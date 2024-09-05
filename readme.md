@@ -168,7 +168,7 @@ Notes Section (add)
 -	Asynchronous in-game reference
 
 
-
+[link to CAPS test](https://github.com/RNIB-MediaAndCulture/Gaming_Devkit/blob/main/readme.md#the-caps-test)
 
  
 Tentative timeline:
