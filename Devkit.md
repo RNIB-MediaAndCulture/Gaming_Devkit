@@ -65,7 +65,7 @@ There are three primary ways to do this:
 Menu and User Interface (UI) narration, hereafter simply referred to as “narration”, is a feature that allows menu items and other elements in a game to be spoken, primarily via synthesised speech.  This means that those with no vision or who have trouble seeing the screen for whatever reason can navigate menus unaided. 
 
 #### 6.1.1	Adjustable Speech
-Narration as defined above should be adjustable in terms of its speed.  After all, just like we all read at different paces, we also all listen and comprehend at different rates.  If a player needs information quickly and can understand the speech at a much faster rate, they should be able to speed up the rate at which the narration is being spoken. Many screen reader users will listen to speech at over 300 words per minute [ ] and sometimes as fast as 500 words per minute. With the range of variability between users it’s best to offer as much granularity in speeds as is practical.
+Narration as defined above should be adjustable in terms of its speed.  After all, just like we all read at different paces, we also all listen and comprehend at different rates.  If a player needs information quickly and can understand the speech at a much faster rate, they should be able to speed up the rate at which the narration is being spoken. Many screen reader users will listen to speech at over 300 words per minute [^1] and sometimes as fast as 500 words per minute. With the range of variability between users it’s best to offer as much granularity in speeds as is practical.
 Examples: Diablo IV, Sea Of Thieves and any game that has screen reader compatibility on PC
 
 ### 6.2	DPad navigation
@@ -225,7 +225,7 @@ Tokens from a given set of types fill a grid and the player needs to spot and se
 
 Examples: Bejeweled, Bubble pop, Candy Crush, Tetris
 
-Mechanics: Pattern matching, Powerups, Story, Timed gameplay
+Mechanics: [Pattern matching](#8511pattern-matching), [Powerups](#8513powerups), [Story](#8519story), [Timed gameplay](#8521timed-gameplay)
 
 #### 8.4.7	 Puzzle Games (not word, number or token based)
 Games where the objective is to solve puzzles with a similar theme. These can be very different from each other although common game mechanics may be identifiable.
@@ -538,18 +538,40 @@ Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
 ### 9	Glossary
--	Screen reader: A piece of software that renders on screen text, controls and other information (when labelled correctly and sent in a compatible format via software) as synthesised speech.  The term is most associated with computer and mobile phone usage, though the user interfaces of games consoles could also be said to have screen readers built in.
+#### Screen reader 
+A piece of software that renders on screen text, controls and other information (when labelled correctly and sent in a compatible format via software) as synthesised speech.  The term is most associated with computer and mobile phone usage, though the user interfaces of games consoles could also be said to have screen readers built in.
 
--	Magnification: Magnification stretches a portion of the screen over a larger area to make it easier to see for partially sighted people. It may require a user to move the viewing window around the original viewing area to see the whole screen or it may reflow elements on the screen especially where text is involved. 
+#### Magnification
+Magnification stretches a portion of the screen over a larger area to make it easier to see for partially sighted people. It may require a user to move the viewing window around the original viewing area to see the whole screen or it may reflow elements on the screen especially where text is involved. 
 
--	High contrast modes: High contrast modes seek to ensure that anything that needs to be seen on the screen stands out by increasing the colour contrast between adjacent blocks of colour (such as text and its background). High contrast modes will often place contrasting solid backgrounds behind text and icons and may have a range of colour schemes to accommodate colour blindness, dyslexia and taste.
+#### High contrast modes
+High contrast modes seek to ensure that anything that needs to be seen on the screen stands out by increasing the colour contrast between adjacent blocks of colour (such as text and its background). High contrast modes will often place contrasting solid backgrounds behind text and icons and may have a range of colour schemes to accommodate colour blindness, dyslexia and taste.
 
--	Colour inversion: Colour inversion filters swap colours for ones that are calculated to be their opposites. This is often used to reduce glare by swapping screens with large amounts of white for ones that are darker. Colour inversion filters may also attempt to increase contrast by crushing colours towards white or black.
+#### Colour inversion
+Colour inversion filters swap colours for ones that are calculated to be their opposites. This is often used to reduce glare by swapping screens with large amounts of white for ones that are darker. Colour inversion filters may also attempt to increase contrast by crushing colours towards white or black.
 
--	Colour blindness filter: A filter that modifies colours across the screen to make it easier to see for people with colour blindness. The process is called Daltonization any may offer a selection of filters for people with different types of colour blindness.
+#### Colour blindness filter
+A filter that modifies colours across the screen to make it easier to see for people with colour blindness. The process is called Daltonization any may offer a selection of filters for people with different types of colour blindness.
 
--	Accessibility framework: An accessibility framework is software that simplifies and automates some of the accessibility functions for developers to make it easier to include accessibility in their software. An accessibility framework may recognise a piece of code as a button and instruct the screen reader on how to present it to the user. It may then guess how to identify the button, for instance by using the name of the image used for the button, while offering the developer a chance to override this guess. If the image used is called “img_2461” and the developer does not override this then the screen reader will identify the button as “img_2461” which will be of minimal help to the user. Accessibility frameworks require semantic markup, preferably provided as part of the development environment but markup languages such as ARIA are available, and some input from developers to override default labels.
+#### Accessibility framework
+An accessibility framework is software that simplifies and automates some of the accessibility functions for developers to make it easier to include accessibility in their software. An accessibility framework may recognise a piece of code as a button and instruct the screen reader on how to present it to the user. It may then guess how to identify the button, for instance by using the name of the image used for the button, while offering the developer a chance to override this guess. If the image used is called “img_2461” and the developer does not override this then the screen reader will identify the button as “img_2461” which will be of minimal help to the user. Accessibility frameworks require semantic markup, preferably provided as part of the development environment but markup languages such as ARIA are available, and some input from developers to override default labels.
 
--	Development environment: This is the suite of tools used by a game developer to create the game. It may consist of one software package that does everything but more usually consists of several software packages that work together on different aspects of the game such as graphics, audio design, game interactions and the gaming framework that holds all of these together. 
+#### Development environment
+This is the suite of tools used by a game developer to create the game. It may consist of one software package that does everything but more usually consists of several software packages that work together on different aspects of the game such as graphics, audio design, game interactions and the gaming framework that holds all of these together. 
 
--	Asynchronous in-game reference: This is information that is presented to the user as part of the game but outside of any real-time gameplay. This could include maps, inventories, bestiaries, list of goals etc where the gameplay is paused while the reference is available.
+#### Asynchronous in-game reference
+This is information that is presented to the user as part of the game but outside of any real-time gameplay. This could include maps, inventories, bestiaries, list of goals etc where the gameplay is paused while the reference is available.
+
+[^1]: [https://webaim.org/techniques/screenreader/ ](https://webaim.org/techniques/screenreader/ )
+
+
+### Authors (RNIB)
+Ben Breen 
+John Paton
+Dean Myles
+James Kyle
+Jonny Marshal
+Sonali Rai
+
+### External reviewers
+(add names)
