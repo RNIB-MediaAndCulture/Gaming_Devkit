@@ -190,14 +190,14 @@ Object of the game is to accumulate an in-game currency. Rate of currency collec
 
 Examples: Archer: Dangerphone, Legend of the slime
 
-Mechanics: Idle gaming, Minigames, Powerups, Story
+Mechanics: [Idle gaming](#855-idle-gaming), [Minigames](#858-minigames), [Powerups](#8513powerups), [Story](#8519story)
 
 #### 8.4.2	 Card battlers and Deck building games
 Card battlers and deck building games are digital versions of card games. Each card is a gameplay modifier, and these are used competitively against other players to score points and win rounds. These may use a communal deck of cards but commonly players build up their personal deck through random gifts, purchases using in game currency, points scored, accumulating a set number of tokens or players may even be able to capture them from opponents. The positions the cards can be played in may also have modifier functions and the player may need to know what cards their opponent has played and where.
 
 Examples: Exploding Kittens, Hearthstone, Marvel Snap, Slay the Spire
 
-Mechanics: Cards, Inserting to grid, Multiplayer, Resource management, Timed gameplay
+Mechanics: [Cards](#852-cards), [Inserting to grid](#856-inserting-to-grid), [Multiplayer](#859-multiplayer), [Resource management](#8515resource-management), [Timed gameplay](#8521timed-gameplay)
 
 #### 8.4.3	 Empire Games
 Base building games with resources gathering, area unlocking, character and feature unlocking, and guilds. May include merge mechanics, Tower defence mechanics, minigames and single player combat.
