@@ -57,9 +57,9 @@ Consoles have a rich selection of options for input and output. For output, cons
 
 ## 6	User-interface navigation
 There are three primary ways to do this:
-•	By voice: Narration
-•	By vision: Magnification/ Zoom
-•	By touch: Haptics
+-	By voice: Narration
+-	By vision: Magnification/ Zoom
+-	By touch: Haptics
 
 ### 6.1	Menu/UI Narration  
 Menu and User Interface (UI) narration, hereafter simply referred to as “narration”, is a feature that allows menu items and other elements in a game to be spoken, primarily via synthesised speech.  This means that those with no vision or who have trouble seeing the screen for whatever reason can navigate menus unaided. 
@@ -101,10 +101,10 @@ Low vision players may find it difficult to distinguish key elements such as int
 Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour blindness is one of the most common types so if you just allowed different shades or green and red then they may not stand out to some people.
 
 Sometimes buttons and icons may not be clickable but may still be visible on the screen. The button may be greyed out or be superimposed with a clock face or other modifier to signify that it’s not available. Common options for this are:
-•	 Active (ready to use)
-•	Inactive – charging (timer)
-•	Inactive – waiting for condition
-•	Unavailable
+- Active (ready to use)
+-	Inactive – charging (timer)
+-	Inactive – waiting for condition
+-	Unavailable
 
 It is recommended to create icons with abilities that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of shapes.
 
@@ -462,41 +462,37 @@ Cycle through Elements, List view
 Alert popups are useful to tell the user that an event has happened when there is more information available than can be communicated with an audio tone. Visually the information can be high contrast and enlarged and audibly the information can be read out as text. Popups that block the screen, and speech that obscures a significant part of the audio must only be triggered by the user, to avoid hijacking their attention and gameplay. If a user is playing using audio, the audio used to signal that an alert is available must be short in order to avoid blocking other audibly communicated information. Consider a short sound effect or phrase of a few syllables to signal an alert popup is available and then some mechanism to open the popup to hear the rest of the information. If the audio signal can communicate the information itself, then no popup is needed. For instance, in a base building game with a building queue an audio signal “building complete” tells you that a building has finished, and you can check the queue if you want to know what is still being built. An audio signal “incoming attack” may need a popup to tell you who and what is attacking.
 
 Pros:
-•	Useful for computer triggered (or timed) events
-
+-	Useful for computer triggered (or timed) events
 Cons:
-•	Can create audio clutter if not designed well
+-	Can create audio clutter if not designed well
 
 #### 8.6.2	 Beacons
 If elements are placed around the player, then stereo or 3D binaural sound could be used to indicate where they are in relation to the player or their avatar. This is especially useful if not using a grid system to place objects. Different sounds can indicate different objects or classes of object. This can be an intuitive way to communicate information but may cause problems for players with hearing loss especially if a player has more hearing loss in one ear or uses cochlear implants. 
 
 Pros:
-•	Intuitive
-•	Particularly well suited to some game layouts
-
+-	Intuitive
+-	Particularly well suited to some game layouts
 Cons:
-•	May cause problems for players with hearing loss
+-	May cause problems for players with hearing loss
 
 #### 8.6.3	 Colour Coding
 Colour coding is a good way to communicate information for partially sighted gamers. Different classes of object (owned by player, friendly to player, enemies, boosters, or resources) can be given different colours. These can be applied as outlines, or a colour filter could be applied across the entire object as if you are viewing it through a coloured filter. Colours chosen must be high contrast in relation to their background and should not be the only way any piece of information is communicated. Players with colour blindness may have problems distinguishing between different colours used so it may help to allow players to change the colours used but where possible the same information should be communicated through text or different shapes. 
 
 Pros:
-•	Clear and intuitive way to communicate information
-
+-	Clear and intuitive way to communicate information
 Cons:
-•	Not suitable for people with colour blindness so should not be the only way information is communicated.
+-	Not suitable for people with colour blindness so should not be the only way information is communicated.
 
 #### 8.6.4	 Cycle through elements
 This is a standard screen reader interaction. Users can cycle forward and backward through a list of elements and as they do each element is named through speech. They can then select or activate the element through another command. If there is more information available on an element, then a user could hold down a finger to hear it or it may play automatically if no other action is selected. The most urgent or important information should be spoken first and moving to the next element should start speaking the next element’s name straight away (instead of finishing the current utterance). If you are able to access the accessibility API of the phone, then you will get most of this behaviour for free and will only need to add metadata for the things the phone won’t know such as what the element is called and what order to cycle through them (if standard reading order is not correct). 
 
 Pros:
-•	It may be possible to hook into the screen reader built into the phone to get this interaction almost for free
-•	In an ordered set of elements all elements can be accessed.
-•	Familiar to users
-
+-	It may be possible to hook into the screen reader built into the phone to get this interaction almost for free
+-	In an ordered set of elements all elements can be accessed.
+-	Familiar to users
 Cons:
-•	Will read through elements in a specific order rather than encouraging natural discovery
-•	Users move through items in a single dimension (next and previous) so two-dimensional structures require more thought to make them accessible in a natural feeling way.
+-	Will read through elements in a specific order rather than encouraging natural discovery
+-	Users move through items in a single dimension (next and previous) so two-dimensional structures require more thought to make them accessible in a natural feeling way.
 
 #### 8.6.5	 Explore by touch
 This is another common screen reader interaction on phones. The user moves their finger around the screen and as they do the screen reader reads what’s under their finger. They can then perform a second command such as a double tap to select the last element that was read out. If there is more information available on an element, then a user could hold down a finger to hear it or it may play automatically if no other action is selected. The most urgent or important information should be spoken first and moving to the next element should start speaking the next element’s name straight away (instead of finishing the current utterance). If a user is accessing a line of elements and running their finger along the line they can stray off the line and lose their place. Similarly, if running their finger along one row in a grid they can stray onto the row above or below. In this case they should be told they have moved to a different row (by numbering the rows you can announce the new row number if the user strays onto a different row). The size of elements on the screen makes a big difference because smaller elements are easier to miss.
@@ -506,7 +502,6 @@ Pros:
 -	Allows natural discovery of elements
 -	Familiar to users
 -	Works well for two dimensional structures
-
 Cons:
 -	Can be easy to miss elements so it’s harder to ensure the user can access all elements on the screen.
 -	Easy to stray off a line or row 
@@ -518,7 +513,6 @@ This is similar to Cycle through Elements. Users can move up, down, left and rig
 Pros:
 -	In an ordered grid of elements all elements can be accessed.
 -	Intuitive to users
-
 Cons:
 -	Easy to miss elements in gameplay where all elements need to be accessed 
 -	Requires more commands than Cycle through Elements
@@ -528,7 +522,6 @@ If the information about elements on a page has a clear data structure, then it 
 
 Pros:
 -	Can be organised in the way that makes most sense for the information or deliberately obfuscated if that is part of the challenge.
-
 Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
