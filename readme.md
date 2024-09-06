@@ -3,11 +3,15 @@
 This is a draft of accessibility guidance to be provided to studios, developers and publishers of videogames to provide insight on how to best make said titles accessible to players across the spectrum of sight loss, including a complete lack of vision.
 
 ## The CAPS test
-When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain Challenge, Ambience, Participation and Story.
-Challenge – the game needs to challenge a player, or they will lose interest. 
-Ambience – many games are set in rich worlds. This ambience needs to be communicated to players or they will be missing out on an important feature.
-Participation – if a game allows communication between players, then this needs to be accessible to enable gamers with sight loss to feel included. This includes trophies and the ability to discuss the game.
-Story – Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible.
+When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain **Challenge**, **Ambience**, **Participation** and **Story**.
+### Challenge 
+The game needs to challenge a player, or they will lose interest. 
+### Ambience
+Many games are set in rich worlds. This ambience needs to be communicated to players or they will be missing out on an important feature.
+### Participation
+If a game allows communication between players, then this needs to be accessible to enable gamers with sight loss to feel included. This includes trophies and the ability to discuss the game.
+### Story
+Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible.
 If a game can be playable from beginning to end but fails the CAPS test then gamers with sight loss may not want to play it anyway. 
 
 ## Designing upwards theory: 
