@@ -65,7 +65,7 @@ There are three primary ways to do this:
 Menu and User Interface (UI) narration, hereafter simply referred to as “narration”, is a feature that allows menu items and other elements in a game to be spoken, primarily via synthesised speech.  This means that those with no vision or who have trouble seeing the screen for whatever reason can navigate menus unaided. 
 
 #### 6.1.1	Adjustable Speech
-Narration as defined above should be adjustable in terms of its speed.  After all, just like we all read at different paces, we also all listen and comprehend at different rates.  If a player needs information quickly and can understand the speech at a much faster rate, they should be able to speed up the rate at which the narration is being spoken. Many screen reader users will listen to speech at over 300 words per minute [1] and sometimes as fast as 500 words per minute. With the range of variability between users it’s best to offer as much granularity in speeds as is practical.
+Narration as defined above should be adjustable in terms of its speed.  After all, just like we all read at different paces, we also all listen and comprehend at different rates.  If a player needs information quickly and can understand the speech at a much faster rate, they should be able to speed up the rate at which the narration is being spoken. Many screen reader users will listen to speech at over 300 words per minute [^1] and sometimes as fast as 500 words per minute. With the range of variability between users it’s best to offer as much granularity in speeds as is practical.
 Examples: Diablo IV, Sea Of Thieves and any game that has screen reader compatibility on PC
 
 ### 6.2	DPad navigation
