@@ -566,12 +566,12 @@ This is information that is presented to the user as part of the game but outsid
 
 
 ### Authors (RNIB)
-Ben Breen 
-John Paton
-Dean Myles
-James Kyle
-Jonny Marshal
-Sonali Rai
+- Ben Breen 
+- John Paton
+- Dean Myles
+- James Kyle
+- Jonny Marshal
+- Sonali Rai
 
 ### External reviewers
-(add names)
+- Robin Sloan
