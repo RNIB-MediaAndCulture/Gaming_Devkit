@@ -189,72 +189,84 @@ Here we will present a list of common genres and the mechanics we would expect t
 Object of the game is to accumulate an in-game currency. Rate of currency collection is decided by upgrades which are often purchased with the in-game currency. Will often include minigames and powerups. 
 
 Examples: Archer: Dangerphone, Legend of the slime
+
 Mechanics: Idle gaming, Minigames, Powerups, Story
 
 #### 8.4.2	 Card battlers and Deck building games
 Card battlers and deck building games are digital versions of card games. Each card is a gameplay modifier, and these are used competitively against other players to score points and win rounds. These may use a communal deck of cards but commonly players build up their personal deck through random gifts, purchases using in game currency, points scored, accumulating a set number of tokens or players may even be able to capture them from opponents. The positions the cards can be played in may also have modifier functions and the player may need to know what cards their opponent has played and where.
 
 Examples: Exploding Kittens, Hearthstone, Marvel Snap, Slay the Spire
+
 Mechanics: Cards, Inserting to grid, Multiplayer, Resource management, Timed gameplay
 
 #### 8.4.3	 Empire Games
 Base building games with resources gathering, area unlocking, character and feature unlocking, and guilds. May include merge mechanics, Tower defence mechanics, minigames and single player combat.
 
 Examples: The ants: Underground kingdom, Boom beach, Top War: Battle game
-Mechanics: Feature unlock, Guilds, Merging, Minigames, Placing items, Raid parties, Research, Resource management, Single player combat, Upgrade building
+
+Mechanics: [Feature unlock](#853-feature-unlock), Guilds, Merging, Minigames, Placing items, Raid parties, Research, Resource management, Single player combat, Upgrade building
 
 #### 8.4.4	 Merge games
 If the player has two of the same item, they can combine them to make something else. This may form the central puzzle of the game or a form of resource management.
 
 Examples: Merge Mansion, Top War: Battle Game
+
 Mechanics: Merging
 
 #### 8.4.5	 Number/token puzzles
 Puzzles involving placing numbers or tokens in a grid according to a given ruleset (such as no number must appear twice in a particular group or the numbers in a line must add up to a given sum). 
 
 Examples: Fillomino, Hitori, Kakuro, Sudoku 
+
 Mechanics: Inserting to grid
 
 #### 8.4.6	 Pattern games
 Tokens from a given set of types fill a grid and the player needs to spot and select (or create) groups of them according to a set of rules such as adjacent tokens are of the same type. Selecting the group may be done through swapping adjacent tokens (Candy Crush), firing another token (Bubble Pop) or just selecting a group (Bejeweled). Once a group is selected or created it usually disappears and the tokens will often move to form a slightly different grid. Often powerups are created by selecting or creating large groups of tokens and the games may be timed.
 
 Examples: Bejeweled, Bubble pop, Candy Crush, Tetris
+
 Mechanics: Pattern matching, Powerups, Story, Timed gameplay
 
 #### 8.4.7	 Puzzle Games (not word, number or token based)
 Games where the objective is to solve puzzles with a similar theme. These can be very different from each other although common game mechanics may be identifiable.
 
 Examples: Cut the rope, Hashi (bridges), Sokoban, Tiny bubbles, Euclidea,
+
 Mechanics: Pattern matching, Placing items, Inserting to Grid, Timed gameplay
 
 #### 8.4.8	Rolling games
 The player moves around an area with collectible items which are collected based on proximity to the player’s avatar. The most famous example is Katamari Damacy where the collected items get stuck to a ball which gets bigger as the game progresses. “Alien Invasion RPG Idle Space” features an Alien with “catching tentacles” where the player has to stay within a certain distance from its victims for a set length of time (while the victims may run randomly, run away or attack the player).
 
 Examples: Alien Invasion RPG Idle Space, Katamari Damarcy 
+
 Mechanics: Powerups, Rolling, Timed gameplay 
 
 #### 8.4.9	Sims
 Sims or simulators are roleplay or creation games that enable the person to recreate environments, roleplay jobs, roleplay social situations and dating or simulate environments in a virtual world sandbox.
 
 Examples: Rollercoaster manager, SimCity, The Sims 
+
 Mechanics: Placing items, Resource management, Story
 
 #### 8.4.10	Strategy games
 Strategy is an umbrella term for games where a set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy). It often encompasses PvP (Player vs Player) and PvE  (Player vs Enemy) but may involve attacking a base or building a base in order to make it harder for an enemy to attack it.
 
 Examples: Boom Beach, Clash of Clans, Warhammer 40,000 Tacticus
+
 Mechanics: Guilds, Placing items, Research, Single player combat, Strategy, Timed gameplay, 
 
 #### 8.4.11	Tower defence games
 Waves of enemies march towards the players base and the player places structures to try and block, destroy or otherwise prevent them from reaching the base. Usually timed but sometimes with a setup period where the player can place defences before the attack begins.
 
 Examples: Plants vs Zombies
+
 Mechanics: Placing items, Timed gameplay, Story, Strategy
 
 #### 8.4.12	Word games
 Puzzles involving making words from a set of given letters. May be single or multiplayer. May be timed or not.
 
 Examples: Kitty Letter, Wordscapes, Word Domination, Wordle 
+
 Mechanics: Inserting to grid, Multiplayer, Timed gameplay
 
 ### 8.5	Mechanics
@@ -525,9 +537,6 @@ Pros:
 Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
-
-
- 
 ### 9	Glossary
 -	Screen reader: A piece of software that renders on screen text, controls and other information (when labelled correctly and sent in a compatible format via software) as synthesised speech.  The term is most associated with computer and mobile phone usage, though the user interfaces of games consoles could also be said to have screen readers built in.
 
