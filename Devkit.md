@@ -204,21 +204,21 @@ Base building games with resources gathering, area unlocking, character and feat
 
 Examples: The ants: Underground kingdom, Boom beach, Top War: Battle game
 
-Mechanics: [Feature unlock](#853-feature-unlock), Guilds, Merging, Minigames, Placing items, Raid parties, Research, Resource management, Single player combat, Upgrade building
+Mechanics: [Feature unlock](#853-feature-unlock), [Guilds](#854-guilds), [Merging](#857-merging), [Minigames](#858-minigames), [Placing items](#8512placing-items), [Raid parties](#8516raid-parties), [Research](#8514research), [Resource management](#8515resource-management), [Single player combat](#8518single-player-combat), [Upgrade building](#8522upgrade-building)
 
 #### 8.4.4	 Merge games
 If the player has two of the same item, they can combine them to make something else. This may form the central puzzle of the game or a form of resource management.
 
 Examples: Merge Mansion, Top War: Battle Game
 
-Mechanics: Merging
+Mechanics: [Merging](#857-merging)
 
 #### 8.4.5	 Number/token puzzles
 Puzzles involving placing numbers or tokens in a grid according to a given ruleset (such as no number must appear twice in a particular group or the numbers in a line must add up to a given sum). 
 
 Examples: Fillomino, Hitori, Kakuro, Sudoku 
 
-Mechanics: Inserting to grid
+Mechanics: [Inserting to grid](#856-inserting-to-grid)
 
 #### 8.4.6	 Pattern games
 Tokens from a given set of types fill a grid and the player needs to spot and select (or create) groups of them according to a set of rules such as adjacent tokens are of the same type. Selecting the group may be done through swapping adjacent tokens (Candy Crush), firing another token (Bubble Pop) or just selecting a group (Bejeweled). Once a group is selected or created it usually disappears and the tokens will often move to form a slightly different grid. Often powerups are created by selecting or creating large groups of tokens and the games may be timed.
@@ -232,42 +232,42 @@ Games where the objective is to solve puzzles with a similar theme. These can be
 
 Examples: Cut the rope, Hashi (bridges), Sokoban, Tiny bubbles, Euclidea,
 
-Mechanics: Pattern matching, Placing items, Inserting to Grid, Timed gameplay
+Mechanics: [Pattern matching](#8511pattern-matching), [Placing items](#8512placing-items), [Inserting to grid](#856-inserting-to-grid), [Timed gameplay](#8521timed-gameplay)
 
 #### 8.4.8	Rolling games
 The player moves around an area with collectible items which are collected based on proximity to the player’s avatar. The most famous example is Katamari Damacy where the collected items get stuck to a ball which gets bigger as the game progresses. “Alien Invasion RPG Idle Space” features an Alien with “catching tentacles” where the player has to stay within a certain distance from its victims for a set length of time (while the victims may run randomly, run away or attack the player).
 
 Examples: Alien Invasion RPG Idle Space, Katamari Damarcy 
 
-Mechanics: Powerups, Rolling, Timed gameplay 
+Mechanics: [Powerups](#8513powerups), [Rolling](#8517rolling), [Timed gameplay](#8521timed-gameplay) 
 
 #### 8.4.9	Sims
 Sims or simulators are roleplay or creation games that enable the person to recreate environments, roleplay jobs, roleplay social situations and dating or simulate environments in a virtual world sandbox.
 
 Examples: Rollercoaster manager, SimCity, The Sims 
 
-Mechanics: Placing items, Resource management, Story
+Mechanics: [Placing items](#8512placing-items), [Resource management](#8515resource-management), [Story](#8519story)
 
 #### 8.4.10	Strategy games
 Strategy is an umbrella term for games where a set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy). It often encompasses PvP (Player vs Player) and PvE  (Player vs Enemy) but may involve attacking a base or building a base in order to make it harder for an enemy to attack it.
 
 Examples: Boom Beach, Clash of Clans, Warhammer 40,000 Tacticus
 
-Mechanics: Guilds, Placing items, Research, Single player combat, Strategy, Timed gameplay, 
+Mechanics: [Guilds](#854-guilds), [Placing items](#8512placing-items), [Research](#8514research), [Single player combat](#8518single-player-combat), [Strategy](#8520strategy), [Timed gameplay](#8521timed-gameplay), 
 
 #### 8.4.11	Tower defence games
 Waves of enemies march towards the players base and the player places structures to try and block, destroy or otherwise prevent them from reaching the base. Usually timed but sometimes with a setup period where the player can place defences before the attack begins.
 
 Examples: Plants vs Zombies
 
-Mechanics: Placing items, Timed gameplay, Story, Strategy
+Mechanics: [Placing items](#8512placing-items),[Timed gameplay](#8521timed-gameplay), [Story](#8519story), [Strategy](#8520strategy)
 
 #### 8.4.12	Word games
 Puzzles involving making words from a set of given letters. May be single or multiplayer. May be timed or not.
 
 Examples: Kitty Letter, Wordscapes, Word Domination, Wordle 
 
-Mechanics: Inserting to grid, Multiplayer, Timed gameplay
+Mechanics: [Inserting to grid](#856-inserting-to-grid), [Multiplayer](#859-multiplayer), [Timed gameplay](#8521timed-gameplay)
 
 ### 8.5	Mechanics
 #### 8.5.1	 Adverts
@@ -285,7 +285,7 @@ Accessibility Considerations:
 Information about how to use the card as well as the effect it has had when played should be communicated accessibly through high contrast visuals and speech. A list view of the cards the player and their opponent have played and the effects after all modifiers have acted could enable accessible navigation through both high contrast visuals and speech.
 
 Accessibility Interactions:
-Cycle through Elements, Grid Navigation, List view
+[Cycle through Elements](#864-cycle-through-elements), [Grid Navigation](#866-grid-navigation), [List view](#867-list-view)
 
 #### 8.5.3	 Feature unlock 
 Description:
@@ -295,7 +295,7 @@ Accessibility Considerations:
 Alerts that tell the player the feature has been unlocked should be accessible both through high contrast visuals and audio alerts.
 
 Accessibility Interactions:
-Alert Popups
+[Alert Popups](#861-alert-popups)
 
 #### 8.5.4	 Guilds 
 Description:
@@ -312,7 +312,7 @@ Accessibility Considerations:
 A player will need to know the rate of accumulation, caps to how much can be accumulated and a status update when they log in so these things will need to be communicated accessibly.
 
 Accessibility Interactions:
-Alert Popups
+[Alert Popups](#861-alert-popups)
 
 #### 8.5.6	 Inserting to grid 
 Description:
@@ -322,7 +322,7 @@ Accessibility Considerations:
 Consider what information they need to know to place the item well. See the section “puzzle games” for more advice on this. Allowing players to move step by step through the grid (with up, down, left, right) will help players with sight loss or dexterity issues to locate cells in the grid. Explore by touch may also be appropriate.
 
 Accessibility Interactions:
-Explore by Touch, Grid Navigation
+[Explore by Touch](#865-explore-by-touch), [Grid Navigation](#866-grid-navigation)
 
 #### 8.5.7	 Merging 
 Description:
@@ -332,7 +332,7 @@ Accessibility Considerations:
 Consider whether a list view of the items that tells the player which items they have will damage the challenge the player faces (see CAPS test). This can then be enlarged or spoken for accessibility. Items in the list view could be grouped together or deliberately shuffled so that when the player hears an item name they have to remember if they’ve heard it before. If it is felt that a list view removes too much challenge for a player then items could be highlighted with contrasting colours in their standard grid layout and if there are too many item classes for the chosen colours to contrast then the set of items can be split into subsets the player can cycle though where one subset at a time is highlighted with contrasting colours.
 
 Accessibility Interactions:
-Explore by Touch, Grid Navigation, List view
+[Explore by Touch](#865-explore-by-touch), [Grid Navigation](#866-grid-navigation), [List view](#867-list-view)
 
 #### 8.5.8	 Minigames 
 Description:
@@ -356,7 +356,7 @@ Accessibility Considerations:
 Although most games with paid boosters can be played without using them players won’t get an equivalent experience unless they are accessible. Make sure that the menus for paid boosts are high contrast and spoken (if possible) and make sure that any alerts coming back from the boost are accessible.
 
 Accessibility Interactions:
-Alert Popups
+[Alert Popups](#861-alert-popups)
 
 #### 8.5.11	Pattern matching 
 Description:
@@ -366,7 +366,7 @@ Accessibility Considerations:
 Ensure that elements are high contrast and use contrasting colours as a default. Make sure that colour is not the only method of distinguishing elements. Players with colour blindness may benefit from being able to change the colours used. When making the game accessible by audio try to consider how to quickly communicate to the player the information they need (without solving it for them) and potentially allow gameplay to pause while the information is being communicated. 
 
 Accessibility Interactions:
-Colour Coding, Explore by Touch, Grid Navigation, List view
+[Colour Coding ](#863-colour-coding), [Explore by Touch](#865-explore-by-touch), [Grid Navigation](#866-grid-navigation), [List view](#867-list-view)
 
 #### 8.5.12	Placing items 
 Description:
@@ -376,7 +376,7 @@ Accessibility Considerations:
 If the player is building a base and there is not a strategic element to placement, then consider suggesting where they can place it so they don’t need to drag the building around the map. Consider whether a reorganise function that moves all structures around and clusters them thematically, spreads them out or removes gaps between structures will help. If there is a strategic element to placement then consider what information the player will need to know (what is it adjacent to, in line of, which defensive structures are covering it, what will it replace etc) and try to communicate this to them if possible. Colour coding whether structures are defensive, resources, boosters etc may help. Placing items should be possible through either curser keys, cycling through available positions or both.
 
 Accessibility Interactions:
-Colour Coding, Explore by Touch, Grid Navigation, List view
+[Colour Coding ](#863-colour-coding), [Explore by Touch](#865-explore-by-touch), [Grid Navigation](#866-grid-navigation), [List view](#867-list-view)
 
 #### 8.5.13	Powerups 
 Description:
@@ -386,7 +386,7 @@ Accessibility Considerations:
 Consider how to alert the player that a powerup is available. Powerups are often introduced and explained at the start of a particular level and their function will often be reinforced in interlevel loading screens. If these explanations are accessible and name, the powerup then just the name can be used to alert the player that the powerup has been awarded. Also consider whether the alert should try to indicate where the powerup has been placed or whether the player will be able to figure this out from the action that created the powerup and the standard discovery mechanism used to find the patterns. In rare cases an alert popup may be needed if there is too much information to communicate otherwise.
 
 Accessibility Interactions:
-Alert Popups
+[Alert Popups](#861-alert-popups)
 
 #### 8.5.14	Research
 Description:
@@ -396,7 +396,7 @@ Accessibility Considerations:
 Players need to be able to select the research they want to do, understand the prerequisites, and what the cost will be and then get alerted when the research is complete.
 
 Accessibility interactions:
-Alert Popups, List View
+[Alert Popups](#861-alert-popups), [List view](#867-list-view)
 
 #### 8.5.15	Resource management 
 Description:
@@ -406,7 +406,7 @@ Accessibility Considerations:
 Alerts and information panels telling the player how much resources they have should be accessible through high-contrast visuals and speech. This may require a function to enable the player to select the information panel to either magnify it or read out the information.
 
 Accessibility Interactions:
-Cycle through Elements, List view
+[Cycle through Elements](#864-cycle-through-elements), [List view](#867-list-view)
 
 #### 8.5.16	Raid parties 
 Description:
@@ -416,7 +416,7 @@ Accessibility Considerations:
 Players will need to know the strength of the base or entity they are raiding as well as the number and strength of the units they are sending. Consider what information they need in order to select units to send as well as making the unit selection process as accessible as possible.
 
 Accessibility Interactions:
-Cycle through Elements, List view
+[Cycle through Elements](#864-cycle-through-elements), [List view](#867-list-view)
 
 #### 8.5.17	Rolling 
 Description:
@@ -426,7 +426,7 @@ Accessibility Considerations:
 Rolling mechanics require the player to know their position relative to items they need to collect or avoid, often with a fine granularity. Consider using colour-coded highlights to tell players whether they need to collect, avoid or fight an interactable item and also whether something is an obstacle. This may also be communicated through stereo or 3D sound through headphones with different sounds representing different objects (or different class of object). If there is metric that signifies progress then consider how to communicate this both through high contrast visuals and speech. 
 
 Accessibility Interactions:
-Beacons, Colour Coding
+[Beacons](#862-beacons), [Colour Coding ](#863-colour-coding)
 
 #### 8.5.18	Single player combat 
 Description:
@@ -450,7 +450,7 @@ Accessibility Considerations:
 Consider what information the player needs to know and when. If building (or attacking) a base, structures could have colour coded highlights to indicate if they are resources, defensive structures, boosters or neutral (neither part of the offence nor defence). For attacking/defending a base or single player combat a list view of assets or enemies could tell the player what they have and what they are attacking (or defending against). Highlighting any element in the list view could cycle to that item on the screen and communicate key stats, attack range, movement available, attacking items in range etc.
 
 Accessibility Interactions:
-Colour Coding, Cycle through Elements, List view 
+[Colour Coding ](#863-colour-coding), [Cycle through Elements](#864-cycle-through-elements), [List view](#867-list-view) 
 
 #### 8.5.21	Timed gameplay 
 Description:
@@ -467,7 +467,7 @@ Accessibility Considerations:
 The player will need to know the current level of the building, the cost to upgrade and whether it can be upgraded now (whether they have enough resources and whether there are any prerequisites). These details need to be accessible. This could be done through a pop-up window to avoid the base seeming cluttered, but it may help to have a list of all the buildings and their levels that a player has so they can scan down the list rather than trying to find the buildings in the base.
 
 Accessibility Interactions:
-Cycle through Elements, List view
+[Cycle through Elements](#864-cycle-through-elements), [List view](#867-list-view)
 
 ### 8.6	Accessibility Interactions
 #### 8.6.1	 Alert popups
