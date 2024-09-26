@@ -1,4 +1,4 @@
-# RNIB Best Practice in Accessible Gaming 2023 [BPAG2023]
+# RNIB Best Practice in Accessible Gaming 2024 [BPAG2024]
 ## 1	Spectrum of sight loss 
 People with sight loss cannot be thought of as one homogenous group. People have different levels and types of sight loss, and their level of sight will decide how they interact with content. People with significant sight loss who are generally registered as severely sight impaired have different requirements to those of people who are partially sighted. 
 
