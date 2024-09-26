@@ -3,11 +3,11 @@
 People with sight loss cannot be thought of as one homogenous group. People have different levels and types of sight loss, and their level of sight will decide how they interact with content. People with significant sight loss who are generally registered as severely sight impaired have different requirements to those of people who are partially sighted. 
 
 Add common sight loss conditions and how they manifest themselves 
-1.	Glaucoma
-2.	Diabetes related eye conditions
-3.	Cataract
-4.	Macular Degeneration
-5.	Retinitis Pigmentosa 
+1.	[Glaucoma](https://www.rnib.org.uk/your-eyes/eye-conditions-az/glaucoma/)
+2.	[Diabetes related eye conditions](https://www.rnib.org.uk/your-eyes/eye-conditions-az/diabetes-related-eye-conditions/)
+3.	[Cataract](https://www.rnib.org.uk/your-eyes/eye-conditions-az/cataracts/)
+4.	[Macular Degeneration](https://www.rnib.org.uk/your-eyes/eye-conditions-az/age-related-macular-degeneration-amd/)
+5.	[Retinitis Pigmentosa](https://www.rnib.org.uk/your-eyes/eye-conditions-az/retinitis-pigmentosa/)
 
 ## 2	Feedback welcome
 We expect the games industry will continue to improve and evolve and we intend that this document should do the same. If you feel any advice is missing, any challenge is not tackled or any common solution is not represented then let us know. This document belongs to the games industry and we will be updating it in line with accessibility best practice.
