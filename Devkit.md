@@ -2,7 +2,7 @@
 ## 1	Spectrum of sight loss 
 People with sight loss cannot be thought of as one homogenous group. People have different levels and types of sight loss, and their level of sight will decide how they interact with content. People with significant sight loss who are generally registered as severely sight impaired have different requirements to those of people who are partially sighted. 
 
-Add common sight loss conditions and how they manifest themselves 
+RNIB has an a-z of sight conditions but some of the most common are:
 1.	[Glaucoma](https://www.rnib.org.uk/your-eyes/eye-conditions-az/glaucoma/)
 2.	[Diabetes related eye conditions](https://www.rnib.org.uk/your-eyes/eye-conditions-az/diabetes-related-eye-conditions/)
 3.	[Cataract](https://www.rnib.org.uk/your-eyes/eye-conditions-az/cataracts/)
