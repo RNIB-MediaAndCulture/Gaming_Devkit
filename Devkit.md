@@ -24,7 +24,7 @@ If a game allows communication between players, then this needs to be accessible
 ### Story
 Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible.
 
-If a game can be playable from beginning to end but fails, the CAPS test then the game may not be engaging enough for gamers with sight loss. 
+If a game can be playable from beginning to end but fails the CAPS test then the game may not be engaging enough for gamers with sight loss. 
 
 ## 4	Designing upwards theory
 This theory is where we’ll begin as this is a starting point that everything else can feed into as part of implementation. However, we also understand that there are limitations to being able to implement accessibility so every approach might be different (for instance due to engines not allowing for easy building in of menu narration) which could change as projects progress.  Identifying these barriers and the right people who can assist in solving them can then allow future projects to have accessibility built in from the ground up as early as possible in development, thus not incurring retrofitting costs. Any serious barriers should be recorded on a centralised document. This means that if a developer has resources, then they can appoint a separate team or member of staff to resolving them. If not, then they can seek to fix them with any spare staff capacity between projects. This list should be as centralised as possible so that if teams working on separate projects face the same issue it can be fixed once and benefit both projects. 
