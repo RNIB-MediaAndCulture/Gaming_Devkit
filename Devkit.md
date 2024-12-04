@@ -476,6 +476,7 @@ Alert popups are useful to tell the user that an event has happened when there i
 
 Pros:
 -	Useful for computer triggered (or timed) events
+
 Cons:
 -	Can create audio clutter if not designed well
 
@@ -485,6 +486,7 @@ If elements are placed around the player, then stereo or 3D binaural sound could
 Pros:
 -	Intuitive
 -	Particularly well suited to some game layouts
+
 Cons:
 -	May cause problems for players with hearing loss
 
@@ -493,6 +495,7 @@ Colour coding is a good way to communicate information for partially sighted gam
 
 Pros:
 -	Clear and intuitive way to communicate information
+
 Cons:
 -	Not suitable for people with colour blindness so should not be the only way information is communicated.
 
@@ -503,6 +506,7 @@ Pros:
 -	It may be possible to hook into the screen reader built into the phone to get this interaction almost for free
 -	In an ordered set of elements all elements can be accessed.
 -	Familiar to users
+  
 Cons:
 -	Will read through elements in a specific order rather than encouraging natural discovery
 -	Users move through items in a single dimension (next and previous) so two-dimensional structures require more thought to make them accessible in a natural feeling way.
@@ -515,6 +519,7 @@ Pros:
 -	Allows natural discovery of elements
 -	Familiar to users
 -	Works well for two dimensional structures
+
 Cons:
 -	Can be easy to miss elements so it’s harder to ensure the user can access all elements on the screen.
 -	Easy to stray off a line or row 
@@ -526,6 +531,7 @@ This is similar to Cycle through Elements. Users can move up, down, left and rig
 Pros:
 -	In an ordered grid of elements all elements can be accessed.
 -	Intuitive to users
+
 Cons:
 -	Easy to miss elements in gameplay where all elements need to be accessed 
 -	Requires more commands than Cycle through Elements
@@ -535,6 +541,7 @@ If the information about elements on a page has a clear data structure, then it 
 
 Pros:
 -	Can be organised in the way that makes most sense for the information or deliberately obfuscated if that is part of the challenge.
+
 Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
