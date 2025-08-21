@@ -40,6 +40,14 @@ Colour coding is a good way to communicate information, but it should not be the
 
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
 
+## 5 The Value of Agency
+**To Add:**
+- Blind people want to play the game not listen to it play itself,
+- Audio Aim vs Auto Aim,
+- Don't skip mini games,
+- Audio beacons for navigation rather than rails
+- Removing agency decreases the challenge and enjoyment of a game
+
 ## 5	Platform specific requirements 
 The accessibility needs of users do not change much depending on platform but the tools available may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
 
