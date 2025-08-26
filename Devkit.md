@@ -47,6 +47,7 @@ Consider where accessibility can be the default. A good example is using sound d
 - Don't skip mini games,
 - Audio beacons for navigation rather than rails
 - Removing agency decreases the challenge and enjoyment of a game
+- Making the game playable is the main option so it's better to skip a section (or feature) and have the rest of the game playable than obsess over a minigame
 
 ## 5	Platform specific requirements 
 The accessibility needs of users do not change much depending on platform but the tools available may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
