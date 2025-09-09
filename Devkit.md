@@ -1,3 +1,4 @@
+
 ![RNIB logo](RNIB_logo.png)
 # RNIB Best Practice in Accessible Gaming 2024 [BPAG2024]
 ## 1	Spectrum of sight loss 
@@ -41,6 +42,22 @@ Colour coding is a good way to communicate information, but it should not be the
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
 
 ## 5 The Value of Agency
+
+During accessibility discussions, it is always important to consider how much agency a player has via particular accessibility implementations.  Agency here is defined as how much a player can achieve without the need for additional workarounds, whether they be technological (such as Optical Character Recognition or OCR) or human (i.e. getting a sighted person to assist verbally via callouts or through controlling the game for them).
+
+Agency has become a key point of discussion over the last few years, with players repeatedly stating that they want to be able to actually engage with the game, not just listen to it essentially playing itself.
+
+#5.1 Targeting/Aiming
+The process of hitting your target first begins with you actually being able to target it correctly.  In years gone by, it was customary to utilise a lock-on mechanic to keep a target in the centre of your view, or even hit it directly when a player pressed the corresponding button to fire their weapon of choice.
+
+Even in titles like The Last Of Us Parts I and II, as well as God Of War Ragnarök, though a player can freely aim, without sight it is often recommended to just use target lock or the game's equivalent setting to be able to guarantee hitting your targets.
+
+This system, as much as it can allow for progression, does not unfortunately provide a great deal of agency.  For example, all you have to do during a Last Of Us encounter is to aim, wait until an enemy is in range (as the game tracks targets for you and locks onto them automatically) then pull the trigger until the target dies, then wait for the next enemy to appear and repeat until you clear the area.
+
+An alternative for this has thankfully been seen in recent years thanks to titles like Sea Of Thieves, where audio aim systems mean you can hear where a target is and adjust your weapon's reticle/crosshair accordingly based purely on changes in the audio cues presented.
+
+Such systems mean that it is solely up to the player as to which target they shoot first, let's say, rather than having a lower priority target in your sights instead of the main threat.
+
 **To Add:**
 - Blind people want to play the game not listen to it play itself,
 - Audio Aim vs Auto Aim,
