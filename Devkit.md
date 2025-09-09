@@ -47,7 +47,7 @@ During accessibility discussions, it is always important to consider how much ag
 
 Agency has become a key point of discussion over the last few years, with players repeatedly stating that they want to be able to actually engage with the game, not just listen to it essentially playing itself.
 
-#5.1 Targeting/Aiming
+### 5.1 Targeting/Aiming
 The process of hitting your target first begins with you actually being able to target it correctly.  In years gone by, it was customary to utilise a lock-on mechanic to keep a target in the centre of your view, or even hit it directly when a player pressed the corresponding button to fire their weapon of choice.
 
 Even in titles like The Last Of Us Parts I and II, as well as God Of War Ragnarök, though a player can freely aim, without sight it is often recommended to just use target lock or the game's equivalent setting to be able to guarantee hitting your targets.
