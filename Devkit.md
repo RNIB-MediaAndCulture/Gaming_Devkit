@@ -25,10 +25,12 @@ If a game allows communication between players, then this needs to be accessible
 ### Story
 Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible.
 
-If a game can be playable from beginning to end but fails the CAPS test then the game may not be engaging enough for gamers with sight loss. 
+If a game can be playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss. 
 
 ## 4	Designing upwards theory
-This theory is where we’ll begin as this is a starting point that everything else can feed into as part of implementation. However, we also understand that there are limitations to being able to implement accessibility so every approach might be different (for instance due to engines not allowing for easy building in of menu narration) which could change as projects progress.  Identifying these barriers and the right people who can assist in solving them can then allow future projects to have accessibility built in from the ground up as early as possible in development, thus not incurring retrofitting costs. Any serious barriers should be recorded on a centralised document. This means that if a developer has resources, then they can appoint a separate team or member of staff to resolving them. If not, then they can seek to fix them with any spare staff capacity between projects. This list should be as centralised as possible so that if teams working on separate projects face the same issue it can be fixed once and benefit both projects. 
+This theory is where we’ll begin as this is a starting point that everything else can feed into as part of implementation. However, we also understand that there are limitations to being able to implement accessibility, so every approach might be different and evolve as projects progress. For instance different approaches could occur due to engines not allowing for easy building in of menu narration, or a game already having hooks for aiming information could allow a system for audio aim to be tied in, instead of constructing an entirely new infrastructure.
+
+Identifying these barriers and the right people who can assist in solving them can then allow future projects to have accessibility built in from the ground up as early as possible in development, thus not incurring retrofitting costs. Any serious barriers should be recorded on a centralised document. This means that if a developer has resources, then they can appoint a separate team or member of staff to resolving them. If not, then they can seek to fix them with any spare staff capacity between projects. This list should be as centralised as possible so that if teams working on separate projects face the same issue it can be fixed once and benefit both projects. 
 
 Gamers across the spectrum of sight loss should be able to enjoy the same titles as everyone else, including players with absolutely no sight whatsoever. The features that can be of assistance, (menu narration, use of haptics for information etc) will not only assist blind players but anyone with greater levels of usable vision as well as other challenges (for instance if they can’t hear a cue that has a haptic equivalent).
 
@@ -45,29 +47,43 @@ Consider where accessibility can be the default. A good example is using sound d
 
 During accessibility discussions, it is always important to consider how much agency a player has via particular accessibility implementations.  Agency here is defined as how much a player can achieve without the need for additional workarounds, whether they be technological (such as Optical Character Recognition or OCR) or human (i.e. getting a sighted person to assist verbally via callouts or through controlling the game for them).
 
-Agency has become a key point of discussion over the last few years, with players repeatedly stating that they want to be able to actually engage with the game, not just listen to it essentially playing itself.
+Agency has become a key point of discussion over the last few years, with players repeatedly stating that they want to be able to actually engage with the game, not just listen to it essentially playing itself.  Below are discussions of a few areas where agency is a key element of conversation, though of course others will inevitably exists as well.
 
 ### 5.1 Targeting/Aiming
-The process of hitting your target first begins with you actually being able to target it correctly.  In years gone by, it was customary to utilise a lock-on mechanic to keep a target in the centre of your view, or even hit it directly when a player pressed the corresponding button to fire their weapon of choice.
+The process of hitting your target begins, understandably, with you actually being able to find said target correctly in the first place.  In years gone by, it was customary to utilise a lock-on mechanic to keep a target in the centre of your view, or even hit it directly when a player pressed the corresponding button to fire their weapon of choice.
 
-Even in titles like The Last Of Us Parts I and II, as well as God Of War Ragnarök, though a player can freely aim, without sight it is often recommended to just use target lock or the game's equivalent setting to be able to guarantee hitting your targets.
+Even in titles like The Last Of Us Parts I and II, as well as God Of War Ragnarök, though a player can freely aim by turning off auto-lock, without sight it is often recommended to just use target lock (or the game's equivalent setting) to be able to guarantee hitting objects or enemies as the situation requires.
 
 This system, as much as it can allow for progression, does not unfortunately provide a great deal of agency.  For example, all you have to do during a Last Of Us encounter is to aim, wait until an enemy is in range (as the game tracks targets for you and locks onto them automatically) then pull the trigger until the target dies, then wait for the next enemy to appear and repeat until you clear the area.
 
-An alternative for this has thankfully been seen in recent years thanks to titles like Sea Of Thieves, where audio aim systems mean you can hear where a target is and adjust your weapon's reticle/crosshair accordingly based purely on changes in the audio cues presented.
+An alternative for this has thankfully been seen in recent years thanks to titles like Sea Of Thieves and Atomfall, where audio aim systems mean you can hear where a target is and adjust your weapon's reticle/crosshair accordingly based purely on changes in the audio cues presented to the player.
 
 Such systems mean that it is solely up to the player as to which target they shoot first, let's say, rather than having a lower priority target in your sights instead of the main threat.
 
+#5.2 Minigames and Quick Time Events
+
+Though they might seem very much like side content to most, minigames can not only give players a much needed break from the main gameplay loop of their chosen title, but they have also been seen to give rewards that can be of great benefit, including being a part of achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation.
+
+Though they might not be seen as minigames, puzzles can definitely fall into this category as well, especially as they often lock items, optional story content or other interesting side elements behind their completion.
+
+Completing puzzles has often been a sore point in terms of accessibility for gamers with sight loss, with the answer in recent years from some developers being to add a "skip puzzle" option.
+
+Though this solution does in theory solve the problem by allowing the player to progress past a barrier that was otherwise blocking them from the rest of the game or other content, it also has two undesired effects.  Specifically, these are that it reduces agency as this option does not allow the player to complete the puzzle themselves, whilst simultaneously also denying the player the opportunity to witness any story-related events, dialogue or moments that sighted players might find of interest.
+
+An alternative to this scenario, other than making the puzzle accessible natively of course (which would be by far the best option) would be to provide a way for the puzzle to automatically complete itself. Whilst this does of course still reduce agency, it would allow players to see the resultant outcome of the puzzle including any and all dialogue, for example, reminiscent of quick time events as discussed below.
+
+Quick time events (or QTE's) 
+
+This reactionary button sequence-style mechanic has been around for a long time, but often presents issues for gamers without sight due to a lack of non-visual information for said button prompts, whether through narration or audio cues.  Auto-completion of these sequences is one option, given it also aids those who may not physically be able to complete them, but the best way to make these accessible is to add the aforementioned audio cues or narration to allow players to hearwhat they need to press, with appropriate compensation for completion time being designed in from thebeginning.
+
 **To Add:**
-- Blind people want to play the game not listen to it play itself,
-- Audio Aim vs Auto Aim,
 - Don't skip mini games,
 - Audio beacons for navigation rather than rails
 - Removing agency decreases the challenge and enjoyment of a game
 - Making the game playable is the main option so it's better to skip a section (or feature) and have the rest of the game playable than obsess over a minigame
 
 ## 5	Platform specific requirements 
-The accessibility needs of users do not change much depending on platform but the tools available may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
+The accessibility needs of users do not change much depending on platform but the tools available on platforms may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
 
 ### 5.1	PC/Mac/Web based
 Windows and OSX have screen readers that will read out highlighted text and magnification software that will enlarge a portion of the screen. Depending on the development environment you use you may be able to make use of the screen reader to read out menus or magnify part of the screen. 
