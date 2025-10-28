@@ -1,27 +1,26 @@
 # Gaming Use cases
 This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [First-person shooter](link) aspect but may also inherit the [Exploration] (link) and [Team communcation](link) aspect.   
-
 The document then lists relevant mechanics for each aspect of experience. These are actions you might expect to perform as part of this aspect or ways in which you might expect to interact with it. These describe potential accessibility barriers and ways in which you might overcome those barriers. The suggestions of ways to overcome the barriers may point to accessibility design patterns.
 
 ## Aspects of Experience
 
- - Class-Based Play
+### Class-Based Play
  Players take on specific roles with unique abilities (e.g., healer, tank, scout), often in team-based games. This can overlap with RPG but is distinct in multiplayer contexts.
- - Character Progression
+### Character Progression
 Players improve their character’s stats, skills, or gear over time. Can be tied to experience points, quests, or achievements.
- - Co-op Mechanics
+### Co-op Mechanics
 Players work together to achieve shared goals, often requiring coordination and complementary skills.
- - construction
+### construction
 Players place, remove, or modify elements in the game world to create structures or solve spatial challenges. Common in sandbox and survival games.
- - Management / Tycoon
+### Management / Tycoon
  Players oversee systems like cities, businesses, or ecosystems, making decisions to optimize performance or growth. Often involves resource balancing and strategic planning.
- - Environmental Interaction
+### Environmental Interaction
 Players manipulate the environment directly—moving objects, activating switches, or using physics-based mechanics to solve problems or progress.
- - Survival
+### Survival
 Players must manage health, hunger, stamina, and other survival metrics while avoiding threats. Often includes crafting and exploration.
- - Narrative Choice / Branching Paths
+### Narrative Choice / Branching Paths
 Players make decisions that affect the story or game world. These choices may lead to different outcomes or endings.
- -  Rhythm / Timing
+###  Rhythm / Timing
 Players interact with the game in sync with music or timed prompts. Found in rhythm games or mini-games within larger titles.
 
 
