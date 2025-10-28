@@ -61,9 +61,15 @@ Player guides their character to move around a map without alerting computer con
 #### Relevant Mechanics
 
 
-### First-person shooter
+### First-person shooter  <- Combat (single character)
 The player navigates a map attacking enemies which may be NPCs or other players. 
 #### Relevant Mechanics
+
+### Combat (multiple character synchronous)
+
+### Combat (multiple character turn-based)
+
+### Combat (menu driven)
 
 ### Sandbox
 #### Relevant Mechanics
