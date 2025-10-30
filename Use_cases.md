@@ -1,43 +1,86 @@
 # Gaming Use cases
-This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [First-person shooter](link) aspect but may also inherit the [Exploration] (link) and [Team communcation](link) aspect.   
+This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [Combat (frst person)](#combat-(first-person)) aspect but may also inherit the [Exploration] (link) and [Team communcation](link) aspect.   
 The document then lists relevant mechanics for each aspect of experience. These are actions you might expect to perform as part of this aspect or ways in which you might expect to interact with it. These describe potential accessibility barriers and ways in which you might overcome those barriers. The suggestions of ways to overcome the barriers may point to accessibility design patterns.
 
 ## Aspects of Experience
 
-### Class-Based Play
- Players take on specific roles with unique abilities (e.g., healer, tank, scout), often in team-based games. This can overlap with RPG but is distinct in multiplayer contexts.
+### Menu (textual)
+A menu is a part of almost every game and enables the player to set preferences, set game difficulty, choose which level to play 
+
 ### Character Progression
 Players improve their character’s stats, skills, or gear over time. Can be tied to experience points, quests, or achievements.
-### Co-op Mechanics
-Players work together to achieve shared goals, often requiring coordination and complementary skills.
+
+### Class-Based Play
+Players take on specific roles with unique abilities (e.g., healer, tank, scout), often in team-based games. This can overlap with RPG but is distinct in multiplayer contexts.
+
+### Combat (1v1)
+A player uses uses a combination of attacks, blocks, jumps, crouches and horizontal movement to attack an opponant (either computer controlled or player controlled). 
+#### Relevant Mechanics
+[Perceive attack]  , [attack]  , [block]  , [Movement2D]  , [locate opponant2D] 
+
+### Combat (beat 'em up)
+The player fights through waves of enemies often in a side-scrolling or platform style game.
+#### Relevant Mechanics
+[attack]  , [block]  ,  [locate opponant2D] , [Movement2D]  , [Perceive attack]  
+
+### Combat (first-person) 
+The player navigates a map attacking enemies which may be NPCs or other players. 
+#### Relevant Mechanics
+
+### Combat (menu driven)
+
+#### Relevant Mechanics
+Text menu, 
+
+### Combat (multi-character synchronous)
+
+#### Relevant Mechanics
+
+### Combat (multi-character turn-based)
+
+#### Relevant Mechanics
+
 ### construction
 Players place, remove, or modify elements in the game world to create structures or solve spatial challenges. Common in sandbox and survival games.
-### Management / Tycoon
- Players oversee systems like cities, businesses, or ecosystems, making decisions to optimize performance or growth. Often involves resource balancing and strategic planning.
+
+### Co-op Mechanics
+Players work together to achieve shared goals, often requiring coordination and complementary skills.
+
 ### Environmental Interaction
 Players manipulate the environment directly—moving objects, activating switches, or using physics-based mechanics to solve problems or progress.
-### Survival
-Players must manage health, hunger, stamina, and other survival metrics while avoiding threats. Often includes crafting and exploration.
+
+### Exploration
+The player has a large map to explore and movement through this environment is largely unrestricted.
+#### Relevant Mechanics
+[Perceive collision] ,  [Perceive danger]  , [Perceive objects]  , [Perceive path]  , [Perceive direction](#perceive-direction)
+
+> [!NOTE]
+> Should Environmental Interaction and Exploration be merged?
+
+### Management / Tycoon
+ Players oversee systems like cities, businesses, or ecosystems, making decisions to optimize performance or growth. Often involves resource balancing and strategic planning.
 ### Narrative Choice / Branching Paths
 Players make decisions that affect the story or game world. These choices may lead to different outcomes or endings.
-###  Rhythm / Timing
-Players interact with the game in sync with music or timed prompts. Found in rhythm games or mini-games within larger titles.
-
 
 ### Racing 
 Players compete to cover a track faster than other players or faster than a set time limit.  
 #### Relevant Mechanics
 
-### Fighting (Beat 'em up)
-A player uses uses a combination of attacks, blocks, jumps, crouches and horizontal movement to attack an opponant (either computer controlled or player controlled). 
-#### Relevant Mechanics
-[Perceive attack]  , [attack]  , [block]  , [Movement2D]  , [locate opponant2D] 
-### Exploration
-The player has a large map to explore and movement through this environment is largely unrestricted.
-#### Relevant Mechanics
-[Perceive collision] ,  [Perceive danger]  , [Perceive objects]  , [Perceive path]  , [Perceive direction](#perceive-direction)
-### RPG
-The player controls a character which may either be fully created for them or may be highly customisable often from a given set of races, classes and alignments. Focus is on advancing a storyline and developing their chosen character. 
+###  Rhythm / Timing
+Players interact with the game in sync with music or timed prompts. Found in rhythm games or mini-games within larger titles.
+
+
+### Survival
+Players must manage health, hunger, stamina, and other survival metrics while avoiding threats. Often includes crafting and exploration.
+
+
+
+### Adventure
+eg. Neverwinter nights, Zelda etc
+
+todo:
+ - merge with class-based play
+
 ### Simulation
 The player can participate in a simulated world or activity. This could be through computer generated characters that the player controls or a first or third person simulated activity such as driving a train or powerwashing an area.
 #### Relevant Mechanics
@@ -46,30 +89,46 @@ The player can participate in a simulated world or activity. This could be throu
 
 #### Relevant Mechanics
 
-### Strategy
-#### Relevant Mechanics
+
 
 ### Stealth
 Player guides their character to move around a map without alerting computer controlled enemies. This often involves knowing which way an enemy is facing and timing the players movements to avoid alerting them. Player may need to get their character to crouch. The enemies position may be communicated via footsteps.
+#### Relevant Mechanics
+
+### Strategy
 #### Relevant Mechanics
 
 ### Team communication
 
 #### Relevant Mechanics
 
-### Puzzle Game
+### Puzzle 
+This refers to games which are entirely puzzle based rather than games such as adventure games that feature puzzles.
 #### Relevant Mechanics
 
 
-### First-person shooter  <- Combat (single character)
+### Combat (first-person) 
 The player navigates a map attacking enemies which may be NPCs or other players. 
+eg. God of War, Bioshock etc
 #### Relevant Mechanics
-
-### Combat (multiple character synchronous)
-
-### Combat (multiple character turn-based)
+[Assistant]
 
 ### Combat (menu driven)
+
+#### Relevant Mechanics
+Text menu, 
+
+### Combat (multi-character synchronous)
+
+#### Relevant Mechanics
+
+### Combat (multi-character turn-based)
+
+#### Relevant Mechanics
+
+
+
+
 
 ### Sandbox
 #### Relevant Mechanics
