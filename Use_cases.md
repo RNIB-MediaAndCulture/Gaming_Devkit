@@ -1,5 +1,5 @@
 # Gaming Use cases
-This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [Combat (first person)](#combat-(first-person)) aspect but may also inherit the [Exploration] (link) and [Team communication](link) aspect.   
+This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [Combat (first person)](#combat-first-person) aspect but may also inherit the [Exploration](#exploration) and [Team communication](link) aspect.   
 The document then lists relevant mechanics for each aspect of experience. These are actions you might expect to perform as part of this aspect or ways in which you might expect to interact with it. These describe potential accessibility barriers and ways in which you might overcome those barriers. The suggestions of ways to overcome the barriers may point to accessibility design patterns.
 
 ## Aspects of Experience
@@ -8,16 +8,13 @@ The document then lists relevant mechanics for each aspect of experience. These 
 A menu is a part of almost every game and enables the player to set preferences, set game difficulty, choose which level to play 
 #### Relevant Mechanics
 [checkbox - additive selection] , [enter menu] , [navigate menu 1D] , [navigate menu 2D] , [radio button - mutex selection] , [select-menu] , [slider - proportion selection]
-
 ### Character Progression
 Players improve their character’s stats, skills, or gear over time. Can be tied to experience points, quests, or achievements.
 [object description] , [object comparison] , [levelling-up] , [questing/achievements]  
-
 ### Class-Based Play /Role-play
 Players take on specific roles with unique abilities (e.g., healer, tank, scout), often in team-based games. 
 #### Relevant Mechanics
 [character creation] , [character selection]
-
 ### Combat (1v1)
 A player uses a combination of attacks, blocks, jumps, crouches and horizontal movement to attack an opponent (either computer controlled or player controlled). 
 #### Relevant Mechanics
