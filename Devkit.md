@@ -18,12 +18,12 @@ We expect the games industry will continue to improve and evolve and we intend t
 When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain Challenge, Ambience, Participation and Story.
 ### Challenge
 The game needs to challenge a player, or they will lose interest. 
-### Ambience
-Many games are set in rich worlds. This ambience needs to be communicated to players or they will be missing out on an important feature.
+### Agency
+It is better to allow a gamer to act for themselves rather than removing their agency by automating elements of gameplay.
 ### Participation
 If a game allows communication between players, then this needs to be accessible to enable gamers with sight loss to feel included. This includes trophies and the ability to discuss the game.
 ### Story
-Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible.
+Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible. Many games are set in rich worlds. This ambience is also part of the story and needs to be communicated to players or they will be missing out on an important feature.
 
 If a game can be playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss. 
 
@@ -60,7 +60,7 @@ An alternative for this has thankfully been seen in recent years thanks to title
 
 Such systems mean that it is solely up to the player as to which target they shoot first, let's say, rather than having a lower priority target in your sights instead of the main threat.
 
-#5.2 Minigames and Quick Time Events
+### 5.2 Minigames and Quick Time Events
 
 Though they might seem very much like side content to most, minigames can not only give players a much needed break from the main gameplay loop of their chosen title, but they have also been seen to give rewards that can be of great benefit, including being a part of achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation.
 
