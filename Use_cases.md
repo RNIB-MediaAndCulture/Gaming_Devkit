@@ -1,5 +1,5 @@
 # Gaming Use cases
-This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [Combat (first person)](#combat-first-person) aspect but may also inherit the [Exploration](#exploration) and [Team communication](link) aspect.   
+This document aims to encompass the types of games that exist in order to identify accessibility barriers and offer suggested solutions. It is broadly inspired by object based programming where something can 'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects of a game. A first person shooter game wil inherit the [Combat (first person)](#combat-first-person) aspect but may also inherit the [Exploration](#exploration) and [Team communication](#team-communication) aspect.   
 The document then lists relevant mechanics for each aspect of experience. These are actions you might expect to perform as part of this aspect or ways in which you might expect to interact with it. These describe potential accessibility barriers and ways in which you might overcome those barriers. The suggestions of ways to overcome the barriers may point to accessibility design patterns.
 
 ## Aspects of Experience
@@ -110,6 +110,7 @@ Player guides their character to move around a map without alerting computer con
 ### Team communication
 
 #### Relevant Mechanics
+[text chat] , [voice chat] , [emoji] , 
 
 ### Puzzle 
 This refers to games which are entirely puzzle based rather than games such as adventure games that feature puzzles.
