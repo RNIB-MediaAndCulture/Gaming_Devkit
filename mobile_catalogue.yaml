@@ -4,7 +4,7 @@ catalogue:
     This is for illustration only. Adverts and paid boosters are common to all genres so will not 
     be mentioned every time.
   genres:
-    - name: "Accumulator games 
+    - name: "Accumulator games" 
       description: >
         Object of the game is to accumulate an in-game currency. Rate of currency collection is decided by upgrades which are often purchased with the in-game currency. Will often include minigames and powerups. 
 
@@ -18,7 +18,7 @@ catalogue:
         - [Powerups](8513powerups), 
         - [Story](8519story)
 
-    - name: "Card battlers and Deck building games
+    - name: "Card battlers and Deck building games"
       description: >
         Card battlers and deck building games are digital versions of card games. Each card is a gameplay modifier, and these are used competitively against other players to score points and win rounds. These may use a communal deck of cards but commonly players build up their personal deck through random gifts, purchases using in game currency, points scored, accumulating a set number of tokens or players may even be able to capture them from opponents. The positions the cards can be played in may also have modifier functions and the player may need to know what cards their opponent has played and where.
 
@@ -35,7 +35,7 @@ catalogue:
         - [Resource management](8515resource-management), 
         - [Timed gameplay](8521timed-gameplay)
 
-    - name: "Empire Games
+    - name: "Empire Games"
       description: >
         Base building games with resources gathering, area unlocking, character and feature unlocking, and guilds. May include merge mechanics, Tower defence mechanics, minigames and single player combat.
 
@@ -56,7 +56,7 @@ catalogue:
         - [Single player combat](8518single-player-combat), 
         - [Upgrade building](8522upgrade-building)
 
-    - name: "Merge games
+    - name: "Merge games"
       description: >
         If the player has two of the same item, they can combine them to make something else. This may form the central puzzle of the game or a form of resource management.
 
@@ -67,7 +67,7 @@ catalogue:
       mechanics:  
         - [Merging](857-merging)
 
-    - name: "Number/token puzzles
+    - name: "Number/token puzzles"
       description: >
         Puzzles involving placing numbers or tokens in a grid according to a given ruleset (such as no number must appear twice in a particular group or the numbers in a line must add up to a given sum). 
 
@@ -80,7 +80,7 @@ catalogue:
       mechanics:  
         - [Inserting to grid](856-inserting-to-grid)
 
-    - name: "Pattern games
+    - name: "Pattern games"
       description: >
         Tokens from a given set of types fill a grid and the player needs to spot and select (or create) groups of them according to a set of rules such as adjacent tokens are of the same type. Selecting the group may be done through swapping adjacent tokens (Candy Crush), firing another token (Bubble Pop) or just selecting a group (Bejeweled). Once a group is selected or created it usually disappears and the tokens will often move to form a slightly different grid. Often powerups are created by selecting or creating large groups of tokens and the games may be timed.
 
@@ -93,7 +93,7 @@ catalogue:
       mechanics:  
         - [Pattern matching](8511pattern-matching), [Powerups](8513powerups), [Story](8519story), [Timed gameplay](8521timed-gameplay)
 
-    - name: "Puzzle Games (not word, number or token based)
+    - name: "Puzzle Games (not word, number or token based)"
       description: >
         Games where the objective is to solve puzzles with a similar theme. These can be very different from each other although common game mechanics may be identifiable.
 
@@ -110,7 +110,7 @@ catalogue:
         - [Inserting to grid](856-inserting-to-grid), 
         - [Timed gameplay](8521timed-gameplay)
 
-    - name: "Rolling games
+    - name: "Rolling games"
       description: >
         The player moves around an area with collectible items which are collected based on proximity to the player’s avatar. The most famous example is Katamari Damacy where the collected items get stuck to a ball which gets bigger as the game progresses. “Alien Invasion RPG Idle Space” features an Alien with “catching tentacles” where the player has to stay within a certain distance from its victims for a set length of time (while the victims may run randomly, run away or attack the player).
 
@@ -123,7 +123,7 @@ catalogue:
         - [Rolling](8517rolling), 
         - [Timed gameplay](8521timed-gameplay) 
 
-    - name: "Sims
+    - name: "Sims"
       description: >
         Sims or simulators are roleplay or creation games that enable the person to recreate environments, roleplay jobs, roleplay social situations and dating or simulate environments in a virtual world sandbox.
 
@@ -137,7 +137,7 @@ catalogue:
         - [Resource management](8515resource-management), 
         - [Story](8519story)
 
-    - name: "Strategy games
+    - name: "Strategy games"
       description: >
         Strategy is an umbrella term for games where a set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy). It often encompasses PvP (Player vs Player) and PvE  (Player vs Enemy) but may involve attacking a base or building a base in order to make it harder for an enemy to attack it.
 
@@ -167,7 +167,7 @@ catalogue:
         - [Story](8519story), 
         - [Strategy](8520strategy)
 
-    - name: "Word games
+    - name: "Word games"
       description: >
         Puzzles involving making words from a set of given letters. May be single or multiplayer. May be timed or not.
 
@@ -181,3 +181,220 @@ catalogue:
         - [Inserting to grid](856-inserting-to-grid), 
         - [Multiplayer](859-multiplayer), 
         - [Timed gameplay](8521timed-gameplay)
+  - mechanics:
+    - name: "Adverts"
+      description: >
+        Adverts may be used to reward players with boosts and bonuses or may be essential to play the game (where the player doesn’t have a choice). Be aware that these adverts may not be accessible so players may not know what’s going on and often the button to close the advert may be small and hard to accurately click.
+
+      accessibility Considerations: >
+        Make sure the player knows how long the advert is at the start of it or has a progress indicator that tells them when it will finish. Give players an accessible mechanism to exit the advert (or follow the advert to download the app being advertised if they want). If a miss-click opens up an app store, then make sure the player knows they have been redirected.
+
+    - name: "Cards"
+      description: >
+        Cards are items that can be collected and act as modifiers for other gameplay. They may be the main form of gameplay such as in deck building games or may also be used to enhance abilities of raiding parties or other game mechanics.
+
+      accessibility Considerations: >
+        Information about how to use the card as well as the effect it has had when played should be communicated accessibly through high contrast visuals and speech. A list view of the cards the player and their opponent have played and the effects after all modifiers have acted could enable accessible navigation through both high contrast visuals and speech.
+
+      accessibility interactions: >
+      - Cycle through Elements, 
+      - Grid Navigation, 
+      - List view
+
+    - name: "Feature unlock"
+      description: >
+        Some features may become available after a player has purchased them with in-game credits or resources or after they reach a threshold of XP.
+
+      accessibility Considerations: >
+        Alerts that tell the player the feature has been unlocked should be accessible both through high contrast visuals and audio alerts.
+
+      accessibility interactions: >
+      - Alert Popups
+
+    - name: "Guilds"
+      description: >
+        Many games have guilds that players can join to complete quests and levels together. This commonly includes a chat function.
+
+      accessibility Considerations: >
+        Chat text should be high contrast and spoken by text-to-speech. Players can be alerted by new lines of text by a short audible alert but should be in control of which text is read out. If new text is read out as it comes in then this can be overwhelming and confusing.
+
+    - name: "Idle gaming"
+      description: >
+        Idle gaming is where points or resources accumulate regardless of whether or not the player is actively playing.
+
+      accessibility Considerations: >
+        A player will need to know the rate of accumulation, caps to how much can be accumulated and a status update when they log in so these things will need to be communicated accessibly.
+
+      accessibility interactions: >
+      - Alert Popups
+
+    - name: "Inserting to grid"
+      description: >
+        A player has a grid of cells to insert items into. This includes crossword layouts where only some cells in the grid are accessible.
+
+      accessibility Considerations: >
+        Consider what information they need to know to place the item well. See the section “puzzle games” for more advice on this. Allowing players to move step by step through the grid (with up, down, left, right) will help players with sight loss or dexterity issues to locate cells in the grid. Explore by touch may also be appropriate.
+
+      accessibility interactions: >
+      - Explore by Touch, 
+      - Grid Navigation
+
+    - name: "Merging"
+      description: >
+        Merging is a popular gaming mechanism where dragging an item onto an identical item will give you a different item (normally of a higher level). It commonly involves visually searching for items that look the same in order to merge them.
+
+      accessibility Considerations: >
+        Consider whether a list view of the items that tells the player which items they have will damage the challenge the player faces (see CAPS test). This can then be enlarged or spoken for accessibility. Items in the list view could be grouped together or deliberately shuffled so that when the player hears an item name they have to remember if they’ve heard it before. If it is felt that a list view removes too much challenge for a player then items could be highlighted with contrasting colours in their standard grid layout and if there are too many item classes for the chosen colours to contrast then the set of items can be split into subsets the player can cycle though where one subset at a time is highlighted with contrasting colours.
+
+      accessibility interactions: >
+      - Explore by Touch, 
+      - Grid Navigation, 
+      - List view
+
+    - name: "Minigames"
+      description: >
+        A bonus game, often played in between levels, that may be a modified version of the main game or have completely different gameplay or mechanics.
+
+      accessibility Considerations: >
+        Any minigames that are included need to be made accessible or skippable. If they are made skippable then consider how much this will impact the players experience and enjoyment.
+
+    - name: "Multiplayer"
+      description: >
+        Where two or more players are playing at the same time and the actions of one player are seen by the other players in the game as they make them.
+
+      accessibility Considerations: >
+        If players compete against each other in real-time then any accessibility features they are using may slow them down or otherwise place them at a disadvantage. Consider different leagues so players who are slowed down by accessibility features can compete against people who will give them an appropriate level of challenge. Also if the game is not using turn-based mechanics by default consider whether turn-based gameplay options can be made available.
+
+    - name: "Paid boosters"
+      description: >
+        The player can buy boosters or anything that can help their progression or enjoyment of the game with legal tender.
+
+      accessibility Considerations: >
+        Although most games with paid boosters can be played without using them players won’t get an equivalent experience unless they are accessible. Make sure that the menus for paid boosts are high contrast and spoken (if possible) and make sure that any alerts coming back from the boost are accessible.
+
+      accessibility interactions: >
+      - Alert Popups
+
+    - name: "Pattern matching"
+      description: >
+        The player has to find and select patterns within a grid of random elements. The rarer the pattern the better the reward they get for finding it.
+
+      accessibility Considerations: >
+        Ensure that elements are high contrast and use contrasting colours as a default. Make sure that colour is not the only method of distinguishing elements. Players with colour blindness may benefit from being able to change the colours used. When making the game accessible by audio try to consider how to quickly communicate to the player the information they need (without solving it for them) and potentially allow gameplay to pause while the information is being communicated.
+
+      accessibility interactions: >
+      - Colour Coding , 
+      - Explore by Touch, 
+      - Grid Navigation, 
+      - List view
+
+    - name: "Placing items"
+      description: >
+        A player has to choose where to place an item within a designated area. Gridlines or a grid may be used but many of the items are commonly larger than the cells of the grid so they might not fit exactly.
+
+      accessibility Considerations: >
+        If the player is building a base and there is not a strategic element to placement, then consider suggesting where they can place it so they don’t need to drag the building around the map. Consider whether a reorganise function that moves all structures around and clusters them thematically, spreads them out or removes gaps between structures will help. If there is a strategic element to placement then consider what information the player will need to know (what is it adjacent to, in line of, which defensive structures are covering it, what will it replace etc) and try to communicate this to them if possible. Colour coding whether structures are defensive, resources, boosters etc may help. Placing items should be possible through either curser keys, cycling through available positions or both.
+
+      accessibility interactions: >
+      - Colour Coding , 
+      - Explore by Touch, 
+      - Grid Navigation, 
+      - List view
+
+    - name: "Powerups"
+      description: >
+        Powerups modify the behaviour of elements or actions to make them more effective. In pattern matching games they are often awarded for finding less common patterns and may remove more elements than just those that form the pattern.
+
+      accessibility Considerations: >
+        Consider how to alert the player that a powerup is available. Powerups are often introduced and explained at the start of a particular level and their function will often be reinforced in interlevel loading screens. If these explanations are accessible and name, the powerup then just the name can be used to alert the player that the powerup has been awarded. Also consider whether the alert should try to indicate where the powerup has been placed or whether the player will be able to figure this out from the action that created the powerup and the standard discovery mechanism used to find the patterns. In rare cases an alert popup may be needed if there is too much information to communicate otherwise.
+
+      accessibility interactions: >
+      - Alert Popups
+
+    - name: "Research"
+      description: >
+        A booster that can be selected and is then available after a given time period. The booster may be free to select or more usually cost tokens or currency of some type. Being able to perform research may be dependent on having performed other research.
+
+      accessibility Considerations: >
+        Players need to be able to select the research they want to do, understand the prerequisites, and what the cost will be and then get alerted when the research is complete.
+
+      accessibility interactions: >
+      - Alert Popups, 
+      - List view
+
+    - name: "Resource management"
+      description: >
+        A game may have resources that need to be collected or purchased with in-game currency. Players need to manage these to keep them within particular thresholds and failing to do so may mean they lose the game or it may impact game progression or prevent them carrying out other tasks (base building games may require resource management in order to train troops or build units).
+
+      accessibility Considerations: >
+        Alerts and information panels telling the player how much resources they have should be accessible through high-contrast visuals and speech. This may require a function to enable the player to select the information panel to either magnify it or read out the information.
+
+      accessibility interactions: >
+      - Cycle through Elements, 
+      - List view
+
+    - name: "Raid parties"
+      description: >
+        Some games enable a player to select some of their units to raid another base or entity. The units will then go off and fight and the player will be told whether they were successful (but without controlling the battle).
+
+      accessibility Considerations: >
+        Players will need to know the strength of the base or entity they are raiding as well as the number and strength of the units they are sending. Consider what information they need in order to select units to send as well as making the unit selection process as accessible as possible.
+
+      accessibility interactions: >
+      - Cycle through Elements, 
+      - List view
+
+    - name: "Rolling"
+      description: >
+        As the player moves their avatar around a scene they will interact with items in the scene based on contact or proximity. They may need to collect items, avoid them or stay close to them without touching them.
+
+      accessibility Considerations: >
+        Rolling mechanics require the player to know their position relative to items they need to collect or avoid, often with a fine granularity. Consider using colour-coded highlights to tell players whether they need to collect, avoid or fight an interactable item and also whether something is an obstacle. This may also be communicated through stereo or 3D sound through headphones with different sounds representing different objects (or different class of object). If there is metric that signifies progress then consider how to communicate this both through high contrast visuals and speech.
+
+      accessibility interactions: >
+      - Beacons, 
+      - Colour Coding
+
+    - name: "Single player combat"
+      description: >
+        The player controls one or more units in attacking one or more enemies or a base. The enemies or base may belong to another player but are being controlled by a computer. In this mechanism the player controls their units in the battle.
+
+      accessibility Considerations: >
+        See Strategy and Timed gameplay.
+
+    - name: "Story"
+      description: >
+        Many games have a story mode where the story is advanced in between levels.
+
+      accessibility Considerations: >
+        Any text needs to be high contrast and should be voiced, either with recorded prompts or, if available, with text-to-speech.
+
+    - name: "Strategy"
+      description: >
+        A set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy).
+
+      accessibility Considerations: >
+        Consider what information the player needs to know and when. If building (or attacking) a base, structures could have colour coded highlights to indicate if they are resources, defensive structures, boosters or neutral (neither part of the offence nor defence). For attacking/defending a base or single player combat a list view of assets or enemies could tell the player what they have and what they are attacking (or defending against). Highlighting any element in the list view could cycle to that item on the screen and communicate key stats, attack range, movement available, attacking items in range etc.
+
+      accessibility interactions: >
+      - Colour Coding , 
+      - Cycle through Elements, 
+      - List view
+
+    - name: "Timed gameplay"
+      description: >
+        Tasks needed to be completed before a timer runs out.
+
+      accessibility Considerations: >
+        Screenreaders and magnification/zoom can increase the time it takes to perform an action so if a player needs to perform an action within a time limit consider allowing them to increase or remove the time limit.
+
+    - name: "Upgrade building"
+      description: >
+      Where a player controls a building on a map (or in a base) they may need to upgrade that building to make it stronger or to unlock features.
+
+      accessibility Considerations: >
+        The player will need to know the current level of the building, the cost to upgrade and whether it can be upgraded now (whether they have enough resources and whether there are any prerequisites). These details need to be accessible. This could be done through a pop-up window to avoid the base seeming cluttered, but it may help to have a list of all the buildings and their levels that a player has so they can scan down the list rather than trying to find the buildings in the base.
+
+      accessibility interactions: >
+      - Cycle through Elements, 
+      - List view
