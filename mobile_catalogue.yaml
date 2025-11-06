@@ -1,0 +1,183 @@
+catalogue:
+  description: >
+    Here we will present a list of common genres and the mechanics we would expect to find in them.
+    This is for illustration only. Adverts and paid boosters are common to all genres so will not 
+    be mentioned every time.
+  genres:
+    - name: "Accumulator games 
+      description: >
+        Object of the game is to accumulate an in-game currency. Rate of currency collection is decided by upgrades which are often purchased with the in-game currency. Will often include minigames and powerups. 
+
+      examples:
+        - Archer: Dangerphone, 
+        - Legend of the slime
+
+            mechanics: 
+        - [Idle gaming](855-idle-gaming), 
+        - [Minigames](858-minigames), 
+        - [Powerups](8513powerups), 
+        - [Story](8519story)
+
+    - name: "Card battlers and Deck building games
+      description: >
+        Card battlers and deck building games are digital versions of card games. Each card is a gameplay modifier, and these are used competitively against other players to score points and win rounds. These may use a communal deck of cards but commonly players build up their personal deck through random gifts, purchases using in game currency, points scored, accumulating a set number of tokens or players may even be able to capture them from opponents. The positions the cards can be played in may also have modifier functions and the player may need to know what cards their opponent has played and where.
+
+      examples:
+        - Exploding Kittens, 
+        - Hearthstone, 
+        - Marvel Snap, 
+        - Slay the Spire
+
+      mechanics:  
+        - [Cards](852-cards), 
+        - [Inserting to grid](856-inserting-to-grid), 
+        - [Multiplayer](859-multiplayer), 
+        - [Resource management](8515resource-management), 
+        - [Timed gameplay](8521timed-gameplay)
+
+    - name: "Empire Games
+      description: >
+        Base building games with resources gathering, area unlocking, character and feature unlocking, and guilds. May include merge mechanics, Tower defence mechanics, minigames and single player combat.
+
+      examples:
+        - The ants: Underground kingdom, 
+        - Boom beach, 
+        - Top War: Battle game
+
+      mechanics:  
+        - [Feature unlock](853-feature-unlock), 
+        - [Guilds](854-guilds), 
+        - [Merging](857-merging), 
+        - [Minigames](858-minigames), 
+        - [Placing items](8512placing-items), 
+        - [Raid parties](8516raid-parties), 
+        - [Research](8514research), 
+        - [Resource management](8515resource-management), 
+        - [Single player combat](8518single-player-combat), 
+        - [Upgrade building](8522upgrade-building)
+
+    - name: "Merge games
+      description: >
+        If the player has two of the same item, they can combine them to make something else. This may form the central puzzle of the game or a form of resource management.
+
+      examples:
+        - Merge Mansion, 
+        - Top War: Battle Game
+
+      mechanics:  
+        - [Merging](857-merging)
+
+    - name: "Number/token puzzles
+      description: >
+        Puzzles involving placing numbers or tokens in a grid according to a given ruleset (such as no number must appear twice in a particular group or the numbers in a line must add up to a given sum). 
+
+      examples:
+        - Fillomino, 
+        - Hitori, 
+        - Kakuro, 
+        - Sudoku 
+
+      mechanics:  
+        - [Inserting to grid](856-inserting-to-grid)
+
+    - name: "Pattern games
+      description: >
+        Tokens from a given set of types fill a grid and the player needs to spot and select (or create) groups of them according to a set of rules such as adjacent tokens are of the same type. Selecting the group may be done through swapping adjacent tokens (Candy Crush), firing another token (Bubble Pop) or just selecting a group (Bejeweled). Once a group is selected or created it usually disappears and the tokens will often move to form a slightly different grid. Often powerups are created by selecting or creating large groups of tokens and the games may be timed.
+
+      examples:
+        - Bejeweled, 
+        - Bubble pop, 
+        - Candy Crush, 
+        - Tetris
+
+      mechanics:  
+        - [Pattern matching](8511pattern-matching), [Powerups](8513powerups), [Story](8519story), [Timed gameplay](8521timed-gameplay)
+
+    - name: "Puzzle Games (not word, number or token based)
+      description: >
+        Games where the objective is to solve puzzles with a similar theme. These can be very different from each other although common game mechanics may be identifiable.
+
+      examples:
+        - Cut the rope, 
+        - Hashi (bridges), 
+        - Sokoban, 
+        - Tiny bubbles, 
+        - Euclidea,
+
+      mechanics:  
+        - [Pattern matching](8511pattern-matching), 
+        - [Placing items](8512placing-items), 
+        - [Inserting to grid](856-inserting-to-grid), 
+        - [Timed gameplay](8521timed-gameplay)
+
+    - name: "Rolling games
+      description: >
+        The player moves around an area with collectible items which are collected based on proximity to the player’s avatar. The most famous example is Katamari Damacy where the collected items get stuck to a ball which gets bigger as the game progresses. “Alien Invasion RPG Idle Space” features an Alien with “catching tentacles” where the player has to stay within a certain distance from its victims for a set length of time (while the victims may run randomly, run away or attack the player).
+
+      examples:
+        - Alien Invasion RPG Idle Space, 
+        - Katamari Damarcy 
+
+      mechanics:  
+        - [Powerups](8513powerups), 
+        - [Rolling](8517rolling), 
+        - [Timed gameplay](8521timed-gameplay) 
+
+    - name: "Sims
+      description: >
+        Sims or simulators are roleplay or creation games that enable the person to recreate environments, roleplay jobs, roleplay social situations and dating or simulate environments in a virtual world sandbox.
+
+      examples:
+        - Rollercoaster manager, 
+        - SimCity, 
+        - The Sims 
+
+      mechanics:  
+        - [Placing items](8512placing-items), 
+        - [Resource management](8515resource-management), 
+        - [Story](8519story)
+
+    - name: "Strategy games
+      description: >
+        Strategy is an umbrella term for games where a set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy). It often encompasses PvP (Player vs Player) and PvE  (Player vs Enemy) but may involve attacking a base or building a base in order to make it harder for an enemy to attack it.
+
+      examples:
+        - Boom Beach, 
+        - Clash of Clans, 
+        - Warhammer 40,000 Tacticus
+
+      mechanics:  
+        - [Guilds](854-guilds), 
+        - [Placing items](8512placing-items), 
+        - [Research](8514research), 
+        - [Single player combat](8518single-player-combat), 
+        - [Strategy](8520strategy), 
+        - [Timed gameplay](8521timed-gameplay), 
+
+    - name: "Tower defence games"
+      description: >
+        Waves of enemies march towards the players base and the player places structures to try and block, destroy or otherwise prevent them from reaching the base. Usually timed but sometimes with a setup period where the player can place defences before the attack begins.
+
+      examples:
+        - Plants vs Zombies
+
+      mechanics:  
+        - [Placing items](8512placing-items),
+        - [Timed gameplay](8521timed-gameplay), 
+        - [Story](8519story), 
+        - [Strategy](8520strategy)
+
+    - name: "Word games
+      description: >
+        Puzzles involving making words from a set of given letters. May be single or multiplayer. May be timed or not.
+
+      examples:
+        - Kitty Letter, 
+        - Wordscapes, 
+        - Word Domination, 
+        - Wordle 
+
+      mechanics:  
+        - [Inserting to grid](856-inserting-to-grid), 
+        - [Multiplayer](859-multiplayer), 
+        - [Timed gameplay](8521timed-gameplay)
