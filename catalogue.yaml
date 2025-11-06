@@ -22,26 +22,20 @@ catalogue:
       - "radio button - mutex selection"
       - "select-menu"
       - "slider - proportion selection"
-    - name: 
-      description: >
-         
-      mechanics:
+  
   mechanics:
     - name: "Perceive direction"
       description: >
-      In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
-      they need to 'go north' or because they are being told that a quest item is in that direction. 
-      This is separate to knowing which 'path' to take.
-      potential barriers:
-      - barrier: Direction is communicated visually and is not accessible to people with sight loss
-        - Consider providing a ping only when the user is facing the direction to be perceived.
-        - Consider enabling the player to set a steady sonar ping in the direction that needs to be perceived.
+        In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
+        they need to go north or because they are being told that a quest item is in that direction. This is 
+        separate to knowing which path to take    
+      potentialBarriers:
+      - barrier : "Direction is communicated visually and is not accessible to people with sight loss"
+        consider:
+        - "providing a ping only when the user is facing the direction to be perceived."
+        - "enabling the player to set a steady sonar ping in the direction that needs to be perceived."
         patterns:
-         - "Audio Beacons"
-      
-
-
-
+        - "Audio Beacons"    
 
   patterns:
     - name: "Adjustable contrast"
@@ -59,7 +53,7 @@ catalogue:
         Audio beacons are sounds 'placed around' the user using immersive audio. They can act as a way to locate 
         objects in a virtual space, to annotate objects or to provide waypoints for navigation.
 
-    - name: "Audio description""
+    - name: "Audio description"
       description: >
         Audio description or AD is a spoken soundtrack that describes visual information people with sight loss would
         otherwise miss. They are typically available of pre-recorded immutable content.
