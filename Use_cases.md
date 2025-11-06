@@ -11,7 +11,7 @@ Mechanics [checkbox - additive selection] , [enter menu] , [navigate menu 1D] , 
 ### Character Progression
 Players improve their character’s stats, skills, or gear over time. Can be tied to experience points, quests, or achievements.
 
-Mechanics [object description] , [object comparison] , [levelling-up] , [questing/achievements]  
+Mechanics [levelling-up] ,  [object description] , [object comparison] ,  , [questing/achievements]  
 ### Class-Based Play /Role-play
 Players take on specific roles with unique abilities (e.g., healer, tank, scout), often in team-based games. 
 
@@ -39,22 +39,22 @@ Mechanics [checkbox - additive selection] , [enter menu] , [navigate menu 1D] , 
 ### Combat (multi-character synchronous)
 Other characters may be friendly, neutral or unaligned (alliance can shift).
 
-Mechanics [Cooldown]
+Mechanics  [attack - continuous]  , [combat mode],  [cooldown], [special attack] ,  [locate opponant2D] , [Movement2D]  , [Perceive attack]  , [Perceive FoE]
 
 ### Combat (multi-character turn-based)
 Other characters may be friendly, neutral or unaligned (alliance can shift).
 
-Mechanics
+Mechanics [attack]  , [combat mode] ,  [locate opponant2D] , [Movement2D]  , [Perceive attack]  , [Perceive FoE]
 
 ### Construction
 Players place, remove, or modify elements in the game world to create structures or solve spatial challenges. Common in sandbox and survival games.
 
-Mechanics
+Mechanics 
 
 ### Co-op Mechanics
-Players work together to achieve shared goals, often requiring coordination and complementary skills.
+Players work together with another player to achieve shared goals, often requiring coordination and complementary skills.
 
-Mechanics [Team communication] 
+Mechanics [Team communication] , [place marker] , [perceive marker]
 
 
 ### Environmental Interaction
@@ -71,8 +71,9 @@ Mechanics [Perceive collision] ,  [Perceive danger]  , [Perceive objects]  , [Pe
 > Should Environmental Interaction and Exploration be merged?
 
 ### Management / Tycoon
- Players oversee systems like cities, businesses, or ecosystems, making decisions to optimize performance or growth. Often involves resource balancing and strategic planning.
+Players oversee systems like cities, businesses, or ecosystems, making decisions to optimize performance or growth. Often involves resource balancing and strategic planning.
 
+Mechanics [move building], [perceive earnings],  [place building], [sell building],  [upgrade building]
 
 ### Narrative Choice / Branching Paths
 Players make decisions that affect the story or game world. These choices may lead to different outcomes or endings.
@@ -80,7 +81,7 @@ Players make decisions that affect the story or game world. These choices may le
 ### Racing 
 Players compete to cover a track faster than other players or faster than a set time limit.  
 
-Mechanics
+Mechanics 
 
 ###  Rhythm / Timing
 Players interact with the game in sync with music or timed prompts. Found in rhythm games or mini-games within larger titles.
@@ -136,7 +137,8 @@ Mechanics
 
 ### Sandbox
 Mechanics
-
+> [!NOTE]
+> While this is definately a gaming genre I'm not sure this is a gaming aspect. Sandbox games are defined as not having defined goals but the mechanics are the same as those of other game types such as survival games.
 
 
 
