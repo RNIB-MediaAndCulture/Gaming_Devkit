@@ -1,0 +1,51 @@
+catalogue:
+  aspects:
+    - name: Menu (textual)
+      description: >
+        A menu is a part of almost every game and enables the player to set preferences, set game difficulty, 
+        choose which level to play. 
+      mechanics:
+      - "checkbox - additive selection"
+      - "enter menu"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "radio button" 
+      - "mutex selection"
+      - "select-menu"
+      - "slider - proportion selection"
+    - name: 
+      description: >
+         
+      mechanics:
+  mechanics:
+    - name: "Perceive direction"
+      description: >
+      In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
+      they need to 'go north' or because they are being told that a quest item is in that direction. 
+      This is separate to knowing which 'path' to take.
+      potential barriers:
+      - barrier: Direction is communicated visually and is not accessible to people with sightloss
+        - Consider providing a ping only when the user is facing the direction to be perceived.
+        - Consider enabling the player to set a steady sonar ping in the direction that needs to be perceived.
+        patterns:
+         - "Audio Beacons"
+      
+
+
+
+
+  patterns:
+    - name: "Adjustable contrast"
+      description: >
+      
+    - name: "Adjustable semantic audio profiles"
+      description: >
+        By separating audio into profiles such as dialogue, music, sound effects (conveying meaning) and background 
+        (providing atmosphere) these can then have their volumes independently adjustable. This enables a player to 
+        increase the volume of audio that helps them while reducing the volume of other audio. 
+        See also Clean audio.
+      
+
+
+
+    
