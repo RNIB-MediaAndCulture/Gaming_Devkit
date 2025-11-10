@@ -29,15 +29,15 @@ catalogue:
       mechanics used:
       - "levelling-up"
       - "object description"
-      - object comparison
-      - questing/achievements
+      - "object comparison"
+      - "questing/achievements"
     - name: Class-Based Play /Role-play
       description: >
         Players take on specific roles with unique abilities (e.g., healer,
         tank, scout), often in team-based games.
       mechanics used:
-      - character creation
-      - character selection
+      - "character creation"
+      - "character selection"
     - name: Combat (1v1)
       description: >
         A player uses a combination of "attack"s, "block"s, jumps, "crouch"es and
@@ -48,7 +48,7 @@ catalogue:
       - "block"
       - "locate opponant2D"
       - "Movement2D"
-      - Perceive "attack"
+      - "Perceive attack"
     - name: Combat (beat 'em up)
       description: >
         The player fights through waves of enemies often in a side-scrolling
@@ -60,6 +60,22 @@ catalogue:
       - "locate opponant2D"
       - "Movement2D"
       - "Perceive attack"
+    - name: Combat (continuous)
+      description: >
+        Player controlled character or characters are ordered to attack enemies and then
+        continue to do so until the enemies are dead or they are told to stop. Characters
+        may have special attacks or different combat modes that the player can select and
+        these may have cooldowns or need to be powered up. Other characters may be friendly, 
+        neutral or unaligned (alliance can shift).
+      mechanics used:
+      - "attack - continuous"
+      - "combat mode"
+      - "cooldown"
+      - "special attack"
+      - "locate opponant2D"
+      - "Movement2D"
+      - "Perceive attack"
+      - "Perceive FoE"
     - name: Combat (first-person)
       description: >
         The player navigates a map "attack"ing enemies which may be NPCs or
@@ -75,7 +91,7 @@ catalogue:
       - "locate opponant2D"
       - "Movement2D"
       - "Perceive attack"
-      - Perceive FoE
+      - "Perceive FoE"
     - name: Combat (menu driven)
       description: >
         Combat is turn based although the player or opponent may miss turns
@@ -90,54 +106,37 @@ catalogue:
       - "radio button - mutex selection"
       - "select - atomic selection"
       - "slider - proportion selection"
-      - unavailable
-    - name: Combat (multi-character synchronous)
-      description: >
-        Other characters may be friendly, neutral or unaligned (alliance can shift).
-      mechanics used:
-      - attack - continuous
-      - combat mode
-      - cooldown
-      - special attack
-      - "locate opponant2D"
-      - "Movement2D"
-      - Perceive "attack"
-      - Perceive FoE
+      - "unavailable"
     - name: Combat (multi-character turn-based)
       description: >
         Other characters may be friendly, neutral or unaligned (alliance can shift).
       mechanics used:
       - "attack"
-      - combat mode
+      - "combat mode"
       - "locate opponant2D"
       - "Movement2D"
-      - Perceive attack
-      - Perceive FoE
+      - "Perceive attack"
+      - "Perceive FoE"
     - name: Construction
       description: >
-        Players place, remove, or modify elements in the game world to create structures or solve spatial challenges. Common in sandbox and survival games.
-    - name: Co-op Mechanics
-      description: >
-        Players work together with another player to achieve shared goals, often requiring coordination and complementary skills.
-      mechanics used:
-      - Team communication
-      - place marker
-      - perceive marker
+        Players place, remove, or modify elements in the game world to create structures 
+        or solve spatial challenges. Common in sandbox and survival games.
     - name: Environmental Interaction
       description: >
         Players manipulate the environment directly—moving objects, activating
         switches, or using physics-based mechanics to solve problems or progress.
       mechanics used:
-      - Perceive interactable
-      - Perceive object state
-      - Perceive environment state
+      - "Perceive interactable"
+      - "Perceive object state"
+      - "Perceive environment state"
     - name: Exploration
       description: >
-        The player has a large map to explore and movement through this environment is largely unrestricted.
+        The player has a large map to explore and movement through this environment is 
+        largely unrestricted.
       mechanics used:
-      - Perceive collision
-      - Perceive danger
-      - Perceive objects
+      - "Perceive collision"
+      - "Perceive danger"
+      - "Perceive objects"
       - "Perceive path"
       - "Perceive direction"
     - name: Management / Tycoon
@@ -190,20 +189,22 @@ catalogue:
       description: ''
       mechanics used:
       - "strategy"
-    - name: Team communication
-      description: placeholder text
+    - name: Co-op Mechanics
+      description: >
+        Players work together with another player to achieve shared goals, often requiring 
+        coordination and complementary skills.
       mechanics used:
       - "text chat"
       - "voice chat"
       - "emoji"
+      - "place marker"
+      - "perceive marker"
     - name: Puzzle
       description: >
         This refers to games which are entirely puzzle based rather than
         games such as adventure games that feature puzzles.
-  
-  
   mechanics:
-    - name: ""Perceive direction""
+    - name: "Perceive direction"
       description: >
         In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
         they need to go north or because they are being told that a quest item is in that direction. This is 
