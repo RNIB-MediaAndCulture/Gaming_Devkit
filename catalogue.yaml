@@ -1,6 +1,6 @@
 catalogue:
   description: >
-    This document aims to encompass the types of games that exist in order to identify accessibility barriers 
+    This document "Aim"s to encompass the types of games that exist in order to identify accessibility barriers 
     and offer suggested solutions. It is broadly inspired by object based programming where something can 
     'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects 
     of a game. A first person shooter game will inherit the Combat (first person) aspect but may also inherit the 
@@ -15,7 +15,7 @@ catalogue:
         A menu is a part of almost every game and enables the player to set preferences, set game difficulty, 
         choose which level to play. 
       mechanics used:
-      - "checkbox - additive selection"
+      - "checkbox - additive selection""
       - "enter menu"
       - "navigate menu 1D"
       - "navigate menu 2D"
@@ -27,8 +27,8 @@ catalogue:
         Players improve their character’s stats, skills, or gear over time.
         Can be tied to experience points, quests, or achievements.
       mechanics used:
-      - levelling-up
-      - object description
+      - "levelling-up"
+      - "object description"
       - object comparison
       - questing/achievements
     - name: Class-Based Play /Role-play
@@ -40,41 +40,41 @@ catalogue:
       - character selection
     - name: Combat (1v1)
       description: >
-        A player uses a combination of attacks, blocks, jumps, crouches and
-        horizontal movement to attack an opponent (either computer controlled or player
+        A player uses a combination of "attack"s, "block"s, jumps, "crouch"es and
+        horizontal movement to "attack" an opponent (either computer controlled or player
         controlled).
       mechanics used:
-      - attack
-      - block
-      - locate opponant2D
-      - Movement2D
-      - Perceive attack
+      - "attack"
+      - "block"
+      - "locate opponant2D"
+      - "Movement2D"
+      - Perceive "attack"
     - name: Combat (beat 'em up)
       description: >
         The player fights through waves of enemies often in a side-scrolling
         or platform style game. Other characters may be friendly, neutral or unaligned 
         (alliance can shift).
       mechanics used:
-      - attack
-      - block
-      - locate opponant2D
-      - Movement2D
-      - Perceive attack
+      - "attack"
+      - "block"
+      - "locate opponant2D"
+      - "Movement2D"
+      - "Perceive attack"
     - name: Combat (first-person)
       description: >
-        The player navigates a map attacking enemies which may be NPCs or
+        The player navigates a map "attack"ing enemies which may be NPCs or
         other players. Other characters may be friendly, neutral or unaligned (alliance
         can shift).
       mechanics used:
-      - Aim
-      - Assistant
-      - attack
-      - block
-      - crouch
-      - dodge
-      - locate opponant2D
-      - Movement2D
-      - Perceive attack
+      - "Aim"
+      - "Assistant"
+      - "attack"
+      - "block"
+      - "crouch"
+      - "dodge"
+      - "locate opponant2D"
+      - "Movement2D"
+      - "Perceive attack"
       - Perceive FoE
     - name: Combat (menu driven)
       description: >
@@ -82,14 +82,14 @@ catalogue:
         or have extra turns. Often the player may choose between 2 or more levels of
         attack, to block or to use inventory items such as healing potions.
       mechanics used:
-      - checkbox - additive selection
-      - enter menu
-      - navigate menu 1D
-      - navigate menu 2D
-      - Perceive attack
-      - radio button - mutex selection
-      - select - atomic selection
-      - slider - proportion selection
+      - "checkbox - additive selection"
+      - "enter menu"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "Perceive attack"
+      - "radio button - mutex selection"
+      - "select - atomic selection"
+      - "slider - proportion selection"
       - unavailable
     - name: Combat (multi-character synchronous)
       description: >
@@ -99,18 +99,18 @@ catalogue:
       - combat mode
       - cooldown
       - special attack
-      - locate opponant2D
-      - Movement2D
-      - Perceive attack
+      - "locate opponant2D"
+      - "Movement2D"
+      - Perceive "attack"
       - Perceive FoE
     - name: Combat (multi-character turn-based)
       description: >
         Other characters may be friendly, neutral or unaligned (alliance can shift).
       mechanics used:
-      - attack
+      - "attack"
       - combat mode
-      - locate opponant2D
-      - Movement2D
+      - "locate opponant2D"
+      - "Movement2D"
       - Perceive attack
       - Perceive FoE
     - name: Construction
@@ -138,19 +138,19 @@ catalogue:
       - Perceive collision
       - Perceive danger
       - Perceive objects
-      - Perceive path
-      - Perceive direction](#perceive-direction)
+      - "Perceive path"
+      - "Perceive direction"
     - name: Management / Tycoon
       description: >
         Players oversee systems like cities, businesses, or ecosystems, making
         decisions to optimize performance or growth. Often involves resource balancing
         and strategic planning.
       mechanics used:
-      - move building
-      - perceive earnings
-      - place building
-      - sell building
-      - upgrade building
+      - "move building"
+      - "perceive earnings"
+      - "place building"
+      - "sell building"
+      - "upgrade building"
     - name: Narrative Choice / Branching Paths
       description: >
         Players make decisions that affect the story or game world. These
@@ -178,24 +178,24 @@ catalogue:
     - name: Sports [stub]
       description: Simulation of
       mechanics used:
-      - team identification
+      - "team identification"
     - name: Stealth
       description: >
         Player guides their character to move around a map without alerting
         computer controlled enemies. This often involves knowing which way an enemy
         is facing and timing the players movements to avoid alerting them. Player may
-        need to get their character to crouch. The enemies position may be communicated
+        need to get their character to "crouch". The enemies position may be communicated
         via visual or audio means or require the player to time their action.
-    - name: Strategy
+    - name: "strategy"
       description: ''
       mechanics used:
-      - Strategy
+      - "strategy"
     - name: Team communication
       description: placeholder text
       mechanics used:
-      - text chat
-      - voice chat
-      - emoji
+      - "text chat"
+      - "voice chat"
+      - "emoji"
     - name: Puzzle
       description: >
         This refers to games which are entirely puzzle based rather than
@@ -203,7 +203,7 @@ catalogue:
   
   
   mechanics:
-    - name: "Perceive direction"
+    - name: ""Perceive direction""
       description: >
         In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
         they need to go north or because they are being told that a quest item is in that direction. This is 
@@ -257,16 +257,16 @@ catalogue:
 
     - name: "Clear fonts and text"
       description: >
-        Avoid block capitals as these obscure the shape of words. Ensure easy to read fonts are available and are 
+        Avoid "block" capitals as these obscure the shape of words. Ensure easy to read fonts are available and are 
         preferably the default.  
 
     - name: "Coded audio"
       description: >
         By designing sound effects for similar actions to have similar characteristics it is possible to 
         communicate actions that are happening through sound. This was done in Killer Instinct where a blind 
-        player could tell whether an attack was high or low (for example) by the sound effect associated with 
-        it. It is also used in God of War Ragnarok where there are sound effects for an unblockable or 
-        undodgeable attacks.
+        player could tell whether an "attack" was high or low (for example) by the sound effect associated with 
+        it. It is also used in God of War Ragnarok where there are sound effects for an un"block"able or 
+        un"dodge"able "attack"s.
 
     - name: "CVD friendly communication"
       description: >
