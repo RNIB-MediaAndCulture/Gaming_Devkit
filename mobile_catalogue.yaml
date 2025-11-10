@@ -14,7 +14,7 @@ catalogue:
         - "Archer: Dangerphone" 
         - "Legend of the slime"
 
-            mechanics: 
+      mechanics: 
         - "Idle gaming"
         - "Minigames"
         - "Powerups"
@@ -573,6 +573,7 @@ catalogue:
       - Useful for computer triggered (or timed) events
       cons:
       - Can create audio clutter if not designed well
+      
     - name: "Beacons"
       description: >
         If elements are placed around the player, then stereo or 3D binaural sound could be used to 
@@ -586,6 +587,7 @@ catalogue:
       - Particularly well suited to some game layouts
       cons:
       - May cause problems for players with hearing loss
+      
     - name: "Colour Coding"
       description: >
         Colour coding is a good way to communicate information for partially sighted gamers. 
@@ -601,6 +603,7 @@ catalogue:
       - Clear and intuitive way to communicate information
       cons:
       - Not suitable for people with colour vision deficiency so should not be the only way information is communicated.
+      
     - name: "Cycle through elements"
       description: >
         This is a standard screen reader interaction. Users can cycle forward and backward through 
@@ -620,6 +623,7 @@ catalogue:
       cons:
       - Will read through elements in a specific order rather than encouraging natural discovery
       - Users move through items in a single dimension (next and previous) so two-dimensional structures require more thought to make them accessible in a natural feeling way.
+      
     - name: "Explore by touch"
       description: >
         This is another common screen reader interaction on phones. The user moves their finger around 
@@ -644,6 +648,7 @@ catalogue:
       - Can be easy to miss elements so it’s harder to ensure the user can access all elements on the screen.
       - Easy to stray off a line or row 
       - Smaller elements easier to miss
+      
     - name: "Grid Navigation"
       description: >
         This is similar to Cycle through Elements. Users can move up, down, left and right through a grid 
@@ -659,6 +664,7 @@ catalogue:
       cons:
       - Easy to miss elements in gameplay where all elements need to be accessed 
       - Requires more commands than Cycle through Elements
+      
     - name: "List View"
       description: >
         If the information about elements on a page has a clear data structure, then it may make sense
