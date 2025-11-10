@@ -189,9 +189,13 @@ catalogue:
     - name: Strategy
       description: ''
       mechanics used:
-      - Strategy](#strategy)
+      - Strategy
     - name: Team communication
-      description: Mechanics [text chat] , [voice chat] , [emoji] ,
+      description: placeholder text
+      mechanics used:
+      - text chat
+      - voice chat
+      - emoji
     - name: Puzzle
       description: >
         This refers to games which are entirely puzzle based rather than
