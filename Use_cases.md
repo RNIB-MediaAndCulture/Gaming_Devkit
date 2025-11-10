@@ -29,7 +29,7 @@ Mechanics [attack]  , [block]  ,  [locate opponant2D] , [Movement2D]  , [Perceiv
 ### Combat (first-person) 
 The player navigates a map attacking enemies which may be NPCs or other players. Other characters may be friendly, neutral or unaligned (alliance can shift).
 
-Mechanics  [Assistant] , [attack]  , [block]  , [crouch] ,  [dodge] ,  [locate opponant2D] , [Movement2D]  , [Perceive attack]  , [Perceive FoE]
+Mechanics  [Aim] , [Assistant] , [attack]  , [block]  , [crouch] ,  [dodge] ,  [locate opponant2D] , [Movement2D]  , [Perceive attack]  , [Perceive FoE]
 
 ### Combat (menu driven)
 Combat is turn based although the player or opponent may miss turns or have extra turns. Often the player may choose between 2 or more levels of attack, to block or to use inventory items such as healing potions.
