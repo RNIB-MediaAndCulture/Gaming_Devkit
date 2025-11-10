@@ -14,7 +14,7 @@ catalogue:
       description: >
         A menu is a part of almost every game and enables the player to set preferences, set game difficulty, 
         choose which level to play. 
-      mechanics:
+      mechanics used:
       - "checkbox - additive selection"
       - "enter menu"
       - "navigate menu 1D"
@@ -34,13 +34,13 @@ catalogue:
         consider:
         - "providing a ping only when the user is facing the direction to be perceived."
         - "enabling the player to set a steady sonar ping in the direction that needs to be perceived."
-        patterns:
+        patterns to consider:
         - "Audio Beacons"    
 
   patterns:
     - name: "Adjustable contrast"
       description: >
-      
+        Placeholder text.
     - name: "Adjustable semantic audio profiles"
       description: >
         By separating audio into profiles such as dialogue, music, sound effects (conveying meaning) and background 
