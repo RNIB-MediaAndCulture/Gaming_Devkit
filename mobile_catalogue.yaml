@@ -31,9 +31,9 @@ catalogue:
         the player may need to know what cards their opponent has played and where.
 
       examples:
-        - Exploding Kittens, 
-        - Hearthstone, 
-        - Marvel Snap, 
+        - Exploding Kittens
+        - Hearthstone
+        - Marvel Snap
         - Slay the Spire
 
       mechanics:  
@@ -50,8 +50,8 @@ catalogue:
         minigames and single player combat.
 
       examples:
-        - "The ants: Underground kingdom", 
-        - Boom beach, 
+        - "The ants: Underground kingdom"
+        - Boom beach
         - "Top War: Battle game"
 
       mechanics:  
@@ -72,7 +72,7 @@ catalogue:
         else. This may form the central puzzle of the game or a form of resource management.
 
       examples:
-        - Merge Mansion, 
+        - Merge Mansion
         - "Top War: Battle Game"
 
       mechanics:  
@@ -85,9 +85,9 @@ catalogue:
         must add up to a given sum). 
 
       examples:
-        - Fillomino, 
-        - Hitori, 
-        - Kakuro, 
+        - Fillomino
+        - Hitori
+        - Kakuro
         - Sudoku 
 
       mechanics:  
@@ -104,9 +104,9 @@ catalogue:
         large groups of tokens and the games may be timed.
 
       examples:
-        - Bejeweled, 
-        - Bubble pop, 
-        - Candy Crush, 
+        - Bejeweled
+        - Bubble pop
+        - Candy Crush
         - Tetris
 
       mechanics:  
@@ -121,11 +121,11 @@ catalogue:
         different from each other although common game mechanics may be identifiable.
 
       examples:
-        - Cut the rope, 
-        - Hashi (bridges), 
-        - Sokoban, 
-        - Tiny bubbles, 
-        - Euclidea,
+        - Cut the rope
+        - Hashi (bridges)
+        - Sokoban
+        - Tiny bubbles
+        - Euclidea
 
       mechanics:  
         - "Pattern matching"
@@ -143,7 +143,7 @@ catalogue:
         (while the victims may run randomly, run away or attack the player).
 
       examples:
-        - Alien Invasion RPG Idle Space, 
+        - Alien Invasion RPG Idle Space
         - Katamari Damarcy 
         - All in Hole
 
@@ -159,8 +159,8 @@ catalogue:
         environments in a virtual world sandbox.
 
       examples:
-        - Rollercoaster manager, 
-        - SimCity, 
+        - Rollercoaster manager
+        - SimCity
         - The Sims 
 
       mechanics:  
@@ -177,8 +177,8 @@ catalogue:
         building a base in order to make it harder for an enemy to attack it.
 
       examples:
-        - Boom Beach, 
-        - Clash of Clans, 
+        - Boom Beach
+        - Clash of Clans
         - Warhammer 40,000 Tacticus
 
       mechanics:  
@@ -201,7 +201,7 @@ catalogue:
 
       mechanics:  
         - "Placing items"
-        - "Timed gameplay", 
+        - "Timed gameplay"
         - "Story"
         - "Strategy"
 
@@ -211,9 +211,9 @@ catalogue:
         May be timed or not.
 
       examples:
-        - Kitty Letter, 
-        - Wordscapes, 
-        - Word Domination, 
+        - Kitty Letter
+        - Wordscapes
+        - Word Domination
         - Wordle 
 
       mechanics:  
