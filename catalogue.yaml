@@ -15,7 +15,7 @@ catalogue:
         A menu is a part of almost every game and enables the player to set preferences, set game difficulty, 
         choose which level to play. 
       mechanics used:
-      - "checkbox - additive selection""
+      - "checkbox - additive selection"
       - "enter menu"
       - "navigate menu 1D"
       - "navigate menu 2D"
