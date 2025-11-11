@@ -217,10 +217,434 @@ catalogue:
         patterns to consider:
         - "Audio Beacons"    
 
+    - name: "Aim"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+    - name: "Assistant"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Movement2D"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive FoE"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive attack"
+      description: >
+        The gamer needs to know their character is being attacked so they can react accordingly.
+      potentialBarriers:
+      - barrier : "If attacks towards the player are only represented visually then gamers without sight will not know that they need to react."
+        consider: 
+        - Using a sound effect to indicate the attack coming in. The player nneds to know what type of attack and which direction.
+        - Surround sound or stereo encoding may be apropriate to communicate the direction the attack is coming in from.
+      patterns to consider:
+      - "Audio beacons"
+      - "Binaural audio"
+      - "Coded audio"
+      - "Surround sound"
+      - "Visual sound effects"
+
+    - name: "Perceive collision"
+      description: >
+        When moving around an area a player needs to know that they have collided with something.
+      potentialBarriers:
+      - barrier : "If objects that characters can colide with are only represented visually then gamers without sight cannot tell that they have collided with something. They may try to keep going in this direction thinking the are still moving."
+        consider: 
+        - using a sound effect to indicate the collision.
+
+
+    - name: "Perceive danger"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive direction"
+      description: >
+        In a virtual world the user needs to be able to navigate to a particular direction. This could be because 
+        they need to go north or because they are being told that a quest item is in that direction. This is 
+        separate to knowing which path to take    
+      potentialBarriers:
+      - barrier : "Direction is communicated visually and is not accessible to people with sight loss"
+        consider:
+        - "providing a ping only when the user is facing the direction to be perceived."
+        - "enabling the player to set a steady sonar ping in the direction that needs to be perceived."
+        patterns to consider:
+        - "Audio Beacons"    
+
+
+    - name: "Perceive environment state"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive interactable"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive object state"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive objects"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "Perceive path"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "attack"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "attack - continuous"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "block"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "character creation"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "character selection"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "checkbox - additive selection"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "combat mode"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "cooldown"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "crouch"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "dodge"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "emoji"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "enter menu"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "levelling-up"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "locate opponant2D"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "move building"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "navigate menu 1D"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "navigate menu 2D"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "object comparison"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "object description"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "perceive earnings"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "perceive marker"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "place building"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "place marker"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "questing/achievements"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "radio button - mutex selection"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : "Gamers without sight cannot perceive visual menu elements to change them."
+        consider:
+        - Spoken menus through text to speech
+      - barrier : "Gamers without sight cannot tell which setting is selected."
+        consider:
+        - Announcing the current setting when the menu element is highlighted through speech.
+      - barrier : "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
+        consider:
+        - Using clear fonts and text that are easier to read.
+        - Offering a high contrast option or, preferably, a high contrast default.
+        - Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile.
+      patterns to consider:
+      - "Clear fonts and text"
+      - "CVD friendly communication"
+      - "High Contrast
+      - "Text to speech"
+      - "Screenreader support"
+      - "Opaque background"
+
+    - name: "select - atomic selection"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "select-menu"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "sell building"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "slider - proportion selection"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "special attack"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "strategy"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "team identification"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "text chat"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "unavailable"
+      description: >
+        Options which cannot be selected in menus and interfaces are often greyed out or otherwise marked as unavailable.
+      potentialBarriers:
+      - barrier : "If the option can be selected but its unavailability is not indicated in audio gamers without sight will not know why they can't select it. If it cannot be selected then they may not know it's there which can cause confusion."
+      consider: 
+      - Allow the option to be selected but indicated audibly either through speech or with a meaningful sound effect that it cannot be used.
+
+
+    - name: "upgrade building"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+    - name: "voice chat"
+      description: >
+        Placeholder
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
+
+
+
+
   patterns:
     - name: "Adjustable contrast"
       description: >
         Placeholder text.
+        
     - name: "Adjustable semantic audio profiles"
       description: >
         By separating audio into profiles such as dialogue, music, sound effects (conveying meaning) and background 
@@ -304,6 +728,11 @@ catalogue:
       description: >
         People who have hearing loss in one ear can benefit from stereo audio being flattened to mono audio so 
         that no audio information is going just to the ear with hearing loss. 
+
+    - name: "Opaque background"
+      description: >
+        Transparent backgrounds behind text or icons can make them hard to read/perceive for partially sighted 
+        people. Having an option to set opaque backgrounds (preferably as a default) can improve readability. 
 
     - name: "Pre-recorded audio clips"
       description: >
