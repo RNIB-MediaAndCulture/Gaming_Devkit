@@ -31,7 +31,7 @@ catalogue:
       - "object description"
       - "object comparison"
       - "questing/achievements"
-    - name: Class-Based Play /Role-play
+    - name: "Class-Based Play /Role-play"
       description: >
         Players take on specific roles with unique abilities (e.g., healer,
         tank, scout), often in team-based games.
