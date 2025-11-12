@@ -456,11 +456,26 @@ catalogue:
 
     - name: "navigate menu 1D"
       description: >
-        Placeholder
+        Move through a menu in one dimension with a next and last option. This could be vertical (moving up and down), horizontal (moving left and right) or any other modality with next item, previous item and select options. 
       potentialBarriers:
-      - barrier : ""
+      - barrier : "Gamers without sight cannot perceive menu elements to navigate them."
         consider: ""
-
+      - barrier : "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
+        consider:
+        - Using clear fonts and text that are easier to read.
+        - Offering a high contrast option or, preferably, a high contrast default.
+        - Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile.
+      - barrier : "Gamers without sight cannot perceive menu elements to navigate them."
+        consider: ""      
+      - barrier : "Movement through the menu is via analogue "
+        consider: ""
+      patterns to consider:
+      - "Clear fonts and text"
+      - "CVD friendly communication"
+      - "High Contrast
+      - "Text to speech"
+      - "Screenreader support"
+      - "Opaque background"
 
     - name: "navigate menu 2D"
       description: >
