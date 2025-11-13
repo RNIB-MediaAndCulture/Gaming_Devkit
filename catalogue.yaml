@@ -1,6 +1,6 @@
 catalogue:
   description: >
-    This document "Aim"s to encompass the types of games that exist in order to identify accessibility barriers 
+    This document Aims to encompass the types of games that exist in order to identify accessibility barriers 
     and offer suggested solutions. It is broadly inspired by object based programming where something can 
     'inherit' properties from parents. In this way it offers 'aspects of experience' which will embody aspects 
     of a game. A first person shooter game will inherit the Combat (first person) aspect but may also inherit the 
@@ -40,8 +40,8 @@ catalogue:
       - "character selection"
     - name: Combat (1v1)
       description: >
-        A player uses a combination of "attack"s, "block"s, jumps, "crouch"es and
-        horizontal movement to "attack" an opponent (either computer controlled or player
+        A player uses a combination of attacks, blocks, jumps, crouches and
+        horizontal movement to attack an opponent (either computer controlled or player
         controlled).
       mechanics used:
       - "attack"
@@ -183,7 +183,7 @@ catalogue:
         Player guides their character to move around a map without alerting
         computer controlled enemies. This often involves knowing which way an enemy
         is facing and timing the players movements to avoid alerting them. Player may
-        need to get their character to "crouch". The enemies position may be communicated
+        need to get their character to crouch. The enemies position may be communicated
         via visual or audio means or require the player to time their action.
     - name: "strategy"
       description: ''
@@ -697,16 +697,16 @@ catalogue:
 
     - name: "Clear fonts and text"
       description: >
-        Avoid "block" capitals as these obscure the shape of words. Ensure easy to read fonts are available and are 
+        Avoid block capitals as these obscure the shape of words. Ensure easy to read fonts are available and are 
         preferably the default.  
 
     - name: "Coded audio"
       description: >
         By designing sound effects for similar actions to have similar characteristics it is possible to 
         communicate actions that are happening through sound. This was done in Killer Instinct where a blind 
-        player could tell whether an "attack" was high or low (for example) by the sound effect associated with 
-        it. It is also used in God of War Ragnarok where there are sound effects for an un"block"able or 
-        un"dodge"able "attack"s.
+        player could tell whether an attack was high or low (for example) by the sound effect associated with 
+        it. It is also used in God of War Ragnarok where there are sound effects for an unblockable or 
+        undodgeable attacks.
 
     - name: "CVD friendly communication"
       description: >
