@@ -28,20 +28,22 @@ Gamers with sight loss need to be able to follow the story so cutscenes, in game
 If a game can be playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss. 
 
 ## 4	Designing upwards theory
-Designing upwards theory is a starting point that everything else can feed into as part of implementation. However, we also understand that there are limitations to being able to implement accessibility, so every approach might be different and evolve as projects progress. For instance different approaches could occur due to engines not allowing for easy building in of menu narration, or a game already having hooks for aiming information could allow a system for audio aim to be tied in, instead of constructing an entirely new infrastructure.
+Gamers across the spectrum of sight loss, including players with absolutely no sight whatsoever, should be able to enjoy the same titles as everyone else. The features that can be of assistance, (menu narration, resizable fonts, high contrast options, use of haptics for information etc) will not only assist gamers with sight loss but anyone with greater levels of usable vision.
 
-Identifying these barriers and the right people who can assist in solving them can then allow future projects to have accessibility built in from the ground up as early as possible in development, thus not incurring retrofitting costs. Any serious barriers should be recorded on a centralised document. This means that if a developer has resources, then they can appoint a separate team or member of staff to resolving them. If not, then they can seek to fix them with any spare staff capacity between projects. This list should be as centralised as possible so that if teams working on separate projects face the same issue it can be fixed once and benefit both projects. 
+By considering the fundamentals of how players interact with your game and ensuring that information is presented through different types of information channels (visually, audibly and where possible haptically) from the start of a project you can reduce the number of changes needed to make the game accessible later on.
 
-Gamers across the spectrum of sight loss should be able to enjoy the same titles as everyone else, including players with absolutely no sight whatsoever. The features that can be of assistance, (menu narration, use of haptics for information etc) will not only assist blind players but anyone with greater levels of usable vision as well as other challenges (for instance if they can’t hear a cue that has a haptic equivalent).
+As an underlying principle, any information that needs to be communicated should be communicated with high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice delivered through the settings menus.
 
-If you instead were to design features for people with usable vision (colour-blindness/contrast filters for instance) you’d have the issue that only those who can see at that level of vision or above are having improved agency, whereas anyone who has less vision can’t benefit from those elements.
+Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who are colour blind.
 
-As a result, you should look, where you can, to design upwards from no vision whatsoever so that as many people as possible can benefit.
-As an underlying principle, any information that needs to be communicated should be communicated with high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice delivered through the settings menus. 
-
-Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who are colour blind. 
+> [!NOTE]
+> Is this addressed elsewhere? If so we can take it out here.
 
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
+Building on previous work
+
+Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility wins and losses should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
+
 
 ## 5 The Value of Agency
 
