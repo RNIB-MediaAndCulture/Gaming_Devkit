@@ -40,10 +40,10 @@ Colour coding is a good way to communicate information, but it should not be the
 > Is this addressed elsewhere? If so we can take it out here.
 
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
-Building on previous work
+
+## Building on previous work
 
 Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility wins and losses should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
-
 
 ## 5 The Value of Agency
 
