@@ -1,0 +1,21 @@
+
+<html>
+<head>
+</head>
+<body>
+<div id="output"></div>
+  <script type="module">
+// Octokit.js
+// https://github.com/octokit/core.js#readme
+const octokit = new Octokit()
+
+await octokit.request('POST /markdown/raw', {
+  text: https://raw.githubusercontent.com/RNIB-MediaAndCulture/Gaming_Devkit/master/Devkit.md,
+  headers: {
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+})
+
+  </script>
+
+</body>
