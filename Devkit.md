@@ -43,7 +43,7 @@ Consider where accessibility can be the default. A good example is using sound d
 
 ## Building on previous work
 
-Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility wins and losses should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
+Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility successes and failures should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
 
 ## 5 The Value of Agency
 
@@ -55,14 +55,13 @@ A common mechanic for making aiming accessible is to use a lock-on mechanic to k
 Audio aiming, as demonstrated in Sea Of Thieves and Atomfall uses audio tones to communicate to the player where an enemy is in relation to the crosshairs. This places control back in the gamer's hands and allows them to choose which opponent they want to attack. 
 
 ### 5.2 Minigames, puzzles and Quick Time Events
-Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional gameplay that can be challenging to make accessible. This also applies to some in-game puzzles. 
+Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional mechanisms that can be challenging to make accessible. This also applies to some in-game puzzles. 
 
-It can be tempting to skip these elements but doing so reduces the players agency as well as bypassing any part of the story that is told through them. Where possible blind and partially sighted gamers should be given the information they need to solve the puzzle, QTE or minigame in a timely manner. For a QTE this could be speech giving the button name and anything else the gamer needs to know as concisely as possible. For instance "X" is better than "press the X button" and if you need to press the button fast repeatedly "mash X" is better than "press the X button repeatedly" but a fast tone that tells a player to press the button repeatedly could be combined with speech saying "X". 
+It can be tempting to skip these elements but doing so reduces the players agency as well as bypassing any part of the story that is told through them. Where possible blind and partially sighted gamers should be given the information they need to solve the puzzle, QTE or minigame in a timely manner. For a QTE this could be speech giving the button name and anything else the gamer needs to know as concisely as possible. For instance "X" is better than "press the X button" and if you need to press the button fast repeatedly "mash X" is better than "press the X button repeatedly" but a fast tone that tells a player to press the button repeatedly could be combined with speech saying "X". Remenmber to use the same communication in tutorials and on-boarding so blind gamers can learn it organically.
 
 If it isn't possible to make minigame, puzzle or QTE accessible then having it autocomplete is better than skipping it because it allows the player to experience that part of the story. If the accessible play method is appreciably more difficult for a player with sight loss than the non-accessible method is for a sighted player then there could be a menu option to autocomplete this type of puzzle. This is best determined by play testing with gamers with sight loss who are used to audio interactions and so will fare better with them than a sighted person would.  
 
 Any part of a game that is skipped or autocompletes is a part that the gamer doesn't get to play. 
-
 
 **To Add:**
 - Audio beacons for navigation rather than rails
@@ -98,16 +97,18 @@ Narration as defined above should be adjustable in terms of its speed.  After al
 Examples: Diablo IV, Sea Of Thieves and any game that has screen reader compatibility on PC
 
 ### 6.2	DPad navigation
-Allowing players to use digital directional movement as opposed to a cursor-based system will not only allow gamers across the spectrum of sight loss to more efficiently navigate menus, maps and other elements, but also assist those outside of that demographic who have issues with cursor-based menus.
+Allowing players to use digital directional movement as opposed to a cursor-based system will not only allow gamers across the spectrum of sight loss to more efficiently navigate menus, maps and other elements, but also helps other gamers who have issues with cursor-based menus.
 
 Accessing menu and interface elements using free moving cursers can cause problems for people with sight loss or dexterity issues. Blind users have no context for where a free moving curser is until it hits an interactive element (and that’s only if the element has an audible or tactile cue). If your game is accessible through magnification, then users with high magnification settings may also find they are lost with no visual markers near enough to the curser to tell them where they are. Users with dexterity issues or non-standard input devices may also have trouble with the precision of landing on an element.
 
 Enabling a user to move between items with a single button press can help in all these areas. In a menu, feedback to the user should also give enough context to navigate. Speech should make it clear when the user is on a submenu and what type of control is highlighted. Toggles, sliders and radio buttons have different behaviours when selected and a blind user needs to know which one they are using. This could be explicitly stated in the speech by saying “toggle”, “slider” or “radio button” or indicated some other way as long as it is clear and consistent.
 
 ### 6.3	Aiming 
-If your game requires use of a reticle for aiming, for whatever purpose (i.e., even if your game is not combat-focused), though lock-on aiming is an option, explore the possibilities of utilising audio and haptic feedback to allow players with no sight to aim with more freedom and know what they’re targeting.  For instance, in a target rich environment where differing enemies can take priority, allow players to distinguish what enemy they want to lock onto and target.
+If your game requires use of a reticle for aiming allow players with no sight to aim with more freedom and know what they’re targeting. Audio-based aiming provides the gamers with sound cues to guide them to the enemy without snapping to the target. Auto aiming locks on to the nearest target which reduces agency but can be useful for players with dexterity issues or who are using non-standard interfaces. Ideally audio-based aiming should be the default with auto aiming available from a menu setting.  
 
-An example of an audio-based aiming system can be seen in Sea Of Thieves’ August patch in the form of aim assist audio cues.  These allow a player to line up a target in the sights of their guns and fire when a different audio cue, indicating successful acquisition of the target is confirmed. 
+An example of an audio-based aiming system can be seen in Sea Of Thieves or Atomfall in the form of aim assist audio cues.  These allow a player to line up a target in the sights of their guns and fire when successful acquisition of the target is confirmed through audio. 
+
+If there are multiple enemies with different characteristics (for instance a boss and henchman or different classes of attacker) communicate to the player which one has been targeted and when using auto aiming allow them to select a different anemy to attack. This lets the gamer play more strategically.
 
 ### 6.4	Designing for Zoom  
 Zoom is a feature that takes a section of the screen and enlarges it so that it fills the whole screen. It makes images bigger which can help partially sighted people but since it is only showing part of the screen it means the rest of the screen will not be visible. It also requires a separate navigation mechanism to choose which part of the screen you want to see. You might build zoom into your game, especially if the gameplay is turn-based rather than real-time but some platforms will enable zoom even if you do not build it in itself. Zoom functions can often magnify screens up to 16 times and, in the case of specialist software, even up to 64 times. 
@@ -124,10 +125,13 @@ Small UI elements are a common accessibility issue for low vision players. For d
 Allowing the player to adjust the scale and position of individual UI elements is another way to improve their readability by low vision players. Including this level of customisation allows players to enlarge and increase the visibility of UI elements they find most difficult to see without increasing the size of less useful elements or those for which no scaling is needed. 
 Examples: Warframe, Tom Clancy’s The Division 2
 
+> [!note]
+> These examples should be worked into the text unless we have them for all the options.
+
 ## 6.6	High contrast filter
 Low vision players may find it difficult to distinguish key elements such as interactive objects or non-player characters from the rest of the environment. This can be addressed by implementing a high-contrast mode in which the game environment and other static objects are displayed in a greyscale colour palette, while important or interactive objects are displayed in bright colours that stand out to low vision players. 
 
-Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so if you just allowed different shades or green and red then they may not stand out to some people.
+Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so information communicated by green and red will not be accessible to some people.
 
 Sometimes buttons and icons may not be clickable but may still be visible on the screen. The button may be greyed out or be superimposed with a clock face or other modifier to signify that it’s not available. Common options for this are:
 - Active (ready to use)
@@ -135,7 +139,7 @@ Sometimes buttons and icons may not be clickable but may still be visible on the
 -	Inactive – waiting for condition
 -	Unavailable
 
-It is recommended to create icons with abilities that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of shapes.
+It is recommended to create icons that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of shapes.
 
 ## 6.7	Colour Vision Deficiency filters
 CVD (Colour Vision Deficiency), otherwise known as colour blindness, is a condition where parts of the eye that discern colours are missing or not working as standard. CVD filters, using a process called daltonization, applied across the whole game can ensure that colours have as much contrast as possible and can make the game easier to play for people who have CVD. This can make colours look unnatural and make the game less immersive and as a result, not all players who could benefit from the feature will choose to use it. Using patterns or high contrast ratios (as defined by WCAG) can improve the default accessibility without reducing immersion and offering colour options for some game elements while retaining expected colours (trees are green, concrete is grey, etc) is likely to be the best solution. 
@@ -147,9 +151,9 @@ Text that is too small for the low vision player to read will cause those player
 
 Text size is important, but large text with poor readability can also be a barrier to low vision players. Use a clear, wide font like Arial or Verdana, and avoid using ornate, cursive, narrow or otherwise difficult to read fonts. If a more decorative font is used, then there should be an option to revert to a simpler more readable font.  
 
-Use both upper-case and lower-case letters where possible. Using only upper-case letters works well for titles or main headings, but it will have a significant negative impact on the readability on longer sections of text. The shape of words (i.e., when bits of letters stick up or hang down from the word) gives usable information for partially sighted people to recognise the word. Block capitals have a rectangular shape which makes them harder to read.
+Use both upper-case and lower-case letters where possible. Using only upper-case letters may look good for titles or main headings, but it will have a significant negative impact on the readability on longer sections of text. The shape of words (i.e. when bits of letters stick up or hang down from the word) gives usable information for partially sighted people to recognise the word. Block capitals have a rectangular shape which makes them harder to read.
 
-The contrast between text and background affects how easy it is to read. Avoid overlaying text on images or video without a contrasting box behind them and provide options for this background to be opaque (or make it opaque by default). The WCAG guidelines have a metric for colour contrast which can tell you how different two colours are.    Allowing the player to choose the text and background colour scheme will make it more accessible to some low vision players.
+The contrast between text and background affects how easy it is to read. Avoid overlaying text on images or video without a contrasting box behind them and provide options for this background to be opaque (or make it opaque by default). The WCAG guidelines have a metric for colour contrast which can tell you how different two colours are. Allowing the player to choose the text and background colour scheme will make it more accessible to some low vision players.
 
 ### 6.9	Flashing, flickering and strobe light effects
 Flashing occurs when all the pixels suddenly change to white and reverts back to create a flash, the rate of where flashing occurs is stated between 3-30 Hertz (flashes per second) and in some cases up to 60 Hertz. This is sometimes used to simulate camera flashes or lightning and to indicate that a selection has been made in game menus, but it can induce seizures in people with epilepsy. 
