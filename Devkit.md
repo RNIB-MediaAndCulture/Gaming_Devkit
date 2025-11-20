@@ -41,20 +41,20 @@ Colour coding is a good way to communicate information, but it should not be the
 
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
 
-## Building on previous work
+## 5  Building on previous work
 
 Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility successes and failures should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
 
-## 5 The Value of Agency
+## 6 The Value of Agency
 
 During accessibility discussions, it is always important to consider how much agency a player has via particular accessibility implementations. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable but if a lack of agency means the gamer losses too much challenge then the game can lose its appeal. 
 
-### 5.1 Targeting/Aiming
+### 6.1 Targeting/Aiming
 A common mechanic for making aiming accessible is to use a lock-on mechanic to keep a target in the centre of your view. Other options are to have the crosshairs lock on to targets independent of the view or automatically hit any target in range if the player attacks. These increase accessibility and allow progression but remove agency and can undermine the gaming experience. 
 
 Audio aiming, as demonstrated in Sea Of Thieves and Atomfall uses audio tones to communicate to the player where an enemy is in relation to the crosshairs. This places control back in the gamer's hands and allows them to choose which opponent they want to attack. 
 
-### 5.2 Minigames, puzzles and Quick Time Events
+### 6.2 Minigames, puzzles and Quick Time Events
 Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional mechanisms that can be challenging to make accessible. This also applies to some in-game puzzles. 
 
 It can be tempting to skip these elements but doing so reduces the players agency as well as bypassing any part of the story that is told through them. Where possible blind and partially sighted gamers should be given the information they need to solve the puzzle, QTE or minigame in a timely manner. For a QTE this could be speech giving the button name and anything else the gamer needs to know as concisely as possible. For instance "X" is better than "press the X button" and if you need to press the button fast repeatedly "mash X" is better than "press the X button repeatedly" but a fast tone that tells a player to press the button repeatedly could be combined with speech saying "X". Remenmber to use the same communication in tutorials and on-boarding so blind gamers can learn it organically.
@@ -67,57 +67,57 @@ Any part of a game that is skipped or autocompletes is a part that the gamer doe
 - Audio beacons for navigation rather than rails
 
 
-## 5	Platform specific requirements 
+## 7	Platform specific requirements 
 The accessibility needs of users do not change much depending on platform but the tools available on platforms may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
 
-### 5.1	PC/Mac/Web based
+### 7.1	PC/Mac/Web based
 Windows and OSX have screen readers that will read out highlighted text and magnification software that will enlarge a portion of the screen. Depending on the development environment you use you may be able to make use of the screen reader to read out menus or magnify part of the screen. 
 
 PC gamers and Mac gamers may use magnification software to zoom in to games. This may be useful for menus or in game text where a game does not require a timely response. For high levels of magnification it is important that menus have a logical layout otherwise users may not be able to find menu options.  
 
-### 5.2	Mobile phones and tablets
+### 7.2	Mobile phones and tablets
 Mobile phones provide both challenges and accessibility tools. A smaller screen means that accessibility tools for partially sighted people are even more important because more people may need to use them. 
 
 Larger mobile phone operating systems include suites of accessibility tools as standard. Screenreaders, magnification, high contrast modes, colour inversion and colour vision deficiency filters are common and whether you can make use of these will depend on the development environment   you choose. For instance, the native development environments for particular platforms may provide better access to accessibility frameworks than cross-platform development tools. When selecting a development environment find out how much it allows use of the accessibility frameworks available and how much you will need to do yourself. Tools such as magnification and colour inversion will likely work regardless of the development environment you choose so it is worth testing with these to see how well they work with your game and whether you can do anything to improve the experience.
 
-### 5.3	Consoles 
+### 7.3	Consoles 
 Consoles have a rich selection of options for input and output. For output, consoles often allow for large screens, immersive soundscapes (through headphones or speaker arrays), and tactile feedback through controllers. For input, they may have buttons, joysticks, d-pads, microphones, cameras, accelerometers and motion sensors. All of these have accessibility potential but could also raise accessibility barriers.  
 
-## 6	User-interface navigation
+## 8	User-interface navigation
 There are three primary ways to do this:
 -	By voice: Narration
 -	By vision: Magnification/ Zoom
 -	By touch: Haptics
 
-### 6.1	Menu/UI Narration  
+### 8.1	Menu/UI Narration  
 Menu and User Interface (UI) narration, hereafter simply referred to as “narration”, is a feature that allows menu items and other elements in a game to be spoken, primarily via synthesised speech.  This means that those with no vision or who have trouble seeing the screen for whatever reason can navigate menus unaided. 
 
-#### 6.1.1	Adjustable Speech
+#### 8.1.1	Adjustable Speech
 Narration as defined above should be adjustable in terms of its speed.  After all, just like we all read at different paces, we also all listen and comprehend at different rates.  If a player needs information quickly and can understand the speech at a much faster rate, they should be able to speed up the rate at which the narration is being spoken. Many screen reader users will listen to speech at over 300 words per minute [^1] and sometimes as fast as 500 words per minute. With the range of variability between users it’s best to offer as much granularity in speeds as is practical.
 Examples: Diablo IV, Sea Of Thieves and any game that has screen reader compatibility on PC
 
-### 6.2	DPad navigation
+### 8.2	DPad navigation
 Allowing players to use digital directional movement as opposed to a cursor-based system will not only allow gamers across the spectrum of sight loss to more efficiently navigate menus, maps and other elements, but also helps other gamers who have issues with cursor-based menus.
 
 Accessing menu and interface elements using free moving cursers can cause problems for people with sight loss or dexterity issues. Blind users have no context for where a free moving curser is until it hits an interactive element (and that’s only if the element has an audible or tactile cue). If your game is accessible through magnification, then users with high magnification settings may also find they are lost with no visual markers near enough to the curser to tell them where they are. Users with dexterity issues or non-standard input devices may also have trouble with the precision of landing on an element.
 
 Enabling a user to move between items with a single button press can help in all these areas. In a menu, feedback to the user should also give enough context to navigate. Speech should make it clear when the user is on a submenu and what type of control is highlighted. Toggles, sliders and radio buttons have different behaviours when selected and a blind user needs to know which one they are using. This could be explicitly stated in the speech by saying “toggle”, “slider” or “radio button” or indicated some other way as long as it is clear and consistent.
 
-### 6.3	Aiming 
+### 8.3	Aiming 
 If your game requires use of a reticle for aiming allow players with no sight to aim with more freedom and know what they’re targeting. Audio-based aiming provides the gamers with sound cues to guide them to the enemy without snapping to the target. Auto aiming locks on to the nearest target which reduces agency but can be useful for players with dexterity issues or who are using non-standard interfaces. Ideally audio-based aiming should be the default with auto aiming available from a menu setting.  
 
 An example of an audio-based aiming system can be seen in Sea Of Thieves or Atomfall in the form of aim assist audio cues.  These allow a player to line up a target in the sights of their guns and fire when successful acquisition of the target is confirmed through audio. 
 
 If there are multiple enemies with different characteristics (for instance a boss and henchman or different classes of attacker) communicate to the player which one has been targeted and when using auto aiming allow them to select a different anemy to attack. This lets the gamer play more strategically.
 
-### 6.4	Designing for Zoom  
+### 8.4	Designing for Zoom  
 Zoom is a feature that takes a section of the screen and enlarges it so that it fills the whole screen. It makes images bigger which can help partially sighted people but since it is only showing part of the screen it means the rest of the screen will not be visible. It also requires a separate navigation mechanism to choose which part of the screen you want to see. You might build zoom into your game, especially if the gameplay is turn-based rather than real-time but some platforms will enable zoom even if you do not build it in itself. Zoom functions can often magnify screens up to 16 times and, in the case of specialist software, even up to 64 times. 
 
 If you decide to build zoom in yourself then it is worth speaking with accessibility consultants or magnification users to understand common interaction patterns for zoom software. Creating your own zoom will allow you to follow the focus with the zoomed area. Coupled with d-pad navigation this can make it easier to follow menus. 
 
 A much simpler option however is to try to ensure your game works well with the Zoom options that the platform provides. When zoomed in the user is viewing the screen through a small window so it can be easy to lose navigational context. Try to make the layout of menus etc logical and predictable. Left align options that are above each other and avoid putting options in ‘islands’ with no other options or text near them. If an option is separate from the rest of the on-screen information then you can use ruled lines above, below or to the side of it to tie it in with some other text on the screen. 
 
-### 6.5	Scalable user interfaces
+### 8.5	Scalable user interfaces
 A well designed and informative user interface (UI) plays an important role of conveying information to the player. However, the size and placement of UI elements can present accessibility barriers to low vision players. 
 
 Small UI elements are a common accessibility issue for low vision players. For desktop and mobile gaming the minimum target size is 32 x 32 pixels and it is recommended that clickable elements are at least 44 x 44 pixels . Scalable user interfaces, however, can resolve this across all platforms. Allow the player to increase the size of UI elements to make them more readable during gameplay. If there is a maximum value at which the layout and functionality are maintained, consider allowing the player to increase the UI scale beyond this. Though this may cause UI elements to overlap and some useful information to be lost, these increased UI sizes may be useful to some low vision players. 
@@ -128,7 +128,7 @@ Examples: Warframe, Tom Clancy’s The Division 2
 > [!note]
 > These examples should be worked into the text unless we have them for all the options.
 
-### 6.6	High contrast filter
+### 8.6	High contrast filter
 Low vision players may find it difficult to distinguish key elements such as interactive objects or non-player characters from the rest of the environment. This can be addressed by implementing a high-contrast mode in which the game environment and other static objects are displayed in a greyscale colour palette, while important or interactive objects are displayed in bright colours that stand out to low vision players. 
 
 Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so information communicated by green and red will not be accessible to some people.
@@ -141,10 +141,10 @@ Sometimes buttons and icons may not be clickable but may still be visible on the
 
 It is recommended to create icons that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of shapes.
 
-### 6.7	Colour Vision Deficiency filters
+### 8.7	Colour Vision Deficiency filters
 CVD (Colour Vision Deficiency), otherwise known as colour blindness, is a condition where parts of the eye that discern colours are missing or not working as standard. CVD filters, using a process called daltonization, applied across the whole game can ensure that colours have as much contrast as possible and can make the game easier to play for people who have CVD. This can make colours look unnatural and make the game less immersive and as a result, not all players who could benefit from the feature will choose to use it. Using patterns or high contrast ratios (as defined by WCAG) can improve the default accessibility without reducing immersion and offering colour options for some game elements while retaining expected colours (trees are green, concrete is grey, etc) is likely to be the best solution. 
 
-### 6.8	Large text size with clear, readable font/readable text
+### 8.8	Large text size with clear, readable font/readable text
 On-screen text can be a barrier to low vision players being able to play or access all parts of a video game. 
 
 Text that is too small for the low vision player to read will cause those players to either strain to read it or miss it entirely. This can be addressed by making the default text size large enough for low vision players to read comfortably, or by giving the player the option to make the text larger. 
@@ -155,44 +155,44 @@ Use both upper-case and lower-case letters where possible. Using only upper-case
 
 The contrast between text and background affects how easy it is to read. Avoid overlaying text on images or video without a contrasting box behind them and provide options for this background to be opaque (or make it opaque by default). The WCAG guidelines have a metric for colour contrast which can tell you how different two colours are. Allowing the player to choose the text and background colour scheme will make it more accessible to some low vision players.
 
-### 6.9	Flashing, flickering and strobe light effects
+### 8.9	Flashing, flickering and strobe light effects
 Flashing occurs when all the pixels suddenly change to white and reverts back to create a flash, the rate of where flashing occurs is stated between 3-30 Hertz (flashes per second) and in some cases up to 60 Hertz. This is sometimes used to simulate camera flashes or lightning and to indicate that a selection has been made in game menus, but it can induce seizures in people with epilepsy. 
 
 Flashing effects must be avoided by default and if an effect is needed then an alternative that does not endanger people with epilepsy should be used. If it is felt that flashing would have contributed to the game, it needs to be enabled by a user on every session and come with additional advice and agreements to state that the enablement of the feature will not affect them nor any individuals in proximity or within the household.
 
 Flickering and strobe lights can be encountered within game environments and consist of rapid patterned changes of colour and from bright all white to no light being emitted. They have been used in wide range of games that are either set in a space themed horror/thriller or other light ambience in intense game locations. Flickering and strobe lights need to have options that disable the lighting effect and any epilepsy inducing light effects should be disabled on default in the game settings and only be available if enabled by the user.
 
-### 6.10	Standardising the experience across all screens
+### 8.10	Standardising the experience across all screens
 From the very first onboarding elements, accessibility features such as narration should be present to allow players to set up the game as they desire, without the need for additional assistance. This includes elements such as brightness sliders or screen calibration, which normally appear before any accessibility settings are shown. As demonstrated by God Of War Ragnarök, a voiced prompt could guide the user how to enable narration functionality during set-up.
 Examples: The Last Of Us Parts I and II, Gears 5 Horde and Escape modes
 
-## 7	In-game navigation
+## 9	In-game navigation
 Games that allow players to explore at will can be hard to navigate for players who cannot see the offered paths easily (or at all). Though some games can allow players to move through the world by pressing a button and have the camera turn, there are also other ways to make this work, including audio cues (see below). Enabling players to roam freely in an open world while still being able to follow both main and side quests is a difficult balance and, at the time of writing this advice, one that has not been achieved to our knowledge. Players will need to be able to select which quest to pursue and the game will need to communicate path markers and quest items appropriately, including ‘hidden’ or discoverable items where the player must find the location themselves. Maps should be made as accessible as possible using contrast, magnification and potentially simplification or colour coding. If a map window tells you information about that region such as which quests and quest objects are available in that region, then this should be read out. 
 
-### 7.1	Audio cues
+### 9.1	Audio cues
 Audio cues are a key part of gaming with sight loss. They are both the medium in which information is delivered and that the game is experienced and understood. Audio cues should be clear and distinct but should also fit within the game’s universe so as not to break immersion. You don’t always have to use accessibility specific cues either, for instance an enemy’s attack audio could give enough of an audio cue to parry it in an action setting without being able to see it coming and without needing an extra accessibility cue, as can be seen in God Of War 2018 and Star Wars Jedi Survivor  .
 
 Making it clear when a player can do things like jump or traverse or when a status change such as when they are low on health can vastly improve the level of agency a player has and reduce the need for sighted assistance. An accessible mechanism for interrogating status, such as health or ammo, may also benefit gamers.   This should be player triggered and should speak out any important status elements and/or show them with high contrast or magnification. The game may or may not pause on this screen to enable a player to read through or listen to their status without dying. 
 
 Audio cues can also be used for navigation as an alternative to having the camera turn to point the player at the next objective. This gives a greater feeling of space and freedom to the player rather than complete linearity. Examples of this can be seen in Gears 5’s Navigation Ping: Escape Mode feature, which also includes high contrast visual elements to let even more people take advantage of the trail it leaves to lead players through areas.
 
-### 7.2	Audio description
+### 9.2	Audio description
 Audio description is a medium that’s long been present in film, TV and theatre, but has only recently become recognised as a core part of the gaming space as of 2020. Though trailers from companies like Ubisoft, Activision Blizzard and Sony Santa Monica are examples of where this has been applied with reference to trailers, videogames still haven’t caught up as of 2023 other than a couple examples, namely The Last Of Us Part I for cinematics and Stories Of Blossom having audio description integrated throughout.
 
 Implementing these to relay descriptions of character actions, gestures or sequences allows players to understand your story where otherwise they will miss key details or plot points.
 
-### 7.3	Descriptions viewable in-game as official channel
+### 9.3	Descriptions viewable in-game as official channel
 If someone can’t see the visuals of the worlds you’ve created, the characters, the locations, the weapons, the items, a lot can be lost in terms of immersion. Having a way to view descriptions of key characters, items, locations etc as a player progresses, as well as audio glossaries for enemies and their attacks, could massively help with the increased level of understanding a player without sight can have of your world. Consider whether information is needed synchronously while a gamer is playing the game or asynchronously through glossaries, bestiaries and other sources of information that a player can look up later. Including artistic context while a player is playing will likely increase enjoyment but full descriptions of environments, enemies, objects, NPCs etc may be better suited to an asynchronous in-game reference.
 
-### 7.4	Haptic feedback 
+### 9.4	Haptic feedback 
 Haptic feedback from controllers has historically just been used for immersion.  However, recent advances like the PlayStation 5 DualSense haptic feedback capabilities have allowed for increased accessibility-related information to be conveyed.
 
 Used not just for immersion but for information relay (how much health you have, when a bar is filling up for an attack etc). There are currently few examples of best practice, so it is worth testing with users to ensure that mechanics are useful and not distracting.
 
-### 7.5	Cooperative play
+### 9.5	Cooperative play
 The aim of making a game accessible should be to enable a blind and partially sighted person to play it completely independently. The heart of the matter however is to enable a blind and partially sighted player to enjoy the game and allowing cooperative play can do this. This could be where different members of a team take on different tasks such as in Sea of Thieves or where two players could control the same character with a sighted player handling the tasks that require vision such as through the co-pilot system built into Horizon Forbidden West. 
 
-### 7.6	Cross Platform Design 
+### 9.6	Cross Platform Design 
 There are accessibility considerations to keep in mind when designing a game to be released on several platforms. This is particularly important when implementing narration into a game. If one platform is involved, a common strategy is to use a system level output mechanism like Microsoft Speech API (MS SAPI) on Windows, which is a built-in component of the operating system.  However, if available, directly hooking into screen readers (such as on Windows) allows for greater flexibility on the part of the player as their preferred rates of speech, verbosity settings etc could be used or acknowledged by the system as the default.   
  
 If you are working with several platforms the system level screen reader requirements can differ and it may not be possible to implement narration across the different platforms with a singular solution.  This means that instead of utilising the platform to provide the text to speech, the designer would have to provide the narration. Using speech synthesis or pre-recorded narration would ensure that the narration would work on any platform. Solutions like Read Speaker’s plug in or in development implementations from engines like Unity or Unreal may be viable alternatives but should be user tested during development to avoid any missing narration or customisability issues being left unchecked until release. 
@@ -204,7 +204,7 @@ A good example of giving users the information they need is Sudoku. Sudoku is a 
 
 Crosswords are another good example. A crossword is a word puzzle where words need to be placed in rows and columns of cells in a, usually, irregular lattice such that each cell contains one letter and some of the cells will be part of two different words. Rows and columns are usually numbered with a set of clues to solve that will tell you what word is needed for a row or column. As words are placed in the lattice this will inform the user of some of the letters that are parts of other words that the clues indicate. They may read a clue and already know that the second letter is t and the fifth one is r. A user may then want to cycle through the lattice to find words that already have some of the letters filled in. To do this they will want to hear the progress for each word i.e., “6 letters, second letter t, fifth letter r” before having to listen to the clue. Another common tactic after hearing a clue is to get a hint by solving the clue of a word that intersects the one, they want to solve. This means the accessible gameplay should attempt to enable behaviour whereby after hearing a clue a user can then hear the clues to words that intersect the first word, solve these and return to the first word. This may be done with bespoke commands such as “hear intersecting clues” but may also be done by allowing users to move up, down, left and right through the lattice and hearing the clues that apply to a given cell. For instance, when walking through 5 across and landing on an intersectional cell the user could be told it is the third letter of 7 down and be given the clue for 7 down. The user can then keep going left and right to hear more of 5 across or press up or down to move into 7 down. When designing accessibility for puzzle games with common gameplay patterns those gameplay patterns should be accommodated by the accessibility features and design.
 
-## 8	Categorising Mobile Games for Accessibility
+## 10	Categorising Mobile Games for Accessibility
 ### 8.1	Genres vs mechanics
 While genres are useful for choosing games to play, they are not always useful for identifying accessibility challenges. For this reason, we will identify common game mechanics used for different genres and describe the accessibility challenges and potential accessibility interactions that can be used for this. This section is provided for advice and nothing in this section is considered to be exhaustive. 
 
