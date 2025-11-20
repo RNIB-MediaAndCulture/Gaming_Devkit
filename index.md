@@ -117,7 +117,7 @@ If you decide to build zoom in yourself then it is worth speaking with accessibi
 
 A much simpler option however is to try to ensure your game works well with the Zoom options that the platform provides. When zoomed in the user is viewing the screen through a small window so it can be easy to lose navigational context. Try to make the layout of menus etc logical and predictable. Left align options that are above each other and avoid putting options in ‘islands’ with no other options or text near them. If an option is separate from the rest of the on-screen information then you can use ruled lines above, below or to the side of it to tie it in with some other text on the screen. 
 
-## 6.5	Scalable user interfaces
+### 6.5	Scalable user interfaces
 A well designed and informative user interface (UI) plays an important role of conveying information to the player. However, the size and placement of UI elements can present accessibility barriers to low vision players. 
 
 Small UI elements are a common accessibility issue for low vision players. For desktop and mobile gaming the minimum target size is 32 x 32 pixels and it is recommended that clickable elements are at least 44 x 44 pixels . Scalable user interfaces, however, can resolve this across all platforms. Allow the player to increase the size of UI elements to make them more readable during gameplay. If there is a maximum value at which the layout and functionality are maintained, consider allowing the player to increase the UI scale beyond this. Though this may cause UI elements to overlap and some useful information to be lost, these increased UI sizes may be useful to some low vision players. 
@@ -128,7 +128,7 @@ Examples: Warframe, Tom Clancy’s The Division 2
 > [!note]
 > These examples should be worked into the text unless we have them for all the options.
 
-## 6.6	High contrast filter
+### 6.6	High contrast filter
 Low vision players may find it difficult to distinguish key elements such as interactive objects or non-player characters from the rest of the environment. This can be addressed by implementing a high-contrast mode in which the game environment and other static objects are displayed in a greyscale colour palette, while important or interactive objects are displayed in bright colours that stand out to low vision players. 
 
 Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so information communicated by green and red will not be accessible to some people.
@@ -141,10 +141,10 @@ Sometimes buttons and icons may not be clickable but may still be visible on the
 
 It is recommended to create icons that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of shapes.
 
-## 6.7	Colour Vision Deficiency filters
+### 6.7	Colour Vision Deficiency filters
 CVD (Colour Vision Deficiency), otherwise known as colour blindness, is a condition where parts of the eye that discern colours are missing or not working as standard. CVD filters, using a process called daltonization, applied across the whole game can ensure that colours have as much contrast as possible and can make the game easier to play for people who have CVD. This can make colours look unnatural and make the game less immersive and as a result, not all players who could benefit from the feature will choose to use it. Using patterns or high contrast ratios (as defined by WCAG) can improve the default accessibility without reducing immersion and offering colour options for some game elements while retaining expected colours (trees are green, concrete is grey, etc) is likely to be the best solution. 
 
-## 6.8	Large text size with clear, readable font/readable text
+### 6.8	Large text size with clear, readable font/readable text
 On-screen text can be a barrier to low vision players being able to play or access all parts of a video game. 
 
 Text that is too small for the low vision player to read will cause those players to either strain to read it or miss it entirely. This can be addressed by making the default text size large enough for low vision players to read comfortably, or by giving the player the option to make the text larger. 
