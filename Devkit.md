@@ -205,20 +205,20 @@ A good example of giving users the information they need is Sudoku. Sudoku is a 
 Crosswords are another good example. A crossword is a word puzzle where words need to be placed in rows and columns of cells in a, usually, irregular lattice such that each cell contains one letter and some of the cells will be part of two different words. Rows and columns are usually numbered with a set of clues to solve that will tell you what word is needed for a row or column. As words are placed in the lattice this will inform the user of some of the letters that are parts of other words that the clues indicate. They may read a clue and already know that the second letter is t and the fifth one is r. A user may then want to cycle through the lattice to find words that already have some of the letters filled in. To do this they will want to hear the progress for each word i.e., “6 letters, second letter t, fifth letter r” before having to listen to the clue. Another common tactic after hearing a clue is to get a hint by solving the clue of a word that intersects the one, they want to solve. This means the accessible gameplay should attempt to enable behaviour whereby after hearing a clue a user can then hear the clues to words that intersect the first word, solve these and return to the first word. This may be done with bespoke commands such as “hear intersecting clues” but may also be done by allowing users to move up, down, left and right through the lattice and hearing the clues that apply to a given cell. For instance, when walking through 5 across and landing on an intersectional cell the user could be told it is the third letter of 7 down and be given the clue for 7 down. The user can then keep going left and right to hear more of 5 across or press up or down to move into 7 down. When designing accessibility for puzzle games with common gameplay patterns those gameplay patterns should be accommodated by the accessibility features and design.
 
 ## 10	Categorising Mobile Games for Accessibility
-### 8.1	Genres vs mechanics
+### 10.1	Genres vs mechanics
 While genres are useful for choosing games to play, they are not always useful for identifying accessibility challenges. For this reason, we will identify common game mechanics used for different genres and describe the accessibility challenges and potential accessibility interactions that can be used for this. This section is provided for advice and nothing in this section is considered to be exhaustive. 
 
-### 8.2	A note on ‘challenge’
+### 10.2	A note on ‘challenge’
 As described in the CAPS test it is important to preserve the level of challenge in a game. Some accessibility features could be used to make a game easier to play but many mobile games have a graduated challenge (they get harder over time). Consider whether a feature removes challenge or just attenuates it in a way that means players can still find the right balance for them.
 
-### 8.3	Translating visual information for blind gamers
+### 10.3	Translating visual information for blind gamers
 When trying to communicate visual information to a blind and partially sighted audience how you communicate it will depend on the type of information.
 Speech is very rich in information with a low learning curve but takes longer to process so may not be suitable for cues that need to be acted on quickly. Sound effects can be quick to act on and can identify things such as different enemies, different trigger events or different types of object. Sound effects can be presented with different pitches, volume or positions (left to right or full surround sound) to add layers of information. If using the position of a sound remember that binaural surround sound may not work well for everyone and people with hearing loss in one or both ears will miss part of the information you are presenting. Mono audio is a common accessibility feature for people with hearing loss in one ear. Consider the most appropriate and intuitive way to communicate something and where possible use multiple communication channels (communicate the same information visually and audibly) to help people with different needs.
 
-### 8.4	 Genres
+### 10.4	 Genres
 Here we will present a list of common genres and the mechanics we would expect to find in them. This is for illustration only. Adverts and paid boosters are common to all genres so will not be mentioned every time.
 
-#### 8.4.1	 Accumulator games 
+#### 10.4.1	 Accumulator games 
 Object of the game is to accumulate an in-game currency. Rate of currency collection is decided by upgrades which are often purchased with the in-game currency. Will often include minigames and powerups. 
 
 Examples: Archer: Dangerphone, Legend of the slime
