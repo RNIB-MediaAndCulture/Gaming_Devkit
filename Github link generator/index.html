@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="module">
+function generateMarkdownLink(heading) {
+ let output="";
+  // Remove leading hashes and trim whitespace
+  const text = heading.replace(/^#+\s*/, '').trim();
+
+  // Create the anchor: lowercase, remove special chars except hyphens, replace spaces with hyphens
+  const anchor = text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // remove punctuation
+    .replace(/\s+/g, '-')     // replace spaces with hyphens;
+//output=`[${text}](#${anchor})`
+document.getElementById('output').textContent = `[${text}](#${anchor})`;
+
+//  return `[${text}](#${anchor})`;
+}
+
+// Example usage:
+//console.log(generateMarkdownLink('#### 8.5.5 Idle gaming'));
+// Output: [Idle gaming](#855-idle-gaming)
+
+document.getElementById('heading').addEventListener("input", (event) => {
+generateMarkdownLink(event.target.value);
+});
+
+
+</script>
+
+
+<form>
+<input type="text" id="heading"></input>
+<div id="output"></div>
+</form>
+
+</body>
