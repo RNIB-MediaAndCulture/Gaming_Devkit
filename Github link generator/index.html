@@ -24,18 +24,16 @@
     });
 
     document.getElementById('addLink').addEventListener("click", (event) => {
-      document.getElementById('linkList').textContent += document.getElementById('output').textContent;
+      document.getElementById('linkList').textContent += document.getElementById('output').textContent+="\n";
     });
   
 </script>
 
-<form> // Do you need a form element for a single element and no submit button?
+<form> <!-- Do you need a form element for a single element and no submit button? -->
   <input type="text" id="heading"></input>
   <div id="output"></div>
-  //<input type="button" Value="Add link to list" id="addLink">
-</form> // Could add a button to add the links to the end of another <div> Then you could create a load of links at the same time
-
+  <input type="button" Value="Add link to list" id="addLink">
+</form> 
   <div id="linkList"></div>
 
 </body>
-
