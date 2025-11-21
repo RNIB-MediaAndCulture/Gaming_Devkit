@@ -36,9 +36,6 @@ As an underlying principle, any information that needs to be communicated should
 
 Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who are colour blind.
 
-> [!NOTE]
-> Is this addressed elsewhere? If so we can take it out here.
-
 Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
 
 ## 5  Building on previous work
@@ -225,70 +222,70 @@ Examples: Archer: Dangerphone, Legend of the slime
 
 Mechanics: [Idle gaming](#855-idle-gaming), [Minigames](#858-minigames), [Powerups](#8513powerups), [Story](#8519story)
 
-#### 8.4.2	 Card battlers and Deck building games
+#### 10.4.2	 Card battlers and Deck building games
 Card battlers and deck building games are digital versions of card games. Each card is a gameplay modifier, and these are used competitively against other players to score points and win rounds. These may use a communal deck of cards but commonly players build up their personal deck through random gifts, purchases using in game currency, points scored, accumulating a set number of tokens or players may even be able to capture them from opponents. The positions the cards can be played in may also have modifier functions and the player may need to know what cards their opponent has played and where.
 
 Examples: Exploding Kittens, Hearthstone, Marvel Snap, Slay the Spire
 
 Mechanics: [Cards](#852-cards), [Inserting to grid](#856-inserting-to-grid), [Multiplayer](#859-multiplayer), [Resource management](#8515resource-management), [Timed gameplay](#8521timed-gameplay)
 
-#### 8.4.3	 Empire Games
+#### 10.4.3	 Empire Games
 Base building games with resources gathering, area unlocking, character and feature unlocking, and guilds. May include merge mechanics, Tower defence mechanics, minigames and single player combat.
 
 Examples: The ants: Underground kingdom, Boom beach, Top War: Battle game
 
 Mechanics: [Feature unlock](#853-feature-unlock), [Guilds](#854-guilds), [Merging](#857-merging), [Minigames](#858-minigames), [Placing items](#8512placing-items), [Raid parties](#8516raid-parties), [Research](#8514research), [Resource management](#8515resource-management), [Single player combat](#8518single-player-combat), [Upgrade building](#8522upgrade-building)
 
-#### 8.4.4	 Merge games
+#### 10.4.4	 Merge games
 If the player has two of the same item, they can combine them to make something else. This may form the central puzzle of the game or a form of resource management.
 
 Examples: Merge Mansion, Top War: Battle Game
 
 Mechanics: [Merging](#857-merging)
 
-#### 8.4.5	 Number/token puzzles
+#### 10.4.5	 Number/token puzzles
 Puzzles involving placing numbers or tokens in a grid according to a given ruleset (such as no number must appear twice in a particular group or the numbers in a line must add up to a given sum). 
 
 Examples: Fillomino, Hitori, Kakuro, Sudoku 
 
 Mechanics: [Inserting to grid](#856-inserting-to-grid)
 
-#### 8.4.6	 Pattern games
+#### 10.4.6	 Pattern games
 Tokens from a given set of types fill a grid and the player needs to spot and select (or create) groups of them according to a set of rules such as adjacent tokens are of the same type. Selecting the group may be done through swapping adjacent tokens (Candy Crush), firing another token (Bubble Pop) or just selecting a group (Bejeweled). Once a group is selected or created it usually disappears and the tokens will often move to form a slightly different grid. Often powerups are created by selecting or creating large groups of tokens and the games may be timed.
 
 Examples: Bejeweled, Bubble pop, Candy Crush, Tetris
 
 Mechanics: [Pattern matching](#8511pattern-matching), [Powerups](#8513powerups), [Story](#8519story), [Timed gameplay](#8521timed-gameplay)
 
-#### 8.4.7	 Puzzle Games (not word, number or token based)
+#### 10.4.7	 Puzzle Games (not word, number or token based)
 Games where the objective is to solve puzzles with a similar theme. These can be very different from each other although common game mechanics may be identifiable.
 
 Examples: Cut the rope, Hashi (bridges), Sokoban, Tiny bubbles, Euclidea,
 
 Mechanics: [Pattern matching](#8511pattern-matching), [Placing items](#8512placing-items), [Inserting to grid](#856-inserting-to-grid), [Timed gameplay](#8521timed-gameplay)
 
-#### 8.4.8	Rolling games
+#### 10.4.8	Rolling games
 The player moves around an area with collectible items which are collected based on proximity to the player’s avatar. The most famous example is Katamari Damacy where the collected items get stuck to a ball which gets bigger as the game progresses. “Alien Invasion RPG Idle Space” features an Alien with “catching tentacles” where the player has to stay within a certain distance from its victims for a set length of time (while the victims may run randomly, run away or attack the player).
 
 Examples: Alien Invasion RPG Idle Space, Katamari Damarcy 
 
 Mechanics: [Powerups](#8513powerups), [Rolling](#8517rolling), [Timed gameplay](#8521timed-gameplay) 
 
-#### 8.4.9	Sims
+#### 10.4.9	Sims
 Sims or simulators are roleplay or creation games that enable the person to recreate environments, roleplay jobs, roleplay social situations and dating or simulate environments in a virtual world sandbox.
 
 Examples: Rollercoaster manager, SimCity, The Sims 
 
 Mechanics: [Placing items](#8512placing-items), [Resource management](#8515resource-management), [Story](#8519story)
 
-#### 8.4.10	Strategy games
+#### 10.4.10	Strategy games
 Strategy is an umbrella term for games where a set piece of gameplay with a certain set of items, characters or resources will play out very differently depending on how the player deploys and uses them (the player’s strategy). It often encompasses PvP (Player vs Player) and PvE  (Player vs Enemy) but may involve attacking a base or building a base in order to make it harder for an enemy to attack it.
 
 Examples: Boom Beach, Clash of Clans, Warhammer 40,000 Tacticus
 
 Mechanics: [Guilds](#854-guilds), [Placing items](#8512placing-items), [Research](#8514research), [Single player combat](#8518single-player-combat), [Strategy](#8520strategy), [Timed gameplay](#8521timed-gameplay), 
 
-#### 8.4.11	Tower defence games
+#### 10.4.11	Tower defence games
 Waves of enemies march towards the players base and the player places structures to try and block, destroy or otherwise prevent them from reaching the base. Usually timed but sometimes with a setup period where the player can place defences before the attack begins.
 
 Examples: Plants vs Zombies
