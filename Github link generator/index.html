@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> <title>LinkGen for github markdown</title>
 </head>
 <body>
 
 <script type="module">
-function generateMarkdownLink(heading) {
- let output="";
-  // Remove leading hashes and trim whitespace
-  const text = heading.replace(/^#+\s*/, '').trim();
+  function generateMarkdownLink(heading) {
+    let output="";
+    // Remove leading hashes and trim whitespace
+    const text = heading.replace(/^#+\s*/, '').trim();
 
-  // Create the anchor: lowercase, remove special chars except hyphens, replace spaces with hyphens
-  const anchor = text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // remove punctuation
-    .replace(/\s+/g, '-')     // replace spaces with hyphens;
-//output=`[${text}](#${anchor})`
-document.getElementById('output').textContent = `[${text}](#${anchor})`;
+    // Create the anchor: lowercase, remove special chars except hyphens, replace spaces with hyphens
+    const anchor = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // remove punctuation
+      .replace(/\s+/g, '-')     // replace spaces with hyphens;
+      document.getElementById('output').textContent = `[${text}](#${anchor})`; // Generate the link text as you type
+    };
 
-//  return `[${text}](#${anchor})`;
-}
-
-// Example usage:
-//console.log(generateMarkdownLink('#### 8.5.5 Idle gaming'));
-// Output: [Idle gaming](#855-idle-gaming)
-
-document.getElementById('heading').addEventListener("input", (event) => {
-generateMarkdownLink(event.target.value);
-});
-
+    document.getElementById('heading').addEventListener("input", (event) => {
+      generateMarkdownLink(event.target.value);
+    });
 
 </script>
 
+<form> // Do you need a form element for a single element and no submit button?
+  <input type="text" id="heading"></input>
+  <div id="output"></div>
+</form> // Could add a button to add the links to the end of another <div> Then you could create a load of links at the same time
 
-<form>
-<input type="text" id="heading"></input>
-<div id="output"></div>
-</form>
 
 </body>
