@@ -28,11 +28,11 @@ Gamers with sight loss need to be able to follow the story so cutscenes, in game
 If a game can be playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss. 
 
 ## 4	Designing upwards theory
-Gamers across the spectrum of sight loss, including players with absolutely no sight whatsoever, should be able to enjoy the same titles as everyone else. The features that can be of assistance, (menu narration, resizable fonts, high contrast options, use of haptics for information etc) will not only assist gamers with sight loss but anyone with greater levels of usable vision.
+Gamers across the spectrum of sight loss, including players with absolutely no sight whatsoever, should be able to enjoy the same titles as everyone else. Many of the features that can be of assistance, (menu narration, resizable fonts, high contrast options, use of haptics for information etc) will not only assist gamers with sight loss but anyone with greater levels of usable vision.
 
 By considering the fundamentals of how players interact with your game and ensuring that information is presented through different types of information channels (visually, audibly and where possible haptically) from the start of a project you can reduce the number of changes needed to make the game accessible later on.
 
-As an underlying principle, any information that needs to be communicated should be communicated with high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice delivered through the settings menus.
+Any information that needs to be communicated should be communicated with high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice delivered through the settings menus.
 
 Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who are colour blind.
 
