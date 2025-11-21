@@ -120,10 +120,8 @@ A well designed and informative user interface (UI) plays an important role of c
 Small UI elements are a common accessibility issue for low vision players. For desktop and mobile gaming the minimum target size is 32 x 32 pixels and it is recommended that clickable elements are at least 44 x 44 pixels . Scalable user interfaces, however, can resolve this across all platforms. Allow the player to increase the size of UI elements to make them more readable during gameplay. If there is a maximum value at which the layout and functionality are maintained, consider allowing the player to increase the UI scale beyond this. Though this may cause UI elements to overlap and some useful information to be lost, these increased UI sizes may be useful to some low vision players. 
 
 Allowing the player to adjust the scale and position of individual UI elements is another way to improve their readability by low vision players. Including this level of customisation allows players to enlarge and increase the visibility of UI elements they find most difficult to see without increasing the size of less useful elements or those for which no scaling is needed. 
-Examples: Warframe, Tom Clancy’s The Division 2
 
-> [!note]
-> These examples should be worked into the text unless we have them for all the options.
+Examples of this include Warframe and Tom Clancy’s The Division 2.
 
 ### 8.6	High contrast filter
 Low vision players may find it difficult to distinguish key elements such as interactive objects or non-player characters from the rest of the environment. This can be addressed by implementing a high-contrast mode in which the game environment and other static objects are displayed in a greyscale colour palette, while important or interactive objects are displayed in bright colours that stand out to low vision players. 
@@ -159,9 +157,10 @@ Flashing effects must be avoided by default and if an effect is needed then an a
 
 Flickering and strobe lights can be encountered within game environments and consist of rapid patterned changes of colour and from bright all white to no light being emitted. They have been used in wide range of games that are either set in a space themed horror/thriller or other light ambience in intense game locations. Flickering and strobe lights need to have options that disable the lighting effect and any epilepsy inducing light effects should be disabled on default in the game settings and only be available if enabled by the user.
 
-### 8.10	Standardising the experience across all screens
+### 8.10	Accessibility from the start
 From the very first onboarding elements, accessibility features such as narration should be present to allow players to set up the game as they desire, without the need for additional assistance. This includes elements such as brightness sliders or screen calibration, which normally appear before any accessibility settings are shown. As demonstrated by God Of War Ragnarök, a voiced prompt could guide the user how to enable narration functionality during set-up.
-Examples: The Last Of Us Parts I and II, Gears 5 Horde and Escape modes
+
+This has been done well in The Last Of Us Parts I and II and Gears 5 in Horde and Escape modes.
 
 ## 9	In-game navigation
 Games that allow players to explore at will can be hard to navigate for players who cannot see the offered paths easily (or at all). Though some games can allow players to move through the world by pressing a button and have the camera turn, there are also other ways to make this work, including audio cues (see below). Enabling players to roam freely in an open world while still being able to follow both main and side quests is a difficult balance and, at the time of writing this advice, one that has not been achieved to our knowledge. Players will need to be able to select which quest to pursue and the game will need to communicate path markers and quest items appropriately, including ‘hidden’ or discoverable items where the player must find the location themselves. Maps should be made as accessible as possible using contrast, magnification and potentially simplification or colour coding. If a map window tells you information about that region such as which quests and quest objects are available in that region, then this should be read out. 
