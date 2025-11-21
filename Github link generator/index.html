@@ -7,6 +7,7 @@
 <script type="module">
   function generateMarkdownLink(heading) {
     let output="";
+
     // Remove leading hashes and trim whitespace
     const text = heading.replace(/^#+\s*/, '').trim();
 
@@ -22,12 +23,19 @@
       generateMarkdownLink(event.target.value);
     });
 
+    document.getElementById('addLink').addEventListener("click", (event) => {
+      document.getElementById('linkList').textContent += document.getElementById('output').textContent;
+    });
+  
 </script>
 
 <form> // Do you need a form element for a single element and no submit button?
   <input type="text" id="heading"></input>
   <div id="output"></div>
+  //<input type="button" Value="Add link to list" id="addLink">
 </form> // Could add a button to add the links to the end of another <div> Then you could create a load of links at the same time
 
+  <div id="linkList"></div>
 
 </body>
+
