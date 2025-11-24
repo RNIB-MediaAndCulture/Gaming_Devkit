@@ -4,10 +4,10 @@
 ## 1	Spectrum of sight loss 
 People with sight loss cannot be thought of as one homogenous group. People have different levels and types of sight loss, and their level of sight will decide how they interact with content. People with significant sight loss who are generally registered as severely sight impaired have different requirements to those of people who are partially sighted. 
 
-RNIB has an a-z of sight conditions but some of the most common are:
+RNIB has an [A to Z of sight conditions](https://www.rnib.org.uk/your-eyes/eye-conditions-az/) but some of the most common are:
 1.	[Glaucoma](https://www.rnib.org.uk/your-eyes/eye-conditions-az/glaucoma/)
 2.	[Diabetes related eye conditions](https://www.rnib.org.uk/your-eyes/eye-conditions-az/diabetes-related-eye-conditions/)
-3.	[Cataract](https://www.rnib.org.uk/your-eyes/eye-conditions-az/cataracts/)
+3.	[Cataracts](https://www.rnib.org.uk/your-eyes/eye-conditions-az/cataracts/)
 4.	[Macular Degeneration](https://www.rnib.org.uk/your-eyes/eye-conditions-az/age-related-macular-degeneration-amd/)
 5.	[Retinitis Pigmentosa](https://www.rnib.org.uk/your-eyes/eye-conditions-az/retinitis-pigmentosa/)
 
@@ -44,25 +44,21 @@ Accessibility is a journey not a destination and all progress is valid. To prese
 
 ## 6 The Value of Agency
 
-During accessibility discussions, it is always important to consider how much agency a player has via particular accessibility implementations. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable but if a lack of agency means the gamer losses too much challenge then the game can lose its appeal. 
+During accessibility discussions, it is always important to consider how much agency a player has via particular accessibility implementations. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable but if a lack of agency means the gamer loses too much challenge then the game can equally lose its appeal. 
 
 ### 6.1 Targeting/Aiming
-A common mechanic for making aiming accessible is to use a lock-on mechanic to keep a target in the centre of your view. Other options are to have the crosshairs lock on to targets independent of the view or automatically hit any target in range if the player attacks. These increase accessibility and allow progression but remove agency and can undermine the gaming experience. 
+A common mechanic for making aiming accessible is to use a lock-on system to keep a target in the centre of your view. Other options are to have the crosshairs lock on to targets independent of the view or automatically hit any target in range if the player attacks. These increase accessibility and allow progression but remove agency and can undermine the gaming experience. 
 
 Audio aiming, as demonstrated in Sea Of Thieves and Atomfall uses audio tones to communicate to the player where an enemy is in relation to the crosshairs. This places control back in the gamer's hands and allows them to choose which opponent they want to attack. 
 
 ### 6.2 Minigames, puzzles and Quick Time Events
 Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional mechanisms that can be challenging to make accessible. This also applies to some in-game puzzles. 
 
-It can be tempting to skip these elements but doing so reduces the players agency as well as bypassing any part of the story that is told through them. Where possible blind and partially sighted gamers should be given the information they need to solve the puzzle, QTE or minigame in a timely manner. For a QTE this could be speech giving the button name and anything else the gamer needs to know as concisely as possible. For instance "X" is better than "press the X button" and if you need to press the button fast repeatedly "mash X" is better than "press the X button repeatedly" but a fast tone that tells a player to press the button repeatedly could be combined with speech saying "X". Remenmber to use the same communication in tutorials and on-boarding so blind gamers can learn it organically.
+It can be tempting to skip these elements but doing so reduces the players agency as well as bypassing any part of the story that is told through them. Where possible blind and partially sighted gamers should be given the information they need to solve the puzzle, QTE or minigame in a timely manner. For a QTE this could be speech giving the button name and anything else the gamer needs to know as concisely as possible. For instance "X" is better than "press the X button" and if you need to press the button fast repeatedly "mash X" is better than "press the X button repeatedly". A fast tone that indicates  to a player to press the button repeatedly could be combined with speech saying "X" for an even more fluid method of information delivery. Remember to use the same communication in tutorials and on-boarding so blind gamers can learn it organically.
 
-If it isn't possible to make minigame, puzzle or QTE accessible then having it autocomplete is better than skipping it because it allows the player to experience that part of the story. If the accessible play method is appreciably more difficult for a player with sight loss than the non-accessible method is for a sighted player then there could be a menu option to autocomplete this type of puzzle. This is best determined by play testing with gamers with sight loss who are used to audio interactions and so will fare better with them than a sighted person would.  
+If it isn't possible to make a minigame, puzzle or QTE accessible then having it autocomplete is better than skipping it, as it allows the player to experience that part of the story. If the accessible play method is appreciably more difficult for a player with sight loss than the non-accessible method is for a sighted player then there could be a menu option to autocomplete this type of puzzle. This is best determined by play testing with gamers with sight loss who are used to audio interactions and so will fare better with them than a sighted person would.  
 
 Any part of a game that is skipped or autocompletes is a part that the gamer doesn't get to play. 
-
-**To Add:**
-- Audio beacons for navigation rather than rails
-
 
 ## 7	Platform specific requirements 
 The accessibility needs of users do not change much depending on platform but the tools available on platforms may do. These may also create situational accessibility needs. If a web-based game can be played through a PC browser or a mobile phone, then the size of onscreen text will need to be larger for the mobile phone in proportion to the screen size. The gamer using a mobile phone could be considered situationally partially sighted because they will face much of the same challenges as a partially sighted gamer may face using a larger screen.
@@ -163,7 +159,7 @@ From the very first onboarding elements, accessibility features such as narratio
 This has been done well in The Last Of Us Parts I and II and Gears 5 in Horde and Escape modes.
 
 ## 9	In-game navigation
-Games that allow players to explore at will can be hard to navigate for players who cannot see the offered paths easily (or at all). Though some games can allow players to move through the world by pressing a button and have the camera turn, there are also other ways to make this work, including audio cues (see below). Enabling players to roam freely in an open world while still being able to follow both main and side quests is a difficult balance and, at the time of writing this advice, one that has not been achieved to our knowledge. Players will need to be able to select which quest to pursue and the game will need to communicate path markers and quest items appropriately, including ‘hidden’ or discoverable items where the player must find the location themselves. Maps should be made as accessible as possible using contrast, magnification and potentially simplification or colour coding. If a map window tells you information about that region such as which quests and quest objects are available in that region, then this should be read out. 
+Games that allow players to explore at will can be hard to navigate for players who cannot see the offered paths easily (or at all). Though some games can allow players to move through the world by pressing a button and have the camera turn, there are also other ways to make this work that provide greater freedom, including use of audio cues (see below). Enabling players to roam freely in an open world while still being able to follow both main and side quests is a difficult balance and, at the time of writing this advice, one that has not been achieved to our knowledge. Players will need to be able to select which quest to pursue and the game will need to communicate path markers and quest items appropriately, including ‘hidden’ or discoverable items where the player must find the location themselves. Maps should be made as accessible as possible using contrast, magnification and potentially simplification or colour coding. If a map window tells you information about that region such as which quests and quest objects are available in that region, then this should be read out. 
 
 ### 9.1	Audio cues
 Audio cues are a key part of gaming with sight loss. They are both the medium in which information is delivered and that the game is experienced and understood. Audio cues should be clear and distinct but should also fit within the game’s universe so as not to break immersion. You don’t always have to use accessibility specific cues either, for instance an enemy’s attack audio could give enough of an audio cue to parry it in an action setting without being able to see it coming and without needing an extra accessibility cue, as can be seen in God Of War 2018 and Star Wars Jedi Survivor  .
