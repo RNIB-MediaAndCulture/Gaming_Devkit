@@ -11,6 +11,8 @@
 ## Ensure design patterns here are carried over to Catalogue
 - Asynchronous info?
 
-
+## Links to other projects?
+- accessible crosswords
+- sodukos?
 
 
