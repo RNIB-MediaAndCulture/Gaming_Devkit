@@ -98,12 +98,12 @@ catalogue:
     
     - name: Combat (first-person)
       description: >
-        The player navigates a map "attack"ing enemies which may be NPCs or
+        The player navigates a map attacking enemies which may be NPCs or
         other players. Other characters may be friendly, neutral or unaligned (alliance
         can shift).
       mechanics used:
       - "Aim"
-      - "Assistant"
+      - "Companion"
       - "attack"
       - "block"
       - "crouch"
@@ -385,29 +385,7 @@ catalogue:
         patterns to consider:
         - "Customisable UI / HUD"
         - "High Contrast"
-
-    - name: "Assistant"
-      description: >
-        AI or automated systems that can help the player perform actions, navigate, or make decisions. This could 
-        include combat assistants, navigation aids, or gameplay automation features.
-      potentialBarriers:
-      - barrier: "Players may not know assistant features exist or how to activate them."
-        consider:
-        - "Making assistant features discoverable through tutorials and clear menu options."
-        - "Providing toggle options for different levels of assistance."
-      - barrier: "Assistant features may not be customizable enough for individual needs."
-        consider:
-        - "Offering granular control over what the assistant helps with."
-        - "Providing adjustable assistance levels rather than all-or-nothing options."
-      - barrier: "Audio feedback from assistants may not be accessible to players with hearing loss."
-        consider:
-        - "Providing visual indicators for assistant actions and suggestions."
-        - "Using captions for any spoken assistant dialogue."
-        patterns to consider:
-        - "Captions"
-        - "Text to speech"
-        - "Visual sound effects"
-
+        
     - name: "Movement2D"
       description: >
         The player controls their character's movement through a 2D or 3D space, typically using directional 
@@ -431,6 +409,7 @@ catalogue:
         patterns to consider:
         - "Audio beacons"
         - "Coded audio"
+        
     - name: "Movement2D"
       description: >
         Placeholder
