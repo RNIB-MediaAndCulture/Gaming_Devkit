@@ -15,7 +15,7 @@ RNIB has an [A to Z of sight conditions](https://www.rnib.org.uk/your-eyes/eye-c
 We expect the games industry will continue to improve and evolve and we intend that this document should do the same. If you feel any advice is missing, any challenge is not tackled or any common solution is not represented then let us know. This document belongs to the games industry and we will be updating it in line with accessibility best practice.
 
 ## 3	The CAPS test
-When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain Challenge, Ambience, Participation and Story.
+When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain Challenge, Agency, Participation and Story.
 ### Challenge
 The game needs to challenge a player, or they will lose interest. 
 ### Agency
