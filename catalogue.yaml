@@ -22,15 +22,22 @@ catalogue:
       - "radio button - mutex selection"
       - "select-menu"
       - "slider - proportion selection"
+      - "select - atomic selection"
+      - "unavailable"
+    
     - name: Character Progression
       description: >
-        Players improve their character’s stats, skills, or gear over time.
+        Players improve their character's stats, skills, or gear over time.
         Can be tied to experience points, quests, or achievements.
       mechanics used:
       - "levelling-up"
       - "object description"
       - "object comparison"
       - "questing/achievements"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "select - atomic selection"
+    
     - name: "Class-Based Play /Role-play"
       description: >
         Players take on specific roles with unique abilities (e.g., healer,
@@ -38,6 +45,11 @@ catalogue:
       mechanics used:
       - "character creation"
       - "character selection"
+      - "object description"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "select - atomic selection"
+    
     - name: Combat (1v1)
       description: >
         A player uses a combination of attacks, blocks, jumps, crouches and
@@ -46,9 +58,12 @@ catalogue:
       mechanics used:
       - "attack"
       - "block"
+      - "dodge"
       - "locate opponant2D"
       - "Movement2D"
       - "Perceive attack"
+      - "Perceive FoE"
+    
     - name: Combat (beat 'em up)
       description: >
         The player fights through waves of enemies often in a side-scrolling
@@ -57,9 +72,13 @@ catalogue:
       mechanics used:
       - "attack"
       - "block"
+      - "dodge"
       - "locate opponant2D"
       - "Movement2D"
       - "Perceive attack"
+      - "Perceive FoE"
+      - "Perceive collision"
+    
     - name: Combat (continuous)
       description: >
         Player controlled character or characters are ordered to attack enemies and then
@@ -76,6 +95,7 @@ catalogue:
       - "Movement2D"
       - "Perceive attack"
       - "Perceive FoE"
+    
     - name: Combat (first-person)
       description: >
         The player navigates a map "attack"ing enemies which may be NPCs or
@@ -92,6 +112,9 @@ catalogue:
       - "Movement2D"
       - "Perceive attack"
       - "Perceive FoE"
+      - "Perceive collision"
+      - "Perceive direction"
+    
     - name: Combat (menu driven)
       description: >
         Combat is turn based although the player or opponent may miss turns
@@ -107,6 +130,8 @@ catalogue:
       - "select - atomic selection"
       - "slider - proportion selection"
       - "unavailable"
+      - "object description"
+    
     - name: Combat (multi-character turn-based)
       description: >
         Other characters may be friendly, neutral or unaligned (alliance can shift).
@@ -117,10 +142,23 @@ catalogue:
       - "Movement2D"
       - "Perceive attack"
       - "Perceive FoE"
+      - "character selection"
+      - "special attack"
+    
     - name: Construction
       description: >
         Players place, remove, or modify elements in the game world to create structures 
         or solve spatial challenges. Common in sandbox and survival games.
+      mechanics used:
+      - "place building"
+      - "move building"
+      - "sell building"
+      - "Perceive objects"
+      - "Perceive collision"
+      - "Movement2D"
+      - "navigate menu 1D"
+      - "select - atomic selection"
+    
     - name: Environmental Interaction
       description: >
         Players manipulate the environment directly—moving objects, activating
@@ -129,6 +167,9 @@ catalogue:
       - "Perceive interactable"
       - "Perceive object state"
       - "Perceive environment state"
+      - "Perceive objects"
+      - "Movement2D"
+    
     - name: Exploration
       description: >
         The player has a large map to explore and movement through this environment is 
@@ -139,6 +180,9 @@ catalogue:
       - "Perceive objects"
       - "Perceive path"
       - "Perceive direction"
+      - "Movement2D"
+      - "Perceive interactable"
+    
     - name: Management / Tycoon
       description: >
         Players oversee systems like cities, businesses, or ecosystems, making
@@ -150,34 +194,103 @@ catalogue:
       - "place building"
       - "sell building"
       - "upgrade building"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "select - atomic selection"
+      - "object description"
+      - "object comparison"
+    
     - name: Narrative Choice / Branching Paths
       description: >
         Players make decisions that affect the story or game world. These
         choices may lead to different outcomes or endings.
+      mechanics used:
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "radio button - mutex selection"
+      - "select - atomic selection"
+      - "object description"
+    
     - name: Racing
       description: >
         Players compete to cover a track faster than other players or faster
         than a set time limit.
+      mechanics used:
+      - "Movement2D"
+      - "Perceive collision"
+      - "Perceive path"
+      - "Perceive direction"
+      - "Perceive danger"
+      - "Aim"
+    
     - name: Rhythm / Timing
       description: >
         Players interact with the game in sync with music or timed prompts.
         Found in rhythm games or mini-games within larger titles.
+      mechanics used:
+      - "Perceive attack"
+      - "attack"
+      - "Perceive direction"
+      - "select - atomic selection"
+    
     - name: Survival
       description: >
         Players must manage health, hunger, stamina, and other survival metrics
         while avoiding threats. Often includes crafting and exploration.
+      mechanics used:
+      - "Movement2D"
+      - "Perceive danger"
+      - "Perceive objects"
+      - "Perceive collision"
+      - "Perceive interactable"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "object description"
+      - "object comparison"
+      - "place building"
+    
     - name: Adventure
       description: eg. Neverwinter nights, Zelda etc
+      mechanics used:
+      - "Movement2D"
+      - "Perceive objects"
+      - "Perceive path"
+      - "Perceive direction"
+      - "Perceive collision"
+      - "Perceive interactable"
+      - "attack"
+      - "block"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "questing/achievements"
+      - "object description"
+    
     - name: Simulation
       description: >
         The player can participate in a simulated world or activity. This
         could be through computer generated characters that the player controls or a
         first or third person simulated activity such as driving a train or powerwashing
         an area.
+      mechanics used:
+      - "Movement2D"
+      - "Perceive collision"
+      - "Perceive objects"
+      - "Perceive direction"
+      - "Perceive path"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+    
     - name: Sports [stub]
       description: Simulation of
       mechanics used:
       - "team identification"
+      - "Movement2D"
+      - "Aim"
+      - "attack"
+      - "Perceive FoE"
+      - "Perceive objects"
+      - "Perceive direction"
+    
     - name: Stealth
       description: >
         Player guides their character to move around a map without alerting
@@ -185,10 +298,29 @@ catalogue:
         is facing and timing the players movements to avoid alerting them. Player may
         need to get their character to crouch. The enemies position may be communicated
         via visual or audio means or require the player to time their action.
+      mechanics used:
+      - "Movement2D"
+      - "crouch"
+      - "Perceive FoE"
+      - "locate opponant2D"
+      - "Perceive collision"
+      - "Perceive objects"
+      - "Perceive direction"
+      - "Perceive danger"
+    
     - name: "strategy"
       description: ''
       mechanics used:
       - "strategy"
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "select - atomic selection"
+      - "Movement2D"
+      - "attack"
+      - "combat mode"
+      - "Perceive FoE"
+      - "locate opponant2D"
+    
     - name: Co-op Mechanics
       description: >
         Players work together with another player to achieve shared goals, often requiring 
@@ -199,10 +331,21 @@ catalogue:
       - "emoji"
       - "place marker"
       - "perceive marker"
+      - "team identification"
+    
     - name: Puzzle
       description: >
         This refers to games which are entirely puzzle based rather than
         games such as adventure games that feature puzzles.
+      mechanics used:
+      - "navigate menu 1D"
+      - "navigate menu 2D"
+      - "select - atomic selection"
+      - "Perceive objects"
+      - "Perceive object state"
+      - "Perceive environment state"
+      - "Perceive interactable"
+      - "Movement2D"
   mechanics:
     - name: "Perceive direction"
       description: >
@@ -219,19 +362,75 @@ catalogue:
 
     - name: "Aim"
       description: >
-        Placeholder
+        The player must precisely position a targeting reticle or crosshair to interact with objects or attack 
+        enemies, typically using mouse, joystick, or motion controls.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Precise aiming requires fine motor control that may be difficult for gamers with motor impairments or tremors."
+        consider:
+        - "Providing aim assist options with adjustable strength (target magnetism, friction, tracking)."
+        - "Offering target lock-on mechanics as an alternative to free aiming."
+        - "Implementing larger hit boxes or more forgiving aim requirements."
+      - barrier: "Players with sight loss cannot see targets to aim at them."
+        consider:
+        - "Providing audio targeting systems that indicate target direction and distance through sound."
+        - "Implementing auto-aim options for accessibility."
+        - "Using haptic feedback to indicate when aim is on target."
+        patterns to consider:
+        - "Audio beacons"
+        - "Coded audio"
+      - barrier: "Players with partial sight may struggle to see small crosshairs or distant targets."
+        consider:
+        - "Allowing customization of crosshair size, color, and contrast."
+        - "Providing target highlighting or outline options."
+        patterns to consider:
+        - "Customisable UI / HUD"
+        - "High Contrast"
 
     - name: "Assistant"
       description: >
-        Placeholder
+        AI or automated systems that can help the player perform actions, navigate, or make decisions. This could 
+        include combat assistants, navigation aids, or gameplay automation features.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players may not know assistant features exist or how to activate them."
+        consider:
+        - "Making assistant features discoverable through tutorials and clear menu options."
+        - "Providing toggle options for different levels of assistance."
+      - barrier: "Assistant features may not be customizable enough for individual needs."
+        consider:
+        - "Offering granular control over what the assistant helps with."
+        - "Providing adjustable assistance levels rather than all-or-nothing options."
+      - barrier: "Audio feedback from assistants may not be accessible to players with hearing loss."
+        consider:
+        - "Providing visual indicators for assistant actions and suggestions."
+        - "Using captions for any spoken assistant dialogue."
+        patterns to consider:
+        - "Captions"
+        - "Text to speech"
+        - "Visual sound effects"
 
-
+    - name: "Movement2D"
+      description: >
+        The player controls their character's movement through a 2D or 3D space, typically using directional 
+        inputs (keyboard, joystick, or other controllers).
+      potentialBarriers:
+      - barrier: "Fine motor control required for analogue stick movement can be difficult for gamers with motor impairments."
+        consider:
+        - "Providing digital directional alternatives (discrete button presses) alongside analogue controls."
+        - "Offering adjustable movement speed settings and acceleration curves."
+        - "Implementing auto-run or hold-to-move options to reduce sustained input requirements."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Simultaneous movement and other actions (looking, attacking) can be challenging for gamers with limited motor function."
+        consider:
+        - "Allowing button remapping and custom control schemes."
+        - "Implementing assisted movement options or auto-navigation to waypoints."
+      - barrier: "Players with sight loss cannot see where they are moving or what obstacles are in their path."
+        consider:
+        - "Providing audio cues for terrain changes, nearby obstacles, and directional information."
+        - "Implementing audio beacons for navigation waypoints."
+        patterns to consider:
+        - "Audio beacons"
+        - "Coded audio"
     - name: "Movement2D"
       description: >
         Placeholder
@@ -242,10 +441,32 @@ catalogue:
 
     - name: "Perceive FoE"
       description: >
-        Placeholder
+        The player must identify whether a character or entity is a Friend or Enemy (FoE), which may affect gameplay 
+        decisions and strategies.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Friend/enemy distinction relies on visual cues (colors, uniforms, markers) that players with sight loss or color vision deficiency cannot perceive."
+        consider:
+        - "Using distinct audio signatures for friends vs. enemies."
+        - "Implementing verbal identification (Ally nearby, Enemy detected)."
+        - "Using different sound profiles for friendly and enemy actions."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+        - "Audio beacons"
+      - barrier: "Color-coded friend/enemy systems fail for players with color vision deficiency."
+        consider:
+        - "Using shapes, patterns, and symbols in addition to color."
+        - "Allowing customization of friend/enemy colors."
+        - "Implementing CVD-friendly color profiles."
+        patterns to consider:
+        - "CVD friendly communication"
+        - "High Contrast"
+      - barrier: "Neutral or shifting alliances can be confusing without clear indication."
+        consider:
+        - "Providing clear audio/visual feedback when alliance status changes."
+        - "Using distinct markers or sounds for neutral entities."
+        patterns to consider:
+        - "Coded audio"
 
 
     - name: "Perceive attack"
@@ -274,10 +495,34 @@ catalogue:
 
     - name: "Perceive danger"
       description: >
-        Placeholder
+        The player needs to identify environmental hazards, incoming threats, or dangerous situations that require 
+        avoidance or defensive action.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only danger indicators (red zones, warning signs, visual effects) are inaccessible to players with sight loss."
+        consider:
+        - "Using warning sounds that increase in urgency as danger approaches."
+        - "Implementing haptic feedback for proximity to hazards."
+        - "Providing verbal warnings for specific danger types."
+        patterns to consider:
+        - "Coded audio"
+        - "Binaural audio"
+        - "Adjustable semantic audio profiles"
+      - barrier: "Subtle environmental danger cues may be missed by players with partial sight or attention difficulties."
+        consider:
+        - "Making danger indicators more pronounced and distinctive."
+        - "Offering adjustable danger warning sensitivity."
+        - "Using multiple sensory channels (audio, visual, haptic) simultaneously."
+        patterns to consider:
+        - "High Contrast"
+        - "Coded audio"
+      - barrier: "Players with hearing loss may miss audio danger warnings."
+        consider:
+        - "Providing visual danger indicators with high contrast."
+        - "Using screen shake or controller vibration for imminent danger."
+        - "Implementing visual sound effects for danger cues."
+        patterns to consider:
+        - "Visual sound effects"
+        - "High Contrast"
 
 
     - name: "Perceive direction"
@@ -304,10 +549,35 @@ catalogue:
 
     - name: "Perceive interactable"
       description: >
-        Placeholder
+        The player needs to identify which objects or elements in the environment can be interacted with and 
+        understand what interactions are possible.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Interactive objects that only indicate interactability through visual highlighting are inaccessible to players with sight loss."
+        consider:
+        - "Using distinct audio cues when near interactive objects."
+        - "Implementing object scanning with audio feedback listing nearby interactables."
+        - "Providing verbal descriptions of available interactions."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Subtle visual cues for interactability may be missed by partially sighted players."
+        consider:
+        - "Making interaction prompts more prominent with high contrast."
+        - "Allowing customization of interaction indicator size and color."
+        - "Using consistent, clear visual language for all interactive elements."
+        patterns to consider:
+        - "High Contrast"
+        - "Customisable UI / HUD"
+      - barrier: "Context-sensitive interactions may not be obvious without trying different buttons."
+        consider:
+        - "Announcing available interactions when approaching objects."
+        - "Displaying/announcing all possible interactions clearly."
+        - "Using consistent interaction buttons across different object types."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+        - "Visual sound effects"
 
 
     - name: "Perceive object state"
@@ -320,42 +590,149 @@ catalogue:
 
     - name: "Perceive objects"
       description: >
-        Placeholder
+        The player needs to identify and understand objects in the game environment, including interactive items, 
+        collectibles, obstacles, and decorative elements.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot see objects or distinguish them from the environment."
+        consider:
+        - "Implementing object scanning or detection systems with audio feedback."
+        - "Using audio beacons for important objects."
+        - "Providing verbal object descriptions when nearby or focused."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Small objects or poor visual contrast makes objects hard to see for partially sighted players."
+        consider:
+        - "Highlighting interactive objects with high contrast outlines."
+        - "Allowing customization of object highlight colors and styles."
+        - "Implementing object magnification or zoom features."
+        patterns to consider:
+        - "High Contrast"
+        - "Customisable UI / HUD"
+      - barrier: "Visual clutter makes it difficult to distinguish important objects from background elements."
+        consider:
+        - "Offering simplified visual modes with reduced clutter."
+        - "Providing object filtering options to highlight only specific object types."
+        - "Using distinct audio signatures for different object categories."
+        patterns to consider:
+        - "Audio beacons"
+        - "Coded audio"
 
 
     - name: "Perceive path"
       description: >
-        Placeholder
+        The player must identify navigable routes, understand terrain layout, and determine where they can or cannot go.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only path indicators are inaccessible to players with sight loss."
+        consider:
+        - "Implementing audio breadcrumb trails or path-following audio cues."
+        - "Using haptic feedback to indicate when on/off the path."
+        - "Providing verbal descriptions of path options (Path forward, Dead end ahead)."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Complex 3D environments make paths difficult to perceive even with sight."
+        consider:
+        - "Offering assisted navigation modes that guide players along paths."
+        - "Implementing waypoint systems with audio/visual guidance."
+        - "Providing minimap audio descriptions."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+      - barrier: "Distinguishing walkable from non-walkable terrain is difficult without visual cues."
+        consider:
+        - "Using distinct audio for different terrain types."
+        - "Implementing edge detection warnings when approaching boundaries."
+        - "Providing high contrast modes for terrain visualization."
+        patterns to consider:
+        - "Coded audio"
+        - "High Contrast"
+        - "Binaural audio"
 
 
     - name: "attack"
       description: >
-        Placeholder
+        The player initiates an offensive action against an enemy or object, typically through button presses or 
+        trigger pulls.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Precise timing or button combinations may be difficult for gamers with motor impairments."
+        consider:
+        - "Offering simpler attack inputs with fewer button combinations."
+        - "Implementing attack queuing or buffering to make timing more forgiving."
+        - "Providing one-button attack options or auto-attack modes."
+      - barrier: "Players with sight loss cannot see when attacks connect or when they should attack."
+        consider:
+        - "Using distinct audio feedback for successful hits, misses, and critical hits."
+        - "Implementing haptic feedback for attack confirmation."
+        - "Providing audio cues for optimal attack timing windows."
+        patterns to consider:
+        - "Coded audio"
+        - "Adjustable semantic audio profiles"
+      - barrier: "Rapid repeated button presses (button mashing) can cause fatigue or be impossible for some players."
+        consider:
+        - "Offering toggle or hold alternatives to repeated pressing."
+        - "Reducing or eliminating quick-time events that require rapid inputs."
+        patterns to consider:
+        - "Digital control"
 
 
     - name: "attack - continuous"
       description: >
-        Placeholder
+        The player's character automatically continues attacking once an attack command is given, until told to stop 
+        or the target is defeated.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players need to know when continuous attacks start, stop, or if the target changes."
+        consider:
+        - "Providing clear audio feedback when entering/exiting continuous attack mode."
+        - "Using distinct sounds for attacks on different targets."
+        - "Visual indicators showing continuous attack status."
+        patterns to consider:
+        - "Coded audio"
+      - barrier: "Players with sight loss may not know when to cancel continuous attacks (e.g., when target is defeated or a better target appears)."
+        consider:
+        - "Announcing target status changes through audio (Target defeated, New threat detected)."
+        - "Implementing smart targeting that automatically switches to optimal targets."
+        patterns to consider:
+        - "Text to speech"
+        - "Audio beacons"
+      - barrier: "Managing multiple characters with continuous attacks can be cognitively overwhelming."
+        consider:
+        - "Providing clear character identification in audio feedback."
+        - "Allowing simplified group commands."
+        patterns to consider:
+        - "Coded audio"
+
 
 
     - name: "block"
       description: >
-        Placeholder
+        The player performs a defensive action to reduce or negate incoming damage, typically requiring timing and 
+        directional awareness.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Precise timing for blocks can be difficult for players with delayed reaction times or motor impairments."
+        consider:
+        - "Offering extended block windows or more forgiving timing."
+        - "Implementing auto-block options or assisted blocking."
+        - "Providing block buffering to accept inputs slightly early."
+      - barrier: "Players with sight loss cannot see incoming attacks to time blocks appropriately."
+        consider:
+        - "Using distinct audio cues that telegraph attack timing and type."
+        - "Implementing rhythmic audio patterns that indicate when to block."
+        - "Providing haptic feedback as attack timing indicator."
+        patterns to consider:
+        - "Coded audio"
+        - "Binaural audio"
+        - "Surround sound"
+      - barrier: "Directional blocking requires knowing which direction attacks come from."
+        consider:
+        - "Using surround sound or binaural audio to indicate attack direction."
+        - "Simplifying to non-directional blocking or assisted directional blocking."
+        patterns to consider:
+        - "Audio beacons"
+        - "Binaural audio"
+        - "Surround sound"
 
 
     - name: "character creation"
@@ -376,10 +753,33 @@ catalogue:
 
     - name: "checkbox - additive selection"
       description: >
-        Placeholder
+        Multiple items can be independently toggled on or off, allowing zero, one, or multiple simultaneous selections.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot perceive which checkboxes are checked or unchecked."
+        consider:
+        - "Announcing the state of each checkbox as it's focused (Sound effects: checked)."
+        - "Using distinct sounds for checking vs. unchecking actions."
+        - "Announcing total number of checked items when appropriate."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Visual checkbox states may be unclear for partially sighted players."
+        consider:
+        - "Using high contrast checkmarks or fill colors."
+        - "Making checkboxes larger and more visually distinct."
+        - "Using text labels in addition to checkmarks (ON/OFF)."
+        patterns to consider:
+        - "High Contrast"
+        - "Clear fonts and text"
+      - barrier: "Understanding that multiple selections are possible may not be obvious."
+        consider:
+        - "Announcing that multiple selections are allowed when entering the menu."
+        - "Using distinct terminology (Toggle rather than Select)."
+        - "Providing a select all or clear all option for convenience."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+        - "Opaque background"
 
 
     - name: "combat mode"
@@ -400,18 +800,53 @@ catalogue:
 
     - name: "crouch"
       description: >
-        Placeholder
+        The player makes their character adopt a lower stance, often used for stealth, avoiding detection, or 
+        dodging high attacks.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Toggle vs. hold crouch mechanics - holding buttons can cause fatigue for players with motor impairments."
+        consider:
+        - "Offering both toggle and hold options for crouching."
+        - "Making toggle the default to reduce sustained input requirements."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Players with sight loss may not know when crouching is necessary or beneficial."
+        consider:
+        - "Providing audio cues when crouch-appropriate situations arise (e.g., Low clearance ahead, Enemy looking this way)."
+        - "Implementing contextual auto-crouch options."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Remembering crouch state can be difficult without clear feedback."
+        consider:
+        - "Providing persistent audio or haptic feedback while crouched."
+        - "Using distinct movement sounds when crouched vs. standing."
+        patterns to consider:
+        - "Coded audio"
 
 
     - name: "dodge"
       description: >
-        Placeholder
+        The player performs an evasive maneuver to avoid attacks or hazards, often requiring quick directional input 
+        and timing.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Dodge timing windows are often very tight, difficult for players with delayed reaction times."
+        consider:
+        - "Offering extended dodge timing windows or dodge buffering."
+        - "Implementing assisted dodge mechanics that trigger automatically."
+        - "Providing visual or audio telegraphing of dodge opportunities."
+      - barrier: "Directional dodging requires simultaneous direction and action inputs, challenging for motor-impaired players."
+        consider:
+        - "Simplifying to non-directional dodges or auto-directional dodges."
+        - "Allowing dodge direction to be set separately from execution."
+      - barrier: "Players with sight loss cannot see attacks coming to time dodges."
+        consider:
+        - "Using distinct audio cues that clearly telegraph dodge timing."
+        - "Implementing rhythmic audio patterns for dodge windows."
+        - "Providing haptic feedback for dodge timing."
+        patterns to consider:
+        - "Coded audio"
+        - "Binaural audio"
+        - "Surround sound"
 
 
     - name: "emoji"
@@ -424,10 +859,30 @@ catalogue:
 
     - name: "enter menu"
       description: >
-        Placeholder
+        The player activates or opens a menu system, typically to access settings, inventory, character information, 
+        or game options.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players may not know which button opens menus or how to access different menu types."
+        consider:
+        - "Using consistent button mappings for menu access across the game."
+        - "Providing clear tutorials or button prompts for menu access."
+        - "Allowing menu access through multiple input methods (button, pause, voice)."
+      - barrier: "Menu activation confirmation may only be visual, leaving players with sight loss uncertain if the menu opened."
+        consider:
+        - "Playing a distinct sound effect when menus open."
+        - "Providing verbal confirmation (Settings menu opened)."
+        - "Using haptic feedback for menu state changes."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Overlapping menus or complex menu hierarchies can be confusing."
+        consider:
+        - "Announcing which menu has been opened when entering."
+        - "Providing clear menu breadcrumbs or navigation paths."
+        - "Using distinct audio signatures for different menu types."
+        patterns to consider:
+        - "Digital control"
+        - "Coded audio"
 
 
     - name: "levelling-up"
@@ -440,10 +895,34 @@ catalogue:
 
     - name: "locate opponant2D"
       description: >
-        Placeholder
+        The player must identify and track the position of enemies or opponents within the game space, whether on 
+        screen or off screen.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot visually locate opponents."
+        consider:
+        - "Using directional audio (surround sound/binaural) to indicate opponent positions."
+        - "Implementing audio beacons or pings that reveal enemy locations."
+        - "Providing verbal callouts of opponent positions (e.g., Enemy behind you)."
+        patterns to consider:
+        - "Audio beacons"
+        - "Binaural audio"
+        - "Surround sound"
+        - "Coded audio"
+      - barrier: "Players with partial sight may struggle to distinguish opponents from the environment or friendlies."
+        consider:
+        - "Offering high contrast modes for enemy highlighting."
+        - "Allowing customization of enemy outline colors and thickness."
+        - "Providing clear visual/audio distinction between enemy types."
+        patterns to consider:
+        - "High Contrast"
+      - barrier: "Off-screen opponents are difficult to track without visual indicators."
+        consider:
+        - "Implementing off-screen indicators with audio cues."
+        - "Using 3D audio to maintain spatial awareness of off-screen enemies."
+        patterns to consider:
+        - "Audio beacons"
+        - "Binaural audio"
+        - "Surround sound"
 
 
     - name: "move building"
@@ -456,33 +935,81 @@ catalogue:
 
     - name: "navigate menu 1D"
       description: >
-        Move through a menu in one dimension with a next and last option. This could be vertical (moving up and down), horizontal (moving left and right) or any other modality with next item, previous item and select options. 
+        Move through a menu in one dimension with a next and previous option. This could be vertical (moving up and 
+        down), horizontal (moving left and right) or any other modality with next item, previous item and select options.
       potentialBarriers:
-      - barrier : "Gamers without sight cannot perceive menu elements to navigate them."
-        consider: ""
-      - barrier : "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
+      - barrier: "Gamers without sight cannot perceive menu elements to navigate them."
         consider:
-        - Using clear fonts and text that are easier to read.
-        - Offering a high contrast option or, preferably, a high contrast default.
-        - Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile.
-      - barrier : "Gamers without sight cannot perceive menu elements to navigate them."
-        consider: ""      
-      - barrier : "Movement through the menu is via analogue "
-        consider: ""
-      patterns to consider:
-      - "Clear fonts and text"
-      - "CVD friendly communication"
-      - "High Contrast"
-      - "Text to speech"
-      - "Screenreader support"
-      - "Opaque background"
+        - "Implementing text-to-speech that reads each menu item as it's highlighted."
+        - "Supporting platform screenreaders where available."
+        - "Using pre-recorded audio clips for menu options to enhance quality."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+        - "Pre-recorded audio clips"
+      - barrier: "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
+        consider:
+        - "Using clear fonts and text that are easier to read."
+        - "Offering a high contrast option or, preferably, a high contrast default."
+        - "Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile."
+        - "Making text resizable to accommodate different visual needs."
+        patterns to consider:
+        - "Clear fonts and text"
+        - "High Contrast"
+        - "Opaque background"
+        - "Resizable text"
+      - barrier: "Movement through the menu via analogue controls can be imprecise and difficult."
+        consider:
+        - "Supporting digital directional input (discrete button presses) for menu navigation."
+        - "Implementing menu navigation wrapping (going past the last item returns to first)."
+        - "Preventing accidental navigation with appropriate input deadzone settings."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Long menus without clear structure are difficult to navigate efficiently."
+        consider:
+        - "Announcing position in the menu (Item 3 of 10)."
+        - "Implementing quick navigation (jump to first/last, page up/down)."
+        - "Providing menu search functionality."
+        patterns to consider:
+        - "Text to speech"
+        - "CVD friendly communication"
 
     - name: "navigate menu 2D"
       description: >
-        Placeholder
+        Navigate through menus that have both horizontal and vertical dimensions, such as grid layouts, tables, or 
+        menus with multiple columns and rows.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Gamers without sight cannot perceive the 2D spatial layout of menu elements."
+        consider:
+        - "Implementing text-to-speech that announces each item and its position."
+        - "Announcing row and column information (Row 2, Column 3 of 5)."
+        - "Providing linear navigation alternatives that traverse the 2D space in a predictable pattern."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Understanding the structure and boundaries of 2D menus is cognitively demanding."
+        consider:
+        - "Playing boundary sounds when reaching edges of the menu."
+        - "Announcing menu dimensions when first entered (3 by 4 grid)."
+        - "Allowing toggle between 2D and 1D navigation modes."
+        patterns to consider:
+        - "Coded audio"
+      - barrier: "Analogue control for 2D menu navigation is imprecise."
+        consider:
+        - "Supporting digital directional controls for discrete cell-by-cell movement."
+        - "Implementing grid snapping to prevent landing between menu items."
+        - "Using shoulder buttons or triggers for quick row/column jumping."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Partially sighted gamers may lose track of their position in complex 2D layouts."
+        consider:
+        - "Highlighting the current selection with high contrast indicators."
+        - "Showing visual breadcrumbs or position markers."
+        - "Announcing current position when navigation resumes after inactivity."
+        patterns to consider:
+        - "High Contrast"
+        - "Opaque background"
+        - "Clear fonts and text"
 
 
     - name: "object comparison"
@@ -543,41 +1070,98 @@ catalogue:
 
     - name: "radio button - mutex selection"
       description: >
-        Placeholder
+        Select one option from a mutually exclusive set where selecting a new option automatically deselects the 
+        previous one (e.g., difficulty levels, display modes).
       potentialBarriers:
-      - barrier : "Gamers without sight cannot perceive visual menu elements to change them."
+      - barrier: "Gamers without sight cannot perceive visual menu elements to change them."
         consider:
-        - Spoken menus through text to speech
-      - barrier : "Gamers without sight cannot tell which setting is selected."
+        - "Implementing text-to-speech for menu options."
+        - "Announcing the category name when entering the selection group."
+        - "Using pre-recorded audio clips for common settings."
+        patterns to consider:
+        - "Text to speech"
+        - "Pre-recorded audio clips"
+      - barrier: "Gamers without sight cannot tell which setting is currently selected."
         consider:
-        - Announcing the current setting when the menu element is highlighted through speech.
-      - barrier : "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
+        - "Announcing the current setting when the menu element is highlighted (Difficulty: Normal, selected)."
+        - "Using distinct sounds for the selected option vs. unselected options."
+        - "Announcing when selection changes (Normal deselected, Hard selected)."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Partially sighted gamers can struggle with low contrast, small or hard to read interfaces."
         consider:
-        - Using clear fonts and text that are easier to read.
-        - Offering a high contrast option or, preferably, a high contrast default.
-        - Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile.
-      patterns to consider:
-      - "Clear fonts and text"
-      - "CVD friendly communication"
-      - "High Contrast"
-      - "Text to speech"
-      - "Screenreader support"
-      - "Opaque background"
+        - "Using clear fonts and text that are easier to read."
+        - "Offering a high contrast option or, preferably, a high contrast default."
+        - "Offering opaque backgrounds, preferably as a default but potentially as part of a high contrast profile."
+        - "Making selected options visually distinct with multiple cues (color, size, icons)."
+        patterns to consider:
+        - "Clear fonts and text"
+        - "CVD friendly communication"
+        - "High Contrast"
+        - "Opaque background"
+      - barrier: "Understanding that options are mutually exclusive may not be clear."
+        consider:
+        - "Announcing that only one option can be selected when entering the group."
+        - "Using consistent visual language for radio button groups."
+        - "Grouping related options with clear section headers."
 
-    - name: "select - atomic selection"
+    - name: "select - atomic selection **not right**" 
       description: >
-        Placeholder
+        Choose a single item from a list or set of options where only one item can be selected at a time, and 
+        selecting a new item replaces the previous selection.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot perceive which item is currently selected."
+        consider:
+        - "Announcing the currently selected item when menu is opened."
+        - "Announcing each item's selection state as it's navigated (Selected or Not selected)."
+        - "Using distinct sounds for selected vs. unselected items."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Visual-only indicators of selection state are inaccessible to blind players."
+        consider:
+        - "Using text-to-speech to announce selection changes."
+        - "Playing a confirmation sound when selection changes."
+        - "Supporting screenreader functionality."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Partially sighted players may struggle to see selection indicators."
+        consider:
+        - "Making selection indicators high contrast and clearly visible."
+        - "Allowing customization of selection marker size and color."
+        - "Using multiple visual cues (checkmarks, highlights, borders)."
+        patterns to consider:
+        - "High Contrast"
+        - "Clear fonts and text"
 
 
     - name: "select-menu"
       description: >
-        Placeholder
+        The player confirms a selection or activates a menu item to execute an action or navigate to a submenu.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players may not know which button performs selection vs. navigation."
+        consider:
+        - "Using consistent button mappings for selection throughout the game."
+        - "Announcing available actions when hovering over items (Press X to select)."
+        - "Providing clear visual button prompts."
+      - barrier: "Accidental selections due to sensitive controls or unclear confirmation requirements."
+        consider:
+        - "Implementing optional confirmation prompts for important selections."
+        - "Using a distinct selection confirmed sound or haptic feedback."
+        - "Allowing brief undo or back functionality after selections."
+        patterns to consider:
+        - "Coded audio"
+      - barrier: "Players with sight loss need feedback to know their selection was registered."
+        consider:
+        - "Playing distinct confirmation sounds for successful selections."
+        - "Announcing what was selected (Difficulty: Hard selected)."
+        - "Providing haptic feedback on selection."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+        - "Digital control"
 
 
     - name: "sell building"
@@ -590,10 +1174,41 @@ catalogue:
 
     - name: "slider - proportion selection"
       description: >
-        Placeholder
+        Adjust a value along a continuous or stepped range by moving a slider control, typically used for volume, 
+        brightness, or other scalar settings.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Analogue slider control is imprecise and difficult for players with motor impairments."
+        consider:
+        - "Supporting digital button presses for incremental adjustments."
+        - "Implementing multiple adjustment speeds (fine and coarse)."
+        - "Allowing direct numerical input as an alternative."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Players with sight loss cannot see the current slider position or value."
+        consider:
+        - "Announcing the current value as the slider moves (Volume: 75%)."
+        - "Using audio feedback that represents the value (e.g., volume changes audibly)."
+        - "Announcing minimum, maximum, and default values."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Visual-only slider representations don't convey the current value to blind players."
+        consider:
+        - "Providing numerical value announcements."
+        - "Using positional audio cues (pitch or panning) to represent value."
+        - "Implementing haptic feedback at regular intervals along the slider."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Small visual indicators are hard to see and manipulate for partially sighted players."
+        consider:
+        - "Making slider handles larger and high contrast."
+        - "Displaying the numerical value prominently next to the slider."
+        - "Using clear visual fill or progress indicators."
+        patterns to consider:
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Resizable UI"
 
 
     - name: "special attack"
@@ -632,9 +1247,29 @@ catalogue:
       description: >
         Options which cannot be selected in menus and interfaces are often greyed out or otherwise marked as unavailable.
       potentialBarriers:
-      - barrier : "If the option can be selected but its unavailability is not indicated in audio gamers without sight will not know why they can't select it. If it cannot be selected then they may not know it's there which can cause confusion."
-      consider: 
-      - Allow the option to be selected but indicated audibly either through speech or with a meaningful sound effect that it cannot be used.
+      - barrier: "If the option can be selected but its unavailability is not indicated in audio, gamers without sight will not know why they can't select it. If it cannot be selected then they may not know it's there which can cause confusion."
+        consider:
+        - "Allowing the option to be focused/highlighted but not activated."
+        - "Announcing when focusing unavailable items (New Game - locked, complete tutorial to unlock)."
+        - "Using a distinct sound effect when attempting to select unavailable items."
+        - "Providing clear explanations of why items are unavailable."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Visual greying out may not be sufficient for partially sighted or color blind players."
+        consider:
+        - "Using multiple visual indicators (grayed out, crossed out, locked icon)."
+        - "Ensuring adequate contrast even for unavailable styling."
+        - "Using text labels like LOCKED or UNAVAILABLE in addition to visual styling."
+        patterns to consider:
+        - "CVD friendly communication"
+        - "High Contrast"
+        - "Clear fonts and text"
+      - barrier: "Players may waste time trying to access unavailable options without clear feedback."
+        consider:
+        - "Providing immediate audio/visual feedback when hovering over unavailable items."
+        - "Explaining requirements or conditions to unlock the option."
+        - "Allowing filtering to hide unavailable options if desired."
 
 
     - name: "upgrade building"
