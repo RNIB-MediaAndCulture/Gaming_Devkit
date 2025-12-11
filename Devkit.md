@@ -15,7 +15,8 @@ RNIB has an [A to Z of sight conditions](https://www.rnib.org.uk/your-eyes/eye-c
 We expect the games industry will continue to improve and evolve and we intend that this document should do the same. If you feel any advice is missing, any challenge is not tackled or any common solution is not represented then let us know. This document belongs to the games industry and we will be updating it in line with accessibility best practice.
 
 ## 3	The CAPS test
-When making a game accessible it’s important to remember that it still needs to be enjoyable. It needs to retain Challenge, Agency, Participation and Story.
+When making a game accessible, it’s important to remember that it still needs to be engaging and enjoyable. One metric to measure a game against to see if it still maintains this engagement is whether it passes The CAPS test.
+In order to do so, It needs to retain Challenge, Agency, Participation and Story, clarified below.
 ### Challenge
 The game needs to challenge a player, or they will lose interest. 
 ### Agency
@@ -36,15 +37,17 @@ Any information that needs to be communicated should be communicated with high c
 
 Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who have CVD (Colour Vision Deficiency, otherwise known as colourblindness).
 
-Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to the audio as well as the visual information.
+Consider where accessibility can be the default. A good example is using sound design to communicate information. If a player can tell what type of attack is coming (high, low, unblockable etc) from the sound it makes then a blind player can react accordingly without having to change any settings. This simplifies menus, gives blind players a better experience and may even benefit sighted players who don’t realise that they are also reacting to auditory as well as visual information.
 
 ## 5  Building on previous work
 
-Accessibility is a journey not a destination and all progress is valid. To preserve this progress accessibility successes and failures should be logged to be used in future projects. Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
+Accessibility is a journey not a destination and all progress is valid. To preserve this progress, accessibility successes and failures should be logged to be used in future projects.
+
+Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate, or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
 
 ## 6 The Value of Agency
 
-During accessibility discussions, it is always important to consider how much agency a player has when using particular accessibility features. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable but if a lack of agency means the gamer loses too much challenge then the game can equally lose its appeal. 
+During accessibility discussions, it is always important to consider how much agency a player has when using particular accessibility features. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable, but if a lack of agency means the gamer loses too much challenge then the game can equally lose its appeal. 
 
 ### 6.1 Targeting/Aiming
 A common mechanic for making aiming accessible is to use a lock-on system to keep a target in the centre of your view. Other options are to have the crosshairs lock on to targets independent of the view or automatically hit any target in range if the player attacks. These increase accessibility and allow progression but remove agency and can undermine the gaming experience. 
