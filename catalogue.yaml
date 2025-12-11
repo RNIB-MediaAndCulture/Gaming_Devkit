@@ -510,12 +510,37 @@ catalogue:
         - "Audio Beacons"    
 
 
-    - name: "Perceive environment state"
+- name: "Perceive environment state"
       description: >
-        Placeholder
+        The player needs to understand the current state of the game environment, such as weather conditions, 
+        time of day, environmental hazards active/inactive, or changes to the world state (bridges raised/lowered, 
+        doors open/closed, etc.).
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only indicators of environment state are inaccessible to players with sight loss."
+        consider:
+        - "Providing audio cues or verbal descriptions of environmental conditions."
+        - "Announcing significant environmental state changes (The storm has cleared, Night is falling)."
+        - "Using ambient audio to convey environmental state (rain sounds, wind, crickets at night)."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+        - "Adjustable semantic audio profiles"
+      - barrier: "Subtle visual changes to environment state may be missed by partially sighted players."
+        consider:
+        - "Making environmental indicators more pronounced and clear."
+        - "Providing UI indicators for important environmental states."
+        - "Using high contrast visual effects for state changes."
+        patterns to consider:
+        - "High Contrast"
+        - "Customisable UI / HUD"
+      - barrier: "Players with hearing loss may miss audio-only environmental cues."
+        consider:
+        - "Providing visual indicators for environmental sounds and states."
+        - "Using captions or visual cues for ambient sound changes."
+        - "Implementing icons or UI elements that show current environmental conditions."
+        patterns to consider:
+        - "Visual sound effects"
+        - "Captions"
 
 
     - name: "Perceive interactable"
@@ -553,10 +578,34 @@ catalogue:
 
     - name: "Perceive object state"
       description: >
-        Placeholder
+        The player needs to understand the current state of interactive objects, such as whether a switch is 
+        on/off, a container is open/closed, an item is charged/depleted, or a mechanism is active/inactive.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only indicators of object state (color changes, animations, position) are inaccessible to players with sight loss."
+        consider:
+        - "Providing audio feedback when interacting with or scanning objects to announce their state."
+        - "Using distinct sounds for different object states (click for on, clunk for off)."
+        - "Announcing object state when focusing or approaching (Lever: down position, Door: locked)."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+        - "Audio beacons"
+      - barrier: "Color-based state indicators fail for players with color vision deficiency."
+        consider:
+        - "Using shapes, icons, and text labels in addition to color."
+        - "Implementing patterns or textures to distinguish states."
+        - "Providing CVD-friendly color schemes."
+        patterns to consider:
+        - "CVD friendly communication"
+        - "High Contrast"
+      - barrier: "Small or subtle state indicators may be difficult to perceive for partially sighted players."
+        consider:
+        - "Making state indicators larger and more prominent."
+        - "Allowing customization of indicator size and contrast."
+        - "Using multiple visual cues simultaneously (color, icon, text)."
+        patterns to consider:
+        - "High Contrast"
+        - "Customisable UI / HUD"
 
 
     - name: "Perceive objects"
@@ -708,28 +757,170 @@ catalogue:
 
     - name: "character creation"
       description: >
-        Placeholder
+        Players design and customize their character's appearance, attributes, class, background, and other defining 
+        characteristics.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Visual-only character appearance customization is inaccessible to players with sight loss."
+        consider:
+        - "Providing text descriptions of appearance options (Short spiky hair, red)."
+        - "Using text-to-speech to describe customization choices."
+        - "Allowing players to skip appearance customization if not gameplay-relevant."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Complex multi-stage character creation can be overwhelming and difficult to navigate."
+        consider:
+        - "Providing clear audio/visual indicators of progress through creation steps."
+        - "Announcing how many steps remain in the process."
+        - "Allowing players to save and return to character creation."
+        - "Offering quick creation presets as alternatives."
+        patterns to consider:
+        - "Text to speech"
+        - "Pre-recorded audio clips"
+      - barrier: "Understanding stat implications and build viability requires complex information processing."
+        consider:
+        - "Providing clear explanations of what each stat affects."
+        - "Offering recommended builds or templates for different play styles."
+        - "Announcing when choices have significant gameplay impacts."
+      - barrier: "Visual feedback on how customization affects appearance may not be perceivable."
+        consider:
+        - "Describing appearance changes verbally as they're made."
+        - "Allowing characters to be re-customized later if mistakes are made."
+        - "Providing presets that can be slightly modified."
+        patterns to consider:
+        - "Screenreader support"
+        - "Clear fonts and text"
+        - "High Contrast"
 
     - name: "character selection"
       description: >
-        Placeholder
+        Choose a character to play from a roster of available options, each potentially with different abilities, 
+        stats, or play styles.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Character differences are communicated primarily through visual design."
+        consider:
+        - "Providing audio descriptions of each character's appearance and personality."
+        - "Announcing character names clearly as they're highlighted."
+        - "Using distinct audio themes or voice lines for each character."
+        patterns to consider:
+        - "Text to speech"
+        - "Pre-recorded audio clips"
+      - barrier: "Understanding character abilities and playstyles requires reading or observing complex information."
+        consider:
+        - "Providing clear, concise audio summaries of character abilities."
+        - "Announcing character difficulty or recommended experience level."
+        - "Offering try before you select preview modes with audio guidance."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Large character rosters are difficult to navigate efficiently."
+        consider:
+        - "Implementing character filtering by role, difficulty, or attributes."
+        - "Providing favorites or recent selections for quick access."
+        - "Announcing position in roster (Character 5 of 20)."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Locked or unavailable characters may not be clearly indicated."
+        consider:
+        - "Announcing lock status when hovering over characters."
+        - "Explaining unlock requirements audibly."
+        - "Using distinct audio cues for locked vs. unlocked characters."
+        patterns to consider:
+        - "Coded audio"
+        - "High Contrast"
+        - "Clear fonts and text"
 
     - name: "companion"
       description: >
-        A computer controlled character that behaves with agency in combat and exploration. The companion may autonomously 
-        attack enemies in combat, follow directions in which enemies to attack, find objects, or activate special abilities 
-        either on request or on theoir own agency. 
+        A computer controlled character that behaves with agency in combat and exploration. The companion may 
+        autonomously attack enemies in combat, follow directions in which enemies to attack, find objects, or 
+        activate special abilities either on request or on their own agency.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Players with sight loss cannot see where their companion is located or what actions they are performing."
+        consider:
+        - "Using distinct audio signatures for companion actions (footsteps, attacks, ability sounds)."
+        - "Implementing audio beacons or positional audio to track companion location."
+        - "Announcing companion actions verbally (Companion attacking enemy, Companion found health potion)."
+        - "Using stereo or surround sound to indicate companion position relative to player."
+        patterns to consider:
+        - "Audio beacons"
+        - "Coded audio"
+        - "Text to speech"
+        - "Binaural audio"
+        - "Surround sound"
+      - barrier: "Players with sight loss cannot tell which enemy or object the companion is targeting or interacting with."
+        consider:
+        - "Announcing companion targets verbally (Companion attacking archer, Companion investigating chest)."
+        - "Using directional audio to indicate where the companion's attention is focused."
+        - "Providing audio feedback when issuing commands to confirm target selection."
+        patterns to consider:
+        - "Text to speech"
+        - "Audio beacons"
+        - "Binaural audio"
+      - barrier: "Companion status information (health, abilities available, current state) is displayed visually only."
+        consider:
+        - "Announcing critical companion status changes (Companion health low, Companion ability ready)."
+        - "Providing a companion status check command with audio readout."
+        - "Using audio cues to indicate companion health states (labored breathing when injured)."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Issuing commands to companions requires visual targeting or menu navigation."
+        consider:
+        - "Implementing context-sensitive command systems (next/previous target cycling with audio feedback)."
+        - "Providing radial menus or command wheels with text-to-speech support."
+        - "Using simple directional commands with audio confirmation (Attack ahead, Search area)."
+        patterns to consider:
+        - "Text to speech"
+        - "Digital control"
+        - "Navigate menu 2D"
+      - barrier: "Players cannot see visual indicators of companion AI state (idle, following, attacking, investigating)."
+        consider:
+        - "Using distinct audio loops or sounds for different companion states."
+        - "Announcing state changes when they occur (Companion following, Companion engaging enemy)."
+        - "Implementing audio feedback that conveys companion behavior patterns."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+      - barrier: "Partially sighted players may lose track of companions in visually cluttered environments."
+        consider:
+        - "Providing high contrast outlines or markers for companion characters."
+        - "Allowing customization of companion marker appearance (size, color, icon)."
+        - "Implementing always-visible UI indicators showing companion direction and distance."
+        patterns to consider:
+        - "High Contrast"
+        - "Customisable UI / HUD"
+        - "CVD friendly communication"
+      - barrier: "Players with hearing loss cannot hear companion audio cues or callouts."
+        consider:
+        - "Providing visual indicators for companion actions and status."
+        - "Using visual sound effects or icons to show companion vocalizations."
+        - "Implementing text captions for important companion announcements."
+        patterns to consider:
+        - "Visual sound effects"
+        - "Captions"
+      - barrier: "Managing companion behavior requires complex inputs or menu interactions."
+        consider:
+        - "Providing simple behavior toggle options (aggressive/passive, follow/hold position)."
+        - "Implementing context-sensitive smart commands that require minimal input."
+        - "Allowing behavior customization through accessible menus before gameplay."
+        patterns to consider:
+        - "Digital control"
+        - "Navigate menu 1D"
+      - barrier: "Understanding companion abilities and when they are used is not clear without visual cues."
+        consider:
+        - "Announcing when companions use special abilities."
+        - "Providing descriptions of companion abilities through text-to-speech in menus."
+        - "Using distinct, recognizable audio for each companion ability."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Players cannot tell if companions are stuck, lost, or unable to reach them."
+        consider:
+        - "Implementing audio alerts when companions cannot path to player or targets."
+        - "Announcing when companions respawn or teleport to player."
+        - "Using audio cues when companions encounter navigation problems."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
     - name: "checkbox - additive selection"
       description: >
         Multiple items can be independently toggled on or off, allowing zero, one, or multiple simultaneous selections.
@@ -763,18 +954,63 @@ catalogue:
 
     - name: "combat mode"
       description: >
-        Placeholder
+        The player switches between different combat stances or modes that affect available abilities, defensive 
+        posture, or combat style (e.g., aggressive/defensive stance, different weapon sets, combat/exploration mode).
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Players with sight loss cannot see which combat mode is currently active."
+        consider:
+        - "Announcing combat mode changes audibly (Defensive stance activated)."
+        - "Using distinct ambient sounds or audio signatures for each combat mode."
+        - "Providing audio confirmation when attempting to use mode-specific abilities."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Visual-only mode indicators may be missed during intense combat."
+        consider:
+        - "Making mode indicators prominent and high contrast."
+        - "Positioning mode indicators within the visual safe zone."
+        - "Using screen effects or color grading to reinforce mode changes."
+        patterns to consider:
+        - "High Contrast"
+        - "Visual safe zone"
+        - "Customisable UI / HUD"
+      - barrier: "Accidentally switching modes during combat due to complex input requirements."
+        consider:
+        - "Requiring deliberate input to switch modes (hold button, confirm prompt)."
+        - "Providing clear feedback when mode switches occur."
+        - "Allowing mode switching to be disabled or remapped."
+        patterns to consider:
+        - "Digital control"
 
     - name: "cooldown"
       description: >
-        Placeholder
+        The player must wait a specified time period before using an ability, item, or action again. Tracking 
+        multiple cooldowns simultaneously is common in many games.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only cooldown indicators (progress circles, grayed-out icons) are inaccessible to players with sight loss."
+        consider:
+        - "Announcing when abilities come off cooldown (Fireball ready)."
+        - "Providing audio cues that indicate cooldown progress (rising pitch, ticking)."
+        - "Using distinct sounds when attempting to use abilities still on cooldown."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Small or subtle cooldown timers are difficult to read for partially sighted players."
+        consider:
+        - "Making cooldown indicators larger and more prominent."
+        - "Using high contrast for cooldown displays."
+        - "Displaying numerical countdown timers in addition to visual progress indicators."
+        patterns to consider:
+        - "High Contrast"
+        - "Resizable UI"
+        - "Customisable UI / HUD"
+      - barrier: "Tracking multiple cooldowns simultaneously can be cognitively overwhelming."
+        consider:
+        - "Prioritizing important cooldown notifications."
+        - "Allowing players to set which cooldowns trigger audio notifications."
+        - "Grouping or categorizing cooldowns by importance."
+        patterns to consider:
+        - "Adjustable semantic audio profiles"
 
 
     - name: "crouch"
@@ -830,10 +1066,34 @@ catalogue:
 
     - name: "emoji"
       description: >
-        Placeholder
+        Players use emojis or emoticons to communicate non-verbally with other players, often for quick 
+        communication or to overcome language barriers.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot see emojis sent by other players."
+        consider:
+        - "Announcing emoji meanings through text-to-speech (Player 2 sent thumbs up)."
+        - "Providing text descriptions of emojis."
+        - "Supporting screenreader descriptions of emoji content."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Players with sight loss cannot easily select and send emojis."
+        consider:
+        - "Providing text-to-speech navigation of emoji menus."
+        - "Organizing emojis into logical categories with audio navigation."
+        - "Offering quick-access favorites or frequently used emojis."
+        patterns to consider:
+        - "Text to speech"
+        - "Navigate menu 2D"
+        - "Digital control"
+      - barrier: "Small emoji icons may be difficult to distinguish for partially sighted players."
+        consider:
+        - "Allowing emoji size customization."
+        - "Providing text labels or tooltips for emojis."
+        - "Using high contrast display modes for emoji panels."
+        patterns to consider:
+        - "Resizable UI"
+        - "High Contrast"
 
 
     - name: "enter menu"
@@ -866,10 +1126,35 @@ catalogue:
 
     - name: "levelling-up"
       description: >
-        Placeholder
+        The character gains a level, typically accompanied by stat increases, new abilities, or skill points to 
+        allocate. May involve making choices about character progression.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only level-up notifications and progression screens are inaccessible to players with sight loss."
+        consider:
+        - "Announcing level-up events clearly (Level 5 achieved!)."
+        - "Providing text-to-speech for all progression information and stat changes."
+        - "Using celebratory audio cues for level-up moments."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Complex skill trees or progression choices require understanding visual relationships and hierarchies."
+        consider:
+        - "Providing clear audio descriptions of progression paths and requirements."
+        - "Announcing stat changes and their gameplay effects."
+        - "Offering recommended progression paths for players who want guidance."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Small text and complex UI layouts make progression information hard to read."
+        consider:
+        - "Making progression interfaces resizable and high contrast."
+        - "Using clear fonts and adequate text size."
+        - "Providing opaque backgrounds for text readability."
+        patterns to consider:
+        - "Resizable text"
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Opaque background"
 
 
     - name: "locate opponant2D"
@@ -906,10 +1191,32 @@ catalogue:
 
     - name: "move building"
       description: >
-        Placeholder
+        The player repositions a building, structure, or placed object to a new location, typically in 
+        construction, city-building, or strategy games.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Precise positioning requires visual feedback that is inaccessible to players with sight loss."
+        consider:
+        - "Implementing grid-based placement with audio feedback for position."
+        - "Announcing coordinates or relative positions (3 spaces north of town hall)."
+        - "Using audio cues to indicate valid/invalid placement locations."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Fine motor control required for drag-and-drop movement is difficult for players with motor impairments."
+        consider:
+        - "Providing alternative selection and placement methods (select, then place)."
+        - "Implementing grid snapping or snap-to-valid-location functionality."
+        - "Using keyboard/controller navigation for precise positioning."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Visual collision detection and placement previews are not accessible."
+        consider:
+        - "Providing audio feedback for collisions or invalid placements."
+        - "Announcing whether the current position is valid before confirming."
+        - "Using distinct sounds for different placement states (valid, invalid, optimal)."
+        patterns to consider:
+        - "Coded audio"
 
 
     - name: "navigate menu 1D"
@@ -993,58 +1300,288 @@ catalogue:
 
     - name: "object comparison"
       description: >
-        Placeholder
+        Compare two or more items side-by-side to evaluate differences in stats, properties, or characteristics, 
+        helping players make informed decisions.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual comparison layouts are inaccessible to players with sight loss."
+        consider:
+        - "Providing audio readout of key differences between items."
+        - "Announcing which item is better in specific categories."
+        - "Offering a summary comparison (Sword A has higher damage but lower speed)."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Complex comparison tables with multiple columns and rows are difficult to navigate without sight."
+        consider:
+        - "Implementing structured navigation that reads comparisons systematically."
+        - "Allowing users to select specific attributes to compare."
+        - "Announcing the structure of comparison tables when entering them."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Color coding differences (red for worse, green for better) fails for color blind players."
+        consider:
+        - "Using text indicators (+5, -3) in addition to or instead of colors."
+        - "Using symbols (↑, ↓) alongside color coding."
+        - "Providing CVD-friendly color options."
+        patterns to consider:
+        - "CVD friendly communication"
+        - "High Contrast"
+      - barrier: "Small text or tight layouts make comparisons difficult for partially sighted players."
+        consider:
+        - "Making comparison interfaces resizable."
+        - "Using high contrast for difference indicators."
+        - "Allowing simplified comparison views with only key differences."
+        patterns to consider:
+        - "Resizable text"
+        - "Clear fonts and text"
 
 
     - name: "object description"
       description: >
-        Placeholder
+        Present detailed information about an item, character, ability, or game element, typically in text form with 
+        possible accompanying visuals.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Text-only descriptions are inaccessible to players with sight loss."
+        consider:
+        - "Implementing text-to-speech for all object descriptions."
+        - "Supporting platform screenreaders."
+        - "Using pre-recorded audio descriptions for key items/characters."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+        - "Pre-recorded audio clips"
+      - barrier: "Small text or poor contrast makes descriptions difficult to read for partially sighted players."
+        consider:
+        - "Making text resizable or offering multiple text size options."
+        - "Using high contrast color schemes for description panels."
+        - "Providing opaque backgrounds behind description text."
+        - "Using clear, readable fonts."
+        patterns to consider:
+        - "Resizable text"
+        - "High Contrast"
+        - "Opaque background"
+        - "Clear fonts and text"
+      - barrier: "Long descriptions can be overwhelming or difficult to navigate."
+        consider:
+        - "Breaking descriptions into logical sections that can be navigated."
+        - "Providing a brief summary followed by detailed information."
+        - "Announcing the length of descriptions for audio users."
+      - barrier: "Visual-only information (icons, color coding, images) within descriptions."
+        consider:
+        - "Providing text or audio equivalents for all visual information."
+        - "Announcing icon meanings when using text-to-speech."
+        - "Not relying on color alone to convey information."
+        patterns to consider:
+        - "CVD friendly communication"
 
 
     - name: "perceive earnings"
       description: >
-        Placeholder
+        The player needs to understand income, revenue, or resource generation rates in management, tycoon, or 
+        strategy games. This includes tracking passive income and understanding economic performance.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only displays of earnings, graphs, and financial data are inaccessible to players with sight loss."
+        consider:
+        - "Announcing earnings and income rates through text-to-speech."
+        - "Providing audio summaries of financial performance (Income up 15% this quarter)."
+        - "Using audio cues for significant financial events (profit milestone reached)."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Complex graphs and charts are difficult to interpret for players with sight loss or cognitive difficulties."
+        consider:
+        - "Providing text-based data tables as alternatives to graphs."
+        - "Announcing trends verbally (Sales trending upward, Expenses decreasing)."
+        - "Simplifying data presentation with clear summaries."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Small numbers, graphs, and financial UI elements are hard to read for partially sighted players."
+        consider:
+        - "Making financial displays resizable and high contrast."
+        - "Using clear fonts for numerical data."
+        - "Providing opaque backgrounds for better readability."
+        patterns to consider:
+        - "Resizable text"
+        - "Resizable UI"
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Opaque background"
+      - barrier: "Color-coded financial data (red for loss, green for profit) fails for color blind players."
+        consider:
+        - "Using symbols and text labels in addition to color (+/-  signs, up/down arrows)."
+        - "Providing CVD-friendly color schemes."
+        - "Using patterns or textures to distinguish positive/negative values."
+        patterns to consider:
+        - "CVD friendly communication"
 
 
     - name: "perceive marker"
       description: >
-        Placeholder
+        Players need to see, hear, or otherwise perceive markers placed by themselves or teammates in the game world.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual-only markers are inaccessible to players with sight loss."
+        consider:
+        - "Implementing audio beacons at marker locations that play in 3D space."
+        - "Providing distance and direction information to markers (Team marker 30 meters northwest)."
+        - "Using distinct audio signatures for different marker types or teammates."
+        patterns to consider:
+        - "Audio beacons"
+        - "Binaural audio"
+        - "Surround sound"
+        - "Text to speech"
+      - barrier: "Markers may be difficult to distinguish from environment or other UI elements."
+        consider:
+        - "Making markers high contrast and visually prominent."
+        - "Allowing customization of marker appearance and size."
+        - "Using both visual and audio indicators simultaneously."
+        patterns to consider:
+        - "High Contrast"
+        - "CVD friendly communication"
+      - barrier: "Off-screen markers may be missed without appropriate indicators."
+        consider:
+        - "Providing edge-of-screen indicators for off-screen markers."
+        - "Using 3D audio that maintains spatial awareness of marker positions."
+        - "Announcing nearby markers periodically."
+        patterns to consider:
+        - "Audio beacons"
+        - "Binaural audio"
+        - "Surround sound"
+      - barrier: "Multiple markers from different players can create visual/audio clutter."
+        consider:
+        - "Allowing filtering of markers by type or player."
+        - "Implementing priority systems where critical markers are more prominent."
+        - "Using team-specific audio signatures for marker identification."
+        patterns to consider:
+        - "Coded audio"
+      - barrier: "Marker information (who placed it, what type, when) may not be clearly conveyed."
+        consider:
+        - "Announcing marker details when focused or approached."
+        - "Using teammate voice lines or audio signatures for identification."
+        - "Providing a quick view/list of all active markers."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
 
 
     - name: "place building"
       description: >
-        Placeholder
+        The player positions and constructs a new building, structure, or object in the game world, typically in 
+        construction, city-building, tower defense, or strategy games.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Visual positioning and placement validation are inaccessible to players with sight loss."
+        consider:
+        - "Implementing grid-based or snap-to-location placement with audio feedback."
+        - "Announcing coordinates or descriptions of placement locations."
+        - "Using audio cues to indicate valid/invalid placement (chime for valid, buzz for invalid)."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Players with sight loss cannot see terrain features, resources, or existing structures when placing buildings."
+        consider:
+        - "Providing scanning functionality that describes nearby features and objects."
+        - "Announcing relevant information about the selected location (flat terrain, near water, 5 spaces from existing structure)."
+        - "Using audio beacons to indicate important location features."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+      - barrier: "Drag-and-drop or free-form placement requires fine motor control difficult for players with motor impairments."
+        consider:
+        - "Implementing grid-based placement with discrete movements."
+        - "Providing keyboard/d-pad navigation for positioning."
+        - "Allowing rotation and placement as separate, deliberate actions."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Visual-only indicators of placement requirements (radius, coverage area, resource zones) are not accessible."
+        consider:
+        - "Announcing placement requirements and coverage areas verbally."
+        - "Using audio feedback to indicate optimal placement locations."
+        - "Providing high contrast visual overlays for placement zones."
+        patterns to consider:
+        - "Text to speech"
+        - "High Contrast"
 
 
     - name: "place marker"
       description: >
-        Placeholder
+        Players place markers, pins, or waypoints in the game world to mark locations of interest, coordinate with 
+        teammates, or remember important spots.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Placing markers precisely requires visual aiming or map interaction."
+        consider:
+        - "Allowing markers to snap to significant locations or objects."
+        - "Providing voice commands or quick-place options for common marker types."
+        - "Implementing assisted marker placement that suggests nearby points of interest."
+      - barrier: "Players with sight loss cannot see where markers are being placed."
+        consider:
+        - "Announcing marker placement location (Marker placed 50 meters ahead)."
+        - "Playing a sound effect at the marker's 3D position when placed."
+        - "Confirming marker placement with location details."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+      - barrier: "Different marker types or colors may not be distinguishable."
+        consider:
+        - "Using verbal labels for marker types (Danger marker, Rally point)."
+        - "Announcing marker type during placement."
+        - "Using distinct sounds for different marker types."
+        patterns to consider:
+        - "Coded audio"
+        - "CVD friendly communication"
+      - barrier: "Managing multiple markers can become confusing."
+        consider:
+        - "Providing a list view of all placed markers with descriptions."
+        - "Allowing markers to be named or tagged."
+        - "Announcing when marker limits are approached."
+        patterns to consider:
+        - "High Contrast"
 
 
     - name: "questing/achievements"
       description: >
-        Placeholder
+        Track, display, and manage objectives, goals, achievements, and quest progress throughout the game.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Quest logs and achievement lists are presented as text-heavy interfaces."
+        consider:
+        - "Implementing text-to-speech for all quest descriptions and achievement names."
+        - "Supporting platform screenreaders."
+        - "Providing audio summaries of active quests."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+      - barrier: "Quest objectives and directions rely on visual map markers or directional indicators."
+        consider:
+        - "Providing audio waypoint guidance (Objective 200 meters northwest)."
+        - "Using audio beacons to indicate objective locations."
+        - "Announcing objectives when they update or change."
+        patterns to consider:
+        - "Audio beacons"
+        - "Text to speech"
+      - barrier: "Progress tracking is visual (progress bars, percentages) without audio equivalents."
+        consider:
+        - "Announcing progress percentages when checking quest status."
+        - "Providing audio notifications for quest milestones (25%, 50%, 75%, complete)."
+        - "Using distinct sounds for different types of progress updates."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+      - barrier: "Achievement notifications may be visual-only pop-ups."
+        consider:
+        - "Playing distinctive sounds for achievement unlocks."
+        - "Announcing achievement names and descriptions when unlocked."
+        - "Allowing players to review recent achievements with audio support."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+      - barrier: "Complex quest requirements or nested objectives are cognitively demanding."
+        consider:
+        - "Breaking complex quests into clear, manageable steps."
+        - "Highlighting or announcing the current active objective."
+        - "Providing quest hints or simplified explanations."
+        patterns to consider:
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Resizable text"
 
 
     - name: "radio button - mutex selection"
@@ -1145,10 +1682,30 @@ catalogue:
 
     - name: "sell building"
       description: >
-        Placeholder
+        The player removes a building or structure from the game world, typically receiving resources or currency 
+        in return.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot easily identify which building to select for selling."
+        consider:
+        - "Providing text-to-speech descriptions of buildings when selected or scanned."
+        - "Announcing building type, location, and current value when focused."
+        - "Using audio beacons or navigation aids to locate buildings."
+        patterns to consider:
+        - "Text to speech"
+        - "Audio beacons"
+      - barrier: "Confirmation dialogs or sell value information may only be visual."
+        consider:
+        - "Announcing sell values and confirmation prompts through text-to-speech."
+        - "Providing audio confirmation of successful sales."
+        - "Using distinct sounds for selling actions."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Accidentally selling important buildings due to unclear confirmation or selection."
+        consider:
+        - "Requiring explicit confirmation for selling actions."
+        - "Announcing what will be sold before requiring confirmation."
+        - "Providing undo functionality or sell cooldown period."
 
 
     - name: "slider - proportion selection"
@@ -1192,34 +1749,146 @@ catalogue:
 
     - name: "special attack"
       description: >
-        Placeholder
+        The player executes a powerful or unique attack ability that is distinct from normal attacks, often with 
+        limited uses, cooldowns, or resource costs.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Players with sight loss cannot see special attack animations, effects, or success indicators."
+        consider:
+        - "Using distinct, dramatic audio cues for special attack activation."
+        - "Providing audio feedback for successful hits vs. misses."
+        - "Announcing when special attacks are available or charged."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+      - barrier: "Complex button combinations or timing requirements are difficult for players with motor impairments."
+        consider:
+        - "Offering simplified input methods for special attacks (single button press)."
+        - "Implementing input buffering or queuing for special attacks."
+        - "Providing hold-to-charge alternatives to complex sequences."
+        patterns to consider:
+        - "Digital control"
+      - barrier: "Visual-only indicators of special attack availability (glowing icons, charge meters) are not accessible."
+        consider:
+        - "Announcing when special attacks are ready (Ultimate ability charged)."
+        - "Using rising audio cues to indicate charge progress."
+        - "Providing haptic feedback when special attacks become available."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
+      - barrier: "Aiming or targeting special attacks requires visual precision."
+        consider:
+        - "Providing auto-targeting or target lock for special attacks."
+        - "Using audio targeting cues to indicate aim direction."
+        - "Implementing area-of-effect attacks that reduce precision requirements."
+        patterns to consider:
+        - "Audio beacons"
 
     - name: "strategy"
       description: >
-        Placeholder
+        The player makes tactical or strategic decisions that affect gameplay, such as unit positioning, resource 
+        allocation, tech tree choices, or long-term planning in strategy games.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Visual overview of strategic situations (maps, unit positions, resource distribution) is inaccessible to players with sight loss."
+        consider:
+        - "Providing text-to-speech summaries of strategic situations."
+        - "Announcing unit counts, positions, and status information."
+        - "Implementing audio scanning to explore the strategic state of the game."
+        patterns to consider:
+        - "Text to speech"
+        - "Audio beacons"
+      - barrier: "Complex visual interfaces for strategic information are difficult to navigate without sight."
+        consider:
+        - "Organizing strategic information in navigable lists with audio feedback."
+        - "Providing shortcuts to access specific strategic information."
+        - "Supporting screenreader navigation of strategic interfaces."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+        - "Navigate menu 2D"
+      - barrier: "Processing and comparing multiple sources of information simultaneously is cognitively demanding."
+        consider:
+        - "Providing strategic summaries that highlight key information."
+        - "Offering AI advisors or recommendations."
+        - "Breaking complex strategic information into digestible sections."
+      - barrier: "Small text, icons, and map elements are difficult to see for partially sighted players."
+        consider:
+        - "Making strategic interfaces resizable with high contrast options."
+        - "Using clear fonts and adequate text sizes."
+        - "Providing zoom functionality for maps and strategic views."
+        patterns to consider:
+        - "Resizable UI"
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Magnification"
 
     - name: "team identification"
       description: >
-        Placeholder
+        The player must distinguish between their own team members and opposing team members, which is critical 
+        for cooperative and competitive multiplayer games.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Color-based team identification fails for players with color vision deficiency."
+        consider:
+        - "Using shapes, icons, and patterns in addition to colors to identify teams."
+        - "Providing customizable team colors with CVD-friendly presets."
+        - "Using distinct silhouettes or markers for different teams."
+        patterns to consider:
+        - "CVD friendly communication"
+        - "High Contrast"
+      - barrier: "Players with sight loss cannot visually distinguish team members."
+        consider:
+        - "Using distinct audio signatures for teammate vs. enemy actions and movements."
+        - "Announcing team affiliation when targeting or focusing on characters."
+        - "Providing audio callouts from teammates vs. enemies (using different voice processing)."
+        patterns to consider:
+        - "Coded audio"
+        - "Text to speech"
+        - "Audio beacons"
+      - barrier: "Small or subtle team indicators may be missed during fast-paced gameplay."
+        consider:
+        - "Making team indicators prominent and clear (large icons, outlines)."
+        - "Positioning team indicators within the visual safe zone."
+        - "Using multiple redundant indicators (color, icon, outline)."
+        patterns to consider:
+        - "High Contrast"
+        - "Visual safe zone"
+        - "Customisable UI / HUD"
 
     - name: "text chat"
       description: >
-        Placeholder
+        Players communicate with others through typed text messages, either in real-time or asynchronously.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with sight loss cannot read incoming text messages."
+        consider:
+        - "Implementing text-to-speech for incoming chat messages."
+        - "Announcing who sent each message."
+        - "Providing audio cues when new messages arrive."
+        patterns to consider:
+        - "Text to speech"
+        - "Screenreader support"
+        - "Coded audio"
+      - barrier: "Players with sight loss cannot easily compose and send text messages."
+        consider:
+        - "Supporting screenreader input for text composition."
+        - "Providing quick-reply options or message templates."
+        - "Implementing voice-to-text for message composition."
+        patterns to consider:
+        - "Screenreader support"
+        - "Speech to text"
+      - barrier: "Small text in chat windows is difficult to read for partially sighted players."
+        consider:
+        - "Making chat text resizable and high contrast."
+        - "Using clear, readable fonts."
+        - "Providing opaque backgrounds for chat text."
+        patterns to consider:
+        - "Resizable text"
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Opaque background"
+      - barrier: "Fast-scrolling chat can be overwhelming or difficult to follow."
+        consider:
+        - "Allowing chat scrollback and pause functionality."
+        - "Providing filtering options to show only important messages."
+        - "Announcing only messages directed at the player or from specific sources."
 
 
     - name: "unavailable"
@@ -1251,20 +1920,86 @@ catalogue:
         - "Allowing filtering to hide unavailable options if desired."
 
 
+
     - name: "upgrade building"
       description: >
-        Placeholder
+        The player improves an existing building or structure to enhance its capabilities, increase production, 
+        or unlock new features.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
-
+      - barrier: "Players with sight loss cannot easily identify which buildings can be upgraded or what upgrades are available."
+        consider:
+        - "Announcing upgrade availability when selecting or scanning buildings (Town Hall: upgrade available)."
+        - "Providing text-to-speech descriptions of upgrade options and benefits."
+        - "Using audio cues to indicate upgrade-ready buildings."
+        patterns to consider:
+        - "Text to speech"
+        - "Audio beacons"
+        - "Coded audio"
+      - barrier: "Comparing upgrade options requires understanding complex visual information."
+        consider:
+        - "Providing clear audio summaries of upgrade effects (Increases production by 25%)."
+        - "Announcing cost vs. benefit for upgrade decisions."
+        - "Reading out stat comparisons before and after upgrades."
+        patterns to consider:
+        - "Text to speech"
+        - "Object comparison"
+      - barrier: "Small text and complex upgrade trees are difficult to read and navigate."
+        consider:
+        - "Making upgrade interfaces resizable with high contrast."
+        - "Using clear fonts and adequate spacing."
+        - "Organizing upgrades in a logical, navigable structure."
+        patterns to consider:
+        - "Resizable text"
+        - "High Contrast"
+        - "Clear fonts and text"
+        - "Navigate menu 2D"
+      - barrier: "Progress indicators for upgrades in progress may only be visual."
+        consider:
+        - "Announcing upgrade completion through audio."
+        - "Providing progress updates on request (50% complete, 2 minutes remaining)."
+        - "Using audio to indicate upgrade milestones."
+        patterns to consider:
+        - "Text to speech"
+        - "Coded audio"
 
     - name: "voice chat"
       description: >
-        Placeholder
+        Players communicate with others through real-time voice communication, essential for team coordination 
+        and social gameplay.
       potentialBarriers:
-      - barrier : ""
-        consider: ""
+      - barrier: "Players with hearing loss cannot hear voice communications from teammates."
+        consider:
+        - "Providing speech-to-text transcription of voice chat."
+        - "Implementing visual indicators showing who is speaking."
+        - "Offering text chat as an alternative communication method."
+        patterns to consider:
+        - "Speech to text"
+        - "Captions"
+        - "Visual sound effects"
+      - barrier: "Players with speech impairments may have difficulty using voice chat."
+        consider:
+        - "Supporting text-to-speech for outgoing messages."
+        - "Providing quick-voice-line options or preset callouts."
+        - "Ensuring text chat is a fully viable alternative."
+        patterns to consider:
+        - "Text to speech"
+      - barrier: "Distinguishing between multiple speakers can be difficult."
+        consider:
+        - "Providing visual indicators showing which player is speaking."
+        - "Using spatial audio so voices come from character directions."
+        - "Announcing speaker names with transcriptions."
+        patterns to consider:
+        - "Visual sound effects"
+        - "Binaural audio"
+        - "Surround sound"
+      - barrier: "Background noise and poor audio quality make voice chat hard to understand."
+        consider:
+        - "Implementing noise cancellation and audio enhancement."
+        - "Allowing individual volume adjustment for each speaker."
+        - "Providing audio profiles that boost voice frequencies."
+        patterns to consider:
+        - "Adjustable semantic audio profiles"
+        - "Clean audio"
 
 
 
