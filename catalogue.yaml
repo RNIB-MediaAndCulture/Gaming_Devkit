@@ -410,14 +410,6 @@ catalogue:
         - "Audio beacons"
         - "Coded audio"
         
-    - name: "Movement2D"
-      description: >
-        Placeholder
-      potentialBarriers:
-      - barrier : ""
-        consider: ""
-
-
     - name: "Perceive FoE"
       description: >
         The player must identify whether a character or entity is a Friend or Enemy (FoE), which may affect gameplay 
@@ -729,6 +721,14 @@ catalogue:
       - barrier : ""
         consider: ""
 
+    - name: "companion"
+      description: >
+        A computer controlled character that behaves with agency in combat and exploration. The companion may autonomously 
+        attack enemies in combat, follow directions in which enemies to attack, find objects, or activate special abilities 
+        either on request or on theoir own agency. 
+      potentialBarriers:
+      - barrier : ""
+        consider: ""
 
     - name: "checkbox - additive selection"
       description: >
