@@ -444,10 +444,10 @@ catalogue:
       description: >
         The gamer needs to know their character is being attacked so they can react accordingly.
       potentialBarriers:
-      - barrier : "If attacks towards the player are only represented visually then gamers without sight will not know that they need to react."
+      - barrier: "If attacks towards the player are only represented visually then gamers without sight will not know that they need to react."
         consider: 
-        - Using a sound effect to indicate the attack coming in. The player nneds to know what type of attack and which direction.
-        - Surround sound or stereo encoding may be apropriate to communicate the direction the attack is coming in from.
+        - Using a sound effect to indicate the attack coming in. The player needs to know what type of attack and which direction.
+        - Surround sound or stereo encoding may be appropriate to communicate the direction the attack is coming in from.
       patterns to consider:
       - "Audio beacons"
       - "Binaural audio"
@@ -459,7 +459,7 @@ catalogue:
       description: >
         When moving around an area a player needs to know that they have collided with something.
       potentialBarriers:
-      - barrier : "If objects that characters can colide with are only represented visually then gamers without sight cannot tell that they have collided with something. They may try to keep going in this direction thinking the are still moving."
+      - barrier : "If objects that characters can collide with are only represented visually then gamers without sight cannot tell that they have collided with something. They may try to keep going in this direction thinking the are still moving."
         consider: 
         - using a sound effect to indicate the collision.
 
@@ -510,7 +510,7 @@ catalogue:
         - "Audio Beacons"    
 
 
-- name: "Perceive environment state"
+    - name: "Perceive environment state"
       description: >
         The player needs to understand the current state of the game environment, such as weather conditions, 
         time of day, environmental hazards active/inactive, or changes to the world state (bridges raised/lowered, 
@@ -1622,7 +1622,7 @@ catalogue:
         - "Using consistent visual language for radio button groups."
         - "Grouping related options with clear section headers."
 
-    - name: "select - atomic selection **not right**" 
+    - name: "select - atomic selection --not right" 
       description: >
         Choose a single item from a list or set of options where only one item can be selected at a time, and 
         selecting a new item replaces the previous selection.
