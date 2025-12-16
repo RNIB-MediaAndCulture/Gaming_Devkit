@@ -221,7 +221,6 @@ catalogue:
       - "Perceive path"
       - "Perceive direction"
       - "Perceive danger"
-      - "Aim"
     
     - name: Rhythm / Timing
       description: >
@@ -385,6 +384,7 @@ catalogue:
         patterns to consider:
         - "Customisable UI / HUD"
         - "High Contrast"
+        - "Audio aiming"
         
     - name: "Movement2D"
       description: >
@@ -406,6 +406,7 @@ catalogue:
         consider:
         - "Providing audio cues for terrain changes, nearby obstacles, and directional information."
         - "Implementing audio beacons for navigation waypoints."
+        - "Adding collision sounds to alert players they cannot go further in that direction."
         patterns to consider:
         - "Audio beacons"
         - "Coded audio"
@@ -635,6 +636,7 @@ catalogue:
         - "Offering simplified visual modes with reduced clutter."
         - "Providing object filtering options to highlight only specific object types."
         - "Using distinct audio signatures for different object categories."
+        - "Offer colour coding option for in-game objects (friend, enemy, interactable object etc)"
         patterns to consider:
         - "Audio beacons"
         - "Coded audio"
@@ -717,6 +719,7 @@ catalogue:
         patterns to consider:
         - "Text to speech"
         - "Audio beacons"
+        - "Coded audio"
       - barrier: "Managing multiple characters with continuous attacks can be cognitively overwhelming."
         consider:
         - "Providing clear character identification in audio feedback."
@@ -1033,7 +1036,7 @@ catalogue:
         - "Coded audio"
       - barrier: "Remembering crouch state can be difficult without clear feedback."
         consider:
-        - "Providing persistent audio or haptic feedback while crouched."
+        - "Providing persistant audio cues, coded background audio or haptic feedback while crouched."
         - "Using distinct movement sounds when crouched vs. standing."
         patterns to consider:
         - "Coded audio"
@@ -1269,6 +1272,7 @@ catalogue:
         consider:
         - "Implementing text-to-speech that announces each item and its position."
         - "Announcing row and column information (Row 2, Column 3 of 5)."
+        - "Showing preference to semantic labels for rows and columns rather than numeric ones where possible."
         - "Providing linear navigation alternatives that traverse the 2D space in a predictable pattern."
         patterns to consider:
         - "Text to speech"
@@ -1388,7 +1392,7 @@ catalogue:
         patterns to consider:
         - "Text to speech"
         - "Coded audio"
-      - barrier: "Complex graphs and charts are difficult to interpret for players with sight loss or cognitive difficulties."
+      - barrier: "Complex graphs and charts are difficult to perceive for people with sight loss and difficult to interpret for players with sight loss or cognitive difficulties."
         consider:
         - "Providing text-based data tables as alternatives to graphs."
         - "Announcing trends verbally (Sales trending upward, Expenses decreasing)."
@@ -1482,6 +1486,7 @@ catalogue:
         - "Providing scanning functionality that describes nearby features and objects."
         - "Announcing relevant information about the selected location (flat terrain, near water, 5 spaces from existing structure)."
         - "Using audio beacons to indicate important location features."
+        - "Providing an auto place feature that chooses a suitable spot."
         patterns to consider:
         - "Audio beacons"
         - "Text to speech"
