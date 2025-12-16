@@ -16,7 +16,8 @@ We expect the games industry will continue to improve and evolve and we intend t
 
 ## 3	The CAPS test
 When making a game accessible, it’s important to remember that it still needs to be engaging and enjoyable. One metric to measure a game against to see if it still maintains this engagement is whether it passes The CAPS test.
-In order to do so, It needs to retain Challenge, Agency, Participation and Story, clarified below.
+If a game is playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss.
+In order to pass this test, It needs to retain Challenge, Agency, Participation and Story, clarified below.
 ### Challenge
 The game needs to challenge a player, or they will lose interest. 
 ### Agency
@@ -26,14 +27,12 @@ If a game allows communication between players, then this needs to be accessible
 ### Story
 Gamers with sight loss need to be able to follow the story so cutscenes, in game exposition and banter between characters needs to be accessible. Many games are set in rich worlds. This ambience is also part of the story and needs to be communicated to players or they will be missing out on an important feature.
 
-If a game can be playable from beginning to end but fails the CAPS test, then the game may not be engaging enough for gamers with sight loss. 
-
 ## 4	Designing upwards theory
-Gamers across the spectrum of sight loss, including players with absolutely no sight whatsoever, should be able to enjoy the same titles as everyone else. Many of the features that can be of assistance, (menu narration, resizable fonts, high contrast options, use of haptics for information etc) will not only assist gamers with sight loss but anyone with greater levels of usable vision.
+Gamers across the spectrum of sight loss, including players with absolutely no sight whatsoever, should be able to enjoy the same titles as everyone else. Many of the features that can be of assistance (menu narration, resizable fonts, high contrast options, use of haptics for information etc) will not only assist gamers with sight loss, but also anyone with greater levels of usable vision as well.
 
-By considering the fundamentals of how players interact with your game and ensuring that information is presented through different types of information channels (visually, audibly and, where possible, haptically) from the start of a project you can reduce the number of changes needed to make the game accessible later on.
+By considering the fundamentals of how players interact with your game and ensuring that information is presented through different types of information channels (visually, audibly and, where possible, haptically) from the start of a project, you can reduce the number of changes needed to make the game accessible later on.
 
-Any information that needs to be communicated should be communicated with high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice delivered through the settings menus.
+Any information that needs to be communicated should be relayed through high contrast visuals, through audio and preferably through a text free option. This should help blind and partially sighted people and anyone who is reading impaired including people with dyslexia or with English as a second language (including many sign language users). Multimodal communication (communicating visually and audibly at the same time) is often preferable but whether to communicate something with ‘standard’ visuals, high contrast visuals or audio can be a choice for players, delivered through the settings menus.
 
 Colour coding is a good way to communicate information, but it should not be the only mechanism used because it may be inaccessible to people who have CVD (Colour Vision Deficiency, otherwise known as colourblindness).
 
@@ -41,7 +40,7 @@ Consider where accessibility can be the default. A good example is using sound d
 
 ## 5  Building on previous work
 
-Accessibility is a journey not a destination and all progress is valid. To preserve this progress, accessibility successes and failures should be logged to be used in future projects.
+Accessibility is a journey, not a destination and all progress is valid. To preserve this progress, accessibility successes and failures should be logged to be used in future projects.
 
 Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate, or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
 
