@@ -2132,6 +2132,12 @@ catalogue:
         a screenreader to provide accessibility for your game can be as easy as adding metadata to UI elements but 
         refer to documentation from platform providers to find out what you would need to do.  
 
+    - name: "Speech to speech"
+      description: >
+        People with vocal differences and problems with their speech being understood usually due to medical conditions
+        can have an AI (or person) trained on their voice which outputs a more standard stream of speech that can be 
+        more widely understood.  
+        
     - name: "Speech to text"
       description: >
         Audio speech is converted into a stream of text 
