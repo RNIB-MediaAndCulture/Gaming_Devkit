@@ -2015,7 +2015,13 @@ catalogue:
         (providing atmosphere) these can then have their volumes independently adjustable. This enables a player to 
         increase the volume of audio that helps them while reducing the volume of other audio. 
         See also Clean audio.
-        
+
+    - name: "Audio aiming"
+      description: >
+        The relative position of a target from the crosshairs or reticule is communicated through audio cues such as 
+        pitch, volume or rapidity of clicks. This gives a blind player the information they need to accurately aim at
+        targets while preserving player agency.
+      
     - name: "Audio beacons"
       description: >
         Audio beacons are sounds 'placed around' the user using immersive audio. They can act as a way to locate 
@@ -2024,7 +2030,13 @@ catalogue:
     - name: "Audio description"
       description: >
         Audio description or AD is a spoken soundtrack that describes visual information people with sight loss would
-        otherwise miss. They are typically available of pre-recorded immutable content.
+        otherwise miss. They are typically available as pre-recorded immutable content.
+
+    - name: "Asynchronous communication"
+      description: >
+         Information that helps the player may not always need to be communicated in real-time as they play. Descriptions 
+         of objects, background behind quests, refreshers of the gameplay controls etc can be made available through menu 
+         systems or by pausing the game to hear the information.  
 
     - name: "Binaural audio"
       description: >
