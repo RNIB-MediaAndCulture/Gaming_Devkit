@@ -183,6 +183,14 @@
             color: #555;
         }
 
+        .report-content h5 {
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #666;
+            font-weight: 600;
+        }
+
         .report-content p {
             line-height: 1.6;
             margin-bottom: 15px;
@@ -236,6 +244,22 @@
             font-size: 12px;
             color: #666;
             margin-top: 5px;
+        }
+
+        .implementation-section {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .resource-section {
+            background: #e8f4f8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #27ae60;
         }
     </style>
 </head>
@@ -291,7 +315,6 @@
         let catalogueData = null;
         let selectedAspects = new Set();
 
-        // File loading
         document.getElementById('yamlFile').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -383,187 +406,6 @@
                 return;
             }
 
-            // Collect all mechanics needed for selected aspects
-            const mechanicsNeeded = new Map(); // mechanic name -> Set of aspect names
-            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
-                selectedAspects.has(a.name)
-            );
-
-            selectedAspectsList.forEach(aspect => {
-                if (aspect['mechanics used']) {
-                    aspect['mechanics used'].forEach(mechName => {
-                        if (!mechanicsNeeded.has(mechName)) {
-                            mechanicsNeeded.set(mechName, new Set());
-                        }
-                        mechanicsNeeded.get(mechName).add(aspect.name);
-                    });
-                }
-            });
-
-            // Collect all patterns needed
-            const patternsNeeded = new Set();
-            mechanicsNeeded.forEach((aspects, mechName) => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                if (mechanic && mechanic.potentialBarriers) {
-                    mechanic.potentialBarriers.forEach(barrier => {
-                        if (barrier['patterns to consider']) {
-                            barrier['patterns to consider'].forEach(pattern => {
-                                patternsNeeded.add(pattern);
-                            });
-                        }
-                    });
-                }
-            });
-
-            // Generate markdown
-            let markdown = `# Accessibility Kick-Off Report
-
-## Selected Game Aspects
-
-${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
-
----
-
-## Mechanics to Implement
-
-`;
-
-            // Sort mechanics alphabetically
-            const sortedMechanics = Array.from(mechanicsNeeded.entries()).sort((a, b) => 
-                a[0].localeCompare(b[0])
-            );
-
-            sortedMechanics.forEach(([mechName, aspects]) => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                
-                markdown += `### ${mechName}\n\n`;
-                
-                if (mechanic && mechanic.description) {
-                    markdown += `${mechanic.description.trim()}\n\n`;
-                }
-
-                markdown += `**Required for:** ${Array.from(aspects).join(', ')}\n\n`;
-
-                if (mechanic && mechanic.potentialBarriers && mechanic.potentialBarriers.length > 0) {
-                    markdown += `#### Accessibility Barriers & Considerations\n\n`;
-                    
-                    mechanic.potentialBarriers.forEach((barrierObj, idx) => {
-                        if (barrierObj.barrier) {
-                            markdown += `**Barrier ${idx + 1}:** ${barrierObj.barrier}\n\n`;
-                            
-                            if (barrierObj.consider) {
-                                markdown += `**Consider:**\n`;
-                                if (Array.isArray(barrierObj.consider)) {
-                                    barrierObj.consider.forEach(consideration => {
-                                        markdown += `- ${consideration}\n`;
-                                    });
-                                } else {
-                                    markdown += `- ${barrierObj.consider}\n`;
-                                }
-                                markdown += '\n';
-                            }
-
-                            if (barrierObj['patterns to consider']) {
-                                markdown += `**Related Patterns:** `;
-                                markdown += barrierObj['patterns to consider']
-                                    .map(p => `[${p}](#${p.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`)
-                                    .join(', ');
-                                markdown += '\n\n';
-                            }
-                        }
-                    });
-                }
-
-                markdown += '---\n\n';
-            });
-
-            // Add patterns section
-            if (patternsNeeded.size > 0) {
-                markdown += `## Accessibility Patterns\n\n`;
-
-                const sortedPatterns = Array.from(patternsNeeded).sort();
-                sortedPatterns.forEach(patternName => {
-                    const pattern = catalogueData.catalogue.patterns.find(p => p.name === patternName);
-                    
-                    if (pattern) {
-                        markdown += `### ${pattern.name}\n\n`;
-                        
-                        if (pattern.description) {
-                            markdown += `${pattern.description.trim()}\n\n`;
-                        }
-
-                        // Find which mechanics use this pattern
-                        const mechanicsUsingPattern = [];
-                        sortedMechanics.forEach(([mechName]) => {
-                            const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                            if (mechanic && mechanic.potentialBarriers) {
-                                const usesPattern = mechanic.potentialBarriers.some(b => 
-                                    b['patterns to consider'] && b['patterns to consider'].includes(patternName)
-                                );
-                                if (usesPattern) {
-                                    mechanicsUsingPattern.push(mechName);
-                                }
-                            }
-                        });
-
-                        if (mechanicsUsingPattern.length > 0) {
-                            markdown += `**Used by mechanics:** ${mechanicsUsingPattern.join(', ')}\n\n`;
-                        }
-
-                        markdown += '---\n\n';
-                    }
-                });
-            }
-
-            // Convert markdown to HTML for preview
-            reportDiv.innerHTML = markdownToHTML(markdown);
-        }
-
-        function markdownToHTML(markdown) {
-            let html = markdown;
-            
-            // Headers
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-            html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
-            
-            // Bold
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            
-            // Links
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-            
-            // Lists
-            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            // Horizontal rules
-            html = html.replace(/^---$/gim, '<hr>');
-            
-            // Paragraphs
-            html = html.split('\n\n').map(para => {
-                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
-                    return para;
-                }
-                return para.trim() ? `<p>${para}</p>` : '';
-            }).join('\n');
-            
-            return html;
-        }
-
-        // Download functions
-        document.getElementById('downloadReport').addEventListener('click', function() {
-            const markdown = generateMarkdownReport();
-            downloadFile(markdown, 'accessibility-kickoff-report.md', 'text/markdown');
-        });
-
-        document.getElementById('downloadYaml').addEventListener('click', function() {
-            const filteredYaml = generateFilteredYaml();
-            downloadFile(filteredYaml, 'accessibility-companion-data.yaml', 'text/yaml');
-        });
-
-        function generateMarkdownReport() {
             const mechanicsNeeded = new Map();
             const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
                 selectedAspects.has(a.name)
@@ -594,6 +436,11 @@ ${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
                 }
             });
 
+            let markdown = generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded);
+            reportDiv.innerHTML = markdownToHTML(markdown);
+        }
+
+        function generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded) {
             let markdown = `# Accessibility Kick-Off Report
 
 ## Selected Game Aspects
@@ -668,6 +515,44 @@ ${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
                             markdown += `${pattern.description.trim()}\n\n`;
                         }
 
+                        // Implementation Options
+                        if (pattern.implementation_options) {
+                            markdown += `#### Implementation Options\n\n`;
+                            
+                            if (pattern.implementation_options.unity) {
+                                markdown += `**Unity:**\n`;
+                                if (Array.isArray(pattern.implementation_options.unity)) {
+                                    pattern.implementation_options.unity.forEach(option => {
+                                        markdown += `- ${option}\n`;
+                                    });
+                                } else {
+                                    markdown += `- ${pattern.implementation_options.unity}\n`;
+                                }
+                                markdown += '\n';
+                            }
+                            
+                            if (pattern.implementation_options.unreal) {
+                                markdown += `**Unreal Engine:**\n`;
+                                if (Array.isArray(pattern.implementation_options.unreal)) {
+                                    pattern.implementation_options.unreal.forEach(option => {
+                                        markdown += `- ${option}\n`;
+                                    });
+                                } else {
+                                    markdown += `- ${pattern.implementation_options.unreal}\n`;
+                                }
+                                markdown += '\n';
+                            }
+                        }
+
+                        // Documentation Links
+                        if (pattern.documentation && pattern.documentation.length > 0) {
+                            markdown += `#### Documentation & Resources\n\n`;
+                            pattern.documentation.forEach(doc => {
+                                markdown += `- ${doc}\n`;
+                            });
+                            markdown += '\n';
+                        }
+
                         const mechanicsUsingPattern = [];
                         sortedMechanics.forEach(([mechName]) => {
                             const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
@@ -690,7 +575,109 @@ ${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
                 });
             }
 
+            // Add General Resources section
+            if (catalogueData.catalogue.general_resources) {
+                markdown += `## General Resources\n\n`;
+                markdown += `These resources provide additional guidance and tools for implementing accessibility features across different platforms.\n\n`;
+
+                catalogueData.catalogue.general_resources.forEach(resource => {
+                    markdown += `### ${resource.name}\n\n`;
+                    
+                    if (resource.documentation && resource.documentation.length > 0) {
+                        resource.documentation.forEach(doc => {
+                            markdown += `- ${doc}\n`;
+                        });
+                        markdown += '\n';
+                    }
+
+                    if (resource.items && resource.items.length > 0) {
+                        resource.items.forEach(item => {
+                            markdown += `- ${item}\n`;
+                        });
+                        markdown += '\n';
+                    }
+                });
+            }
+
             return markdown;
+        }
+
+        function markdownToHTML(markdown) {
+            let html = markdown;
+            
+            // Headers
+            html = html.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
+            html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Bold
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Links
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+            
+            // Lists
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            
+            // Horizontal rules
+            html = html.replace(/^---$/gim, '<hr>');
+            
+            // Paragraphs
+            html = html.split('\n\n').map(para => {
+                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
+                    return para;
+                }
+                return para.trim() ? `<p>${para}</p>` : '';
+            }).join('\n');
+            
+            return html;
+        }
+
+        document.getElementById('downloadReport').addEventListener('click', function() {
+            const markdown = generateFullMarkdownReport();
+            downloadFile(markdown, 'accessibility-kickoff-report.md', 'text/markdown');
+        });
+
+        document.getElementById('downloadYaml').addEventListener('click', function() {
+            const filteredYaml = generateFilteredYaml();
+            downloadFile(filteredYaml, 'accessibility-companion-data.yaml', 'text/yaml');
+        });
+
+        function generateFullMarkdownReport() {
+            const mechanicsNeeded = new Map();
+            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
+                selectedAspects.has(a.name)
+            );
+
+            selectedAspectsList.forEach(aspect => {
+                if (aspect['mechanics used']) {
+                    aspect['mechanics used'].forEach(mechName => {
+                        if (!mechanicsNeeded.has(mechName)) {
+                            mechanicsNeeded.set(mechName, new Set());
+                        }
+                        mechanicsNeeded.get(mechName).add(aspect.name);
+                    });
+                }
+            });
+
+            const patternsNeeded = new Set();
+            mechanicsNeeded.forEach((aspects, mechName) => {
+                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
+                if (mechanic && mechanic.potentialBarriers) {
+                    mechanic.potentialBarriers.forEach(barrier => {
+                        if (barrier['patterns to consider']) {
+                            barrier['patterns to consider'].forEach(pattern => {
+                                patternsNeeded.add(pattern);
+                            });
+                        }
+                    });
+                }
+            });
+
+            return generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded);
         }
 
         function generateFilteredYaml() {
@@ -734,6 +721,10 @@ ${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
                     )
                 }
             };
+
+            if (catalogueData.catalogue.general_resources) {
+                filteredCatalogue.catalogue.general_resources = catalogueData.catalogue.general_resources;
+            }
 
             return jsyaml.dump(filteredCatalogue, { lineWidth: -1 });
         }
