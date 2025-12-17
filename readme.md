@@ -8,3 +8,14 @@ The idea behind the AKORG is that at the begining of a project a games developer
 4. Gives some guidance on how to implement those patterns with common game engines.
 
 The report is currently fairly sizable and requires many eyes to check over it and fix any errors. All input is welcome.
+
+### How to use
+1. Open AKORG.html and select the catalogue.yaml as the source file 
+2. Select all of the genre aspects that your game inherits.
+3. Download the report to use as a guide.
+4. Download a yaml file to use as a streamlined version of the mechanics and patterns for your project.  
+
+### Files
+The main files in this are 
+AKORG.html - the website that generates reports
+catalogue.yaml - the database for the report.
