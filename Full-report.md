@@ -1,31 +1,31 @@
-# Accessibility Kick-Off Report full version 20251212
+# Accessibility Kick-Off Report
 
 ## Selected Game Aspects
 
-- Combat (multi-character turn-based)
 - Menu (textual)
 - Character Progression
 - Class-Based Play /Role-play
 - Combat (1v1)
 - Combat (beat 'em up)
-- Combat (continuous)
 - Combat (first-person)
+- Combat (continuous)
 - Combat (menu driven)
-- Construction
-- Environmental Interaction
 - Exploration
 - Management / Tycoon
+- Environmental Interaction
+- Construction
 - Narrative Choice / Branching Paths
-- Racing
-- Rhythm / Timing
-- Survival
-- Adventure
-- Simulation
-- Sports [stub]
 - Stealth
+- Sports [stub]
+- Simulation
+- Adventure
+- Survival
+- Rhythm / Timing
+- Racing
 - strategy
-- Puzzle
 - Co-op Mechanics
+- Puzzle
+- Combat (multi-character turn-based)
 
 ---
 
@@ -35,7 +35,7 @@
 
 The player must precisely position a targeting reticle or crosshair to interact with objects or attack  enemies, typically using mouse, joystick, or motion controls.
 
-**Required for:** Combat (first-person), Racing, Sports [stub]
+**Required for:** Combat (first-person), Sports [stub]
 
 #### Accessibility Barriers & Considerations
 
@@ -61,7 +61,7 @@ The player must precisely position a targeting reticle or crosshair to interact 
 - Allowing customization of crosshair size, color, and contrast.
 - Providing target highlighting or outline options.
 
-**Related Patterns:** [Customisable UI / HUD](#customisable-ui-hud), [High Contrast](#high-contrast)
+**Related Patterns:** [Customisable UI / HUD](#customisable-ui-hud), [High Contrast](#high-contrast), [Audio aiming](#audio-aiming)
 
 ---
 
@@ -122,7 +122,7 @@ The player's character automatically continues attacking once an attack command 
 - Announcing target status changes through audio (Target defeated, New threat detected).
 - Implementing smart targeting that automatically switches to optimal targets.
 
-**Related Patterns:** [Text to speech](#text-to-speech), [Audio beacons](#audio-beacons)
+**Related Patterns:** [Text to speech](#text-to-speech), [Audio beacons](#audio-beacons), [Coded audio](#coded-audio)
 
 **Barrier 3:** Managing multiple characters with continuous attacks can be cognitively overwhelming.
 
@@ -403,7 +403,7 @@ The player makes their character adopt a lower stance, often used for stealth, a
 **Barrier 3:** Remembering crouch state can be difficult without clear feedback.
 
 **Consider:**
-- Providing persistent audio or haptic feedback while crouched.
+- Providing persistant audio cues, coded background audio or haptic feedback while crouched.
 - Using distinct movement sounds when crouched vs. standing.
 
 **Related Patterns:** [Coded audio](#coded-audio)
@@ -652,6 +652,7 @@ The player controls their character's movement through a 2D or 3D space, typical
 **Consider:**
 - Providing audio cues for terrain changes, nearby obstacles, and directional information.
 - Implementing audio beacons for navigation waypoints.
+- Adding collision sounds to alert players they cannot go further in that direction.
 
 **Related Patterns:** [Audio beacons](#audio-beacons), [Coded audio](#coded-audio)
 
@@ -717,6 +718,7 @@ Navigate through menus that have both horizontal and vertical dimensions, such a
 **Consider:**
 - Implementing text-to-speech that announces each item and its position.
 - Announcing row and column information (Row 2, Column 3 of 5).
+- Showing preference to semantic labels for rows and columns rather than numeric ones where possible.
 - Providing linear navigation alternatives that traverse the 2D space in a predictable pattern.
 
 **Related Patterns:** [Text to speech](#text-to-speech), [Screenreader support](#screenreader-support)
@@ -944,7 +946,7 @@ The player needs to understand income, revenue, or resource generation rates in 
 
 **Related Patterns:** [Text to speech](#text-to-speech), [Coded audio](#coded-audio)
 
-**Barrier 2:** Complex graphs and charts are difficult to interpret for players with sight loss or cognitive difficulties.
+**Barrier 2:** Complex graphs and charts are difficult to perceive for people with sight loss and difficult to interpret for players with sight loss or cognitive difficulties.
 
 **Consider:**
 - Providing text-based data tables as alternatives to graphs.
@@ -1207,6 +1209,7 @@ The player needs to identify and understand objects in the game environment, inc
 - Offering simplified visual modes with reduced clutter.
 - Providing object filtering options to highlight only specific object types.
 - Using distinct audio signatures for different object categories.
+- Offer colour coding option for in-game objects (friend, enemy, interactable object etc)
 
 **Related Patterns:** [Audio beacons](#audio-beacons), [Coded audio](#coded-audio)
 
@@ -1272,6 +1275,7 @@ The player positions and constructs a new building, structure, or object in the 
 - Providing scanning functionality that describes nearby features and objects.
 - Announcing relevant information about the selected location (flat terrain, near water, 5 spaces from existing structure).
 - Using audio beacons to indicate important location features.
+- Providing an auto place feature that chooses a suitable spot.
 
 **Related Patterns:** [Audio beacons](#audio-beacons), [Text to speech](#text-to-speech)
 
@@ -1866,13 +1870,75 @@ Players communicate with others through real-time voice communication, essential
 
 By separating audio into profiles such as dialogue, music, sound effects (conveying meaning) and background  (providing atmosphere) these can then have their volumes independently adjustable. This enables a player to  increase the volume of audio that helps them while reducing the volume of other audio.  See also Clean audio.
 
+#### Implementation Options
+
+**Unity:**
+- Use Audio Mixer to separate audio into groups (Dialogue, Music, SFX, Ambience)
+- Create mixer groups for each audio category
+- Expose volume parameters to settings menu
+- Use Audio Mixer snapshots for different profiles
+
+**Unreal Engine:**
+- Organize sounds into hierarchical Sound Classes
+- Use Sound Mix for dynamic volume adjustments
+- Apply Sound Classes to sound cues
+- Allow players to adjust volume per class in settings
+
+#### Documentation & Resources
+
+- Unity Audio Mixer documentation
+- Unreal Sound Classes and Mix documentation
+
 **Used by mechanics:** attack, cooldown, Perceive danger, Perceive environment state, voice chat
+
+---
+
+### Audio aiming
+
+The relative position of a target from the crosshairs or reticule is communicated through audio cues such as  pitch, volume or rapidity of clicks. This gives a blind player the information they need to accurately aim at targets while preserving player agency.
+
+#### Implementation Options
+
+**Unity:**
+- Custom implementation required using audio source positioning
+- Calculate angle/distance between crosshair and target
+- Modify audio parameters (pitch, volume, rate) based on proximity
+
+**Unreal Engine:**
+- Custom Blueprint implementation
+- Use audio parameters to convey targeting information
+- Implement using sound cues with parameter modulation
+
+**Used by mechanics:** Aim
 
 ---
 
 ### Audio beacons
 
 Audio beacons are sounds 'placed around' the user using immersive audio. They can act as a way to locate  objects in a virtual space, to annotate objects or to provide waypoints for navigation.
+
+#### Implementation Options
+
+**Unity:**
+- Attach Audio Source to objects with 3D sound settings enabled
+- Enable 'Spatialize' checkbox on Audio Source
+- Use Microsoft Spatializer Plugin for cross-platform support
+- Microsoft's Responsive Spatial Audio plugin provides drag-and-drop navigation beacons
+- Use Audio Spatializer SDK for custom implementations
+
+**Unreal Engine:**
+- Add Ambient Sound actor to scene for beacon location
+- Configure spatialization in Project Settings > Audio
+- Use sound attenuation for distance-based effects
+- Supports panning, soundfield, and binaural audio
+- Third-party options: Resonance Audio, Steam Audio, Oculus Spatializer
+
+#### Documentation & Resources
+
+- Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
+- Unity: Microsoft Spatial Audio GitHub repository
+- Unity: Microsoft Garage's Responsive Spatial Audio plugin (Unity Asset Store)
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
 
 **Used by mechanics:** Aim, attack - continuous, block, locate opponant2D, move building, Movement2D, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, sell building, special attack, strategy, team identification, upgrade building
 
@@ -1882,6 +1948,25 @@ Audio beacons are sounds 'placed around' the user using immersive audio. They ca
 
 Binaural audio usually refers to replicating the way surround sound is encoded by our ears. This enables  surround sound to be delivered via headphones in a way that our brain can recreate the soundscape around us.
 
+#### Implementation Options
+
+**Unity:**
+- Use Microsoft Spatializer Plugin with binaural rendering
+- Enable spatialize on Audio Source components
+- Configure for headphone output
+- Oculus Spatializer plugin available
+
+**Unreal Engine:**
+- Built-in binaural rendering support
+- Configure in Audio spatialization settings
+- Microsoft Spatial Sound Plugin available for HoloLens 2 and mixed reality
+- Oculus Spatializer plugin available
+
+#### Documentation & Resources
+
+- Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+
 **Used by mechanics:** block, dodge, locate opponant2D, Perceive danger, perceive marker, Perceive path, voice chat
 
 ---
@@ -1889,6 +1974,32 @@ Binaural audio usually refers to replicating the way surround sound is encoded b
 ### CVD friendly communication
 
 Colour Vision Deficiency (Colour Blindness) is a relatively common disability where people have trouble  distinguishing different colours. Information should not be communicated using colour alone but should  also use shape and pattern. CVD filters and can help but care should be taken not to create unnatural  colours (trees should be displayed as green but the uniforms of enemy soldiers in the trees should be  affected by the filter or be preselectable from a range of options or profiles). CVD is a spectrum so  unless a colour profile is tailored to a player it could make colours seem unnatural and break immersion.
+
+#### Implementation Options
+
+**Unity:**
+- Color Blind Safe Palette API: Accessibility.VisionUtility.GetColorBlindSafePalette()
+- Generates distinguishable colors for deuteranopia, protanopia, tritanopia
+- ColorBlind Effect plugin (Project Wilberforce) from Asset Store
+- Custom post-processing shaders using URP or Post-Processing Stack v2
+- Apply post-processing filters to camera
+- Use alternative color palettes in UI
+- Combine color with shapes, patterns, icons
+- Use Color Oracle desktop tool for real-time simulation
+
+**Unreal Engine:**
+- Built-in CVD Settings in Editor: Edit > Editor Preferences > Appearance > Accessibility
+- Runtime support via SetColorVisionDeficiencyType Blueprint node
+- Supports Deuteranope, Protanope, Tritanope types
+- Custom colorblind correction using post-process materials and LUT
+- Test visuals using editor preview modes
+- Wanadev's unreal-colorblind-tool for LUT-based corrections
+
+#### Documentation & Resources
+
+- Unity: https://docs.unity3d.com/ScriptReference/Accessibility.VisionUtility.html
+- Unity: Color Oracle (desktop tool)
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Widget/Accessibility/SetColorVisionDeficiencyType
 
 **Used by mechanics:** navigate menu 1D, object comparison, object description, perceive earnings, Perceive FoE, perceive marker, Perceive object state, place marker, radio button - mutex selection, team identification, unavailable
 
@@ -1898,6 +2009,36 @@ Colour Vision Deficiency (Colour Blindness) is a relatively common disability wh
 
 Captions are lines of text within a users view that correspond to audio information. They can translate  between languages, provide a real-time transcript of speech for people who would struggle to hear or  understand spoken language or describe sounds for people with hearing loss. They may also encourage language  learning or reduce cognitive load by providing multi-channel communication.
 
+#### Implementation Options
+
+**Unity:**
+- Chirp: XR Access Initiative's caption system for VR/AR (supports SRT format)
+- A11YTK (Accessibility Toolkit): Context-aware subtitles with customization
+- Unity Simple SRT: Basic SRT parser
+- Custom implementations using Unity UI or TextMeshPro
+- Include customizable font size, color, position
+- Add speaker identification and sound effect captions
+- Implement directional indicators for spatial sounds
+- Provide scrim/background for readability
+
+**Unreal Engine:**
+- Built-in Subtitle System for basic functionality
+- Better Captions Plugin: Fully replicated system with volume, attenuation, tone info
+- Sound Subtitle System: Blueprint-based with directional indicators
+- Add subtitle data to sound assets
+- Configure subtitle display in Project Settings
+- Use Subtitles and Closed Captions plugin API
+- Follow BBC, Netflix, FCC standards
+- Minimum 0.16s gap between subtitles
+- Support speaker identification and customizable appearance
+
+#### Documentation & Resources
+
+- Unity: Chirp - https://github.com/XR-Access-Initiative/chirp-captions
+- Unity: Unity Learn audio accessibility tutorial
+- Unreal: Subtitles and Closed Captions documentation
+- Best practices: BBC, Netflix, FCC subtitle standards
+
 **Used by mechanics:** Perceive environment state, voice chat
 
 ---
@@ -1905,6 +2046,20 @@ Captions are lines of text within a users view that correspond to audio informat
 ### Clean audio
 
 Dialogue and sound effects conveying information can have their volume boosted compared to other audio.  This could be a single toggle or a set of profiles (with non-information conveying audio being full,  reduced or muted). See also [Adjustable semantic audio profiles](#adjustable-semantic-audio-profiles).
+
+#### Implementation Options
+
+**Unity:**
+- Use Audio Mixer with separate groups for dialogue and effects
+- Implement ducking and side-chain effects
+- Create mixer snapshots for clean audio profiles
+- Expose parameters for runtime control
+
+**Unreal Engine:**
+- Use Sound Classes to categorize audio
+- Implement Sound Mix for dynamic adjustments
+- Create clean audio profiles that boost dialogue/effects
+- Use Sound Attenuation for contextual volume control
 
 **Used by mechanics:** voice chat
 
@@ -1914,6 +2069,27 @@ Dialogue and sound effects conveying information can have their volume boosted c
 
 Avoid block capitals as these obscure the shape of words. Ensure easy to read fonts are available and are  preferably the default.
 
+#### Implementation Options
+
+**Unity:**
+- Use TextMeshPro for better font rendering than legacy Text
+- Recommended: Inter font family
+- Set 12px base size minimum
+- Avoid all-caps text
+- Ensure high contrast against background
+- Provide adequate line spacing
+
+**Unreal Engine:**
+- Support for TrueType and OpenType fonts
+- Use Rich Text for styling options
+- Avoid all-caps text
+- Ensure readability with adequate sizing and spacing
+
+#### Documentation & Resources
+
+- Unity: TextMeshPro documentation
+- Font recommendation: Inter font family at 12px minimum
+
 **Used by mechanics:** character creation, character selection, checkbox - additive selection, levelling-up, navigate menu 1D, navigate menu 2D, object comparison, object description, perceive earnings, questing/achievements, radio button - mutex selection, slider - proportion selection, strategy, text chat, unavailable, upgrade building
 
 ---
@@ -1921,6 +2097,20 @@ Avoid block capitals as these obscure the shape of words. Ensure easy to read fo
 ### Coded audio
 
 By designing sound effects for similar actions to have similar characteristics it is possible to  communicate actions that are happening through sound. This was done in Killer Instinct where a blind  player could tell whether an attack was high or low (for example) by the sound effect associated with  it. It is also used in God of War Ragnarok where there are sound effects for an unblockable or  undodgeable attacks.
+
+#### Implementation Options
+
+**Unity:**
+- Design sound effect libraries with consistent characteristics
+- Use Audio Mixer to apply consistent processing to sound categories
+- Implement audio cue systems that map actions to distinctive sounds
+- Use pitch, timbre, and rhythm to differentiate action types
+
+**Unreal Engine:**
+- Use Sound Cues to create consistent audio signatures
+- Organize sounds into classes with shared characteristics
+- Implement audio parameters that modify sounds consistently
+- Use Sound Mix to maintain consistent audio profiles
 
 **Used by mechanics:** Aim, attack, attack - continuous, block, character selection, checkbox - additive selection, combat mode, cooldown, crouch, dodge, enter menu, levelling-up, locate opponant2D, move building, Movement2D, navigate menu 2D, Perceive danger, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, select-menu, sell building, slider - proportion selection, special attack, team identification, text chat, unavailable, upgrade building
 
@@ -1930,6 +2120,31 @@ By designing sound effects for similar actions to have similar characteristics i
 
 Elements such as crosshairs and cursors should be customisable so they can be made large enough and high  contrast enough for partially sighted gamers but not too large for other gamers. Size, shape and colour  can all make a difference.
 
+#### Implementation Options
+
+**Unity:**
+- Unity UI (uGUI): Canvas-based system with scaling options
+- UI Toolkit: Modern UI system with styling and theming
+- Canvas Scaler for resolution-independent UI
+- Layout Groups for responsive layouts
+- Custom shaders for UI effects
+- Follow WCAG contrast requirements (3:1 minimum for focus)
+- Implement resizable text and UI elements
+- Use high contrast modes via themes
+
+**Unreal Engine:**
+- UMG (Unreal Motion Graphics): Widget-based UI system
+- DPI scaling for different screen sizes
+- Widget blueprints for custom UI
+- Anchoring and canvas panels for responsive design
+- Accessibility Toolkit available on Marketplace
+
+#### Documentation & Resources
+
+- Unity: https://www.foundations.unity.com/fundamentals/accessibility
+- Unreal: UMG documentation
+- WCAG contrast guidelines
+
 **Used by mechanics:** Aim, combat mode, cooldown, Perceive environment state, Perceive interactable, Perceive object state, Perceive objects, team identification
 
 ---
@@ -1937,6 +2152,26 @@ Elements such as crosshairs and cursors should be customisable so they can be ma
 ### Digital control
 
 Digital control is where any input can be performed with discrete button presses or actions. Analogue input  such as analogue joysticks or holding down keys to move a curser can make it hard for blind and partially  sighted people to follow where they are in an interface.
+
+#### Implementation Options
+
+**Unity:**
+- Input System (New): Supports both analog and digital inputs
+- Input Actions can be bound to multiple controls
+- Processors for converting analog to digital
+- Use Input Actions with 'Press' interaction
+- Avoid requiring precise analog stick movements in menus
+
+**Unreal Engine:**
+- Enhanced Input System: Input Actions support both analog and digital
+- Input Modifiers and Triggers for processing
+- Use discrete button inputs for UI navigation
+- Provide alternatives to analog controls
+
+#### Documentation & Resources
+
+- Unity: Input System documentation
+- Unreal: Enhanced Input System documentation
 
 **Used by mechanics:** attack, combat mode, crouch, emoji, enter menu, move building, Movement2D, navigate menu 1D, navigate menu 2D, place building, select-menu, slider - proportion selection, special attack
 
@@ -1946,6 +2181,25 @@ Digital control is where any input can be performed with discrete button presses
 
 Parts of a visual are made to 'stand out' by using contrasting colours. This is often used for text but  could also be used for symbols, the outlines of objects etc. WCAG contains a formula for determining the  contrast ratio between two colours.
 
+#### Implementation Options
+
+**Unity:**
+- Use UI Toolkit theming for high contrast modes
+- Apply post-processing effects for visual contrast
+- Implement high contrast shaders for objects and UI
+- Follow WCAG contrast guidelines (4.5:1 for normal text, 3:1 for large text)
+
+**Unreal Engine:**
+- Use UMG styling for high contrast UI
+- Implement post-process materials for scene contrast
+- Create high contrast widget themes
+- Follow WCAG contrast guidelines
+
+#### Documentation & Resources
+
+- WCAG contrast ratio guidelines
+- Unity UI Toolkit theming documentation
+
 **Used by mechanics:** Aim, character creation, character selection, checkbox - additive selection, combat mode, cooldown, emoji, levelling-up, locate opponant2D, navigate menu 1D, navigate menu 2D, object comparison, object description, Perceive danger, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, radio button - mutex selection, slider - proportion selection, strategy, team identification, text chat, unavailable, upgrade building
 
 ---
@@ -1953,6 +2207,18 @@ Parts of a visual are made to 'stand out' by using contrasting colours. This is 
 ### Magnification
 
 Part or all of the visuals are enlarged making them easier to see.
+
+#### Implementation Options
+
+**Unity:**
+- Implement camera zoom functionality
+- Use UI scaling for interface magnification
+- Create magnifier glass effect with render textures
+
+**Unreal Engine:**
+- Implement camera zoom using field of view adjustments
+- Use UMG scaling for UI magnification
+- Create magnifier effects with scene capture components
 
 **Used by mechanics:** strategy
 
@@ -1962,6 +2228,18 @@ Part or all of the visuals are enlarged making them easier to see.
 
 Transparent backgrounds behind text or icons can make them hard to read/perceive for partially sighted  people. Having an option to set opaque backgrounds (preferably as a default) can improve readability.
 
+#### Implementation Options
+
+**Unity:**
+- Use UI Image Component with solid or semi-transparent backgrounds
+- Custom shaders for consistent backgrounds
+- Always provide opaque option, preferably as default
+
+**Unreal Engine:**
+- Use Border Brush with solid fill behind text
+- Background Blur can help with readability
+- Add background panels behind text elements
+
 **Used by mechanics:** checkbox - additive selection, levelling-up, navigate menu 1D, navigate menu 2D, object description, perceive earnings, radio button - mutex selection, text chat
 
 ---
@@ -1969,6 +2247,18 @@ Transparent backgrounds behind text or icons can make them hard to read/perceive
 ### Pre-recorded audio clips
 
 Instead of using text-to-speech for audio access to immutable text such as menu options pre-recorded audio  can be nicer to listen to and give a better user experience.
+
+#### Implementation Options
+
+**Unity:**
+- Import audio files: WAV, MP3, OGG formats supported
+- Higher quality and better performance than runtime TTS
+- Use for menu narration and fixed content
+
+**Unreal Engine:**
+- Import audio files: WAV, OGG formats supported
+- Higher quality and better performance than runtime TTS
+- Use for menu narration and fixed content
 
 **Used by mechanics:** character creation, character selection, navigate menu 1D, object description, radio button - mutex selection
 
@@ -1978,6 +2268,18 @@ Instead of using text-to-speech for audio access to immutable text such as menu 
 
 Onscreen interfaces can be made bigger to be easier to read and understand or smaller so they obscure less  of the screen.
 
+#### Implementation Options
+
+**Unity:**
+- Use Canvas Scaler for resolution-independent UI
+- Implement UI scale slider in settings
+- Use Layout Groups for responsive layouts
+
+**Unreal Engine:**
+- DPI scaling in User Interface settings
+- Implement UI scale settings for players
+- Use anchors and size boxes for responsive design
+
 **Used by mechanics:** cooldown, emoji, perceive earnings, slider - proportion selection, strategy
 
 ---
@@ -1985,6 +2287,24 @@ Onscreen interfaces can be made bigger to be easier to read and understand or sm
 ### Resizable text
 
 Make sure that any text the player needs to read can be resized. Many partially sighted people benefit from  larger text and some people with extreme loss of peripheral vision may benefit from smaller text.
+
+#### Implementation Options
+
+**Unity:**
+- Use Canvas Scaler with 'Scale With Screen Size'
+- TextMeshPro: Vector-based text rendering with auto-sizing
+- Minimum 12px font size, avoid fonts smaller than 9px
+- Test at multiple resolutions
+
+**Unreal Engine:**
+- UMG Scaling: DPI Scale Rule in User Interface settings
+- Size boxes and scale boxes for dynamic sizing
+- Use size constraints and anchors for responsive text
+
+#### Documentation & Resources
+
+- Unity: TextMeshPro documentation
+- Recommended minimum: 12px, avoid below 9px
 
 **Used by mechanics:** levelling-up, navigate menu 1D, object comparison, object description, perceive earnings, questing/achievements, text chat, upgrade building
 
@@ -1994,13 +2314,46 @@ Make sure that any text the player needs to read can be resized. Many partially 
 
 Many platforms (especially Android, iOS and PC) contain screenreaders. A screenreader is a piece of software  that parses metadata available in software and apps to provide verbal access to visual information. Enabling  a screenreader to provide accessibility for your game can be as easy as adding metadata to UI elements but  refer to documentation from platform providers to find out what you would need to do.
 
+#### Implementation Options
+
+**Unity:**
+- Platform Integration: iOS UIAccessibility, Android TalkBack
+- Windows: Limited NVDA/JAWS support
+- Unity Accessibility Extensions: Open-source screen reader APIs
+- UI Toolkit has basic accessibility support
+- Requires platform-specific native code for comprehensive support
+- Unity 6.3 mentioned to have expanded screen-reader support
+
+**Unreal Engine:**
+- Screen Reader Plugin: Base framework for custom implementations
+- Slate Screen Reader Plugin: Production-ready for Slate UI
+- Features: Accessible UI announcements, navigation, TTS integration, focus management
+- Enable accessibility features in project settings
+
+#### Documentation & Resources
+
+- Unity: Unity Accessibility Extensions - https://unity-accessibility-extensions.readthedocs.io/
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/blind-accessibility-features-overview-in-unreal-engine
+
 **Used by mechanics:** character creation, checkbox - additive selection, emoji, levelling-up, navigate menu 1D, navigate menu 2D, object comparison, object description, questing/achievements, radio button - mutex selection, strategy, text chat
 
 ---
 
 ### Speech to text
 
-Audio speech is converted into a stream of text
+Audio speech is converted into a stream of text.
+
+#### Implementation Options
+
+**Unity:**
+- Platform-specific APIs: iOS Speech Framework, Android Speech Recognition
+- Third-party plugins available on Asset Store
+- Cloud services: Google Cloud Speech-to-Text, Azure Speech Services
+
+**Unreal Engine:**
+- Platform-specific implementations
+- Third-party plugins available
+- Cloud services integration possible
 
 **Used by mechanics:** text chat, voice chat
 
@@ -2010,13 +2363,57 @@ Audio speech is converted into a stream of text
 
 Providing audio through surround sound can help gamers with sight loss orient themselves.
 
+#### Implementation Options
+
+**Unity:**
+- Native multi-channel audio output support
+- Use Microsoft Spatializer, Oculus Spatializer, or Resonance Audio
+- Configure Audio Source for 3D spatial audio
+- HRTF support through spatializer plugins
+
+**Unreal Engine:**
+- Extensive native spatial audio features
+- Supports multi-channel surround sound output
+- Ambisonics: First Order Ambisonic support (Resonance Audio)
+- Object-Based Audio via Wwise or other middleware
+
+#### Documentation & Resources
+
+- Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+
 **Used by mechanics:** block, dodge, locate opponant2D, perceive marker, voice chat
 
 ---
 
 ### Text to speech
 
-Written text is synthesised into speech and played audibly to the user
+Written text is synthesised into speech and played audibly to the user.
+
+#### Implementation Options
+
+**Unity:**
+- Platform-specific native plugins: iOS, Android, macOS using system TTS
+- Windows: Limited native support via Windows Speech API
+- ReadSpeaker AI: Professional TTS with 90+ voices in 30+ languages, no latency
+- Eden AI Plugin: API-based TTS integration
+- Unity Accessibility Extensions: Open-source TTS wrappers
+- ReadSpeaker plugin offers runtime synthesis directly in Unity
+
+**Unreal Engine:**
+- Built-in TTS Plugin: Experimental Text-to-Speech plugin since UE 5.0
+- Screen Reader Plugin: Expands TTS with richer accessibility features
+- Slate Screen Reader Plugin: Built on base Screen Reader for Slate UI
+- Use 'Add Default Channel' and 'Speak on Channel' nodes in Blueprints
+- ReadSpeaker plugin available
+- Wit.ai Voice SDK TTS (Meta)
+- Runtime Text to Speech by Georgy Dev (900+ voices, 44 languages, offline)
+
+#### Documentation & Resources
+
+- Unity: https://unity-accessibility-extensions.readthedocs.io/
+- Unity: ReadSpeaker - https://www.readspeaker.com/resources/unity/
+- Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/text-to-speech-quickstart-in-unreal-engine
 
 **Used by mechanics:** attack - continuous, character creation, character selection, checkbox - additive selection, combat mode, cooldown, crouch, emoji, enter menu, levelling-up, move building, navigate menu 1D, navigate menu 2D, object comparison, object description, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, radio button - mutex selection, select-menu, sell building, slider - proportion selection, special attack, strategy, team identification, text chat, unavailable, upgrade building, voice chat
 
@@ -2026,6 +2423,20 @@ Written text is synthesised into speech and played audibly to the user
 
 Players with a loss of peripheral vision may not be aware of important information placed around the edges  of the screen. They will likely know where to look for persistent UI elements but may miss temporarily  available information or information changes around the borders. A visual safe zone is the area from the  centre of the screen up to a virtual border where information the player may need to know should be placed.
 
+#### Implementation Options
+
+**Unity:**
+- Define safe zone boundaries in UI design
+- Use Canvas Safe Area component
+- Test with various screen sizes and aspect ratios
+- Place critical UI elements within safe zone
+
+**Unreal Engine:**
+- Define safe zone in UMG layouts
+- Use safe zone widget for automatic adjustment
+- Test across different display configurations
+- Keep important information centralized
+
 **Used by mechanics:** combat mode, team identification
 
 ---
@@ -2034,7 +2445,58 @@ Players with a loss of peripheral vision may not be aware of important informati
 
 In a virtual space objects that make sounds can have captions or speech bubbles placed on them to make them  accessible for people with hearing loss.
 
+#### Implementation Options
+
+**Unity:**
+- Custom implementation required
+- Attach UI elements to sound sources
+- Display directional indicators for off-screen sounds
+- Show visual representations of audio events
+- See closed caption tutorials with directional indicators
+
+**Unreal Engine:**
+- Sound Subtitle System: Marketplace asset with directional cones
+- Custom Widgets triggered by sound cues
+- Implement similar to caption systems with visual indicators
+- Use UMG widgets positioned at sound source locations
+
+#### Documentation & Resources
+
+- Unity: Closed caption tutorials with directional indicators
+- Unreal: Sound Subtitle System (Marketplace)
+
 **Used by mechanics:** Perceive danger, Perceive environment state, Perceive interactable, voice chat
 
 ---
+
+## General Resources
+
+These resources provide additional guidance and tools for implementing accessibility features across different platforms.
+
+### Unity Official Resources
+
+- Audio Spatializer SDK: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
+- Accessibility API: https://docs.unity3d.com/ScriptReference/Accessibility.VisionUtility.html
+- Unity Foundations: https://www.foundations.unity.com/fundamentals/accessibility
+
+### Unreal Engine Official Resources
+
+- Blind Accessibility Overview: https://dev.epicgames.com/documentation/en-us/unreal-engine/blind-accessibility-features-overview-in-unreal-engine
+- Text-to-Speech Quickstart: https://dev.epicgames.com/documentation/en-us/unreal-engine/text-to-speech-quickstart-in-unreal-engine
+- Spatialization Overview: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+- Free Accessibility Course: Available through Unreal Online Learning
+
+### Cross-Platform Resources
+
+- Game Accessibility Guidelines: http://gameaccessibilityguidelines.com/
+- XR Access Initiative: https://xraccess.org/
+- IGDA Game Accessibility SIG: https://igda-gasig.org/
+
+### Key Recommendations
+
+- Plan early: Integrate accessibility from the start
+- Use established patterns: Follow WCAG, BBC, Netflix standards
+- Test with users: Include people with disabilities in testing
+- Provide options: Let players customize accessibility features
+- Document clearly: Ensure features are discoverable and well-documented
 
