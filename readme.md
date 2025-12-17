@@ -16,6 +16,6 @@ The report is currently fairly sizable and requires many eyes to check over it a
 4. Download a yaml file to use as a streamlined version of the mechanics and patterns for your project.  
 
 ### Files
-The main files in this are 
-AKORG.html - the website that generates reports
-catalogue.yaml - the database for the report.
+The main files in this are:
+- AKORG.html - the website that generates reports.
+- catalogue.yaml - the database for the report.
