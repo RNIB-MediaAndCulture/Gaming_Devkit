@@ -42,7 +42,7 @@ Consider where accessibility can be the default. A good example is using sound d
 
 Accessibility is a journey, not a destination and all progress is valid. To preserve this progress, accessibility successes and failures should be logged to be used in future projects.
 
-Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is appropriate, or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
+Accessibility features and design patterns that work should be recorded so that they can be reused. Problems that were not solvable using the current tools or in the available timeframe should be logged to be addressed later. This could be through assigning developers to address them, through submitting feature requests to middleware producers if that is applicable, or by using the time saved by recording accessible design patterns and so not reinventing the wheel.
 
 ## 6 The Value of Agency
 
