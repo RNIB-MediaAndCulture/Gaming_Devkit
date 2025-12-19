@@ -347,11 +347,13 @@
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = `aspect-${index}`;
-                checkbox.value = aspect.name;
+                checkbox.setAttribute('aria-label', aspect.name + (aspect.description ? '. ' + aspect.description.substring(0, 100) + (aspect.description.length > 100 ? '...' : '') : ''));
                 checkbox.addEventListener('change', handleAspectChange);
+                checkbox.value = aspect.name;
 
                 const label = document.createElement('label');
                 label.htmlFor = `aspect-${index}`;
+                label.setAttribute('aria-hidden', 'true');
                 label.innerHTML = `<strong>${aspect.name}</strong>`;
                 if (aspect.description) {
                     const desc = aspect.description.substring(0, 100);
