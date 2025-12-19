@@ -1,4 +1,3 @@
-
 ![RNIB logo](RNIB_logo.png)
 # RNIB Best Practice in Accessible Gaming 2024 [BPAG2024]
 ## 1	Spectrum of sight loss 
@@ -125,13 +124,10 @@ Small UI elements are a common accessibility issue for low vision players. For d
 Allowing the player to adjust the scale and position of individual UI elements is another way to improve their readability by low vision players. Including this level of customisation allows players to enlarge and increase the visibility of UI elements they find most difficult to see without increasing the size of less useful elements or those for which no scaling is needed. 
 Examples: Warframe, Tom Clancy’s The Division 2
 
-> [!note]
-> These examples should be worked into the text unless we have them for all the options.
-
-### 6.6	High contrast filter
+## 6.6	High contrast filter
 Low vision players may find it difficult to distinguish key elements such as interactive objects or non-player characters from the rest of the environment. This can be addressed by implementing a high-contrast mode in which the game environment and other static objects are displayed in a greyscale colour palette, while important or interactive objects are displayed in bright colours that stand out to low vision players. 
 
-Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so information communicated by green and red will not be accessible to some people.
+Consistent colour-coding of game elements with similar properties can be used to further help low vision players. For example, representing all hazards as red allows the low vision player to quickly identify them in the environment. This can be done through coloured outlines or halos or the whole object can be coloured as a block. Players should be given options to which colours are used so that they can choose those that best suit their vision. Allow a lot of variance in the colours available. Green and red are typically used for safety and danger but red/green colour vision deficiency is one of the most common types so if you just allowed different shades or green and red then they may not stand out to some people.
 
 Sometimes buttons and icons may not be clickable but may still be visible on the screen. The button may be greyed out or be superimposed with a clock face or other modifier to signify that it’s not available. Common options for this are:
 - Active (ready to use)
