@@ -495,7 +495,7 @@ The player will need to know the current level of the building, the cost to upgr
 Accessibility Interactions:
 [Cycle through Elements](#1064-cycle-through-elements), [List view](#1067-list-view)
 
-### 8.6	Accessibility Interactions
+### 10.6	Accessibility Interactions
 #### 10.6.1	 Alert popups
 Alert popups are useful to tell the user that an event has happened when there is more information available than can be communicated with an audio tone. Visually the information can be high contrast and enlarged and audibly the information can be read out as text. Popups that block the screen, and speech that obscures a significant part of the audio must only be triggered by the user, to avoid hijacking their attention and gameplay. If a user is playing using audio, the audio used to signal that an alert is available must be short in order to avoid blocking other audibly communicated information. Consider a short sound effect or phrase of a few syllables to signal an alert popup is available and then some mechanism to open the popup to hear the rest of the information. If the audio signal can communicate the information itself, then no popup is needed. For instance, in a base building game with a building queue an audio signal “building complete” tells you that a building has finished, and you can check the queue if you want to know what is still being built. An audio signal “incoming attack” may need a popup to tell you who and what is attacking.
 
@@ -570,7 +570,7 @@ Pros:
 Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
-### 9	Glossary
+### 11	Glossary
 #### Screen reader 
 A piece of software that renders on screen text, controls and other information (when labelled correctly and sent in a compatible format via software) as synthesised speech.  The term is most associated with computer and mobile phone usage, though the user interfaces of games consoles could also be said to have screen readers built in.
 
