@@ -46,7 +46,7 @@ Accessibility features and design patterns that work should be recorded so that 
 
 ## 6 The Value of Agency
 
-During accessibility discussions, it is always important to consider how much agency a player has when using particular accessibility features. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable, but if a lack of agency means the gamer loses too much challenge then the game can equally lose its appeal. 
+During accessibility discussions, it is always important to consider how much agency a player has when using particular accessibility features. Agency is linked to the amount of control and decision making that a player has. Reducing agency can diminish the challenge experienced by a gamer and reduce their enjoyment. The most important thing is for a game to be playable, but if a lack of agency means the gamer loses too much challenge then the game can equally lose its appeal.  Below are some examples of where agency comes into play:
 
 ### 6.1 Targeting/Aiming
 A common mechanic for making aiming accessible is to use a lock-on system to keep a target in the centre of your view. Other options are to have the crosshairs lock on to targets independent of the view or automatically hit any target in range if the player attacks. These increase accessibility and allow progression but remove agency and can undermine the gaming experience. 
@@ -570,7 +570,7 @@ Pros:
 Cons:
 -	If the visual layout communicates information, then Cycle Through Elements or Grid Navigation may be more suitable
 
-### 9	Glossary
+### 11	Glossary
 #### Screen reader 
 A piece of software that renders on screen text, controls and other information (when labelled correctly and sent in a compatible format via software) as synthesised speech.  The term is most associated with computer and mobile phone usage, though the user interfaces of games consoles could also be said to have screen readers built in.
 
