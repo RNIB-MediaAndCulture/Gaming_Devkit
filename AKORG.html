@@ -3,30 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibility Kick-Off Report Generator</title>
+    <title>Accessibility Kick-Off Report Generator — RNIB</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <style>
-        * {
+        :root {
+            --rnib-pink:       #e50071;
+            --rnib-pink-dark:  #b8005a;
+            --rnib-pink-tint:  #fce8f1;
+            --rnib-blue:       #0098b9;
+            --rnib-blue-tint:  #e5f5f9;
+            --rnib-green:      #009e4d;
+            --rnib-green-tint: #e5f5ed;
+            --rnib-yellow:     #fdc300;
+            --rnib-grey:       #555554;
+            --rnib-black:      #000000;
+            --rnib-white:      #ffffff;
+            --rnib-off-white:  #f7f7f7;
+            --rnib-rule:       #e0e0e0;
+            --rnib-mid-grey:   #767676;
+
+            --font-stack:   'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+
+            /* Typography — 1pt = 1.333px */
+            --sz-body:  18.67px;   /* 14pt minimum per guidelines */
+            --sz-ui:    16px;      /* 12pt — UI chrome only, never body copy */
+            --sz-small: 14px;      /* 10.5pt — captions / hints only */
+            --sz-h1:    32px;
+            --sz-h2:    24px;
+            --sz-h3:    21.33px;   /* 16pt */
+            --sz-h4:    18.67px;   /* 14pt */
+
+            --lh-body:  22px;      /* 16.5pt — correct leading for 14pt text */
+            --lh-h2:    30px;
+            --lh-h3:    26px;
+
+            --para-gap: 11px;      /* 3mm paragraph spacing */
+        }
+
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-style: normal;           /* No italics */
+            text-decoration: none;        /* No underlines */
+            hyphens: none;                /* No hyphenation */
+            -webkit-hyphens: none;
+            font-variant-ligatures: none; /* Ligatures off */
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: var(--font-stack);
+            font-size: var(--sz-body);
+            line-height: var(--lh-body);
+            color: var(--rnib-black);
+            background: var(--rnib-white);
             height: 100vh;
             overflow: hidden;
+            text-align: left;
         }
-
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 8px;
+            z-index: 999;
+            background: var(--rnib-pink);
+            color: var(--rnib-white);
+            padding: 10px 16px;
+            font-size: var(--sz-body);
+            font-weight: 700;
+            font-family: var(--font-stack);
+        }
+        .skip-link:focus {
+            top: 8px;
+            outline: 3px solid var(--rnib-black);
+            outline-offset: 2px;
+        }
         .container {
             display: flex;
             height: 100vh;
         }
 
         .left-panel {
-            width: 350px;
-            background: #f5f5f5;
-            border-right: 2px solid #ddd;
+            width: 360px;
+            min-width: 360px;
+            background: var(--rnib-white);
+            border-right: 1px solid var(--rnib-rule);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -38,277 +99,510 @@
             flex-direction: column;
             overflow: hidden;
         }
-
         .panel-header {
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
+            padding: 18px 20px 18px 28px;
+            background: var(--rnib-white);
+            border-bottom: 1px solid var(--rnib-rule);
+            position: relative;
+        }
+        .panel-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: var(--rnib-pink);
+        }
+
+        .header-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
         }
 
         .panel-header h1 {
-            font-size: 20px;
-            margin-bottom: 5px;
+            font-size: var(--sz-h3);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: 1.2;
+            margin-bottom: 4px;
         }
 
         .panel-header p {
-            font-size: 13px;
-            opacity: 0.9;
+            font-size: var(--sz-ui);
+            color: var(--rnib-grey);
+            line-height: 1.45;
+        }
+
+        .selected-count {
+            display: block;
+            font-size: var(--sz-ui);
+            font-weight: 700;
+            color: var(--rnib-pink);
+            margin-top: 6px;
+        }
+        .rnib-mark {
+            flex-shrink: 0;
+            text-align: left;
+            line-height: 1;
+        }
+        .rnib-mark__name {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--rnib-black);
+            letter-spacing: -0.5px;
+        }
+        .rnib-mark__bar {
+            display: block;
+            height: 4px;
+            width: 100%;
+            background: var(--rnib-pink);
+            margin: 3px 0 2px;
+        }
+        .rnib-mark__strapline {
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--rnib-black);
+            letter-spacing: 0.3px;
+        }
+
+        .load-file {
+            padding: 14px 20px 14px 28px;
+            background: var(--rnib-off-white);
+            border-bottom: 1px solid var(--rnib-rule);
+        }
+        .load-file label {
+            display: block;
+            font-size: var(--sz-ui);
+            font-weight: 700;
+            color: var(--rnib-black);
+            margin-bottom: 6px;
+        }
+        .load-file input[type="file"] {
+            display: block;
+            width: 100%;
+            font-size: var(--sz-ui);
+            font-family: var(--font-stack);
+            color: var(--rnib-black);
+            cursor: pointer;
+        }
+        .load-file input[type="file"]:focus {
+            outline: 3px solid var(--rnib-pink);
+            outline-offset: 2px;
+        }
+        .load-file .hint {
+            font-size: var(--sz-small);
+            color: var(--rnib-grey);
+            margin-top: 5px;
+            line-height: 1.4;
         }
 
         .aspects-container {
             flex: 1;
             overflow-y: auto;
-            padding: 20px;
+            padding: 12px 16px 12px 20px;
         }
 
-        .aspect-checkbox {
+        .aspect-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 12px;
-            padding: 8px;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-
-        .aspect-checkbox:hover {
-            background: #e8e8e8;
-        }
-
-        .aspect-checkbox input[type="checkbox"] {
-            margin-right: 10px;
-            margin-top: 3px;
+            gap: 12px;
+            padding: 10px 12px 10px 8px;
+            margin-bottom: 2px;
+            border-left: 4px solid transparent;
+            transition: background 0.12s, border-color 0.12s;
             cursor: pointer;
-            width: 18px;
-            height: 18px;
+        }
+        .aspect-item:hover {
+            background: var(--rnib-off-white);
+            border-left-color: var(--rnib-pink);
+        }
+        .aspect-item.is-checked {
+            background: var(--rnib-pink-tint);
+            border-left-color: var(--rnib-pink);
         }
 
-        .aspect-checkbox label {
+        .aspect-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
             cursor: pointer;
-            font-size: 14px;
-            line-height: 1.4;
+            margin-top: 1px;
+            accent-color: var(--rnib-pink);
+        }
+        .aspect-item input[type="checkbox"]:focus {
+            outline: 3px solid var(--rnib-pink);
+            outline-offset: 2px;
+        }
+
+        .aspect-item label {
+            cursor: pointer;
+            line-height: 1.45;
             flex: 1;
         }
-
-        .aspect-checkbox label strong {
+        .aspect-item label strong {
             display: block;
-            margin-bottom: 2px;
+            font-size: var(--sz-ui);
+            font-weight: 700;
+            color: var(--rnib-black);
+            margin-bottom: 1px;
         }
-
-        .aspect-checkbox label span {
-            font-size: 12px;
-            color: #666;
+        .aspect-item label span {
             display: block;
+            font-size: var(--sz-small);
+            color: var(--rnib-grey);
+            line-height: 1.4;
         }
-
         .buttons-container {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #ddd;
+            padding: 14px 20px 14px 28px;
+            background: var(--rnib-white);
+            border-top: 1px solid var(--rnib-rule);
             display: flex;
             gap: 10px;
         }
 
         button {
             flex: 1;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border: none;
-            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: var(--sz-ui);
+            font-weight: 700;
+            font-family: var(--font-stack);
+            border-radius: 0;
             cursor: pointer;
-            transition: all 0.2s;
+            text-align: left;
+            line-height: 1.2;
+            transition: background 0.12s, color 0.12s, border-color 0.12s;
+        }
+        button:focus {
+            outline: 3px solid var(--rnib-pink);
+            outline-offset: 3px;
         }
 
         .report-btn {
-            background: #3498db;
-            color: white;
+            background: var(--rnib-pink);
+            color: var(--rnib-white);
+            border: 2px solid var(--rnib-pink);
         }
-
-        .report-btn:hover {
-            background: #2980b9;
+        .report-btn:hover:not(:disabled) {
+            background: var(--rnib-pink-dark);
+            border-color: var(--rnib-pink-dark);
         }
 
         .yaml-btn {
-            background: #27ae60;
-            color: white;
+            background: var(--rnib-white);
+            color: var(--rnib-black);
+            border: 2px solid var(--rnib-black);
         }
-
-        .yaml-btn:hover {
-            background: #229954;
+        .yaml-btn:hover:not(:disabled) {
+            background: var(--rnib-black);
+            color: var(--rnib-white);
         }
 
         button:disabled {
-            opacity: 0.5;
+            opacity: 0.38;
             cursor: not-allowed;
+        }
+
+        .btn-hint {
+            font-size: var(--sz-small);
+            color: var(--rnib-grey);
+            padding: 0 20px 12px 28px;
+            line-height: 1.4;
+        }
+        .empty-state {
+            padding: 48px 32px;
+            color: var(--rnib-grey);
+        }
+        .empty-state svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 16px;
+            display: block;
+            color: var(--rnib-mid-grey);
+        }
+        .empty-state h3 {
+            font-size: var(--sz-h3);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: 1.2;
+            margin-bottom: var(--para-gap);
+        }
+        .empty-state p {
+            font-size: var(--sz-body);
+            line-height: var(--lh-body);
+            color: var(--rnib-grey);
         }
 
         .report-preview {
             flex: 1;
             overflow-y: auto;
-            padding: 40px;
-            background: white;
+            padding: 48px 56px;
+            background: var(--rnib-white);
         }
 
         .report-content {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 760px;
         }
 
         .report-content h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            font-size: var(--sz-h1);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .report-content h1::after {
+            content: '';
+            display: block;
+            height: 6px;
+            width: 40px;
+            background: var(--rnib-pink);
+            margin-top: 12px;
         }
 
         .report-content h2 {
-            font-size: 24px;
+            font-size: var(--sz-h2);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: var(--lh-h2);
             margin-top: 40px;
-            margin-bottom: 20px;
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            margin-bottom: var(--para-gap);
+            padding-left: 16px;
+            border-left: 8px solid var(--rnib-pink);
         }
 
         .report-content h3 {
-            font-size: 20px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #2c3e50;
+            font-size: var(--sz-h3);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: var(--lh-h3);
+            margin-top: 32px;
+            margin-bottom: var(--para-gap);
         }
 
         .report-content h4 {
-            font-size: 16px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #555;
+            font-size: var(--sz-h4);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: var(--lh-body);
+            margin-top: 24px;
+            margin-bottom: var(--para-gap);
         }
 
         .report-content h5 {
-            font-size: 14px;
-            margin-top: 15px;
-            margin-bottom: 8px;
-            color: #666;
-            font-weight: 600;
+            font-size: var(--sz-body);
+            font-weight: 700;
+            color: var(--rnib-black);
+            line-height: var(--lh-body);
+            margin-top: 20px;
+            margin-bottom: var(--para-gap);
         }
 
         .report-content p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-            color: #333;
+            font-size: var(--sz-body);
+            line-height: var(--lh-body);
+            color: var(--rnib-black);
+            margin-bottom: var(--para-gap);
+            text-indent: 0;
         }
 
-        .report-content ul, .report-content ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
+        .report-content ul,
+        .report-content ol {
+            margin-left: 24px;
+            margin-bottom: var(--para-gap);
         }
 
         .report-content li {
-            margin-bottom: 8px;
-            line-height: 1.5;
+            font-size: var(--sz-body);
+            line-height: var(--lh-body);
+            color: var(--rnib-black);
+            margin-bottom: 5px;
+            padding-left: 4px;
+        }
+
+        .report-content strong {
+            font-weight: 700;
+        }
+
+        .report-content a {
+            color: var(--rnib-blue);
+            font-weight: 600;
+        }
+        .report-content a:hover {
+            color: var(--rnib-pink);
+            text-decoration: underline;
+        }
+        .report-content a:focus {
+            outline: 3px solid var(--rnib-pink);
+            outline-offset: 2px;
+        }
+
+        .report-content hr {
+            border: none;
+            border-top: 1px solid var(--rnib-rule);
+            margin: 32px 0;
         }
 
         .report-content code {
-            background: #f5f5f5;
+            font-size: var(--sz-ui);
+            background: var(--rnib-off-white);
             padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-
-        .empty-state svg {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-
-        .load-file {
-            padding: 20px;
-            background: #fff3cd;
-            border-bottom: 1px solid #ffc107;
-        }
-
-        .load-file input[type="file"] {
-            display: block;
-            width: 100%;
-            padding: 8px;
-            font-size: 14px;
-        }
-
-        .selected-count {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
+            border-left: 3px solid var(--rnib-rule);
         }
 
         .implementation-section {
-            background: #f8f9fa;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 6px;
-            border-left: 4px solid #3498db;
+            background: var(--rnib-blue-tint);
+            padding: 16px 20px;
+            margin: var(--para-gap) 0;
+            border-left: 6px solid var(--rnib-blue);
+        }
+        .implementation-section p,
+        .implementation-section li {
+            font-size: var(--sz-body);
+            font-weight: 500;
+            line-height: var(--lh-body);
+            color: var(--rnib-black);
         }
 
         .resource-section {
-            background: #e8f4f8;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 6px;
-            border-left: 4px solid #27ae60;
+            background: var(--rnib-green-tint);
+            padding: 16px 20px;
+            margin: var(--para-gap) 0;
+            border-left: 6px solid var(--rnib-green);
+        }
+        .resource-section p,
+        .resource-section li {
+            font-size: var(--sz-body);
+            font-weight: 500;
+            line-height: var(--lh-body);
+            color: var(--rnib-black);
+        }
+
+        .aspects-container::-webkit-scrollbar,
+        .report-preview::-webkit-scrollbar {
+            width: 6px;
+        }
+        .aspects-container::-webkit-scrollbar-track,
+        .report-preview::-webkit-scrollbar-track {
+            background: var(--rnib-off-white);
+        }
+        .aspects-container::-webkit-scrollbar-thumb,
+        .report-preview::-webkit-scrollbar-thumb {
+            background: var(--rnib-rule);
+        }
+        .aspects-container::-webkit-scrollbar-thumb:hover,
+        .report-preview::-webkit-scrollbar-thumb:hover {
+            background: var(--rnib-mid-grey);
         }
     </style>
 </head>
 <body>
+
+    <a class="skip-link" href="#reportContent">Skip to report preview</a>
+
     <div class="container">
-        <div class="left-panel">
+
+        <!-- LEFT PANEL: aspect selection ─────────────────── -->
+        <aside class="left-panel" aria-label="Game aspect selection">
+
             <div class="panel-header">
-                <h1>Game Aspects</h1>
-                <p>Select the aspects your game will include</p>
-                <div class="selected-count" id="selectedCount">0 aspects selected</div>
-            </div>
-            
-            <div class="load-file">
-                <input type="file" id="yamlFile" accept=".yaml,.yml" />
+                <div class="header-row">
+                    <div>
+                        <h1>Game Aspects</h1>
+                        <p>Select the aspects your game will include</p>
+                        <span class="selected-count"
+                              id="selectedCount"
+                              aria-live="polite"
+                              aria-atomic="true">0 aspects selected</span>
+                    </div>
+                    <div class="rnib-mark" aria-label="RNIB">
+                        <span class="rnib-mark__name" aria-hidden="true">RNIB</span>
+                        <span class="rnib-mark__bar"  role="presentation"></span>
+                        <span class="rnib-mark__strapline" aria-hidden="true">See differently</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="aspects-container" id="aspectsContainer">
+            <div class="load-file">
+                <label for="yamlFile">Load YAML catalogue</label>
+                <input type="file"
+                       id="yamlFile"
+                       accept=".yaml,.yml"
+                       aria-describedby="yamlHint" />
+                <p class="hint" id="yamlHint">Accepts .yaml or .yml files</p>
+            </div>
+
+            <div class="aspects-container"
+                 id="aspectsContainer"
+                 role="group"
+                 aria-label="Available game aspects">
                 <div class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                         aria-hidden="true" focusable="false">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
                     <p>Load a YAML file to begin</p>
                 </div>
             </div>
 
             <div class="buttons-container">
-                <button class="report-btn" id="downloadReport" disabled>Download Report</button>
-                <button class="yaml-btn" id="downloadYaml" disabled>Download YAML</button>
+                <button class="report-btn"
+                        id="downloadReport"
+                        disabled
+                        aria-disabled="true"
+                        aria-describedby="btnHint">
+                    Download Report
+                </button>
+                <button class="yaml-btn"
+                        id="downloadYaml"
+                        disabled
+                        aria-disabled="true"
+                        aria-describedby="btnHint">
+                    Download YAML
+                </button>
             </div>
-        </div>
+            <p class="btn-hint" id="btnHint">
+                Select at least one aspect to enable downloads
+            </p>
 
-        <div class="right-panel">
+        </aside>
+
+        <!-- RIGHT PANEL: report preview ──────────────────── -->
+        <main class="right-panel" aria-label="Report preview">
+
             <div class="panel-header">
                 <h1>Report Preview</h1>
                 <p>Live preview of your accessibility kick-off report</p>
             </div>
-            <div class="report-preview">
+
+            <div class="report-preview"
+                 role="region"
+                 aria-label="Generated report"
+                 aria-live="polite">
                 <div class="report-content" id="reportContent">
                     <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                             aria-hidden="true" focusable="false">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
                         </svg>
-                        <h3>No Aspects Selected</h3>
-                        <p>Select game aspects from the left panel to generate your report</p>
+                        <h3>No aspects selected</h3>
+                        <p>Select game aspects from the panel on the left to generate your accessibility kick-off report</p>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </main>
     </div>
 
     <script>
@@ -317,60 +611,72 @@
 
         document.getElementById('yamlFile').addEventListener('change', function(e) {
             const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    try {
-                        catalogueData = jsyaml.load(event.target.result);
-                        renderAspects();
-                    } catch (error) {
-                        alert('Error parsing YAML file: ' + error.message);
-                    }
-                };
-                reader.readAsText(file);
-            }
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    catalogueData = jsyaml.load(event.target.result);
+                    renderAspects();
+                } catch (error) {
+                    alert('Error parsing YAML file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
         });
 
         function renderAspects() {
             const container = document.getElementById('aspectsContainer');
             container.innerHTML = '';
 
-            if (!catalogueData || !catalogueData.catalogue || !catalogueData.catalogue.aspects) {
+            if (!catalogueData?.catalogue?.aspects) {
                 container.innerHTML = '<div class="empty-state"><p>No aspects found in YAML file</p></div>';
                 return;
             }
 
             catalogueData.catalogue.aspects.forEach((aspect, index) => {
-                const div = document.createElement('div');
-                div.className = 'aspect-checkbox';
-                
+                const item = document.createElement('div');
+                item.className = 'aspect-item';
+
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = `aspect-${index}`;
-                checkbox.setAttribute('aria-label', aspect.name + (aspect.description ? '. ' + aspect.description.substring(0, 100) + (aspect.description.length > 100 ? '...' : '') : ''));
-                checkbox.addEventListener('change', handleAspectChange);
                 checkbox.value = aspect.name;
+
+                const descPreview = aspect.description
+                    ? aspect.description.substring(0, 120) + (aspect.description.length > 120 ? '\u2026' : '')
+                    : '';
+                checkbox.setAttribute('aria-label',
+                    aspect.name + (descPreview ? '. ' + descPreview : ''));
+
+                checkbox.addEventListener('change', () => handleAspectChange(checkbox, item));
 
                 const label = document.createElement('label');
                 label.htmlFor = `aspect-${index}`;
                 label.setAttribute('aria-hidden', 'true');
-                label.innerHTML = `<strong>${aspect.name}</strong>`;
+
+                const nameEl = document.createElement('strong');
+                nameEl.textContent = aspect.name;
+                label.appendChild(nameEl);
+
                 if (aspect.description) {
-                    const desc = aspect.description.substring(0, 100);
-                    label.innerHTML += `<span>${desc}${aspect.description.length > 100 ? '...' : ''}</span>`;
+                    const descEl = document.createElement('span');
+                    descEl.textContent = descPreview;
+                    label.appendChild(descEl);
                 }
 
-                div.appendChild(checkbox);
-                div.appendChild(label);
-                container.appendChild(div);
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                container.appendChild(item);
             });
         }
 
-        function handleAspectChange(e) {
-            if (e.target.checked) {
-                selectedAspects.add(e.target.value);
+        function handleAspectChange(checkbox, itemEl) {
+            if (checkbox.checked) {
+                selectedAspects.add(checkbox.value);
+                itemEl.classList.add('is-checked');
             } else {
-                selectedAspects.delete(e.target.value);
+                selectedAspects.delete(checkbox.value);
+                itemEl.classList.remove('is-checked');
             }
             updateSelectedCount();
             generateReport();
@@ -378,14 +684,18 @@
         }
 
         function updateSelectedCount() {
-            document.getElementById('selectedCount').textContent = 
-                `${selectedAspects.size} aspect${selectedAspects.size !== 1 ? 's' : ''} selected`;
+            const n = selectedAspects.size;
+            document.getElementById('selectedCount').textContent =
+                `${n} aspect${n !== 1 ? 's' : ''} selected`;
         }
 
         function updateButtons() {
-            const hasSelection = selectedAspects.size > 0;
-            document.getElementById('downloadReport').disabled = !hasSelection;
-            document.getElementById('downloadYaml').disabled = !hasSelection;
+            const has = selectedAspects.size > 0;
+            ['downloadReport', 'downloadYaml'].forEach(id => {
+                const btn = document.getElementById(id);
+                btn.disabled = !has;
+                btn.setAttribute('aria-disabled', String(!has));
+            });
         }
 
         function generateReport() {
@@ -394,347 +704,215 @@
             if (selectedAspects.size === 0) {
                 reportDiv.innerHTML = `
                     <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                             aria-hidden="true" focusable="false">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
                         </svg>
-                        <h3>No Aspects Selected</h3>
-                        <p>Select game aspects from the left panel to generate your report</p>
-                    </div>
-                `;
+                        <h3>No aspects selected</h3>
+                        <p>Select game aspects from the panel on the left to generate your accessibility kick-off report</p>
+                    </div>`;
                 return;
             }
 
             const mechanicsNeeded = new Map();
-            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
-                selectedAspects.has(a.name)
-            );
+            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a =>
+                selectedAspects.has(a.name));
 
             selectedAspectsList.forEach(aspect => {
-                if (aspect['mechanics used']) {
-                    aspect['mechanics used'].forEach(mechName => {
-                        if (!mechanicsNeeded.has(mechName)) {
-                            mechanicsNeeded.set(mechName, new Set());
-                        }
-                        mechanicsNeeded.get(mechName).add(aspect.name);
-                    });
-                }
+                (aspect['mechanics used'] || []).forEach(mechName => {
+                    if (!mechanicsNeeded.has(mechName)) mechanicsNeeded.set(mechName, new Set());
+                    mechanicsNeeded.get(mechName).add(aspect.name);
+                });
             });
 
             const patternsNeeded = new Set();
-            mechanicsNeeded.forEach((aspects, mechName) => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                if (mechanic && mechanic.potentialBarriers) {
-                    mechanic.potentialBarriers.forEach(barrier => {
-                        if (barrier['patterns to consider']) {
-                            barrier['patterns to consider'].forEach(pattern => {
-                                patternsNeeded.add(pattern);
-                            });
-                        }
-                    });
-                }
+            mechanicsNeeded.forEach((_, mechName) => {
+                const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
+                (mech?.potentialBarriers || []).forEach(barrier => {
+                    (barrier['patterns to consider'] || []).forEach(p => patternsNeeded.add(p));
+                });
             });
 
-            let markdown = generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded);
-            reportDiv.innerHTML = markdownToHTML(markdown);
+            reportDiv.innerHTML = markdownToHTML(
+                generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded)
+            );
         }
 
         function generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded) {
-            let markdown = `# Accessibility Kick-Off Report
+            let md = `# Accessibility Kick-Off Report\n\n## Selected Game Aspects\n\n`;
+            md += Array.from(selectedAspects).map(n => `- ${n}`).join('\n');
+            md += '\n\n---\n\n## Mechanics to Implement\n\n';
 
-## Selected Game Aspects
-
-${Array.from(selectedAspects).map(name => `- ${name}`).join('\n')}
-
----
-
-## Mechanics to Implement
-
-`;
-
-            const sortedMechanics = Array.from(mechanicsNeeded.entries()).sort((a, b) => 
-                a[0].localeCompare(b[0])
-            );
+            const sortedMechanics = Array.from(mechanicsNeeded.entries()).sort((a, b) =>
+                a[0].localeCompare(b[0]));
 
             sortedMechanics.forEach(([mechName, aspects]) => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                
-                markdown += `### ${mechName}\n\n`;
-                
-                if (mechanic && mechanic.description) {
-                    markdown += `${mechanic.description.trim()}\n\n`;
-                }
+                const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
+                md += `### ${mechName}\n\n`;
+                if (mech?.description) md += `${mech.description.trim()}\n\n`;
+                md += `**Required for:** ${Array.from(aspects).join(', ')}\n\n`;
 
-                markdown += `**Required for:** ${Array.from(aspects).join(', ')}\n\n`;
-
-                if (mechanic && mechanic.potentialBarriers && mechanic.potentialBarriers.length > 0) {
-                    markdown += `#### Accessibility Barriers & Considerations\n\n`;
-                    
-                    mechanic.potentialBarriers.forEach((barrierObj, idx) => {
-                        if (barrierObj.barrier) {
-                            markdown += `**Barrier ${idx + 1}:** ${barrierObj.barrier}\n\n`;
-                            
-                            if (barrierObj.consider) {
-                                markdown += `**Consider:**\n`;
-                                if (Array.isArray(barrierObj.consider)) {
-                                    barrierObj.consider.forEach(consideration => {
-                                        markdown += `- ${consideration}\n`;
-                                    });
-                                } else {
-                                    markdown += `- ${barrierObj.consider}\n`;
-                                }
-                                markdown += '\n';
-                            }
-
-                            if (barrierObj['patterns to consider']) {
-                                markdown += `**Related Patterns:** `;
-                                markdown += barrierObj['patterns to consider']
-                                    .map(p => `[${p}](#${p.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`)
-                                    .join(', ');
-                                markdown += '\n\n';
-                            }
+                if (mech?.potentialBarriers?.length) {
+                    md += `#### Accessibility Barriers and Considerations\n\n`;
+                    mech.potentialBarriers.forEach((b, idx) => {
+                        if (!b.barrier) return;
+                        md += `**Barrier ${idx + 1}:** ${b.barrier}\n\n`;
+                        if (b.consider) {
+                            md += `**Consider:**\n`;
+                            const items = Array.isArray(b.consider) ? b.consider : [b.consider];
+                            items.forEach(c => { md += `- ${c}\n`; });
+                            md += '\n';
+                        }
+                        if (b['patterns to consider']) {
+                            md += `**Related Patterns:** `;
+                            md += b['patterns to consider']
+                                .map(p => `[${p}](#${p.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`)
+                                .join(', ');
+                            md += '\n\n';
                         }
                     });
                 }
-
-                markdown += '---\n\n';
+                md += '---\n\n';
             });
 
             if (patternsNeeded.size > 0) {
-                markdown += `## Accessibility Patterns\n\n`;
-
-                const sortedPatterns = Array.from(patternsNeeded).sort();
-                sortedPatterns.forEach(patternName => {
+                md += `## Accessibility Patterns\n\n`;
+                Array.from(patternsNeeded).sort().forEach(patternName => {
                     const pattern = catalogueData.catalogue.patterns.find(p => p.name === patternName);
-                    
-                    if (pattern) {
-                        markdown += `### ${pattern.name}\n\n`;
-                        
-                        if (pattern.description) {
-                            markdown += `${pattern.description.trim()}\n\n`;
-                        }
+                    if (!pattern) return;
 
-                        // Implementation Options
-                        if (pattern.implementation_options) {
-                            markdown += `#### Implementation Options\n\n`;
-                            
-                            if (pattern.implementation_options.unity) {
-                                markdown += `**Unity:**\n`;
-                                if (Array.isArray(pattern.implementation_options.unity)) {
-                                    pattern.implementation_options.unity.forEach(option => {
-                                        markdown += `- ${option}\n`;
-                                    });
-                                } else {
-                                    markdown += `- ${pattern.implementation_options.unity}\n`;
-                                }
-                                markdown += '\n';
-                            }
-                            
-                            if (pattern.implementation_options.unreal) {
-                                markdown += `**Unreal Engine:**\n`;
-                                if (Array.isArray(pattern.implementation_options.unreal)) {
-                                    pattern.implementation_options.unreal.forEach(option => {
-                                        markdown += `- ${option}\n`;
-                                    });
-                                } else {
-                                    markdown += `- ${pattern.implementation_options.unreal}\n`;
-                                }
-                                markdown += '\n';
-                            }
-                        }
+                    md += `### ${pattern.name}\n\n`;
+                    if (pattern.description) md += `${pattern.description.trim()}\n\n`;
 
-                        // Documentation Links
-                        if (pattern.documentation && pattern.documentation.length > 0) {
-                            markdown += `#### Documentation & Resources\n\n`;
-                            pattern.documentation.forEach(doc => {
-                                markdown += `- ${doc}\n`;
-                            });
-                            markdown += '\n';
-                        }
-
-                        const mechanicsUsingPattern = [];
-                        sortedMechanics.forEach(([mechName]) => {
-                            const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                            if (mechanic && mechanic.potentialBarriers) {
-                                const usesPattern = mechanic.potentialBarriers.some(b => 
-                                    b['patterns to consider'] && b['patterns to consider'].includes(patternName)
-                                );
-                                if (usesPattern) {
-                                    mechanicsUsingPattern.push(mechName);
-                                }
-                            }
+                    if (pattern.implementation_options) {
+                        md += `#### Implementation Options\n\n`;
+                        ['unity', 'unreal'].forEach(engine => {
+                            if (!pattern.implementation_options[engine]) return;
+                            const label = engine === 'unity' ? 'Unity' : 'Unreal Engine';
+                            md += `**${label}:**\n`;
+                            const opts = Array.isArray(pattern.implementation_options[engine])
+                                ? pattern.implementation_options[engine]
+                                : [pattern.implementation_options[engine]];
+                            opts.forEach(o => { md += `- ${o}\n`; });
+                            md += '\n';
                         });
-
-                        if (mechanicsUsingPattern.length > 0) {
-                            markdown += `**Used by mechanics:** ${mechanicsUsingPattern.join(', ')}\n\n`;
-                        }
-
-                        markdown += '---\n\n';
                     }
+
+                    if (pattern.documentation?.length) {
+                        md += `#### Documentation and Resources\n\n`;
+                        pattern.documentation.forEach(doc => { md += `- ${doc}\n`; });
+                        md += '\n';
+                    }
+
+                    const using = [];
+                    sortedMechanics.forEach(([mechName]) => {
+                        const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
+                        if (mech?.potentialBarriers?.some(b =>
+                            b['patterns to consider']?.includes(patternName))) {
+                            using.push(mechName);
+                        }
+                    });
+                    if (using.length) md += `**Used by mechanics:** ${using.join(', ')}\n\n`;
+                    md += '---\n\n';
                 });
             }
 
-            // Add General Resources section
             if (catalogueData.catalogue.general_resources) {
-                markdown += `## General Resources\n\n`;
-                markdown += `These resources provide additional guidance and tools for implementing accessibility features across different platforms.\n\n`;
-
+                md += `## General Resources\n\n`;
+                md += `These resources provide additional guidance and tools for implementing accessibility features across different platforms.\n\n`;
                 catalogueData.catalogue.general_resources.forEach(resource => {
-                    markdown += `### ${resource.name}\n\n`;
-                    
-                    if (resource.documentation && resource.documentation.length > 0) {
-                        resource.documentation.forEach(doc => {
-                            markdown += `- ${doc}\n`;
-                        });
-                        markdown += '\n';
-                    }
-
-                    if (resource.items && resource.items.length > 0) {
-                        resource.items.forEach(item => {
-                            markdown += `- ${item}\n`;
-                        });
-                        markdown += '\n';
-                    }
+                    md += `### ${resource.name}\n\n`;
+                    (resource.documentation || []).forEach(d => { md += `- ${d}\n`; });
+                    (resource.items || []).forEach(i => { md += `- ${i}\n`; });
+                    md += '\n';
                 });
             }
 
-            return markdown;
+            return md;
         }
 
-        function markdownToHTML(markdown) {
-            let html = markdown;
-            
-            // Headers
+        function markdownToHTML(md) {
+            let html = md;
             html = html.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
-            html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-            
-            // Bold
+            html = html.replace(/^#### (.*$)/gim,  '<h4>$1</h4>');
+            html = html.replace(/^### (.*$)/gim,   '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim,    '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim,     '<h1>$1</h1>');
             html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            
-            // Links
             html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-            
-            // Lists
-            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            // Horizontal rules
+            html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
+            // Wrap contiguous list items
+            html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => `<ul>${match}</ul>`);
             html = html.replace(/^---$/gim, '<hr>');
-            
-            // Paragraphs
             html = html.split('\n\n').map(para => {
-                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
-                    return para;
-                }
-                return para.trim() ? `<p>${para}</p>` : '';
+                const t = para.trim();
+                if (!t) return '';
+                if (/^<(h[1-6]|ul|ol|hr)/.test(t)) return t;
+                return `<p>${t}</p>`;
             }).join('\n');
-            
             return html;
         }
 
-        document.getElementById('downloadReport').addEventListener('click', function() {
-            const markdown = generateFullMarkdownReport();
-            downloadFile(markdown, 'accessibility-kickoff-report.md', 'text/markdown');
+        document.getElementById('downloadReport').addEventListener('click', () => {
+            downloadFile(generateFullMarkdownReport(), 'accessibility-kickoff-report.md', 'text/markdown');
         });
 
-        document.getElementById('downloadYaml').addEventListener('click', function() {
-            const filteredYaml = generateFilteredYaml();
-            downloadFile(filteredYaml, 'accessibility-companion-data.yaml', 'text/yaml');
+        document.getElementById('downloadYaml').addEventListener('click', () => {
+            downloadFile(generateFilteredYaml(), 'accessibility-companion-data.yaml', 'text/yaml');
         });
 
         function generateFullMarkdownReport() {
             const mechanicsNeeded = new Map();
-            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
-                selectedAspects.has(a.name)
-            );
-
-            selectedAspectsList.forEach(aspect => {
-                if (aspect['mechanics used']) {
-                    aspect['mechanics used'].forEach(mechName => {
-                        if (!mechanicsNeeded.has(mechName)) {
-                            mechanicsNeeded.set(mechName, new Set());
-                        }
-                        mechanicsNeeded.get(mechName).add(aspect.name);
-                    });
-                }
+            const list = catalogueData.catalogue.aspects.filter(a => selectedAspects.has(a.name));
+            list.forEach(aspect => {
+                (aspect['mechanics used'] || []).forEach(n => {
+                    if (!mechanicsNeeded.has(n)) mechanicsNeeded.set(n, new Set());
+                    mechanicsNeeded.get(n).add(aspect.name);
+                });
             });
-
             const patternsNeeded = new Set();
-            mechanicsNeeded.forEach((aspects, mechName) => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                if (mechanic && mechanic.potentialBarriers) {
-                    mechanic.potentialBarriers.forEach(barrier => {
-                        if (barrier['patterns to consider']) {
-                            barrier['patterns to consider'].forEach(pattern => {
-                                patternsNeeded.add(pattern);
-                            });
-                        }
-                    });
-                }
+            mechanicsNeeded.forEach((_, n) => {
+                const mech = catalogueData.catalogue.mechanics.find(m => m.name === n);
+                (mech?.potentialBarriers || []).forEach(b => {
+                    (b['patterns to consider'] || []).forEach(p => patternsNeeded.add(p));
+                });
             });
-
-            return generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded);
+            return generateMarkdownContent(list, mechanicsNeeded, patternsNeeded);
         }
 
         function generateFilteredYaml() {
-            const mechanicsNeeded = new Set();
-            const patternsNeeded = new Set();
-            
-            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a => 
-                selectedAspects.has(a.name)
-            );
-
-            selectedAspectsList.forEach(aspect => {
-                if (aspect['mechanics used']) {
-                    aspect['mechanics used'].forEach(mechName => {
-                        mechanicsNeeded.add(mechName);
-                    });
-                }
+            const mechSet = new Set();
+            const patSet  = new Set();
+            const list = catalogueData.catalogue.aspects.filter(a => selectedAspects.has(a.name));
+            list.forEach(a => (a['mechanics used'] || []).forEach(n => mechSet.add(n)));
+            mechSet.forEach(n => {
+                const mech = catalogueData.catalogue.mechanics.find(m => m.name === n);
+                (mech?.potentialBarriers || []).forEach(b => {
+                    (b['patterns to consider'] || []).forEach(p => patSet.add(p));
+                });
             });
-
-            mechanicsNeeded.forEach(mechName => {
-                const mechanic = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                if (mechanic && mechanic.potentialBarriers) {
-                    mechanic.potentialBarriers.forEach(barrier => {
-                        if (barrier['patterns to consider']) {
-                            barrier['patterns to consider'].forEach(pattern => {
-                                patternsNeeded.add(pattern);
-                            });
-                        }
-                    });
-                }
-            });
-
-            const filteredCatalogue = {
+            const out = {
                 catalogue: {
                     description: catalogueData.catalogue.description,
-                    aspects: selectedAspectsList,
-                    mechanics: catalogueData.catalogue.mechanics.filter(m => 
-                        mechanicsNeeded.has(m.name)
-                    ),
-                    patterns: catalogueData.catalogue.patterns.filter(p => 
-                        patternsNeeded.has(p.name)
-                    )
+                    aspects:   list,
+                    mechanics: catalogueData.catalogue.mechanics.filter(m => mechSet.has(m.name)),
+                    patterns:  catalogueData.catalogue.patterns.filter(p => patSet.has(p.name))
                 }
             };
-
             if (catalogueData.catalogue.general_resources) {
-                filteredCatalogue.catalogue.general_resources = catalogueData.catalogue.general_resources;
+                out.catalogue.general_resources = catalogueData.catalogue.general_resources;
             }
-
-            return jsyaml.dump(filteredCatalogue, { lineWidth: -1 });
+            return jsyaml.dump(out, { lineWidth: -1 });
         }
 
         function downloadFile(content, filename, mimeType) {
             const blob = new Blob([content], { type: mimeType });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
             a.href = url;
             a.download = filename;
             document.body.appendChild(a);
