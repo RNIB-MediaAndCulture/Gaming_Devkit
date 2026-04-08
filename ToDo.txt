@@ -1,0 +1,11 @@
+- enable downloading of HTML version
+- AKORG needs to include Godot advice in the report
+
+Also add:
+ - https://gameaccessibilityguidelines.com/avoid-vr-simulation-sickness-triggers/ 
+ - https://gameaccessibilityguidelines.com/if-the-game-uses-field-of-view-3d-engine-only-set-an-appropriate-default-for-the-expected-viewing-environment/
+ - https://gameaccessibilityguidelines.com/ensure-interactive-elements-virtual-controls-are-large-and-well-spaced-particularly-on-small-or-touch-screens/
+ - https://gameaccessibilityguidelines.com/ensure-sound-music-choices-for-each-key-objects-events-are-distinct-from-each-other/
+ - https://gameaccessibilityguidelines.com/avoid-or-provide-option-to-disable-any-difference-between-controller-movement-and-camera-movement/
+ - https://gameaccessibilityguidelines.com/if-the-game-uses-field-of-view-3d-engine-only-allow-a-means-for-it-to-be-adjusted/
+ - https://gameaccessibilityguidelines.com/use-distinct-sound-music-design-for-all-objects-and-events/
