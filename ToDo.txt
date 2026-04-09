@@ -1,5 +1,9 @@
-- enable downloading of HTML version
-- AKORG needs to include Godot advice in the report
+- Fix screenreader expected behaviour 
+  - (cycle through elements not scroll page)
+  - Read full description of aspects
+- Fix the buttons layout
+
+
 
 Also add:
  - https://gameaccessibilityguidelines.com/avoid-vr-simulation-sickness-triggers/ 

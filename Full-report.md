@@ -7,25 +7,25 @@
 - Class-Based Play /Role-play
 - Combat (1v1)
 - Combat (beat 'em up)
-- Combat (first-person)
 - Combat (continuous)
+- Combat (first-person)
 - Combat (menu driven)
+- Combat (multi-character turn-based)
+- Construction
+- Environmental Interaction
 - Exploration
 - Management / Tycoon
-- Environmental Interaction
-- Construction
 - Narrative Choice / Branching Paths
-- Stealth
-- Sports [stub]
-- Simulation
-- Adventure
-- Survival
-- Rhythm / Timing
 - Racing
+- Rhythm / Timing
+- Survival
+- Adventure
+- Simulation
+- Sports [stub]
+- Stealth
 - strategy
 - Co-op Mechanics
 - Puzzle
-- Combat (multi-character turn-based)
 
 ---
 
@@ -37,7 +37,7 @@ The player must precisely position a targeting reticle or crosshair to interact 
 
 **Required for:** Combat (first-person), Sports [stub]
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Precise aiming requires fine motor control that may be difficult for gamers with motor impairments or tremors.
 
@@ -71,7 +71,7 @@ The player initiates an offensive action against an enemy or object, typically t
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (first-person), Combat (multi-character turn-based), Rhythm / Timing, Adventure, Sports [stub], strategy
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Precise timing or button combinations may be difficult for gamers with motor impairments.
 
@@ -105,7 +105,7 @@ The player's character automatically continues attacking once an attack command 
 
 **Required for:** Combat (continuous)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players need to know when continuous attacks start, stop, or if the target changes.
 
@@ -140,7 +140,7 @@ The player performs a defensive action to reduce or negate incoming damage, typi
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (first-person), Adventure
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Precise timing for blocks can be difficult for players with delayed reaction times or motor impairments.
 
@@ -174,7 +174,7 @@ Players design and customize their character's appearance, attributes, class, ba
 
 **Required for:** Class-Based Play /Role-play
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only character appearance customization is inaccessible to players with sight loss.
 
@@ -219,7 +219,7 @@ Choose a character to play from a roster of available options, each potentially 
 
 **Required for:** Class-Based Play /Role-play, Combat (multi-character turn-based)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Character differences are communicated primarily through visual design.
 
@@ -265,7 +265,7 @@ Multiple items can be independently toggled on or off, allowing zero, one, or mu
 
 **Required for:** Menu (textual), Combat (menu driven)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot perceive which checkboxes are checked or unchecked.
 
@@ -302,7 +302,7 @@ The player switches between different combat stances or modes that affect availa
 
 **Required for:** Combat (continuous), Combat (multi-character turn-based), strategy
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot see which combat mode is currently active.
 
@@ -345,7 +345,7 @@ The player must wait a specified time period before using an ability, item, or a
 
 **Required for:** Combat (continuous)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only cooldown indicators (progress circles, grayed-out icons) are inaccessible to players with sight loss.
 
@@ -382,7 +382,7 @@ The player makes their character adopt a lower stance, often used for stealth, a
 
 **Required for:** Combat (first-person), Stealth
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Toggle vs. hold crouch mechanics - holding buttons can cause fatigue for players with motor impairments.
 
@@ -416,7 +416,7 @@ The player performs an evasive maneuver to avoid attacks or hazards, often requi
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (first-person)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Dodge timing windows are often very tight, difficult for players with delayed reaction times.
 
@@ -448,7 +448,7 @@ Players use emojis or emoticons to communicate non-verbally with other players, 
 
 **Required for:** Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot see emojis sent by other players.
 
@@ -485,7 +485,7 @@ The player activates or opens a menu system, typically to access settings, inven
 
 **Required for:** Menu (textual), Combat (menu driven)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players may not know which button opens menus or how to access different menu types.
 
@@ -520,7 +520,7 @@ The character gains a level, typically accompanied by stat increases, new abilit
 
 **Required for:** Character Progression
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only level-up notifications and progression screens are inaccessible to players with sight loss.
 
@@ -557,7 +557,7 @@ The player must identify and track the position of enemies or opponents within t
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (continuous), Combat (first-person), Combat (multi-character turn-based), Stealth, strategy
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot visually locate opponents.
 
@@ -593,7 +593,7 @@ The player repositions a building, structure, or placed object to a new location
 
 **Required for:** Construction, Management / Tycoon
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Precise positioning requires visual feedback that is inaccessible to players with sight loss.
 
@@ -630,7 +630,7 @@ The player controls their character's movement through a 2D or 3D space, typical
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (continuous), Combat (first-person), Combat (multi-character turn-based), Construction, Environmental Interaction, Exploration, Racing, Survival, Adventure, Simulation, Sports [stub], Stealth, strategy, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Fine motor control required for analogue stick movement can be difficult for gamers with motor impairments.
 
@@ -664,7 +664,7 @@ Move through a menu in one dimension with a next and previous option. This could
 
 **Required for:** Menu (textual), Character Progression, Class-Based Play /Role-play, Combat (menu driven), Construction, Management / Tycoon, Narrative Choice / Branching Paths, Survival, Adventure, Simulation, strategy, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Gamers without sight cannot perceive menu elements to navigate them.
 
@@ -711,7 +711,7 @@ Navigate through menus that have both horizontal and vertical dimensions, such a
 
 **Required for:** Menu (textual), Character Progression, Class-Based Play /Role-play, Combat (menu driven), Management / Tycoon, Narrative Choice / Branching Paths, Survival, Adventure, Simulation, strategy, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Gamers without sight cannot perceive the 2D spatial layout of menu elements.
 
@@ -758,7 +758,7 @@ Compare two or more items side-by-side to evaluate differences in stats, propert
 
 **Required for:** Character Progression, Management / Tycoon, Survival
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual comparison layouts are inaccessible to players with sight loss.
 
@@ -804,7 +804,7 @@ Present detailed information about an item, character, ability, or game element,
 
 **Required for:** Character Progression, Class-Based Play /Role-play, Combat (menu driven), Management / Tycoon, Narrative Choice / Branching Paths, Survival, Adventure
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Text-only descriptions are inaccessible to players with sight loss.
 
@@ -849,7 +849,7 @@ The gamer needs to know their character is being attacked so they can react acco
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (continuous), Combat (first-person), Combat (menu driven), Combat (multi-character turn-based), Rhythm / Timing
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** If attacks towards the player are only represented visually then gamers without sight will not know that they need to react.
 
@@ -865,7 +865,7 @@ When moving around an area a player needs to know that they have collided with s
 
 **Required for:** Combat (beat 'em up), Combat (first-person), Construction, Exploration, Racing, Survival, Adventure, Simulation, Stealth
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** If objects that characters can collide with are only represented visually then gamers without sight cannot tell that they have collided with something. They may try to keep going in this direction thinking the are still moving.
 
@@ -880,7 +880,7 @@ The player needs to identify environmental hazards, incoming threats, or dangero
 
 **Required for:** Exploration, Racing, Survival, Stealth
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only danger indicators (red zones, warning signs, visual effects) are inaccessible to players with sight loss.
 
@@ -917,7 +917,7 @@ In a virtual world the user needs to be able to navigate to a particular directi
 
 **Required for:** Combat (first-person), Exploration, Racing, Rhythm / Timing, Adventure, Simulation, Sports [stub], Stealth
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Direction is communicated visually and is not accessible to people with sight loss
 
@@ -935,7 +935,7 @@ The player needs to understand income, revenue, or resource generation rates in 
 
 **Required for:** Management / Tycoon
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only displays of earnings, graphs, and financial data are inaccessible to players with sight loss.
 
@@ -981,7 +981,7 @@ The player needs to understand the current state of the game environment, such a
 
 **Required for:** Environmental Interaction, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only indicators of environment state are inaccessible to players with sight loss.
 
@@ -1018,7 +1018,7 @@ The player must identify whether a character or entity is a Friend or Enemy (FoE
 
 **Required for:** Combat (1v1), Combat (beat 'em up), Combat (continuous), Combat (first-person), Combat (multi-character turn-based), Sports [stub], Stealth, strategy
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Friend/enemy distinction relies on visual cues (colors, uniforms, markers) that players with sight loss or color vision deficiency cannot perceive.
 
@@ -1054,7 +1054,7 @@ The player needs to identify which objects or elements in the environment can be
 
 **Required for:** Environmental Interaction, Exploration, Survival, Adventure, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Interactive objects that only indicate interactability through visual highlighting are inaccessible to players with sight loss.
 
@@ -1091,7 +1091,7 @@ Players need to see, hear, or otherwise perceive markers placed by themselves or
 
 **Required for:** Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only markers are inaccessible to players with sight loss.
 
@@ -1146,7 +1146,7 @@ The player needs to understand the current state of interactive objects, such as
 
 **Required for:** Environmental Interaction, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only indicators of object state (color changes, animations, position) are inaccessible to players with sight loss.
 
@@ -1183,7 +1183,7 @@ The player needs to identify and understand objects in the game environment, inc
 
 **Required for:** Construction, Environmental Interaction, Exploration, Survival, Adventure, Simulation, Sports [stub], Stealth, Puzzle
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot see objects or distinguish them from the environment.
 
@@ -1221,7 +1221,7 @@ The player must identify navigable routes, understand terrain layout, and determ
 
 **Required for:** Exploration, Racing, Adventure, Simulation
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual-only path indicators are inaccessible to players with sight loss.
 
@@ -1258,7 +1258,7 @@ The player positions and constructs a new building, structure, or object in the 
 
 **Required for:** Construction, Management / Tycoon, Survival
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual positioning and placement validation are inaccessible to players with sight loss.
 
@@ -1305,7 +1305,7 @@ Players place markers, pins, or waypoints in the game world to mark locations of
 
 **Required for:** Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Placing markers precisely requires visual aiming or map interaction.
 
@@ -1349,7 +1349,7 @@ Track, display, and manage objectives, goals, achievements, and quest progress t
 
 **Required for:** Character Progression, Adventure
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Quest logs and achievement lists are presented as text-heavy interfaces.
 
@@ -1404,7 +1404,7 @@ Select one option from a mutually exclusive set where selecting a new option aut
 
 **Required for:** Menu (textual), Combat (menu driven), Narrative Choice / Branching Paths
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Gamers without sight cannot perceive visual menu elements to change them.
 
@@ -1455,7 +1455,7 @@ The player confirms a selection or activates a menu item to execute an action or
 
 **Required for:** Menu (textual)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players may not know which button performs selection vs. navigation.
 
@@ -1490,7 +1490,7 @@ The player removes a building or structure from the game world, typically receiv
 
 **Required for:** Construction, Management / Tycoon
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot easily identify which building to select for selling.
 
@@ -1525,7 +1525,7 @@ Adjust a value along a continuous or stepped range by moving a slider control, t
 
 **Required for:** Menu (textual), Combat (menu driven)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Analogue slider control is imprecise and difficult for players with motor impairments.
 
@@ -1571,7 +1571,7 @@ The player executes a powerful or unique attack ability that is distinct from no
 
 **Required for:** Combat (continuous), Combat (multi-character turn-based)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot see special attack animations, effects, or success indicators.
 
@@ -1617,7 +1617,7 @@ The player makes tactical or strategic decisions that affect gameplay, such as u
 
 **Required for:** strategy
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Visual overview of strategic situations (maps, unit positions, resource distribution) is inaccessible to players with sight loss.
 
@@ -1661,7 +1661,7 @@ The player must distinguish between their own team members and opposing team mem
 
 **Required for:** Sports [stub], Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Color-based team identification fails for players with color vision deficiency.
 
@@ -1698,7 +1698,7 @@ Players communicate with others through typed text messages, either in real-time
 
 **Required for:** Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot read incoming text messages.
 
@@ -1742,7 +1742,7 @@ Options which cannot be selected in menus and interfaces are often greyed out or
 
 **Required for:** Menu (textual), Combat (menu driven)
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** If the option can be selected but its unavailability is not indicated in audio, gamers without sight will not know why they can't select it. If it cannot be selected then they may not know it's there which can cause confusion.
 
@@ -1778,7 +1778,7 @@ The player improves an existing building or structure to enhance its capabilitie
 
 **Required for:** Management / Tycoon
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with sight loss cannot easily identify which buildings can be upgraded or what upgrades are available.
 
@@ -1824,7 +1824,7 @@ Players communicate with others through real-time voice communication, essential
 
 **Required for:** Co-op Mechanics
 
-#### Accessibility Barriers & Considerations
+#### Accessibility Barriers and Considerations
 
 **Barrier 1:** Players with hearing loss cannot hear voice communications from teammates.
 
@@ -1884,10 +1884,18 @@ By separating audio into profiles such as dialogue, music, sound effects (convey
 - Apply Sound Classes to sound cues
 - Allow players to adjust volume per class in settings
 
-#### Documentation & Resources
+**Godot:**
+- Create named Audio Buses in the AudioServer (e.g. Dialogue, Music, SFX, Ambience)
+- Set the bus property on each AudioStreamPlayer or AudioStreamPlayer3D node to the appropriate bus
+- Adjust per-bus volume at runtime with AudioServer.set_bus_volume_db(bus_index, db)
+- Save and restore bus volumes via ConfigFile or ProjectSettings to persist player preferences
+- Use AudioServer.set_bus_mute() to allow players to fully mute individual categories
+
+#### Documentation and Resources
 
 - Unity Audio Mixer documentation
 - Unreal Sound Classes and Mix documentation
+- Godot: https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html
 
 **Used by mechanics:** attack, cooldown, Perceive danger, Perceive environment state, voice chat
 
@@ -1908,6 +1916,13 @@ The relative position of a target from the crosshairs or reticule is communicate
 - Custom Blueprint implementation
 - Use audio parameters to convey targeting information
 - Implement using sound cues with parameter modulation
+
+**Godot:**
+- Custom implementation required using GDScript or C#
+- Calculate the angle between the player's aim direction and a target each physics frame
+- Map the angle to pitch_scale and volume_db on an AudioStreamPlayer2D/3D
+- Use a repeating Timer whose wait_time decreases as the crosshair nears the target to produce click rapidity
+- Attach the AudioStreamPlayer to the camera or reticule node so panning reflects aim direction
 
 **Used by mechanics:** Aim
 
@@ -1933,12 +1948,21 @@ Audio beacons are sounds 'placed around' the user using immersive audio. They ca
 - Supports panning, soundfield, and binaural audio
 - Third-party options: Resonance Audio, Steam Audio, Oculus Spatializer
 
-#### Documentation & Resources
+**Godot:**
+- Attach an AudioStreamPlayer3D node to any object that should act as a beacon
+- Enable AudioStreamPlayer3D.autoplay and set an appropriate attenuation model (e.g. ATTENUATION_INVERSE_DISTANCE)
+- Set max_db and unit_db to tune audibility range
+- Godot's built-in panning provides left/right positional cues; combine with pitch variation for elevation hints
+- For binaural spatialization use the GDNative Resonance Audio or Steam Audio plugins
+- Use a NavigationAgent3D alongside a beacon node to guide players towards waypoints
+
+#### Documentation and Resources
 
 - Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
 - Unity: Microsoft Spatial Audio GitHub repository
 - Unity: Microsoft Garage's Responsive Spatial Audio plugin (Unity Asset Store)
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+- Godot: https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html
 
 **Used by mechanics:** Aim, attack - continuous, block, locate opponant2D, move building, Movement2D, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, sell building, special attack, strategy, team identification, upgrade building
 
@@ -1962,10 +1986,17 @@ Binaural audio usually refers to replicating the way surround sound is encoded b
 - Microsoft Spatial Sound Plugin available for HoloLens 2 and mixed reality
 - Oculus Spatializer plugin available
 
-#### Documentation & Resources
+**Godot:**
+- Godot 4's AudioStreamPlayer3D provides basic stereo panning as a built-in approximation
+- For full HRTF binaural rendering integrate the Steam Audio GDExtension plugin
+- Resonance Audio (GDNative/GDExtension) also provides HRTF-based binaural output
+- Inform players that headphones are required or recommended when binaural features are active
+
+#### Documentation and Resources
 
 - Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+- Godot: https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html
 
 **Used by mechanics:** block, dodge, locate opponant2D, Perceive danger, perceive marker, Perceive path, voice chat
 
@@ -1995,11 +2026,20 @@ Colour Vision Deficiency (Colour Blindness) is a relatively common disability wh
 - Test visuals using editor preview modes
 - Wanadev's unreal-colorblind-tool for LUT-based corrections
 
-#### Documentation & Resources
+**Godot:**
+- Apply a full-screen ColorRect or a post-process shader on a CanvasLayer to simulate or correct CVD using a colour matrix
+- Implement deuteranopia, protanopia, and tritanopia correction matrices as shader uniforms; let players choose the mode in settings
+- Use the open-source godot-colorblind-correction GDExtension or adapt a GLSL LUT shader for Godot's ShaderMaterial
+- Always combine colour with shape, pattern, or icon in UI and gameplay elements (e.g. coloured icons that also differ in shape)
+- Test designs using the Color Oracle desktop tool or browser-based CVD simulators during development
+- Provide a fully customisable palette option for UI team colours rather than restricting players to predefined profiles
+
+#### Documentation and Resources
 
 - Unity: https://docs.unity3d.com/ScriptReference/Accessibility.VisionUtility.html
 - Unity: Color Oracle (desktop tool)
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Widget/Accessibility/SetColorVisionDeficiencyType
+- Godot: https://docs.godotengine.org/en/stable/tutorials/shaders/your_first_shader/your_first_spatial_shader.html
 
 **Used by mechanics:** navigate menu 1D, object comparison, object description, perceive earnings, Perceive FoE, perceive marker, Perceive object state, place marker, radio button - mutex selection, team identification, unavailable
 
@@ -2032,12 +2072,23 @@ Captions are lines of text within a users view that correspond to audio informat
 - Minimum 0.16s gap between subtitles
 - Support speaker identification and customizable appearance
 
-#### Documentation & Resources
+**Godot:**
+- Use a CanvasLayer containing a RichTextLabel for always-on-top caption display
+- Drive caption timing from an AnimationPlayer track or a custom subtitle resource (CSV/JSON keyed by timestamp)
+- Parse SRT files at runtime with a simple GDScript regex parser to support standard subtitle formats
+- Expose font size, text colour, background opacity, and screen position as player-adjustable settings
+- Add a ColorRect behind the RichTextLabel with adjustable alpha for a readable scrim
+- Include speaker name labels and directional arrow icons for off-screen sound sources
+- Follow BBC, Netflix, and FCC caption standards for gap timing (minimum 0.16 s between subtitles)
+- Use BBCode in RichTextLabel to colour-code speakers without needing separate nodes
+
+#### Documentation and Resources
 
 - Unity: Chirp - https://github.com/XR-Access-Initiative/chirp-captions
 - Unity: Unity Learn audio accessibility tutorial
 - Unreal: Subtitles and Closed Captions documentation
 - Best practices: BBC, Netflix, FCC subtitle standards
+- Godot: https://docs.godotengine.org/en/stable/classes/class_richtextlabel.html
 
 **Used by mechanics:** Perceive environment state, voice chat
 
@@ -2060,6 +2111,12 @@ Dialogue and sound effects conveying information can have their volume boosted c
 - Implement Sound Mix for dynamic adjustments
 - Create clean audio profiles that boost dialogue/effects
 - Use Sound Attenuation for contextual volume control
+
+**Godot:**
+- Assign Dialogue and SFX streams to their own Audio Buses; assign Music and Ambience to separate buses
+- Implement a 'Clean Audio' toggle that calls AudioServer.set_bus_volume_db() to lower Music/Ambience buses by a preset amount (e.g. -12 dB)
+- Use an AudioEffect (e.g. AudioEffectCompressor) on the Master bus to duck background audio when dialogue plays
+- Provide a settings page with individual sliders for each bus so players can fine-tune their own clean-audio profile
 
 **Used by mechanics:** voice chat
 
@@ -2085,10 +2142,19 @@ Avoid block capitals as these obscure the shape of words. Ensure easy to read fo
 - Avoid all-caps text
 - Ensure readability with adequate sizing and spacing
 
-#### Documentation & Resources
+**Godot:**
+- Import TrueType or OpenType fonts (e.g. Inter, Atkinson Hyperlegible) as FontFile resources
+- Assign fonts via a Theme resource so changes propagate to all UI nodes consistently
+- Set a minimum font size of 16 px (logical pixels) in the Theme; avoid sizes below 12 px
+- Avoid uppercase-only text; use sentence case or title case
+- Enable font anti-aliasing and subpixel rendering in the FontFile import settings for sharpness at small sizes
+- Set adequate line_spacing in the Theme to improve readability for dyslexic players
+
+#### Documentation and Resources
 
 - Unity: TextMeshPro documentation
 - Font recommendation: Inter font family at 12px minimum
+- Godot: https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html
 
 **Used by mechanics:** character creation, character selection, checkbox - additive selection, levelling-up, navigate menu 1D, navigate menu 2D, object comparison, object description, perceive earnings, questing/achievements, radio button - mutex selection, slider - proportion selection, strategy, text chat, unavailable, upgrade building
 
@@ -2111,6 +2177,12 @@ By designing sound effects for similar actions to have similar characteristics i
 - Organize sounds into classes with shared characteristics
 - Implement audio parameters that modify sounds consistently
 - Use Sound Mix to maintain consistent audio profiles
+
+**Godot:**
+- Define an audio event dictionary (Resource or JSON) that maps action types to AudioStream assets with consistent tonal characteristics
+- Use pitch_scale on AudioStreamPlayer nodes to shift pitch up for high attacks and down for low attacks, maintaining consistent timbre
+- Apply a shared AudioEffectEQ or AudioEffectReverb on a dedicated bus for each action category so the processing colour is consistent
+- Document the audio language in your design spec so all sound designers follow the same coding conventions
 
 **Used by mechanics:** Aim, attack, attack - continuous, block, character selection, checkbox - additive selection, combat mode, cooldown, crouch, dodge, enter menu, levelling-up, locate opponant2D, move building, Movement2D, navigate menu 2D, Perceive danger, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, select-menu, sell building, slider - proportion selection, special attack, team identification, text chat, unavailable, upgrade building
 
@@ -2139,11 +2211,20 @@ Elements such as crosshairs and cursors should be customisable so they can be ma
 - Anchoring and canvas panels for responsive design
 - Accessibility Toolkit available on Marketplace
 
-#### Documentation & Resources
+**Godot:**
+- Define all UI styling in a Theme resource; swap themes at runtime to apply high contrast or large-text profiles
+- Use Control node size flags and Container nodes (HBoxContainer, VBoxContainer, MarginContainer) for resolution-independent layouts
+- Expose a UI scale multiplier in settings that drives the root viewport's content_scale_factor
+- Allow players to toggle individual HUD elements (minimap, health bar, ammo) on/off via a settings menu
+- Provide crosshair customisation: swap the TextureRect sprite and allow colour override via a modulate property
+- Follow WCAG 2.2 contrast requirements: 4.5:1 for normal text, 3:1 for large text and UI components
+
+#### Documentation and Resources
 
 - Unity: https://www.foundations.unity.com/fundamentals/accessibility
 - Unreal: UMG documentation
 - WCAG contrast guidelines
+- Godot: https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_theme.html
 
 **Used by mechanics:** Aim, combat mode, cooldown, Perceive environment state, Perceive interactable, Perceive object state, Perceive objects, team identification
 
@@ -2168,10 +2249,18 @@ Digital control is where any input can be performed with discrete button presses
 - Use discrete button inputs for UI navigation
 - Provide alternatives to analog controls
 
-#### Documentation & Resources
+**Godot:**
+- Define all actions in the InputMap (Project > Project Settings > Input Map) so every action has at least one digital binding
+- Use Input.is_action_just_pressed() rather than Input.get_axis() for menu navigation to ensure discrete step behaviour
+- Provide a key/button remapping screen using InputMap.action_add_event() at runtime
+- Avoid requiring held or chargeable inputs in menus; offer a toggle alternative where hold-to-confirm is used
+- Test UI navigation using keyboard only (Tab, arrow keys, Enter/Space) to validate digital-only accessibility
+
+#### Documentation and Resources
 
 - Unity: Input System documentation
 - Unreal: Enhanced Input System documentation
+- Godot: https://docs.godotengine.org/en/stable/tutorials/inputs/input_examples.html
 
 **Used by mechanics:** attack, combat mode, crouch, emoji, enter menu, move building, Movement2D, navigate menu 1D, navigate menu 2D, place building, select-menu, slider - proportion selection, special attack
 
@@ -2195,10 +2284,18 @@ Parts of a visual are made to 'stand out' by using contrasting colours. This is 
 - Create high contrast widget themes
 - Follow WCAG contrast guidelines
 
-#### Documentation & Resources
+**Godot:**
+- Create a high-contrast Theme variant (white text on black backgrounds, bold outlines) and apply it via get_tree().root.theme
+- Add a CanvasLayer post-process shader that boosts contrast using a GLSL sigmoid curve
+- For 3D, increase Environment.adjustment_contrast and adjust material albedo values to separate similar tones
+- Outline important gameplay objects using a second-pass shader (render object with expanded normals in a contrasting colour)
+- Follow WCAG 2.2: 4.5:1 contrast ratio for normal text, 3:1 for large text and UI graphics
+
+#### Documentation and Resources
 
 - WCAG contrast ratio guidelines
 - Unity UI Toolkit theming documentation
+- Godot: https://docs.godotengine.org/en/stable/tutorials/shaders/index.html
 
 **Used by mechanics:** Aim, character creation, character selection, checkbox - additive selection, combat mode, cooldown, emoji, levelling-up, locate opponant2D, navigate menu 1D, navigate menu 2D, object comparison, object description, Perceive danger, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, radio button - mutex selection, slider - proportion selection, strategy, team identification, text chat, unavailable, upgrade building
 
@@ -2220,6 +2317,12 @@ Part or all of the visuals are enlarged making them easier to see.
 - Use UMG scaling for UI magnification
 - Create magnifier effects with scene capture components
 
+**Godot:**
+- Scale the root viewport via get_viewport().content_scale_factor to magnify the entire screen uniformly
+- For a partial magnifier, use a SubViewport rendering the scene at a zoomed camera FOV, displayed in a circular TextureRect overlay
+- For 2D games, reduce Camera2D.zoom to enlarge the visible world
+- Provide a magnification slider in settings that updates content_scale_factor or camera zoom in real time
+
 **Used by mechanics:** strategy
 
 ---
@@ -2239,6 +2342,12 @@ Transparent backgrounds behind text or icons can make them hard to read/perceive
 - Use Border Brush with solid fill behind text
 - Background Blur can help with readability
 - Add background panels behind text elements
+
+**Godot:**
+- Place a ColorRect or PanelContainer behind each Label or RichTextLabel in the scene tree
+- Use a StyleBoxFlat on a Panel node's panel StyleBox to define a solid or semi-transparent fill colour
+- Expose a background opacity slider in settings that modifies the alpha of the ColorRect modulate colour
+- Default to a fully opaque background; let players reduce opacity if they prefer the transparent look
 
 **Used by mechanics:** checkbox - additive selection, levelling-up, navigate menu 1D, navigate menu 2D, object description, perceive earnings, radio button - mutex selection, text chat
 
@@ -2260,6 +2369,12 @@ Instead of using text-to-speech for audio access to immutable text such as menu 
 - Higher quality and better performance than runtime TTS
 - Use for menu narration and fixed content
 
+**Godot:**
+- Import pre-recorded audio as WAV or OGG files; WAV is preferred for short UI clips due to lower decode latency
+- Attach an AudioStreamPlayer (not 3D) on a persistent CanvasLayer so narration is unaffected by in-world audio settings
+- Route narration through a dedicated Narration bus so its volume is independently adjustable
+- Use a dictionary keyed on UI node paths to map each control to its pre-recorded clip for easy maintenance
+
 **Used by mechanics:** character creation, character selection, navigate menu 1D, object description, radio button - mutex selection
 
 ---
@@ -2279,6 +2394,12 @@ Onscreen interfaces can be made bigger to be easier to read and understand or sm
 - DPI scaling in User Interface settings
 - Implement UI scale settings for players
 - Use anchors and size boxes for responsive design
+
+**Godot:**
+- Adjust get_tree().root.content_scale_factor at runtime to scale the entire UI layer uniformly
+- Alternatively, wrap all HUD elements in a single CanvasLayer and set its scale property from a settings slider
+- Use Container nodes and size flags to ensure layouts reflow gracefully at different scales
+- Save the player's preferred scale in a settings file via ConfigFile and restore it on startup
 
 **Used by mechanics:** cooldown, emoji, perceive earnings, slider - proportion selection, strategy
 
@@ -2301,10 +2422,18 @@ Make sure that any text the player needs to read can be resized. Many partially 
 - Size boxes and scale boxes for dynamic sizing
 - Use size constraints and anchors for responsive text
 
-#### Documentation & Resources
+**Godot:**
+- Define the base font size in the project Theme resource so it is inherited by all Label and RichTextLabel nodes
+- Multiply the Theme's default_font_size by the player's chosen scale factor at runtime using a custom autoload
+- Use Control.set_theme_type_variation() to apply size overrides per node type without duplicating the whole Theme
+- Enforce a minimum of 16 px logical size; avoid font sizes below 12 px in any context
+- Test text layout at scale factors of 0.75×, 1×, 1.5×, and 2× to confirm no clipping or overflow occurs
+
+#### Documentation and Resources
 
 - Unity: TextMeshPro documentation
 - Recommended minimum: 12px, avoid below 9px
+- Godot: https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html
 
 **Used by mechanics:** levelling-up, navigate menu 1D, object comparison, object description, perceive earnings, questing/achievements, text chat, upgrade building
 
@@ -2330,10 +2459,19 @@ Many platforms (especially Android, iOS and PC) contain screenreaders. A screenr
 - Features: Accessible UI announcements, navigation, TTS integration, focus management
 - Enable accessibility features in project settings
 
-#### Documentation & Resources
+**Godot:**
+- Godot 4 exposes DisplayServer.tts_speak(), tts_stop(), and tts_is_speaking() for cross-platform TTS on Windows, macOS, Linux, Android, and iOS
+- Set Control.focus_mode to FOCUS_ALL on interactive widgets so keyboard/gamepad navigation triggers TTS announcements
+- Use Control.tooltip_text and accessibility_name (Godot 4.3+) to provide descriptive labels for screen readers
+- Connect the focus_entered signal on each Control to a helper function that calls DisplayServer.tts_speak() with the element's accessible description
+- Test with platform screen readers: NVDA/JAWS on Windows, VoiceOver on macOS/iOS, TalkBack on Android
+- Note: Godot's native screen reader integration is still maturing; supplement with DisplayServer TTS for critical UI paths
+
+#### Documentation and Resources
 
 - Unity: Unity Accessibility Extensions - https://unity-accessibility-extensions.readthedocs.io/
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/blind-accessibility-features-overview-in-unreal-engine
+- Godot: https://docs.godotengine.org/en/stable/classes/class_displayserver.html#class-displayserver-method-tts-speak
 
 **Used by mechanics:** character creation, checkbox - additive selection, emoji, levelling-up, navigate menu 1D, navigate menu 2D, object comparison, object description, questing/achievements, radio button - mutex selection, strategy, text chat
 
@@ -2354,6 +2492,12 @@ Audio speech is converted into a stream of text.
 - Platform-specific implementations
 - Third-party plugins available
 - Cloud services integration possible
+
+**Godot:**
+- No built-in STT API; use Godot's HTTPRequest node to send audio data to a cloud STT service (e.g. Google Cloud Speech-to-Text, Azure Cognitive Services, Whisper API)
+- For offline STT, integrate a GDExtension wrapping Vosk or Whisper.cpp to avoid sending voice data externally
+- Capture microphone input using AudioEffectRecord on a dedicated bus, then pass the buffer to your STT backend
+- Display the returned transcript in a RichTextLabel and allow players to confirm or edit before submitting
 
 **Used by mechanics:** text chat, voice chat
 
@@ -2377,10 +2521,18 @@ Providing audio through surround sound can help gamers with sight loss orient th
 - Ambisonics: First Order Ambisonic support (Resonance Audio)
 - Object-Based Audio via Wwise or other middleware
 
-#### Documentation & Resources
+**Godot:**
+- AudioStreamPlayer3D provides built-in distance attenuation and stereo panning for positional audio
+- For 5.1/7.1 surround output, configure the audio driver in Project Settings > Audio > Driver
+- Use the Resonance Audio GDExtension for first-order ambisonics and HRTF-based surround on headphones
+- Place AudioStreamPlayer3D nodes at sound-emitting objects and ensure the AudioListener3D is attached to the camera or player head
+- Combine surround cues with audio beacons and coded audio to maximise spatial intelligibility for players with sight loss
+
+#### Documentation and Resources
 
 - Unity: https://docs.unity3d.com/Manual/AudioSpatializerSDK.html
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
+- Godot: https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html
 
 **Used by mechanics:** block, dodge, locate opponant2D, perceive marker, voice chat
 
@@ -2409,11 +2561,20 @@ Written text is synthesised into speech and played audibly to the user.
 - Wit.ai Voice SDK TTS (Meta)
 - Runtime Text to Speech by Georgy Dev (900+ voices, 44 languages, offline)
 
-#### Documentation & Resources
+**Godot:**
+- Use DisplayServer.tts_speak(text, voice_id) for built-in cross-platform TTS on Windows, macOS, Linux, Android, and iOS
+- Enumerate available voices with DisplayServer.tts_get_voices() and let players choose a preferred voice in settings
+- Control rate, pitch, and volume via the options dictionary parameter of tts_speak()
+- For cloud-quality voices, send text to a REST TTS API (e.g. Azure Cognitive Services, Google Cloud TTS) via HTTPRequest and play the returned audio stream
+- Route all TTS audio through a dedicated Narration bus with independent volume control
+- Call DisplayServer.tts_stop() before speaking a new string to prevent overlapping announcements
+
+#### Documentation and Resources
 
 - Unity: https://unity-accessibility-extensions.readthedocs.io/
 - Unity: ReadSpeaker - https://www.readspeaker.com/resources/unity/
 - Unreal: https://dev.epicgames.com/documentation/en-us/unreal-engine/text-to-speech-quickstart-in-unreal-engine
+- Godot: https://docs.godotengine.org/en/stable/classes/class_displayserver.html#class-displayserver-method-tts-speak
 
 **Used by mechanics:** attack - continuous, character creation, character selection, checkbox - additive selection, combat mode, cooldown, crouch, emoji, enter menu, levelling-up, move building, navigate menu 1D, navigate menu 2D, object comparison, object description, perceive earnings, Perceive environment state, Perceive FoE, Perceive interactable, perceive marker, Perceive object state, Perceive objects, Perceive path, place building, place marker, questing/achievements, radio button - mutex selection, select-menu, sell building, slider - proportion selection, special attack, strategy, team identification, text chat, unavailable, upgrade building, voice chat
 
@@ -2436,6 +2597,13 @@ Players with a loss of peripheral vision may not be aware of important informati
 - Use safe zone widget for automatic adjustment
 - Test across different display configurations
 - Keep important information centralized
+
+**Godot:**
+- Define a safe zone margin constant (e.g. 10% of viewport dimensions) in a project autoload
+- Use a MarginContainer as the root of the HUD scene, setting its margins to the safe zone values
+- Anchor all critical Control nodes to the centre of the screen and use offsets rather than edge anchors for important notifications
+- Use DisplayServer.get_display_safe_area() (Godot 4) to query the OS-reported safe area on mobile and TV platforms
+- Test layouts at 4:3, 16:9, and 21:9 aspect ratios to confirm critical elements remain within the safe zone
 
 **Used by mechanics:** combat mode, team identification
 
@@ -2460,10 +2628,18 @@ In a virtual space objects that make sounds can have captions or speech bubbles 
 - Implement similar to caption systems with visual indicators
 - Use UMG widgets positioned at sound source locations
 
-#### Documentation & Resources
+**Godot:**
+- Attach a Label or small Control node as a child of the AudioStreamPlayer3D's parent Node3D; use Camera3D.unproject_position() to convert world position to screen coordinates each frame
+- For off-screen sounds, display a directional arrow on the edge of the screen pointing towards the sound source using basic vector maths (atan2 of the screen-space offset)
+- Show a brief animated icon (e.g. AnimatedSprite2D) at the projected position to indicate the sound type using coded iconography
+- Pool label/icon nodes to avoid instantiation cost during gameplay; hide rather than free them when not in use
+- Provide a settings toggle for visual sound effects so players who do not need them can disable the overlay
+
+#### Documentation and Resources
 
 - Unity: Closed caption tutorials with directional indicators
 - Unreal: Sound Subtitle System (Marketplace)
+- Godot: https://docs.godotengine.org/en/stable/classes/class_camera3d.html#class-camera3d-method-unproject-position
 
 **Used by mechanics:** Perceive danger, Perceive environment state, Perceive interactable, voice chat
 
@@ -2485,6 +2661,16 @@ These resources provide additional guidance and tools for implementing accessibi
 - Text-to-Speech Quickstart: https://dev.epicgames.com/documentation/en-us/unreal-engine/text-to-speech-quickstart-in-unreal-engine
 - Spatialization Overview: https://dev.epicgames.com/documentation/en-us/unreal-engine/spatialization-overview-in-unreal-engine
 - Free Accessibility Course: Available through Unreal Online Learning
+
+### Godot Engine Official Resources
+
+- Audio Buses: https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html
+- AudioStreamPlayer3D: https://docs.godotengine.org/en/stable/classes/class_audiostreamplayer3d.html
+- Text-to-Speech (DisplayServer): https://docs.godotengine.org/en/stable/classes/class_displayserver.html#class-displayserver-method-tts-speak
+- GUI and Fonts: https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html
+- Theming: https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_theme.html
+- Input Examples: https://docs.godotengine.org/en/stable/tutorials/inputs/input_examples.html
+- Shaders: https://docs.godotengine.org/en/stable/tutorials/shaders/index.html
 
 ### Cross-Platform Resources
 

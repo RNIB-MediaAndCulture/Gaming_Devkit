@@ -572,6 +572,15 @@
                         aria-describedby="btnHint">
                     Download YAML
                 </button>
+
+                <button class="yaml-btn"
+                        id="downloadHtml"
+                        disabled
+                        aria-disabled="true"
+                        aria-describedby="btnHint">
+                  Download HTML
+                </button>
+
             </div>
             <p class="btn-hint" id="btnHint">
                 Select at least one aspect to enable downloads
@@ -696,7 +705,7 @@
 
         function updateButtons() {
             const has = selectedAspects.size > 0;
-            ['downloadReport', 'downloadYaml'].forEach(id => {
+            ['downloadReport', 'downloadYaml', 'downloadHtml'].forEach(id => {
                 const btn = document.getElementById(id);
                 btn.disabled = !has;
                 btn.setAttribute('aria-disabled', String(!has));
@@ -793,19 +802,29 @@
                     md += `### ${pattern.name}\n\n`;
                     if (pattern.description) md += `${pattern.description.trim()}\n\n`;
 
+
                     if (pattern.implementation_options) {
                         md += `#### Implementation Options\n\n`;
-                        ['unity', 'unreal'].forEach(engine => {
+
+                        const engines = {
+                            unity: 'Unity',
+                            unreal: 'Unreal Engine',
+                            godot: 'Godot'
+                        };
+
+                        Object.entries(engines).forEach(([engine, label]) => {
                             if (!pattern.implementation_options[engine]) return;
-                            const label = engine === 'unity' ? 'Unity' : 'Unreal Engine';
+
                             md += `**${label}:**\n`;
                             const opts = Array.isArray(pattern.implementation_options[engine])
                                 ? pattern.implementation_options[engine]
                                 : [pattern.implementation_options[engine]];
+
                             opts.forEach(o => { md += `- ${o}\n`; });
                             md += '\n';
                         });
                     }
+
 
                     if (pattern.documentation?.length) {
                         md += `#### Documentation and Resources\n\n`;
@@ -870,6 +889,16 @@
             downloadFile(generateFilteredYaml(), 'accessibility-companion-data.yaml', 'text/yaml');
         });
 
+
+        document.getElementById('downloadHtml').addEventListener('click', () => {
+            downloadFile(
+                generateStandaloneHTML(),
+                'accessibility-kickoff-report.html',
+                'text/html'
+            );
+        });
+
+
         function generateFullMarkdownReport() {
             const mechanicsNeeded = new Map();
             const list = catalogueData.catalogue.aspects.filter(a => selectedAspects.has(a.name));
@@ -913,6 +942,170 @@
             }
             return jsyaml.dump(out, { lineWidth: -1 });
         }
+
+// fix indentation
+
+function generateStandaloneHTML() {
+    const reportContent = document.getElementById('reportContent').innerHTML;
+
+    // Grab the existing styles from the current page
+    const styles = document.querySelector('style').innerHTML;
+
+
+
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Accessibility Kick-Off Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+${styles}
+
+/* Trim app-specific layout elements */
+body {
+  overflow: auto;
+}
+
+/* Centre the report nicely when standalone */
+.standalone-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px;
+}
+
+
+/* ─────────────────────────────────────────────
+   PRINT STYLES — Accessibility Kick-Off Report
+   ───────────────────────────────────────────── */
+
+@media print {
+
+  @page {
+    size: A4;
+    margin: 24mm 20mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.45;
+    overflow: visible;
+  }
+
+  /* Remove screen-only UI */
+  .skip-link,
+  .left-panel,
+  .panel-header,
+  .buttons-container {
+    display: none !important;
+  }
+
+  /* Layout cleanup */
+  .standalone-wrapper,
+  .report-preview,
+  .report-content {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 22pt;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+
+  h1::after {
+    background: #000000;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 24pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-top: 18pt;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 12pt;
+    margin-top: 14pt;
+    page-break-after: avoid;
+  }
+
+  /* Body text */
+  p,
+  li {
+    font-size: 12pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  ul,
+  ol {
+    margin-left: 18pt;
+  }
+
+  /* Links */
+  a {
+    color: #000000;
+    text-decoration: underline;
+    word-break: break-word;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+
+  /* Coloured sections → neutral print panels */
+  .implementation-section,
+  .resource-section {
+    background: #ffffff !important;
+    border-left: 4px solid #000000;
+    padding: 12pt 14pt;
+    break-inside: avoid;
+  }
+
+  hr {
+    border-top: 1px solid #000000;
+    margin: 24pt 0;
+    page-break-after: avoid;
+  }
+
+  /* Page breaking rules */
+  h2,
+  h3 {
+    break-after: avoid-page;
+  }
+
+}
+</style>
+</head>
+
+<body>
+<main class="standalone-wrapper">
+  <div class="report-content">
+    ${reportContent}
+  </div>
+</main>
+</body>
+</html>`;
+}
+
+
 
         function downloadFile(content, filename, mimeType) {
             const blob = new Blob([content], { type: mimeType });
