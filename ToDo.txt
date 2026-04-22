@@ -1,7 +1,4 @@
-- Fix screenreader expected behaviour 
-  - (cycle through elements not scroll page)
-  - Read full description of aspects
-- Fix the buttons layout
+- 10.3 is not mobile gaming specific
 
 
 
