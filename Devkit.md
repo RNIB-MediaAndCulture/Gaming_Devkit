@@ -53,7 +53,7 @@ A common mechanic for making aiming accessible is to use a lock-on system to kee
 
 Audio aiming, as demonstrated in Sea Of Thieves and Atomfall uses audio tones to communicate to the player where an enemy is in relation to the crosshairs. This places control back in the gamer's hands and allows them to choose which opponent they want to attack. 
 
-[![A Large level is framed in crosshairs]( https://img.youtube.com/vi/U4VC5bMIimY/0.jpg)](_https://youtu.be/U4VC5bMIimY)
+[![A Large level is framed in crosshairs]( https://img.youtube.com/vi/U4VC5bMIimY/0.jpg)](https://youtu.be/U4VC5bMIimY)
 
 ### 6.2 Minigames, puzzles and Quick Time Events
 Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional mechanisms that can be challenging to make accessible. This also applies to some in-game puzzles. 
