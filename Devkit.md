@@ -53,6 +53,8 @@ A common mechanic for making aiming accessible is to use a lock-on system to kee
 
 Audio aiming, as demonstrated in Sea Of Thieves and Atomfall uses audio tones to communicate to the player where an enemy is in relation to the crosshairs. This places control back in the gamer's hands and allows them to choose which opponent they want to attack. 
 
+[![A Large level is framed in crosshairs]( https://img.youtube.com/vi/U4VC5bMIimY/0.jpg)]( https://youtu.be/U4VC5bMIimY)
+
 ### 6.2 Minigames, puzzles and Quick Time Events
 Minigames and Quick Time Events are not just side content. They can give players a break from the main gameplay loop and provide rewards such as contributing to achievements that can be viewed outside of the game on platforms like Steam, Xbox or PlayStation. They often present gameplay that has additional mechanisms that can be challenging to make accessible. This also applies to some in-game puzzles. 
 
@@ -133,6 +135,8 @@ Sometimes buttons and icons may not be clickable but may still be visible on the
 
 It is recommended to create icons that display states with different shape, colour and another visual cue. An option needs to be provided to players to help them choose to further enhance the colour contrast and increase the width of lines.
 
+[![Silhouettes of a person, yellow, looking across a chasm in the ground, pink, at a freestanding control panel, blue]( https://img.youtube.com/vi/fB0h-kol4fI/0.jpg)]( https://youtu.be/fB0h-kol4fI)
+
 ### 8.7	Colour Vision Deficiency filters
 CVD (Colour Vision Deficiency), otherwise known as colour blindness, is a condition where parts of the eye that discern colours are missing or not working as standard. CVD filters, using a process called daltonization, applied across the whole game can ensure that colours have as much contrast as possible and can make the game easier to play for people who have CVD. This can make colours look unnatural and make the game less immersive and, as a result, not all players who could benefit from the feature will choose to use it. Using patterns or high contrast ratios (as defined by WCAG) can improve the default accessibility without reducing immersion and offering colour options for some game elements while retaining expected colours (trees are green, concrete is grey, etc) are likely to be better solutions. 
 
@@ -169,10 +173,14 @@ Making it clear when a player can do things like jump or traverse or when a stat
 
 Audio cues can also be used for navigation as an alternative to having the camera turn to point the player at the next objective. This gives a greater feeling of space and freedom to the player rather than complete linearity. Examples of this can be seen in Gears 5’s Navigation Ping: Escape Mode feature, which also includes high contrast visual elements to let even more people take advantage of the trail it leaves to lead players through areas.
 
+[![The inventor looks towards three button on the wall in a dimly lit room](https://img.youtube.com/vi/0cQBMGQA0z8/0.jpg)]( https://youtu.be/0cQBMGQA0z8)
+
 ### 9.2	Audio description
 Audio description is a medium that’s long been present in film, TV and theatre, but has only recently become recognised as a core part of the gaming space as of 2020. Though trailers from companies like Ubisoft, Activision Blizzard and Sony Santa Monica are examples of where this has been applied with reference to trailers, audio description in gaming is still rare with notable exeptions being The Last Of Us Part I for cinematics and Stories Of Blossom having audio description integrated throughout.
 
 Implementing these to relay descriptions of character actions, gestures or sequences allows players to understand your story where otherwise they will miss key details or plot points.
+
+[![The inventor looks to the right while captions say “Another tunnel, but finally one that leads up”]( https://img.youtube.com/vi/ gyXNnBhgNSI /0.jpg)]( https://youtu.be/gyXNnBhgNSI)
 
 ### 9.3	Descriptions viewable in-game as official channel
 If someone can’t see the visuals of the worlds you’ve created, the characters, the locations, the weapons, the items, a lot can be lost in terms of immersion. Having a way to view descriptions of key characters, items, locations etc as a player progresses, as well as audio glossaries for enemies and their attacks, could massively help with the increased level of understanding a player without sight can have of your world. Consider whether information is needed synchronously while a gamer is playing the game or asynchronously through glossaries, bestiaries and other sources of information that a player can look up later. Including artistic context while a player is playing will likely increase enjoyment but full descriptions of environments, enemies, objects, NPCs etc may be better suited to an asynchronous in-game reference.
