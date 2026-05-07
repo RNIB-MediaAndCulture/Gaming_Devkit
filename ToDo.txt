@@ -1,6 +1,6 @@
 - 10.3 is not mobile gaming specific
 
-
+- Audio Landmarks alongside Audio Beacons
 
 Also add:
  - https://gameaccessibilityguidelines.com/avoid-vr-simulation-sickness-triggers/ 
