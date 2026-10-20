@@ -162,8 +162,8 @@ button[aria-disabled="true"], button[aria-disabled="true"]:hover {
 <body>
 
 <div class="skip-links">
-    <a href="#main">Skip to main content</a>
-    <a href="#reportRegion">Skip to report preview</a>
+    <a href="#aspects-heading">Skip to game aspects</a>
+    <a href="#report-heading">Skip to report preview</a>
 </div>
 
 <div class="app">
@@ -172,10 +172,10 @@ button[aria-disabled="true"], button[aria-disabled="true"]:hover {
         <p>Choose the aspects of your game to generate a report of the mechanics, barriers and patterns to design for.</p>
     </header>
 
-    <main id="main" class="layout" tabindex="-1">
+    <main id="main" class="layout">
         <section class="panel left-panel" aria-labelledby="aspects-heading">
             <div class="panel-header">
-                <h2 id="aspects-heading">Game aspects</h2>
+                <h2 id="aspects-heading" tabindex="-1">Game aspects</h2>
             </div>
 
             <div class="load-file">
@@ -201,15 +201,15 @@ button[aria-disabled="true"], button[aria-disabled="true"]:hover {
             </div>
         </section>
 
-        <div class="panel right-panel">
+        <section class="panel right-panel" aria-labelledby="report-heading">
             <div class="panel-header">
-                <h2 id="report-heading">Report preview</h2>
+                <h2 id="report-heading" tabindex="-1">Report preview</h2>
                 <p>Updates as you select aspects.</p>
             </div>
-            <div class="report-preview" id="reportRegion" role="region" aria-labelledby="report-heading" tabindex="0">
+            <div class="report-preview" id="reportRegion">
                 <div class="report-content" id="reportContent"></div>
             </div>
-        </div>
+        </section>
     </main>
 </div>
 
@@ -496,7 +496,7 @@ button[aria-disabled="true"], button[aria-disabled="true"]:hover {
 
     function toDOM(m) {
         const frag = document.createDocumentFragment();
-        frag.append(heading(1, 'Accessibility Kick-Off Report'));
+        frag.append(heading(1, 'Accessibility Kick-Off Report', 'report-title'));
 
         frag.append(heading(2, 'Selected game aspects'),
             el('ul', {}, ...m.aspects.map((a) => el('li', {}, a))));
@@ -566,6 +566,9 @@ button[aria-disabled="true"], button[aria-disabled="true"]:hover {
                 frag.append(box);
             });
         }
+        // Guarantees the report always contains focusable content, so browsers
+        // don't make the whole scroll area a tab stop on their own
+        frag.append(el('p', {}, el('a', { href: '#report-title' }, 'Back to top of report')));
         return frag;
     }
 
