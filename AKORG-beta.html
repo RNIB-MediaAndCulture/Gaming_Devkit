@@ -1,1153 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibility Kick-Off Report Generator — RNIB</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    <style>
-        /* To Do
-        - fix Logo (RNIB should be centered not left aligned)
-        - Stop the Aspect Elements being truncated
-        - Bring out the Godot advice in the reports
-        */
-        :root {
-            --rnib-pink:       #e50071;
-            --rnib-pink-dark:  #b8005a;
-            --rnib-pink-tint:  #fce8f1;
-            --rnib-blue:       #0098b9;
-            --rnib-blue-tint:  #e5f5f9;
-            --rnib-green:      #009e4d;
-            --rnib-green-tint: #e5f5ed;
-            --rnib-yellow:     #fdc300;
-            --rnib-grey:       #555554;
-            --rnib-black:      #000000;
-            --rnib-white:      #ffffff;
-            --rnib-off-white:  #f7f7f7;
-            --rnib-rule:       #e0e0e0;
-            --rnib-mid-grey:   #767676;
-
-            --font-stack:   'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-
-            /* Typography — 1pt = 1.333px */
-            --sz-body:  18.67px;   /* 14pt minimum per guidelines */
-            --sz-ui:    16px;      /* 12pt — UI chrome only, never body copy */
-            --sz-small: 14px;      /* 10.5pt — captions / hints only */
-            --sz-h1:    32px;
-            --sz-h2:    24px;
-            --sz-h3:    21.33px;   /* 16pt */
-            --sz-h4:    18.67px;   /* 14pt */
-
-            --lh-body:  22px;      /* 16.5pt — correct leading for 14pt text */
-            --lh-h2:    30px;
-            --lh-h3:    26px;
-
-            --para-gap: 11px;      /* 3mm paragraph spacing */
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-style: normal;           /* No italics */
-            text-decoration: none;        /* No underlines */
-            hyphens: none;                /* No hyphenation */
-            -webkit-hyphens: none;
-            font-variant-ligatures: none; /* Ligatures off */
-        }
-
-        body {
-            font-family: var(--font-stack);
-            font-size: var(--sz-body);
-            line-height: var(--lh-body);
-            color: var(--rnib-black);
-            background: var(--rnib-white);
-            height: 100vh;
-            overflow: hidden;
-            text-align: left;
-        }
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 8px;
-            z-index: 999;
-            background: var(--rnib-pink);
-            color: var(--rnib-white);
-            padding: 10px 16px;
-            font-size: var(--sz-body);
-            font-weight: 700;
-            font-family: var(--font-stack);
-        }
-        .skip-link:focus {
-            top: 8px;
-            outline: 3px solid var(--rnib-black);
-            outline-offset: 2px;
-        }
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .left-panel {
-            width: 460px;
-            min-width: 460px;
-            background: var(--rnib-white);
-            border-right: 1px solid var(--rnib-rule);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .right-panel {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .panel-header {
-            padding: 18px 20px 18px 28px;
-            background: var(--rnib-white);
-            border-bottom: 1px solid var(--rnib-rule);
-            position: relative;
-        }
-        .panel-header::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 8px;
-            background: var(--rnib-pink);
-        }
-
-        .header-row {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .panel-header h1 {
-            font-size: var(--sz-h3);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: 1.2;
-            margin-bottom: 4px;
-        }
-
-        .panel-header p {
-            font-size: var(--sz-ui);
-            color: var(--rnib-grey);
-            line-height: 1.45;
-        }
-
-        .selected-count {
-            display: block;
-            font-size: var(--sz-ui);
-            font-weight: 700;
-            color: var(--rnib-pink);
-            margin-top: 6px;
-        }
-        .rnib-mark {
-            flex-shrink: 0;
-            line-height: 1;
-        }
-        .rnib-mark__logo {
-            display: block;
-            height: 56px;
-            width: auto;
-        }
-
-        .load-file {
-            padding: 14px 20px 14px 28px;
-            background: var(--rnib-off-white);
-            border-bottom: 1px solid var(--rnib-rule);
-        }
-        .load-file label {
-            display: block;
-            font-size: var(--sz-ui);
-            font-weight: 700;
-            color: var(--rnib-black);
-            margin-bottom: 6px;
-        }
-        .load-file input[type="file"] {
-            display: block;
-            width: 100%;
-            font-size: var(--sz-ui);
-            font-family: var(--font-stack);
-            color: var(--rnib-black);
-            cursor: pointer;
-        }
-        .load-file input[type="file"]:focus {
-            outline: 3px solid var(--rnib-pink);
-            outline-offset: 2px;
-        }
-        .load-file .hint {
-            font-size: var(--sz-small);
-            color: var(--rnib-grey);
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .aspects-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 12px 16px 12px 20px;
-        }
-
-        .aspect-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 12px 10px 8px;
-            margin-bottom: 2px;
-            border-left: 4px solid transparent;
-            transition: background 0.12s, border-color 0.12s;
-            cursor: pointer;
-        }
-        .aspect-item:hover {
-            background: var(--rnib-off-white);
-            border-left-color: var(--rnib-pink);
-        }
-        .aspect-item.is-checked {
-            background: var(--rnib-pink-tint);
-            border-left-color: var(--rnib-pink);
-        }
-
-        .aspect-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            cursor: pointer;
-            margin-top: 1px;
-            accent-color: var(--rnib-pink);
-        }
-        .aspect-item input[type="checkbox"]:focus {
-            outline: 3px solid var(--rnib-pink);
-            outline-offset: 2px;
-        }
-
-        .aspect-item label {
-            cursor: pointer;
-            line-height: 1.45;
-            flex: 1;
-        }
-        .aspect-item label strong {
-            display: block;
-            font-size: var(--sz-ui);
-            font-weight: 700;
-            color: var(--rnib-black);
-            margin-bottom: 1px;
-        }
-        .aspect-item label span {
-            display: block;
-            font-size: var(--sz-small);
-            color: var(--rnib-grey);
-            line-height: 1.4;
-        }
-        .buttons-container {
-            padding: 14px 20px 14px 28px;
-            background: var(--rnib-white);
-            border-top: 1px solid var(--rnib-rule);
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            flex: 1;
-            padding: 12px 16px;
-            font-size: var(--sz-ui);
-            font-weight: 700;
-            font-family: var(--font-stack);
-            border-radius: 0;
-            cursor: pointer;
-            text-align: left;
-            line-height: 1.2;
-            transition: background 0.12s, color 0.12s, border-color 0.12s;
-        }
-        button:focus {
-            outline: 3px solid var(--rnib-pink);
-            outline-offset: 3px;
-        }
-
-        .report-btn {
-            background: var(--rnib-pink);
-            color: var(--rnib-white);
-            border: 2px solid var(--rnib-pink);
-        }
-        .report-btn:hover:not(:disabled) {
-            background: var(--rnib-pink-dark);
-            border-color: var(--rnib-pink-dark);
-        }
-
-        .yaml-btn {
-            background: var(--rnib-white);
-            color: var(--rnib-black);
-            border: 2px solid var(--rnib-black);
-        }
-        .yaml-btn:hover:not(:disabled) {
-            background: var(--rnib-black);
-            color: var(--rnib-white);
-        }
-
-        button:disabled {
-            opacity: 0.38;
-            cursor: not-allowed;
-        }
-
-        .btn-hint {
-            font-size: var(--sz-small);
-            color: var(--rnib-grey);
-            padding: 0 20px 12px 28px;
-            line-height: 1.4;
-        }
-        .empty-state {
-            padding: 48px 32px;
-            color: var(--rnib-grey);
-        }
-        .empty-state svg {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 16px;
-            display: block;
-            color: var(--rnib-mid-grey);
-        }
-        .empty-state h3 {
-            font-size: var(--sz-h3);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: 1.2;
-            margin-bottom: var(--para-gap);
-        }
-        .empty-state p {
-            font-size: var(--sz-body);
-            line-height: var(--lh-body);
-            color: var(--rnib-grey);
-        }
-
-        .report-preview {
-            flex: 1;
-            overflow-y: auto;
-            padding: 48px 56px;
-            background: var(--rnib-white);
-        }
-
-        .report-content {
-            max-width: 760px;
-        }
-
-        .report-content h1 {
-            font-size: var(--sz-h1);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: 1.15;
-            margin-bottom: 12px;
-        }
-        .report-content h1::after {
-            content: '';
-            display: block;
-            height: 6px;
-            width: 40px;
-            background: var(--rnib-pink);
-            margin-top: 12px;
-        }
-
-        .report-content h2 {
-            font-size: var(--sz-h2);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: var(--lh-h2);
-            margin-top: 40px;
-            margin-bottom: var(--para-gap);
-            padding-left: 16px;
-            border-left: 8px solid var(--rnib-pink);
-        }
-
-        .report-content h3 {
-            font-size: var(--sz-h3);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: var(--lh-h3);
-            margin-top: 32px;
-            margin-bottom: var(--para-gap);
-        }
-
-        .report-content h4 {
-            font-size: var(--sz-h4);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: var(--lh-body);
-            margin-top: 24px;
-            margin-bottom: var(--para-gap);
-        }
-
-        .report-content h5 {
-            font-size: var(--sz-body);
-            font-weight: 700;
-            color: var(--rnib-black);
-            line-height: var(--lh-body);
-            margin-top: 20px;
-            margin-bottom: var(--para-gap);
-        }
-
-        .report-content p {
-            font-size: var(--sz-body);
-            line-height: var(--lh-body);
-            color: var(--rnib-black);
-            margin-bottom: var(--para-gap);
-            text-indent: 0;
-        }
-
-        .report-content ul,
-        .report-content ol {
-            margin-left: 24px;
-            margin-bottom: var(--para-gap);
-        }
-
-        .report-content li {
-            font-size: var(--sz-body);
-            line-height: var(--lh-body);
-            color: var(--rnib-black);
-            margin-bottom: 5px;
-            padding-left: 4px;
-        }
-
-        .report-content strong {
-            font-weight: 700;
-        }
-
-        .report-content a {
-            color: var(--rnib-blue);
-            font-weight: 600;
-        }
-        .report-content a:hover {
-            color: var(--rnib-pink);
-            text-decoration: underline;
-        }
-        .report-content a:focus {
-            outline: 3px solid var(--rnib-pink);
-            outline-offset: 2px;
-        }
-
-        .report-content hr {
-            border: none;
-            border-top: 1px solid var(--rnib-rule);
-            margin: 32px 0;
-        }
-
-        .report-content code {
-            font-size: var(--sz-ui);
-            background: var(--rnib-off-white);
-            padding: 2px 6px;
-            border-left: 3px solid var(--rnib-rule);
-        }
-
-        .implementation-section {
-            background: var(--rnib-blue-tint);
-            padding: 16px 20px;
-            margin: var(--para-gap) 0;
-            border-left: 6px solid var(--rnib-blue);
-        }
-        .implementation-section p,
-        .implementation-section li {
-            font-size: var(--sz-body);
-            font-weight: 500;
-            line-height: var(--lh-body);
-            color: var(--rnib-black);
-        }
-
-        .resource-section {
-            background: var(--rnib-green-tint);
-            padding: 16px 20px;
-            margin: var(--para-gap) 0;
-            border-left: 6px solid var(--rnib-green);
-        }
-        .resource-section p,
-        .resource-section li {
-            font-size: var(--sz-body);
-            font-weight: 500;
-            line-height: var(--lh-body);
-            color: var(--rnib-black);
-        }
-
-        .aspects-container::-webkit-scrollbar,
-        .report-preview::-webkit-scrollbar {
-            width: 6px;
-        }
-        .aspects-container::-webkit-scrollbar-track,
-        .report-preview::-webkit-scrollbar-track {
-            background: var(--rnib-off-white);
-        }
-        .aspects-container::-webkit-scrollbar-thumb,
-        .report-preview::-webkit-scrollbar-thumb {
-            background: var(--rnib-rule);
-        }
-        .aspects-container::-webkit-scrollbar-thumb:hover,
-        .report-preview::-webkit-scrollbar-thumb:hover {
-            background: var(--rnib-mid-grey);
-        }
-    </style>
-</head>
-<body>
-
-    <a class="skip-link" href="#reportContent">Skip to report preview</a>
-
-    <div class="container">
-
-        <!-- LEFT PANEL: aspect selection ─────────────────── -->
-        <aside class="left-panel" aria-label="Game aspect selection">
-
-            <div class="panel-header">
-                <div class="header-row">
-                    <div>
-                        <h1>Game Aspects</h1>
-                        <p>Select the aspects your game will include</p>
-                        <span class="selected-count"
-                              id="selectedCount"
-                              aria-live="polite"
-                              aria-atomic="true">0 aspects selected</span>
-                    </div>
-                    <div class="rnib-mark">
-                        <img src="data:image/png;base64,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" alt="RNIB — See differently" class="rnib-mark__logo" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="load-file">
-                <label for="yamlFile">Load YAML catalogue</label>
-                <input type="file"
-                       id="yamlFile"
-                       accept=".yaml,.yml"
-                       aria-describedby="yamlHint" />
-                <p class="hint" id="yamlHint">Accepts .yaml or .yml files</p>
-            </div>
-
-            <div class="aspects-container"
-                 id="aspectsContainer"
-                 role="group"
-                 aria-label="Available game aspects">
-                <div class="empty-state">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                         aria-hidden="true" focusable="false">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                    </svg>
-                    <p>Load a YAML file to begin</p>
-                </div>
-            </div>
-
-            <div class="buttons-container">
-                <button class="report-btn"
-                        id="downloadReport"
-                        disabled
-                        aria-disabled="true"
-                        aria-describedby="btnHint">
-                    Download Report
-                </button>
-                <button class="yaml-btn"
-                        id="downloadYaml"
-                        disabled
-                        aria-disabled="true"
-                        aria-describedby="btnHint">
-                    Download YAML
-                </button>
-
-                <button class="yaml-btn"
-                        id="downloadHtml"
-                        disabled
-                        aria-disabled="true"
-                        aria-describedby="btnHint">
-                  Download HTML
-                </button>
-
-            </div>
-            <p class="btn-hint" id="btnHint">
-                Select at least one aspect to enable downloads
-            </p>
-
-        </aside>
-
-        <!-- RIGHT PANEL: report preview ──────────────────── -->
-        <main class="right-panel" aria-label="Report preview">
-
-            <div class="panel-header">
-                <h1>Report Preview</h1>
-                <p>Live preview of your accessibility kick-off report</p>
-            </div>
-
-            <div class="report-preview"
-                 role="region"
-                 aria-label="Generated report"
-                 aria-live="polite">
-                <div class="report-content" id="reportContent">
-                    <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                             aria-hidden="true" focusable="false">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                        <h3>No aspects selected</h3>
-                        <p>Select game aspects from the panel on the left to generate your accessibility kick-off report</p>
-                    </div>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
-    <script>
-        let catalogueData = null;
-        let selectedAspects = new Set();
-
-        document.getElementById('yamlFile').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                try {
-                    catalogueData = jsyaml.load(event.target.result);
-                    renderAspects();
-                } catch (error) {
-                    alert('Error parsing YAML file: ' + error.message);
-                }
-            };
-            reader.readAsText(file);
-        });
-
-        function renderAspects() {
-            const container = document.getElementById('aspectsContainer');
-            container.innerHTML = '';
-
-            if (!catalogueData?.catalogue?.aspects) {
-                container.innerHTML = '<div class="empty-state"><p>No aspects found in YAML file</p></div>';
-                return;
-            }
-
-            // Shared live region — injected once, reused by every checkbox on focus
-            const liveDesc = document.createElement('p');
-            liveDesc.id = 'aspect-live-desc';
-            liveDesc.setAttribute('aria-live', 'polite');
-            liveDesc.setAttribute('aria-atomic', 'true');
-            // Visually hidden but available to screen readers
-            liveDesc.style.cssText = [
-                'position:absolute',
-                'width:1px',
-                'height:1px',
-                'overflow:hidden',
-                'clip:rect(0 0 0 0)',
-                'white-space:nowrap',
-            ].join(';');
-            container.appendChild(liveDesc);
-
-            catalogueData.catalogue.aspects.forEach((aspect, index) => {
-                const item = document.createElement('div');
-                item.className = 'aspect-item';
-
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = `aspect-${index}`;
-                checkbox.value = aspect.name;
-                // aria-label carries the name; description is announced via the
-                // shared live region on focus so it clears again on blur
-                checkbox.setAttribute('aria-label', aspect.name);
-
-                checkbox.addEventListener('change', () => handleAspectChange(checkbox, item));
-
-                // Populate live region with full description on focus; clear on blur
-                checkbox.addEventListener('focus', () => {
-                    liveDesc.textContent = aspect.description || '';
-                });
-                checkbox.addEventListener('blur', () => {
-                    liveDesc.textContent = '';
-                });
-
-                const label = document.createElement('label');
-                label.htmlFor = `aspect-${index}`;
-                label.setAttribute('aria-hidden', 'true');
-
-                const nameEl = document.createElement('strong');
-                nameEl.textContent = aspect.name;
-                label.appendChild(nameEl);
-
-                if (aspect.description) {
-                    const descEl = document.createElement('span');
-                    // Full description — no truncation
-                    descEl.textContent = aspect.description;
-                    label.appendChild(descEl);
-                }
-
-                item.appendChild(checkbox);
-                item.appendChild(label);
-                container.appendChild(item);
-            });
-
-            // Arrow-key navigation: move focus between checkboxes without scrolling
-            container.addEventListener('keydown', function(e) {
-                if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
-
-                const checkboxes = Array.from(
-                    container.querySelectorAll('input[type="checkbox"]')
-                );
-                const current = document.activeElement;
-                const idx = checkboxes.indexOf(current);
-                if (idx === -1) return;
-
-                e.preventDefault(); // stop the scrollbar moving
-
-                const next = e.key === 'ArrowDown'
-                    ? checkboxes[idx + 1]
-                    : checkboxes[idx - 1];
-
-                if (next) {
-                    next.focus();
-                    // Scroll the newly-focused item into view smoothly
-                    next.closest('.aspect-item').scrollIntoView({
-                        block: 'nearest', behavior: 'smooth'
-                    });
-                }
-            });
-        }
-
-        function handleAspectChange(checkbox, itemEl) {
-            if (checkbox.checked) {
-                selectedAspects.add(checkbox.value);
-                itemEl.classList.add('is-checked');
-            } else {
-                selectedAspects.delete(checkbox.value);
-                itemEl.classList.remove('is-checked');
-            }
-            updateSelectedCount();
-            generateReport();
-            updateButtons();
-        }
-
-        function updateSelectedCount() {
-            const n = selectedAspects.size;
-            document.getElementById('selectedCount').textContent =
-                `${n} aspect${n !== 1 ? 's' : ''} selected`;
-        }
-
-        function updateButtons() {
-            const has = selectedAspects.size > 0;
-            ['downloadReport', 'downloadYaml', 'downloadHtml'].forEach(id => {
-                const btn = document.getElementById(id);
-                btn.disabled = !has;
-                btn.setAttribute('aria-disabled', String(!has));
-            });
-        }
-
-        function generateReport() {
-            const reportDiv = document.getElementById('reportContent');
-
-            if (selectedAspects.size === 0) {
-                reportDiv.innerHTML = `
-                    <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                             aria-hidden="true" focusable="false">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                        <h3>No aspects selected</h3>
-                        <p>Select game aspects from the panel on the left to generate your accessibility kick-off report</p>
-                    </div>`;
-                return;
-            }
-
-            const mechanicsNeeded = new Map();
-            const selectedAspectsList = catalogueData.catalogue.aspects.filter(a =>
-                selectedAspects.has(a.name));
-
-            selectedAspectsList.forEach(aspect => {
-                (aspect['mechanics used'] || []).forEach(mechName => {
-                    if (!mechanicsNeeded.has(mechName)) mechanicsNeeded.set(mechName, new Set());
-                    mechanicsNeeded.get(mechName).add(aspect.name);
-                });
-            });
-
-            const patternsNeeded = new Set();
-            mechanicsNeeded.forEach((_, mechName) => {
-                const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                (mech?.potentialBarriers || []).forEach(barrier => {
-                    (barrier['patterns to consider'] || []).forEach(p => patternsNeeded.add(p));
-                });
-            });
-
-            reportDiv.innerHTML = markdownToHTML(
-                generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded)
-            );
-        }
-
-        function generateMarkdownContent(selectedAspectsList, mechanicsNeeded, patternsNeeded) {
-            let md = `# Accessibility Kick-Off Report\n\n## Selected Game Aspects\n\n`;
-            md += Array.from(selectedAspects).map(n => `- ${n}`).join('\n');
-            md += '\n\n---\n\n## Mechanics to Implement\n\n';
-
-            const sortedMechanics = Array.from(mechanicsNeeded.entries()).sort((a, b) =>
-                a[0].localeCompare(b[0]));
-
-            sortedMechanics.forEach(([mechName, aspects]) => {
-                const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                md += `### ${mechName}\n\n`;
-                if (mech?.description) md += `${mech.description.trim()}\n\n`;
-                md += `**Required for:** ${Array.from(aspects).join(', ')}\n\n`;
-
-                if (mech?.potentialBarriers?.length) {
-                    md += `#### Accessibility Barriers and Considerations\n\n`;
-                    mech.potentialBarriers.forEach((b, idx) => {
-                        if (!b.barrier) return;
-                        md += `**Barrier ${idx + 1}:** ${b.barrier}\n\n`;
-                        if (b.consider) {
-                            md += `**Consider:**\n`;
-                            const items = Array.isArray(b.consider) ? b.consider : [b.consider];
-                            items.forEach(c => { md += `- ${c}\n`; });
-                            md += '\n';
-                        }
-                        if (b['patterns to consider']) {
-                            md += `**Related Patterns:** `;
-                            md += b['patterns to consider']
-                                .map(p => `[${p}](#${p.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`)
-                                .join(', ');
-                            md += '\n\n';
-                        }
-                    });
-                }
-                md += '---\n\n';
-            });
-
-            if (patternsNeeded.size > 0) {
-                md += `## Accessibility Patterns\n\n`;
-                Array.from(patternsNeeded).sort().forEach(patternName => {
-                    const pattern = catalogueData.catalogue.patterns.find(p => p.name === patternName);
-                    if (!pattern) return;
-
-                    md += `### ${pattern.name}\n\n`;
-                    if (pattern.description) md += `${pattern.description.trim()}\n\n`;
-
-
-                    if (pattern.implementation_options) {
-                        md += `#### Implementation Options\n\n`;
-
-                        const engines = {
-                            unity: 'Unity',
-                            unreal: 'Unreal Engine',
-                            godot: 'Godot'
-                        };
-
-                        Object.entries(engines).forEach(([engine, label]) => {
-                            if (!pattern.implementation_options[engine]) return;
-
-                            md += `**${label}:**\n`;
-                            const opts = Array.isArray(pattern.implementation_options[engine])
-                                ? pattern.implementation_options[engine]
-                                : [pattern.implementation_options[engine]];
-
-                            opts.forEach(o => { md += `- ${o}\n`; });
-                            md += '\n';
-                        });
-                    }
-
-
-                    if (pattern.documentation?.length) {
-                        md += `#### Documentation and Resources\n\n`;
-                        pattern.documentation.forEach(doc => { md += `- ${doc}\n`; });
-                        md += '\n';
-                    }
-
-                    const using = [];
-                    sortedMechanics.forEach(([mechName]) => {
-                        const mech = catalogueData.catalogue.mechanics.find(m => m.name === mechName);
-                        if (mech?.potentialBarriers?.some(b =>
-                            b['patterns to consider']?.includes(patternName))) {
-                            using.push(mechName);
-                        }
-                    });
-                    if (using.length) md += `**Used by mechanics:** ${using.join(', ')}\n\n`;
-                    md += '---\n\n';
-                });
-            }
-
-            if (catalogueData.catalogue.general_resources) {
-                md += `## General Resources\n\n`;
-                md += `These resources provide additional guidance and tools for implementing accessibility features across different platforms.\n\n`;
-                catalogueData.catalogue.general_resources.forEach(resource => {
-                    md += `### ${resource.name}\n\n`;
-                    (resource.documentation || []).forEach(d => { md += `- ${d}\n`; });
-                    (resource.items || []).forEach(i => { md += `- ${i}\n`; });
-                    md += '\n';
-                });
-            }
-
-            return md;
-        }
-
-        function markdownToHTML(md) {
-            let html = md;
-            html = html.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
-            html = html.replace(/^#### (.*$)/gim,  '<h4>$1</h4>');
-            html = html.replace(/^### (.*$)/gim,   '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim,    '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim,     '<h1>$1</h1>');
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-            html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
-            // Wrap contiguous list items
-            html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => `<ul>${match}</ul>`);
-            html = html.replace(/^---$/gim, '<hr>');
-            html = html.split('\n\n').map(para => {
-                const t = para.trim();
-                if (!t) return '';
-                if (/^<(h[1-6]|ul|ol|hr)/.test(t)) return t;
-                return `<p>${t}</p>`;
-            }).join('\n');
-            return html;
-        }
-
-        document.getElementById('downloadReport').addEventListener('click', () => {
-            downloadFile(generateFullMarkdownReport(), 'accessibility-kickoff-report.md', 'text/markdown');
-        });
-
-        document.getElementById('downloadYaml').addEventListener('click', () => {
-            downloadFile(generateFilteredYaml(), 'accessibility-companion-data.yaml', 'text/yaml');
-        });
-
-
-        document.getElementById('downloadHtml').addEventListener('click', () => {
-            downloadFile(
-                generateStandaloneHTML(),
-                'accessibility-kickoff-report.html',
-                'text/html'
-            );
-        });
-
-
-        function generateFullMarkdownReport() {
-            const mechanicsNeeded = new Map();
-            const list = catalogueData.catalogue.aspects.filter(a => selectedAspects.has(a.name));
-            list.forEach(aspect => {
-                (aspect['mechanics used'] || []).forEach(n => {
-                    if (!mechanicsNeeded.has(n)) mechanicsNeeded.set(n, new Set());
-                    mechanicsNeeded.get(n).add(aspect.name);
-                });
-            });
-            const patternsNeeded = new Set();
-            mechanicsNeeded.forEach((_, n) => {
-                const mech = catalogueData.catalogue.mechanics.find(m => m.name === n);
-                (mech?.potentialBarriers || []).forEach(b => {
-                    (b['patterns to consider'] || []).forEach(p => patternsNeeded.add(p));
-                });
-            });
-            return generateMarkdownContent(list, mechanicsNeeded, patternsNeeded);
-        }
-
-        function generateFilteredYaml() {
-            const mechSet = new Set();
-            const patSet  = new Set();
-            const list = catalogueData.catalogue.aspects.filter(a => selectedAspects.has(a.name));
-            list.forEach(a => (a['mechanics used'] || []).forEach(n => mechSet.add(n)));
-            mechSet.forEach(n => {
-                const mech = catalogueData.catalogue.mechanics.find(m => m.name === n);
-                (mech?.potentialBarriers || []).forEach(b => {
-                    (b['patterns to consider'] || []).forEach(p => patSet.add(p));
-                });
-            });
-            const out = {
-                catalogue: {
-                    description: catalogueData.catalogue.description,
-                    aspects:   list,
-                    mechanics: catalogueData.catalogue.mechanics.filter(m => mechSet.has(m.name)),
-                    patterns:  catalogueData.catalogue.patterns.filter(p => patSet.has(p.name))
-                }
-            };
-            if (catalogueData.catalogue.general_resources) {
-                out.catalogue.general_resources = catalogueData.catalogue.general_resources;
-            }
-            return jsyaml.dump(out, { lineWidth: -1 });
-        }
-
-// fix indentation
-
-function generateStandaloneHTML() {
-    const reportContent = document.getElementById('reportContent').innerHTML;
-
-    // Grab the existing styles from the current page
-    const styles = document.querySelector('style').innerHTML;
-
-
-
-
-    return `<!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="UTF-8">
-<title>Accessibility Kick-Off Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Accessibility Kick-Off Report Generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <style>
-${styles}
+*, *::before, *::after { box-sizing: border-box; }
 
-/* Trim app-specific layout elements */
 body {
-  overflow: auto;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background: #fff;
 }
 
-/* Centre the report nicely when standalone */
-.standalone-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 56px;
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
+/* Skip links */
+.skip-links a {
+    position: absolute;
+    left: 0.5rem;
+    top: -6rem;
+    z-index: 100;
+    background: #fff;
+    color: #000;
+    padding: 0.75rem 1rem;
+    border: 2px solid #000;
+    font-weight: 600;
+}
+.skip-links a:focus { top: 0.5rem; }
 
-/* ─────────────────────────────────────────────
-   PRINT STYLES — Accessibility Kick-Off Report
-   ───────────────────────────────────────────── */
+/* Focus indicator: black ring with white gap, visible on light and dark backgrounds */
+a:focus-visible, button:focus-visible, input:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
+}
 
-@media print {
+/* Page layout */
+.app { display: flex; flex-direction: column; height: 100vh; }
 
-  @page {
-    size: A4;
-    margin: 24mm 20mm;
-  }
+.site-header { background: #1b2a38; color: #fff; padding: 0.75rem 1.25rem; }
+.site-header h1 { margin: 0; font-size: 1.5rem; }
+.site-header p { margin: 0.25rem 0 0; font-size: 0.9375rem; }
 
-  html, body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
+.layout { flex: 1; display: flex; min-height: 0; }
 
-  body {
-    font-size: 12pt;
-    line-height: 1.45;
-    overflow: visible;
-  }
+.panel { display: flex; flex-direction: column; min-height: 0; }
+.left-panel { flex: 0 0 24rem; background: #f5f5f5; border-right: 2px solid #767676; }
+.right-panel { flex: 1; min-width: 0; }
 
-  /* Remove screen-only UI */
-  .skip-link,
-  .left-panel,
-  .panel-header,
-  .buttons-container {
-    display: none !important;
-  }
+.panel-header { background: #2c3e50; color: #fff; padding: 0.75rem 1.25rem; }
+.panel-header h2 { margin: 0; font-size: 1.25rem; }
+.panel-header p { margin: 0.25rem 0 0; font-size: 0.875rem; }
 
-  /* Layout cleanup */
-  .standalone-wrapper,
-  .report-preview,
-  .report-content {
-    padding: 0 !important;
-    margin: 0 auto !important;
-    max-width: 100% !important;
-  }
+/* File loader */
+.load-file { padding: 1rem 1.25rem; background: #fff3cd; border-bottom: 1px solid #8a6d00; }
+.load-file label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.load-file input[type="file"] { display: block; width: 100%; font: inherit; }
+.help { margin: 0.5rem 0 0; font-size: 0.875rem; color: #4a4a4a; }
+.error { margin: 0; color: #8a1f11; font-weight: 600; }
+.error:not(:empty) { margin-top: 0.5rem; }
 
-  /* Headings */
-  h1 {
-    font-size: 22pt;
-    margin-top: 0;
-    page-break-after: avoid;
-  }
+.selected-count { margin: 0; padding: 0.5rem 1.25rem; border-bottom: 1px solid #c8c8c8; font-size: 0.9375rem; }
 
-  h1::after {
-    background: #000000;
-  }
+/* Aspect checkboxes */
+.aspects-container { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; min-height: 0; }
+.empty-note { margin: 0; color: #4a4a4a; }
 
-  h2 {
-    font-size: 16pt;
-    margin-top: 24pt;
-    page-break-after: avoid;
-  }
+fieldset.aspects { border: 0; margin: 0; padding: 0; min-width: 0; }
+fieldset.aspects legend { padding: 0; margin-bottom: 0.5rem; font-weight: 600; }
 
-  h3 {
-    font-size: 14pt;
-    margin-top: 18pt;
-    page-break-after: avoid;
-  }
+.aspect {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    scroll-margin: 1rem;
+}
+.aspect:hover { background: #e4e4e4; }
+.aspect input[type="checkbox"] {
+    grid-row: 1 / span 2;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.1rem 0 0;
+    cursor: pointer;
+}
+.aspect label { grid-column: 2; font-weight: 600; cursor: pointer; display: block; }
+.aspect-desc { grid-column: 2; font-size: 0.875rem; color: #4a4a4a; }
 
-  h4 {
-    font-size: 12pt;
-    margin-top: 14pt;
-    page-break-after: avoid;
-  }
+/* Buttons */
+.actions { padding: 1rem 1.25rem; background: #fff; border-top: 1px solid #c8c8c8; }
+.button-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+button {
+    flex: 1 1 9rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+.report-btn { background: #0b5394; }
+.report-btn:hover { background: #083d6e; }
+.yaml-btn { background: #1e6b34; }
+.yaml-btn:hover { background: #15501f; }
+button[aria-disabled="true"], button[aria-disabled="true"]:hover {
+    background: #6b6b6b;
+    cursor: not-allowed;
+}
+.action-message { margin: 0.5rem 0 0; font-size: 0.9375rem; font-weight: 600; }
+.action-message:empty { margin: 0; }
 
-  /* Body text */
-  p,
-  li {
-    font-size: 12pt;
-    orphans: 3;
-    widows: 3;
-  }
+/* Report preview */
+.report-preview { flex: 1; overflow: auto; padding: 1.5rem 2rem; min-height: 0; }
+.report-content { max-width: 56rem; margin: 0 auto; overflow-wrap: anywhere; }
+.report-content h3 { font-size: 1.75rem; margin: 0 0 0.5rem; color: #1b2a38; }
+.report-content h4 { font-size: 1.5rem; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #0b5394; color: #1b2a38; }
+.report-content h5 { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+.report-content h6 { font-size: 1.0625rem; margin: 1.25rem 0 0.5rem; color: #333; }
+.report-content p { margin: 0 0 0.75rem; }
+.report-content ul, .report-content ol { margin: 0 0 1rem; padding-left: 1.75rem; }
+.report-content li { margin-bottom: 0.5rem; }
+.report-content a { color: #0b5394; text-decoration: underline; }
+.entry { padding-bottom: 1rem; border-bottom: 1px solid #c8c8c8; }
 
-  ul,
-  ol {
-    margin-left: 18pt;
-  }
+.empty-state { text-align: center; padding: 3rem 1rem; color: #4a4a4a; }
+.empty-state svg { width: 5rem; height: 5rem; margin-bottom: 1rem; opacity: 0.6; }
 
-  /* Links */
-  a {
-    color: #000000;
-    text-decoration: underline;
-    word-break: break-word;
-  }
+/* Reflow: stack panels and let the page scroll on narrow or short viewports (WCAG 1.4.10) */
+@media (max-width: 52rem), (max-height: 32rem) {
+    .app { height: auto; min-height: 100vh; }
+    .layout { flex-direction: column; }
+    .left-panel { flex: none; border-right: 0; border-bottom: 2px solid #767676; }
+    .aspects-container, .report-preview { overflow: visible; }
+    .report-preview { padding: 1rem; }
+}
 
-  a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 10pt;
-  }
-
-  /* Coloured sections → neutral print panels */
-  .implementation-section,
-  .resource-section {
-    background: #ffffff !important;
-    border-left: 4px solid #000000;
-    padding: 12pt 14pt;
-    break-inside: avoid;
-  }
-
-  hr {
-    border-top: 1px solid #000000;
-    margin: 24pt 0;
-    page-break-after: avoid;
-  }
-
-  /* Page breaking rules */
-  h2,
-  h3 {
-    break-after: avoid-page;
-  }
-
+@media (forced-colors: active) {
+    button[aria-disabled="true"] { border-color: GrayText; color: GrayText; }
 }
 </style>
 </head>
-
 <body>
-<main class="standalone-wrapper">
-  <div class="report-content">
-    ${reportContent}
-  </div>
-</main>
-</body>
-</html>`;
-}
 
+<div class="skip-links">
+    <a href="#main">Skip to main content</a>
+    <a href="#reportRegion">Skip to report preview</a>
+</div>
 
+<div class="app">
+    <header class="site-header">
+        <h1>Accessibility Kick-Off Report Generator</h1>
+        <p>Choose the aspects of your game to generate a report of the mechanics, barriers and patterns to design for.</p>
+    </header>
 
-        function downloadFile(content, filename, mimeType) {
-            const blob = new Blob([content], { type: mimeType });
-            const url  = URL.createObjectURL(blob);
-            const a    = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+    <main id="main" class="layout" tabindex="-1">
+        <section class="panel left-panel" aria-labelledby="aspects-heading">
+            <div class="panel-header">
+                <h2 id="aspects-heading">Game aspects</h2>
+            </div>
+
+            <div class="load-file">
+                <label for="yamlFile">Catalogue YAML file</label>
+                <input type="file" id="yamlFile" accept=".yaml,.yml" aria-describedby="fileHelp fileError">
+                <p class="help" id="fileHelp">Choose your catalogue file (.yaml or .yml) to list its aspects.</p>
+                <p class="error" id="fileError"></p>
+            </div>
+
+            <p class="selected-count" id="selectedCount">0 aspects selected</p>
+
+            <div class="aspects-container" id="aspectsContainer">
+                <p class="empty-note">No catalogue loaded. Choose a catalogue file to list the available aspects.</p>
+            </div>
+
+            <div class="actions">
+                <div class="button-row">
+                    <button type="button" class="report-btn" id="downloadReport" aria-disabled="true" aria-describedby="actionsHelp">Download report</button>
+                    <button type="button" class="yaml-btn" id="downloadYaml" aria-disabled="true" aria-describedby="actionsHelp">Download YAML</button>
+                </div>
+                <p class="help" id="actionsHelp">Downloads are available once at least one aspect is selected.</p>
+                <p class="action-message" id="actionMessage"></p>
+            </div>
+        </section>
+
+        <div class="panel right-panel">
+            <div class="panel-header">
+                <h2 id="report-heading">Report preview</h2>
+                <p>Updates as you select aspects.</p>
+            </div>
+            <div class="report-preview" id="reportRegion" role="region" aria-labelledby="report-heading" tabindex="0">
+                <div class="report-content" id="reportContent"></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Polite live region: short status messages only, never the whole report -->
+<div id="status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function () {
+    'use strict';
+
+    // ---------- State and helpers ----------
+    let catalogueData = null;
+    const mechIndex = new Map();
+    const patIndex = new Map();
+    const selectedAspects = new Set();
+
+    const $ = (id) => document.getElementById(id);
+    const norm = (s) => String(s == null ? '' : s).trim().toLowerCase().replace(/\s+/g, ' ');
+    const clean = (s) => String(s == null ? '' : s).replace(/\s+/g, ' ').trim();
+    const toArray = (v) => (v == null || v === '' ? [] : (Array.isArray(v) ? v : [v])).map(clean).filter(Boolean);
+    const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const plural = (n, word) => n + ' ' + word + (n === 1 ? '' : 's');
+
+    function el(tag, props, ...kids) {
+        const e = document.createElement(tag);
+        Object.entries(props || {}).forEach(([k, v]) => {
+            if (v == null) return;
+            if (k === 'class') e.className = v;
+            else e.setAttribute(k, v);
+        });
+        kids.flat().forEach((c) => {
+            if (c == null) return;
+            e.append(typeof c === 'string' ? document.createTextNode(c) : c);
+        });
+        return e;
+    }
+
+    let announceTimer;
+    function announce(message) {
+        const status = $('status');
+        clearTimeout(announceTimer);
+        status.textContent = '';
+        announceTimer = setTimeout(() => { status.textContent = message; }, 60);
+    }
+
+    // ---------- Loading the catalogue ----------
+    function showFileError(message) {
+        $('fileError').textContent = message;
+        $('yamlFile').setAttribute('aria-invalid', 'true');
+        announce(message);
+    }
+    function clearFileError() {
+        $('fileError').textContent = '';
+        $('yamlFile').removeAttribute('aria-invalid');
+    }
+
+    function buildIndexes() {
+        mechIndex.clear();
+        patIndex.clear();
+        (catalogueData.catalogue.mechanics || []).forEach((m) => {
+            if (m && m.name && !mechIndex.has(norm(m.name))) mechIndex.set(norm(m.name), m);
+        });
+        (catalogueData.catalogue.patterns || []).forEach((p) => {
+            if (p && p.name && !patIndex.has(norm(p.name))) patIndex.set(norm(p.name), p);
+        });
+    }
+
+    $('yamlFile').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        clearFileError();
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                const data = jsyaml.load(ev.target.result);
+                if (!data || !data.catalogue || !Array.isArray(data.catalogue.aspects)) {
+                    throw new Error('The file does not contain a catalogue with an aspects list.');
+                }
+                catalogueData = data;
+                selectedAspects.clear();
+                buildIndexes();
+                renderAspects();
+                refresh();
+                announce('Catalogue loaded. ' + plural(data.catalogue.aspects.length, 'aspect') + ' available.');
+            } catch (err) {
+                showFileError('Error: could not read ' + file.name + '. ' + err.message);
+            }
+        };
+        reader.onerror = () => showFileError('Error: could not read ' + file.name + '.');
+        reader.readAsText(file);
+    });
+
+    // ---------- Aspect checkboxes ----------
+    // Each row: one native input, one native label holding only the name,
+    // and the description linked with aria-describedby. Every piece of text is
+    // exposed once; there is no aria-label or aria-hidden workaround.
+    function renderAspects() {
+        const fieldset = el('fieldset', { class: 'aspects' },
+            el('legend', {}, 'Select the aspects your game will include'));
+
+        catalogueData.catalogue.aspects.forEach((aspect, i) => {
+            const name = clean(aspect && aspect.name);
+            if (!name) return;
+            const id = 'aspect-' + i;
+            const checkbox = el('input', { type: 'checkbox', id });
+            checkbox.dataset.name = aspect.name;
+            const parts = [checkbox, el('label', { for: id }, name)];
+            const description = clean(aspect.description);
+            if (description) {
+                checkbox.setAttribute('aria-describedby', id + '-desc');
+                parts.push(el('span', { id: id + '-desc', class: 'aspect-desc' }, description));
+            }
+            fieldset.append(el('div', { class: 'aspect' }, ...parts));
+        });
+
+        fieldset.addEventListener('change', onAspectChange);
+        $('aspectsContainer').replaceChildren(fieldset);
+    }
+
+    function onAspectChange(e) {
+        const box = e.target;
+        if (!(box instanceof HTMLInputElement)) return;
+        if (box.checked) selectedAspects.add(box.dataset.name);
+        else selectedAspects.delete(box.dataset.name);
+
+        const model = refresh();
+        const n = selectedAspects.size;
+        if (!model) {
+            announce('No aspects selected. Report cleared.');
+        } else {
+            announce(plural(n, 'aspect') + ' selected. Report updated: ' +
+                plural(model.mechanics.length, 'mechanic') + ' and ' +
+                plural(model.patterns.length, 'pattern') + '.');
         }
-    </script>
+    }
+
+    function setButtonsEnabled(enabled) {
+        ['downloadReport', 'downloadYaml'].forEach((id) => {
+            $(id).setAttribute('aria-disabled', enabled ? 'false' : 'true');
+        });
+    }
+
+    function refresh() {
+        $('selectedCount').textContent = plural(selectedAspects.size, 'aspect') + ' selected';
+        setButtonsEnabled(selectedAspects.size > 0);
+        $('actionMessage').textContent = '';
+        return renderReport();
+    }
+
+    // ---------- Report model ----------
+    function resolvePattern(name) {
+        const found = patIndex.get(norm(name));
+        const display = found ? clean(found.name) : clean(name);
+        return { name: display, slug: slug(display), found: !!found, ref: found || null };
+    }
+
+    function buildModel() {
+        const cat = catalogueData.catalogue;
+        const aspects = (cat.aspects || []).filter((a) => selectedAspects.has(a.name));
+
+        const mechMap = new Map();
+        aspects.forEach((a) => {
+            toArray(a['mechanics used']).forEach((n) => {
+                const key = norm(n);
+                if (!mechMap.has(key)) mechMap.set(key, { displayName: n, requiredFor: [], mechanic: mechIndex.get(key) || null });
+                const entry = mechMap.get(key);
+                if (!entry.requiredFor.includes(clean(a.name))) entry.requiredFor.push(clean(a.name));
+            });
+        });
+
+        const byName = (a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+        const patternMap = new Map();
+
+        const mechanics = [...mechMap.values()].map((entry) => {
+            const m = entry.mechanic;
+            const name = m ? clean(m.name) : clean(entry.displayName);
+            const barriers = (m && Array.isArray(m.potentialBarriers) ? m.potentialBarriers : [])
+                .map((b) => ({
+                    text: clean(b && b.barrier),
+                    consider: toArray(b && b.consider),
+                    patterns: toArray(b && b['patterns to consider']).map(resolvePattern)
+                }))
+                .filter((b) => b.text);
+            // Tolerate "patterns to consider" placed on the mechanic itself
+            const mechanicPatterns = m ? toArray(m['patterns to consider']).map(resolvePattern) : [];
+            const mech = {
+                name, slug: slug(name),
+                description: m ? clean(m.description) : '',
+                requiredFor: entry.requiredFor,
+                barriers, mechanicPatterns
+            };
+            barriers.forEach((b) => b.patterns.forEach((p) => registerPattern(patternMap, p, mech)));
+            mechanicPatterns.forEach((p) => registerPattern(patternMap, p, mech));
+            return mech;
+        }).sort(byName);
+
+        const patterns = [...patternMap.values()].map(({ ref, usedBy }) => ({
+            name: clean(ref.name),
+            slug: slug(ref.name),
+            description: clean(ref.description),
+            impl: Object.entries(ref.implementation_options || {})
+                .map(([key, items]) => ({
+                    label: key === 'unity' ? 'Unity' : key === 'unreal' ? 'Unreal Engine' : key.charAt(0).toUpperCase() + key.slice(1),
+                    items: toArray(items)
+                }))
+                .filter((x) => x.items.length),
+            docs: toArray(ref.documentation),
+            usedBy: usedBy.map((u) => ({ name: u.name, slug: u.slug })).sort(byName)
+        })).sort(byName);
+
+        const resources = (cat.general_resources || []).map((r) => ({
+            name: clean(r && r.name),
+            docs: toArray(r && r.documentation),
+            items: toArray(r && r.items)
+        })).filter((r) => r.name);
+
+        return { aspects: aspects.map((a) => clean(a.name)), mechanics, patterns, resources };
+    }
+
+    function registerPattern(map, p, mech) {
+        if (!p.found) return;
+        const key = norm(p.name);
+        if (!map.has(key)) map.set(key, { ref: p.ref, usedBy: [] });
+        const entry = map.get(key);
+        if (!entry.usedBy.includes(mech)) entry.usedBy.push(mech);
+    }
+
+    // ---------- Rendering: HTML preview ----------
+    function renderReport() {
+        const holder = $('reportContent');
+        if (!catalogueData || selectedAspects.size === 0) {
+            const message = !catalogueData
+                ? 'No catalogue loaded. Choose a catalogue file to begin.'
+                : 'No aspects selected. Select one or more game aspects to generate your report.';
+            holder.replaceChildren(emptyState(message));
+            return null;
+        }
+        const model = buildModel();
+        holder.replaceChildren(toDOM(model));
+        return model;
+    }
+
+    function emptyState(message) {
+        const wrap = el('div', { class: 'empty-state' });
+        wrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">' +
+            '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>' +
+            '<polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line>' +
+            '<line x1="16" y1="17" x2="8" y2="17"></line></svg>';
+        wrap.append(el('p', {}, message));
+        return wrap;
+    }
+
+    // Markdown heading level n becomes h(n+2): the page owns h1 and h2, so the
+    // report title is h3 and the hierarchy never skips a level.
+    function heading(level, text, id) {
+        return el('h' + (level + 2), { id, tabindex: id ? '-1' : null }, text);
+    }
+
+    function linkify(text) {
+        const out = [];
+        const re = /(https?:\/\/[^\s]+)/g;
+        let last = 0, match;
+        while ((match = re.exec(text))) {
+            if (match.index > last) out.push(text.slice(last, match.index));
+            out.push(el('a', { href: match[1] }, match[1]));
+            last = match.index + match[1].length;
+        }
+        if (last < text.length) out.push(text.slice(last));
+        return out;
+    }
+
+    function patternNodes(list) {
+        const out = [];
+        list.forEach((p, i) => {
+            if (i) out.push(', ');
+            out.push(p.found ? el('a', { href: '#pat-' + p.slug }, p.name) : p.name + ' (no entry in catalogue)');
+        });
+        return out;
+    }
+
+    function labelled(label, nodes) {
+        return el('p', {}, el('strong', {}, label + ' '), ...nodes);
+    }
+
+    function toDOM(m) {
+        const frag = document.createDocumentFragment();
+        frag.append(heading(1, 'Accessibility Kick-Off Report'));
+
+        frag.append(heading(2, 'Selected game aspects'),
+            el('ul', {}, ...m.aspects.map((a) => el('li', {}, a))));
+
+        frag.append(heading(2, 'Mechanics to implement'));
+        m.mechanics.forEach((x) => {
+            const box = el('div', { class: 'entry' });
+            box.append(heading(3, x.name, 'mech-' + x.slug));
+            if (x.description) box.append(el('p', {}, x.description));
+            box.append(labelled('Required for:', [x.requiredFor.join(', ')]));
+
+            if (x.barriers.length) {
+                box.append(heading(4, 'Barriers and considerations'));
+                box.append(el('ol', {}, ...x.barriers.map((b) => {
+                    const li = el('li', {}, labelled('Barrier:', [b.text]));
+                    if (b.consider.length) {
+                        li.append(el('p', {}, el('strong', {}, 'Consider:')),
+                            el('ul', {}, ...b.consider.map((c) => el('li', {}, c))));
+                    }
+                    if (b.patterns.length) li.append(labelled('Related patterns:', patternNodes(b.patterns)));
+                    return li;
+                })));
+            } else {
+                box.append(el('p', {}, 'No detailed barriers have been recorded for this mechanic yet.'));
+            }
+            if (x.mechanicPatterns.length) box.append(labelled('Related patterns:', patternNodes(x.mechanicPatterns)));
+            frag.append(box);
+        });
+
+        if (m.patterns.length) {
+            frag.append(heading(2, 'Accessibility patterns'));
+            m.patterns.forEach((p) => {
+                const box = el('div', { class: 'entry' });
+                box.append(heading(3, p.name, 'pat-' + p.slug));
+                if (p.description) box.append(el('p', {}, p.description));
+                if (p.impl.length) {
+                    box.append(heading(4, 'Implementation options'));
+                    p.impl.forEach((group) => {
+                        box.append(el('p', {}, el('strong', {}, group.label)),
+                            el('ul', {}, ...group.items.map((i) => el('li', {}, ...linkify(i)))));
+                    });
+                }
+                if (p.docs.length) {
+                    box.append(heading(4, 'Documentation and resources'),
+                        el('ul', {}, ...p.docs.map((d) => el('li', {}, ...linkify(d)))));
+                }
+                if (p.usedBy.length) {
+                    const links = [];
+                    p.usedBy.forEach((u, i) => {
+                        if (i) links.push(', ');
+                        links.push(el('a', { href: '#mech-' + u.slug }, u.name));
+                    });
+                    box.append(labelled('Used by mechanics:', links));
+                }
+                frag.append(box);
+            });
+        }
+
+        if (m.resources.length) {
+            frag.append(heading(2, 'General resources'),
+                el('p', {}, 'Additional guidance and tools for implementing accessibility features across platforms.'));
+            m.resources.forEach((r) => {
+                const box = el('div', { class: 'entry' });
+                box.append(heading(3, r.name));
+                if (r.docs.length) box.append(el('ul', {}, ...r.docs.map((d) => el('li', {}, ...linkify(d)))));
+                if (r.items.length) box.append(el('ul', {}, ...r.items.map((i) => el('li', {}, ...linkify(i)))));
+                frag.append(box);
+            });
+        }
+        return frag;
+    }
+
+    // In-report links: move focus to the target heading so keyboard and screen reader users land there
+    $('reportContent').addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        const target = document.getElementById(link.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ block: 'start' });
+        target.focus();
+    });
+
+    // ---------- Rendering: Markdown download ----------
+    const mdUrls = (t) => t.replace(/(https?:\/\/[^\s]+)/g, '[$1]($1)');
+    const mdPatterns = (list) => list.map((p) => p.found ? '[' + p.name + '](#' + p.slug + ')' : p.name + ' (no entry in catalogue)').join(', ');
+
+    function toMarkdown(m) {
+        const L = [];
+        L.push('# Accessibility Kick-Off Report', '', '## Selected game aspects', '');
+        m.aspects.forEach((a) => L.push('- ' + a));
+        L.push('', '## Mechanics to implement', '');
+
+        m.mechanics.forEach((x) => {
+            L.push('### ' + x.name, '');
+            if (x.description) L.push(x.description, '');
+            L.push('**Required for:** ' + x.requiredFor.join(', '), '');
+            if (x.barriers.length) {
+                L.push('#### Barriers and considerations', '');
+                x.barriers.forEach((b, i) => {
+                    L.push((i + 1) + '. **Barrier:** ' + b.text, '');
+                    if (b.consider.length) {
+                        L.push('   **Consider:**', '');
+                        b.consider.forEach((c) => L.push('   - ' + c));
+                        L.push('');
+                    }
+                    if (b.patterns.length) L.push('   **Related patterns:** ' + mdPatterns(b.patterns), '');
+                });
+            } else {
+                L.push('No detailed barriers have been recorded for this mechanic yet.', '');
+            }
+            if (x.mechanicPatterns.length) L.push('**Related patterns:** ' + mdPatterns(x.mechanicPatterns), '');
+        });
+
+        if (m.patterns.length) {
+            L.push('## Accessibility patterns', '');
+            m.patterns.forEach((p) => {
+                L.push('### ' + p.name, '');
+                if (p.description) L.push(p.description, '');
+                if (p.impl.length) {
+                    L.push('#### Implementation options', '');
+                    p.impl.forEach((g) => {
+                        L.push('**' + g.label + '**', '');
+                        g.items.forEach((i) => L.push('- ' + mdUrls(i)));
+                        L.push('');
+                    });
+                }
+                if (p.docs.length) {
+                    L.push('#### Documentation and resources', '');
+                    p.docs.forEach((d) => L.push('- ' + mdUrls(d)));
+                    L.push('');
+                }
+                if (p.usedBy.length) {
+                    L.push('**Used by mechanics:** ' + p.usedBy.map((u) => '[' + u.name + '](#' + u.slug + ')').join(', '), '');
+                }
+            });
+        }
+
+        if (m.resources.length) {
+            L.push('## General resources', '',
+                'Additional guidance and tools for implementing accessibility features across platforms.', '');
+            m.resources.forEach((r) => {
+                L.push('### ' + r.name, '');
+                r.docs.forEach((d) => L.push('- ' + mdUrls(d)));
+                r.items.forEach((i) => L.push('- ' + mdUrls(i)));
+                L.push('');
+            });
+        }
+        return L.join('\n');
+    }
+
+    // ---------- Companion YAML ----------
+    function buildFilteredYaml() {
+        const cat = catalogueData.catalogue;
+        const aspects = (cat.aspects || []).filter((a) => selectedAspects.has(a.name));
+
+        const mechKeys = new Set();
+        aspects.forEach((a) => toArray(a['mechanics used']).forEach((n) => mechKeys.add(norm(n))));
+
+        const seenMech = new Set();
+        const mechanics = [];
+        (cat.mechanics || []).forEach((m) => {
+            const key = norm(m && m.name);
+            if (mechKeys.has(key) && !seenMech.has(key)) { seenMech.add(key); mechanics.push(m); }
+        });
+
+        const patKeys = new Set();
+        mechanics.forEach((m) => {
+            (m.potentialBarriers || []).forEach((b) => toArray(b && b['patterns to consider']).forEach((p) => patKeys.add(norm(p))));
+            toArray(m['patterns to consider']).forEach((p) => patKeys.add(norm(p)));
+        });
+
+        const seenPat = new Set();
+        const patterns = [];
+        (cat.patterns || []).forEach((p) => {
+            const key = norm(p && p.name);
+            if (patKeys.has(key) && !seenPat.has(key)) { seenPat.add(key); patterns.push(p); }
+        });
+
+        const out = { catalogue: { description: cat.description, aspects, mechanics, patterns } };
+        if (cat.general_resources) out.catalogue.general_resources = cat.general_resources;
+        return jsyaml.dump(out, { lineWidth: -1, noRefs: true });
+    }
+
+    // ---------- Downloads ----------
+    function say(message) {
+        $('actionMessage').textContent = message;
+        announce(message);
+    }
+
+    function canDownload() {
+        if (!catalogueData) { say('Load a catalogue file first.'); return false; }
+        if (selectedAspects.size === 0) { say('Select at least one aspect first.'); return false; }
+        return true;
+    }
+
+    function downloadFile(content, filename, mimeType) {
+        const url = URL.createObjectURL(new Blob([content], { type: mimeType }));
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    $('downloadReport').addEventListener('click', () => {
+        if (!canDownload()) return;
+        downloadFile(toMarkdown(buildModel()), 'accessibility-kickoff-report.md', 'text/markdown');
+        say('Report downloaded as accessibility-kickoff-report.md.');
+    });
+
+    $('downloadYaml').addEventListener('click', () => {
+        if (!canDownload()) return;
+        downloadFile(buildFilteredYaml(), 'accessibility-companion-data.yaml', 'text/yaml');
+        say('Companion data downloaded as accessibility-companion-data.yaml.');
+    });
+
+    // ---------- Initial state ----------
+    renderReport();
+})();
+</script>
 </body>
 </html>
-
